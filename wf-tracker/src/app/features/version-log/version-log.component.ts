@@ -15,12 +15,17 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
       <div class="version-list">
         @for (entry of log(); track entry.version) {
           <div class="version-entry">
-            <div class="version-header" (click)="toggle(entry.version)">
+            <button
+              type="button"
+              class="version-header"
+              (click)="toggle(entry.version)"
+              [attr.aria-expanded]="isOpen(entry.version)"
+            >
               <span class="version-date">{{ entry.date | slice:0:10 }}</span>
               <span class="version-tag">{{ entry.version }}</span>
               <span class="version-desc">{{ entry.description }}</span>
-              <span class="version-arrow">{{ isOpen(entry.version) ? '▾' : '▸' }}</span>
-            </div>
+              <span class="version-arrow" aria-hidden="true">{{ isOpen(entry.version) ? '▾' : '▸' }}</span>
+            </button>
             @if (isOpen(entry.version) && entry.details) {
               <div class="version-details">
                 <pre>{{ entry.details }}</pre>
@@ -46,6 +51,11 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
       padding: 10px 14px;
       background: var(--color-surface);
       cursor: pointer;
+      width: 100%;
+      text-align: left;
+      border: none;
+      font: inherit;
+      color: inherit;
     }
     .version-header:hover { background: var(--color-surface2); }
     .version-date { font-size: 11px; color: var(--color-text-muted); min-width: 80px; }

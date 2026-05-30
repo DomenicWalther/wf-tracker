@@ -30,6 +30,7 @@ interface IncFamilyCard {
           class="search"
           type="text"
           placeholder="Search families..."
+          aria-label="Search"
           [formControl]="searchControl"
         />
         <span class="stats">
@@ -37,8 +38,8 @@ interface IncFamilyCard {
           <span class="sep">/</span>
           <span class="tot">{{ filteredCards().length }}</span>
         </span>
-        <button class="btn" (click)="checkAll()">✓ All</button>
-        <button class="btn" (click)="uncheckAll()">✗ None</button>
+        <button type="button" class="btn" (click)="checkAll()">✓ All</button>
+        <button type="button" class="btn" (click)="uncheckAll()">✗ None</button>
       </div>
 
       @if (cards().length === 0) {
@@ -48,9 +49,16 @@ interface IncFamilyCard {
       } @else {
         <div class="grid">
           @for (card of filteredCards(); track card.key) {
-            <div class="card" [class.done]="card.checked" (click)="toggle(card.key)">
+            <button
+              type="button"
+              class="card"
+              [class.done]="card.checked"
+              (click)="toggle(card.key)"
+              [attr.aria-pressed]="card.checked"
+              [attr.aria-label]="card.name"
+            >
               <div class="card-top">
-                <span class="checkbox" [class.checked]="card.checked">
+                <span class="checkbox" [class.checked]="card.checked" aria-hidden="true">
                   {{ card.checked ? '✓' : '' }}
                 </span>
                 <span class="family-name">{{ card.name }}</span>
@@ -62,7 +70,7 @@ interface IncFamilyCard {
                   }
                 </div>
               }
-            </div>
+            </button>
           }
         </div>
       }
@@ -120,6 +128,10 @@ interface IncFamilyCard {
       cursor: pointer;
       transition: border-color 0.15s, background 0.15s;
       user-select: none;
+      width: 100%;
+      text-align: left;
+      font: inherit;
+      color: inherit;
     }
     .card:hover { border-color: var(--color-gold); background: var(--color-surface2); }
     .card.done { border-color: var(--color-gold); opacity: 0.55; }

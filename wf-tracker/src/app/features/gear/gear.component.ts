@@ -28,14 +28,19 @@ interface GearColumn {
       />
 
       <div class="gear-search">
-        <input class="cl-search" type="text" placeholder="Search gear..." [formControl]="searchControl" />
+        <input class="cl-search" type="text" placeholder="Search gear..." aria-label="Search" [formControl]="searchControl" />
       </div>
 
       @for (section of gearSections(); track section.key) {
         @if (filteredItems(section.items).length > 0) {
           <div class="gear-section">
-            <div class="gear-section-header" (click)="toggleSection(section.key)">
-              <span class="gear-arrow">{{ isSectionOpen(section.key) ? '▾' : '▸' }}</span>
+            <button
+              type="button"
+              class="gear-section-header"
+              (click)="toggleSection(section.key)"
+              [attr.aria-expanded]="isSectionOpen(section.key)"
+            >
+              <span class="gear-arrow" aria-hidden="true">{{ isSectionOpen(section.key) ? '▾' : '▸' }}</span>
               <span class="gear-section-name">{{ section.label }}</span>
               <app-progress-bar
                 [label]="''"
@@ -43,7 +48,7 @@ interface GearColumn {
                 [total]="sectionProgress(section).total"
                 style="flex: 0 0 200px"
               />
-            </div>
+            </button>
             @if (isSectionOpen(section.key)) {
               <app-tracker-table
                 [columns]="sectionActiveColumns(section.key)"
@@ -84,6 +89,11 @@ interface GearColumn {
       padding: 10px 14px;
       background: var(--color-surface2);
       cursor: pointer;
+      width: 100%;
+      text-align: left;
+      border: none;
+      font: inherit;
+      color: inherit;
     }
     .gear-section-header:hover { background: #1e1e2c; }
     .gear-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }

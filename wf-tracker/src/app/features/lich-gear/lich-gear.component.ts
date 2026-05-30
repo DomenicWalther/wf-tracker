@@ -20,13 +20,18 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
       />
 
       <div class="gear-search">
-        <input class="cl-search" type="text" placeholder="Search weapons..." [formControl]="searchControl" />
+        <input class="cl-search" type="text" placeholder="Search weapons..." aria-label="Search" [formControl]="searchControl" />
       </div>
 
       @for (group of filteredGroups(); track group.name) {
         <div class="gear-section">
-          <div class="gear-section-header" (click)="toggleGroup(group.name)">
-            <span class="gear-arrow">{{ isGroupOpen(group.name) ? '▾' : '▸' }}</span>
+          <button
+            type="button"
+            class="gear-section-header"
+            (click)="toggleGroup(group.name)"
+            [attr.aria-expanded]="isGroupOpen(group.name)"
+          >
+            <span class="gear-arrow" aria-hidden="true">{{ isGroupOpen(group.name) ? '▾' : '▸' }}</span>
             <span class="gear-section-name">{{ group.name }}</span>
             <app-progress-bar
               [label]="''"
@@ -34,7 +39,7 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
               [total]="groupProgress(group).total"
               style="flex: 0 0 200px"
             />
-          </div>
+          </button>
           @if (isGroupOpen(group.name)) {
             <div class="gear-table-wrapper">
               <table class="gear-table">
@@ -53,17 +58,20 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
                       <td class="col-check">
                         <input type="checkbox" class="wf-checkbox"
                           [checked]="isChecked(item, 'obtained')"
-                          (change)="toggle(item, 'obtained')" />
+                          (change)="toggle(item, 'obtained')"
+                          [attr.aria-label]="item + ' - Obtained'" />
                       </td>
                       <td class="col-check">
                         <input type="checkbox" class="wf-checkbox"
                           [checked]="isChecked(item, '60')"
-                          (change)="toggle(item, '60')" />
+                          (change)="toggle(item, '60')"
+                          [attr.aria-label]="item + ' - 60%'" />
                       </td>
                       <td class="col-check">
                         <input type="checkbox" class="wf-checkbox"
                           [checked]="isChecked(item, 'vf')"
-                          (change)="toggle(item, 'vf')" />
+                          (change)="toggle(item, 'vf')"
+                          [attr.aria-label]="item + ' - Valence Fusion'" />
                       </td>
                     </tr>
                   }
@@ -107,6 +115,11 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
       padding: 10px 14px;
       background: var(--color-surface2);
       cursor: pointer;
+      width: 100%;
+      text-align: left;
+      border: none;
+      font: inherit;
+      color: inherit;
     }
     .gear-section-header:hover { background: #1e1e2c; }
     .gear-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }

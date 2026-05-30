@@ -13,6 +13,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
           class="cl-search"
           type="text"
           placeholder="Search..."
+          aria-label="Search"
           [formControl]="searchControl"
         />
         <div class="cl-stats">
@@ -20,17 +21,22 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
           <span class="cl-sep">/</span>
           <span class="cl-total">{{ filteredItems().length }}</span>
         </div>
-        <button class="cl-btn" (click)="checkAll()" title="Check all visible">✓ All</button>
-        <button class="cl-btn" (click)="uncheckAll()" title="Uncheck all visible">✗ None</button>
+        <button type="button" class="cl-btn" (click)="checkAll()" title="Check all visible">✓ All</button>
+        <button type="button" class="cl-btn" (click)="uncheckAll()" title="Uncheck all visible">✗ None</button>
       </div>
 
       @for (group of filteredGroups(); track group.name) {
         <div class="cl-group">
-          <div class="cl-group-header" (click)="toggleGroup(group.name)">
-            <span class="cl-group-arrow">{{ isGroupOpen(group.name) ? '▾' : '▸' }}</span>
+          <button
+            type="button"
+            class="cl-group-header"
+            (click)="toggleGroup(group.name)"
+            [attr.aria-expanded]="isGroupOpen(group.name)"
+          >
+            <span class="cl-group-arrow" aria-hidden="true">{{ isGroupOpen(group.name) ? '▾' : '▸' }}</span>
             <span class="cl-group-name">{{ group.name }}</span>
             <span class="cl-group-progress">{{ groupProgress(group) }}</span>
-          </div>
+          </button>
           @if (isGroupOpen(group.name)) {
             <div class="cl-items">
               @for (item of group.items; track item.key) {
@@ -115,6 +121,11 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
       background: var(--color-surface2);
       cursor: pointer;
       user-select: none;
+      width: 100%;
+      text-align: left;
+      border: none;
+      font: inherit;
+      color: inherit;
     }
     .cl-group-header:hover {
       background: #1e1e2c;

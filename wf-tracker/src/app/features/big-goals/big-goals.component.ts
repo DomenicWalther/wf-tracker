@@ -21,10 +21,11 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
           class="goal-input"
           type="text"
           placeholder="Add a new big goal..."
+          aria-label="New big goal"
           [formControl]="newGoalControl"
           (keyup.enter)="addGoal()"
         />
-        <button class="add-btn" (click)="addGoal()" [disabled]="!newGoalControl.value.trim()">+ Add</button>
+        <button type="button" class="add-btn" (click)="addGoal()" [disabled]="!newGoalControl.value.trim()">+ Add</button>
       </div>
 
       <div class="big-goals-list">
@@ -34,7 +35,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
               <input type="checkbox" class="wf-checkbox" [checked]="isChecked(goal)" (change)="toggle(goal)" />
               <span class="big-goal-text">{{ goal }}</span>
             </label>
-            <button class="delete-btn" (click)="deleteGoal(goal)" title="Remove goal">✕</button>
+            <button class="delete-btn" type="button" (click)="deleteGoal(goal)" title="Remove goal" aria-label="Delete goal">✕</button>
           </div>
         }
         @if (goals().length === 0) {

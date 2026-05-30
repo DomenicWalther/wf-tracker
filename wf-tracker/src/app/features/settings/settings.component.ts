@@ -229,8 +229,8 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
         <div class="settings-card full-width">
           <div class="settings-card-title">Data Management</div>
           <div class="data-actions">
-            <button class="action-btn" (click)="exportData()">Export Progress</button>
-            <button class="action-btn danger" (click)="confirmReset()">Reset All Progress</button>
+            <button type="button" class="action-btn" (click)="exportData()">Export Progress</button>
+            <button type="button" class="action-btn danger" (click)="confirmReset()">Reset All Progress</button>
           </div>
           @if (exportedJson()) {
             <textarea class="export-area" readonly [value]="exportedJson()"></textarea>
@@ -239,8 +239,8 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
             <div class="confirm-box">
               <p>Are you sure? This will permanently delete all your tracked progress.</p>
               <div class="confirm-actions">
-                <button class="action-btn danger" (click)="resetAll()">Yes, Reset Everything</button>
-                <button class="action-btn" (click)="showResetConfirm.set(false)">Cancel</button>
+                <button type="button" class="action-btn danger" (click)="resetAll()">Yes, Reset Everything</button>
+                <button type="button" class="action-btn" (click)="showResetConfirm.set(false)">Cancel</button>
               </div>
             </div>
           }

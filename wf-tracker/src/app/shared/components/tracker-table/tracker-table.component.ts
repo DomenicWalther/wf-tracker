@@ -42,6 +42,7 @@ export interface TrackerRow {
                     class="wf-checkbox"
                     [checked]="isChecked(row.name, col.key)"
                     (change)="toggle.emit({ rowName: row.name, colKey: col.key })"
+                    [attr.aria-label]="row.name + ' - ' + col.label"
                   />
                 </td>
               }

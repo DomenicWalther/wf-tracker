@@ -20,15 +20,15 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
       <div class="goals-section">
         <div class="goals-section-title">Add New Goal</div>
         <div class="add-goal-form" [formGroup]="addForm">
-          <input class="goal-input" type="text" placeholder="Goal description..." formControlName="text" />
-          <select class="goal-select" formControlName="type">
+          <input class="goal-input" type="text" placeholder="Goal description..." aria-label="Goal description" formControlName="text" />
+          <select class="goal-select" aria-label="Goal type" formControlName="type">
             <option value="checkbox">Completion (checkbox)</option>
             <option value="number">Number target</option>
           </select>
           @if (addForm.controls.type.value === 'number') {
-            <input class="goal-num" type="number" placeholder="Target #" formControlName="target" min="1" />
+            <input class="goal-num" type="number" placeholder="Target #" aria-label="Target amount" formControlName="target" min="1" />
           }
-          <button class="add-btn" (click)="addGoal()">+ Add</button>
+          <button type="button" class="add-btn" (click)="addGoal()">+ Add</button>
         </div>
       </div>
 
@@ -46,6 +46,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
                     [value]="goal.current ?? 0"
                     (change)="onCurrentChange(goal, $event)"
                     min="0"
+                    [attr.aria-label]="goal.goal + ' current progress'"
                   />
                   <span class="goal-sep">/</span>
                   <span class="goal-target">{{ goal.target }}</span>
@@ -55,7 +56,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
                     <div class="progress-bar-fill" [style.width.%]="goalPct(goal)"></div>
                   </div>
                 </div>
-                <button class="del-btn" (click)="deleteGoal(goal.id)" title="Delete">✕</button>
+                <button class="del-btn" type="button" (click)="deleteGoal(goal.id)" title="Delete" aria-label="Delete goal">✕</button>
               </div>
             }
           </div>
@@ -71,9 +72,10 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
                   class="wf-checkbox"
                   [checked]="goal.completed"
                   (change)="toggleGoal(goal)"
+                  [attr.aria-label]="goal.goal"
                 />
                 <span class="goal-text" [class.struck]="goal.completed">{{ goal.goal }}</span>
-                <button class="del-btn" (click)="deleteGoal(goal.id)" title="Delete">✕</button>
+                <button class="del-btn" type="button" (click)="deleteGoal(goal.id)" title="Delete" aria-label="Delete goal">✕</button>
               </div>
             }
           </div>

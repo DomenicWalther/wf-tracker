@@ -73,8 +73,15 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
             <span class="logo-wf">WF</span>
           </div>
         }
-        <button class="collapse-btn" (click)="toggleCollapsed()" title="Toggle sidebar">
-          {{ collapsed() ? '›' : '‹' }}
+        <button
+          class="collapse-btn"
+          type="button"
+          (click)="toggleCollapsed()"
+          title="Toggle sidebar"
+          [attr.aria-label]="collapsed() ? 'Expand sidebar' : 'Collapse sidebar'"
+          [attr.aria-expanded]="!collapsed()"
+        >
+          <span aria-hidden="true">{{ collapsed() ? '›' : '‹' }}</span>
         </button>
       </div>
 
@@ -103,7 +110,7 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
                routerLinkActive="active"
                class="nav-item"
                [title]="collapsed() ? item.label : ''">
-              <span class="nav-icon">{{ item.icon }}</span>
+              <span class="nav-icon" aria-hidden="true">{{ item.icon }}</span>
               @if (!collapsed()) {
                 <span class="nav-label">{{ item.label }}</span>
               }
