@@ -1,0 +1,29 @@
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent) },
+  { path: 'quests', loadComponent: () => import('./features/quests/quests.component').then(m => m.QuestsComponent) },
+  { path: 'gear', loadComponent: () => import('./features/gear/gear.component').then(m => m.GearComponent) },
+  { path: 'lich-gear', loadComponent: () => import('./features/lich-gear/lich-gear.component').then(m => m.LichGearComponent) },
+  { path: 'incarnon', loadComponent: () => import('./features/incarnon/incarnon.component').then(m => m.IncarnonComponent) },
+  { path: 'arcanes', loadComponent: () => import('./features/arcanes/arcanes.component').then(m => m.ArcanesComponent) },
+  { path: 'mods', loadComponent: () => import('./features/mods/mods.component').then(m => m.ModsComponent) },
+  { path: 'subsume', loadComponent: () => import('./features/subsume/subsume.component').then(m => m.SubsumeComponent) },
+  { path: 'railjack', loadComponent: () => import('./features/railjack/railjack.component').then(m => m.RailjackComponent) },
+  { path: 'relics', loadComponent: () => import('./features/relics/relics.component').then(m => m.RelicsComponent) },
+  { path: 'blueprints', loadComponent: () => import('./features/blueprints/blueprints.component').then(m => m.BlueprintsComponent) },
+  { path: 'items', loadComponent: () => import('./features/items/items.component').then(m => m.ItemsComponent) },
+  { path: 'cosmetics', loadComponent: () => import('./features/cosmetics/cosmetics.component').then(m => m.CosmeticsComponent) },
+  { path: 'collectable', loadComponent: () => import('./features/collectable/collectable.component').then(m => m.CollectableComponent) },
+  { path: 'decorations', loadComponent: () => import('./features/decorations/decorations.component').then(m => m.DecorationsComponent) },
+  { path: 'codex', loadComponent: () => import('./features/codex/codex.component').then(m => m.CodexComponent) },
+  { path: 'market', loadComponent: () => import('./features/market/market.component').then(m => m.MarketComponent) },
+  { path: 'extra', loadComponent: () => import('./features/extra/extra.component').then(m => m.ExtraComponent) },
+  { path: 'modular-gear', loadComponent: () => import('./features/modular-gear/modular-gear.component').then(m => m.ModularGearComponent) },
+  { path: 'big-goals', loadComponent: () => import('./features/big-goals/big-goals.component').then(m => m.BigGoalsComponent) },
+  { path: 'personal-goals', loadComponent: () => import('./features/personal-goals/personal-goals.component').then(m => m.PersonalGoalsComponent) },
+  { path: 'settings', loadComponent: () => import('./features/settings/settings.component').then(m => m.SettingsComponent) },
+  { path: 'version-log', loadComponent: () => import('./features/version-log/version-log.component').then(m => m.VersionLogComponent) },
+  { path: '**', redirectTo: 'dashboard' }
+];

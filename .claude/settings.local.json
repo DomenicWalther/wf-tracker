@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Domenic/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/22f0036a-b360-4c70-91b3-e18c0805c11d/62a58739-0bc2-4d40-b02c-5fa19ee938ae/skills/xlsx/**)",
+      "Bash(python scripts/extract-text \"C:\\\\Users\\\\Domenic\\\\Downloads\\\\WARFRAME COMPLETION TRACKER - PUBLIC.xlsx\")",
+      "Bash(python -c ' *)",
+      "Bash(pip install *)",
+      "PowerShell(python --version)",
+      "PowerShell(pip --version)",
+      "PowerShell(pip install openpyxl 2>&1)"
+    ]
+  }
+}

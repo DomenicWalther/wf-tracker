@@ -1,0 +1,34 @@
+# Dependencies
+**/node_modules/
+
+# Angular build output / cache
+wf-tracker/dist/
+wf-tracker/tmp/
+wf-tracker/out-tsc/
+wf-tracker/.angular/
+
+# Logs
+*-debug.log
+npm-debug.log
+yarn-error.log
+
+# Coverage / test artifacts
+**/coverage/
+__screenshots__/
+
+# IDEs and editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python (data extraction scripts)
+__pycache__/
+*.pyc

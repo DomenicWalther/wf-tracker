@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #0a0a0f;
+  --color-surface: #12121a;
+  --color-surface2: #1a1a26;
+  --color-border: #2a2a3a;
+  --color-gold: #c89b3c;
+  --color-gold-light: #e8bf6a;
+  --color-text: #d4c5a0;
+  --color-text-muted: #7a7060;
+  --color-green: #4caf7d;
+  --color-red: #e05a5a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+.wf-checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 3px;
+  background: var(--color-surface);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.wf-checkbox:checked {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.wf-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid #0a0a0f;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.wf-checkbox:hover:not(:checked) {
+  border-color: var(--color-gold);
+}
+
+.progress-bar-bg {
+  background: var(--color-surface2);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 6px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.section-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+.tag-founder {
+  color: #ff9a3c;
+  border-color: #ff9a3c40;
+  background: #ff9a3c10;
+}
+
+.tag-old {
+  color: #888;
+  border-color: #88888840;
+  background: #88888810;
+}
+
+.tag-extra {
+  color: #c88;
+  border-color: #c8888840;
+  background: #c8888810;
+}

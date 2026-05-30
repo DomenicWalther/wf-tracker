@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wf-tracker",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start", "--prefix", "wf-tracker", "--", "--port", "4201"],
+      "port": 4201
+    }
+  ]
+}
