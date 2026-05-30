@@ -1,4 +1,5 @@
-import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
@@ -179,17 +180,17 @@ interface IncFamilyCard {
     }
   `]
 })
-export class IncarnonComponent implements OnInit {
+export class IncarnonComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
-  private readonly data = signal<any>(null);
+  private readonly data = toSignal(this.dataService.getData());
 
   searchQuery = '';
 
   readonly cards = computed<IncFamilyCard[]>(() => {
     const d = this.data();
     if (!d) return [];
-    const raw: { name: string; weapons: string[] }[] = d['incarnon'] ?? [];
+    const raw = d.incarnon ?? [];
     const cards: IncFamilyCard[] = [];
     for (const family of raw) {
       if (family.name === '1 FAMILY') {
@@ -218,22 +219,15 @@ export class IncarnonComponent implements OnInit {
     return { completed: all.filter(c => c.checked).length, total: all.length };
   });
 
-  ngOnInit(): void {
-    this.dataService.getData().subscribe(d => this.data.set(d));
-  }
-
   toggle(key: string): void {
     this.tracker.toggle(key);
-    this.data.set({ ...this.data() });
   }
 
   checkAll(): void {
     this.filteredCards().filter(c => !c.checked).forEach(c => this.tracker.toggle(c.key));
-    this.data.set({ ...this.data() });
   }
 
   uncheckAll(): void {
     this.filteredCards().filter(c => c.checked).forEach(c => this.tracker.toggle(c.key));
-    this.data.set({ ...this.data() });
   }
 }

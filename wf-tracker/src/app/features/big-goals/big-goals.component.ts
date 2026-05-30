@@ -1,4 +1,5 @@
-import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, effect, ChangeDetectionStrategy } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
@@ -129,22 +130,29 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
     }
   `]
 })
-export class BigGoalsComponent implements OnInit {
+export class BigGoalsComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
+  private readonly rawData = toSignal(this.dataService.getData());
 
   readonly goals = computed(() => this.tracker.bigGoals());
   newGoalText = '';
 
-  ngOnInit(): void {
-    // Seed from tracker-data.json only if the user has no goals yet
-    if (this.tracker.bigGoals().length === 0) {
-      this.dataService.getData().subscribe(d => {
-        if (this.tracker.bigGoals().length === 0 && d?.bigGoals?.length) {
-          this.tracker.setBigGoals(d.bigGoals);
-        }
-      });
-    }
+  constructor() {
+    // Seed from tracker-data.json only once, the first time the user ever opens this
+    // page. An empty list is a valid customized state, so we track seeding explicitly
+    // rather than inferring it from emptiness — otherwise deleting all goals would
+    // restore the defaults on the next refresh.
+    effect(() => {
+      if (this.tracker.bigGoalsSeeded()) return;
+      const d = this.rawData();
+      if (!d) return;
+      if (d.bigGoals?.length) {
+        this.tracker.setBigGoals(d.bigGoals);
+      } else {
+        this.tracker.markBigGoalsSeeded();
+      }
+    });
   }
 
   isChecked(goal: string): boolean {

@@ -1,4 +1,5 @@
-import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
@@ -143,18 +144,18 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
     }
   `]
 })
-export class LichGearComponent implements OnInit {
+export class LichGearComponent {
   private readonly trackerService = inject(TrackerService);
   private readonly dataService = inject(DataService);
-  private readonly rawData = signal<any>(null);
+  private readonly rawData = toSignal(this.dataService.getData());
   private readonly openGroups = signal<Set<string>>(new Set());
 
   searchQuery = '';
 
   readonly groups = computed<{ name: string; items: string[] }[]>(() => {
     const d = this.rawData();
-    if (!d?.lichGear || typeof d.lichGear !== 'object' || Array.isArray(d.lichGear)) return [];
-    return Object.entries(d.lichGear as Record<string, string[]>).map(([group, items]) => ({
+    if (!d?.lichGear) return [];
+    return Object.entries(d.lichGear).map(([group, items]) => ({
       name: group.split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
       items
     }));
@@ -181,15 +182,6 @@ export class LichGearComponent implements OnInit {
     return { completed, total };
   });
 
-  ngOnInit(): void {
-    this.dataService.getData().subscribe(d => {
-      this.rawData.set(d);
-      if (this.groups().length > 0) {
-        this.openGroups.set(new Set([this.groups()[0].name]));
-      }
-    });
-  }
-
   isChecked(item: string, col: string): boolean {
     const key = col === 'obtained' ? 'lich:' + item : 'lich:' + item + ':' + col;
     return this.trackerService.isChecked(key);
@@ -198,7 +190,6 @@ export class LichGearComponent implements OnInit {
   toggle(item: string, col: string): void {
     const key = col === 'obtained' ? 'lich:' + item : 'lich:' + item + ':' + col;
     this.trackerService.toggle(key);
-    this.rawData.set({ ...this.rawData() });
   }
 
   isGroupOpen(name: string): boolean {

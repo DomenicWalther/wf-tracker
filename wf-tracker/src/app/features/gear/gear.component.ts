@@ -1,15 +1,13 @@
-import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
+import { GearItem } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ProgressBarComponent } from '../../shared/components/progress-bar/progress-bar.component';
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
-
-interface GearItem {
-  name: string;
-  isFounderOnly: boolean;
-}
+import { signal } from '@angular/core';
 
 interface GearColumn {
   key: string;
@@ -94,10 +92,10 @@ interface GearColumn {
     :host ::ng-deep .tt-tag-founder { color: #ff9a3c; }
   `]
 })
-export class GearComponent implements OnInit {
+export class GearComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
-  private readonly data = signal<any>(null);
+  private readonly data = toSignal(this.dataService.getData());
   searchQuery = '';
 
   private readonly openSections = signal<Set<string>>(new Set(['warframes']));
@@ -128,21 +126,21 @@ export class GearComponent implements OnInit {
 
   readonly activeColumns = computed(() => {
     const settings = this.tracker.settings().gear;
-    return this.ALL_COLUMNS.filter(c => !c.settingKey || (settings as any)[c.settingKey]);
+    return this.ALL_COLUMNS.filter(c => !c.settingKey || settings[c.settingKey as keyof typeof settings]);
   });
 
   readonly gearSections = computed(() => {
     const d = this.data();
     if (!d?.gear) return [];
     return [
-      { key: 'warframes', label: 'Warframes', items: d.gear.warframes as GearItem[] },
-      { key: 'primaries', label: 'Primary Weapons', items: d.gear.primaries as GearItem[] },
-      { key: 'secondaries', label: 'Secondary Weapons', items: d.gear.secondaries as GearItem[] },
-      { key: 'melees', label: 'Melee Weapons', items: d.gear.melees as GearItem[] },
-      { key: 'companions', label: 'Companions', items: d.gear.companions as GearItem[] },
-      { key: 'archwings', label: 'Archwings', items: d.gear.archwings as GearItem[] },
-      { key: 'archwingWeapons', label: 'Archwing Weapons', items: d.gear.archwingWeapons as GearItem[] },
-      { key: 'extras', label: 'Extra Gear', items: d.gear.extras as GearItem[] },
+      { key: 'warframes', label: 'Warframes', items: d.gear['warframes'] ?? [] },
+      { key: 'primaries', label: 'Primary Weapons', items: d.gear['primaries'] ?? [] },
+      { key: 'secondaries', label: 'Secondary Weapons', items: d.gear['secondaries'] ?? [] },
+      { key: 'melees', label: 'Melee Weapons', items: d.gear['melees'] ?? [] },
+      { key: 'companions', label: 'Companions', items: d.gear['companions'] ?? [] },
+      { key: 'archwings', label: 'Archwings', items: d.gear['archwings'] ?? [] },
+      { key: 'archwingWeapons', label: 'Archwing Weapons', items: d.gear['archwingWeapons'] ?? [] },
+      { key: 'extras', label: 'Extra Gear', items: d.gear['extras'] ?? [] },
     ];
   });
 
@@ -165,17 +163,12 @@ export class GearComponent implements OnInit {
 
   readonly checkedFn = (rowName: string, colKey: string) => this.isChecked(rowName, colKey);
 
-  ngOnInit(): void {
-    this.dataService.getData().subscribe(d => this.data.set(d));
-  }
-
   isChecked(itemName: string, colKey: string): boolean {
     return this.tracker.isChecked(`gear:${itemName}:${colKey}`);
   }
 
   toggleItem(itemName: string, colKey: string): void {
     this.tracker.toggle(`gear:${itemName}:${colKey}`);
-    this.data.set({ ...this.data() });
   }
 
   toRows(items: GearItem[]): TrackerRow[] {
@@ -222,4 +215,3 @@ export class GearComponent implements OnInit {
     return { completed, total };
   }
 }
-

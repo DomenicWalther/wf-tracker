@@ -18,6 +18,7 @@ export class TrackerService {
   readonly personalGoals = computed(() => this.state().personalGoals);
   readonly todoItems = computed(() => this.state().todoItems);
   readonly bigGoals = computed(() => this.state().bigGoals);
+  readonly bigGoalsSeeded = computed(() => this.state().bigGoalsSeeded);
 
   // Set by dashboard when data loads to enable accurate sidebar progress
   readonly totalTrackable = signal<{ completed: number; total: number }>({ completed: 0, total: 0 });
@@ -158,15 +159,20 @@ export class TrackerService {
   }
 
   addBigGoal(text: string): void {
-    this.updateState(s => ({ ...s, bigGoals: [...s.bigGoals, text] }));
+    this.updateState(s => ({ ...s, bigGoals: [...s.bigGoals, text], bigGoalsSeeded: true }));
   }
 
   deleteBigGoal(text: string): void {
-    this.updateState(s => ({ ...s, bigGoals: s.bigGoals.filter(g => g !== text) }));
+    this.updateState(s => ({ ...s, bigGoals: s.bigGoals.filter(g => g !== text), bigGoalsSeeded: true }));
   }
 
   setBigGoals(goals: string[]): void {
-    this.updateState(s => ({ ...s, bigGoals: goals }));
+    this.updateState(s => ({ ...s, bigGoals: goals, bigGoalsSeeded: true }));
+  }
+
+  /** Marks Big Goals as seeded without changing the list (used when the data file has none to seed). */
+  markBigGoalsSeeded(): void {
+    this.updateState(s => ({ ...s, bigGoalsSeeded: true }));
   }
 
   private defaultState(): TrackerState {
@@ -178,7 +184,8 @@ export class TrackerService {
       sectionToggles: { ...DEFAULT_SECTION_TOGGLES },
       personalGoals: [],
       todoItems: [],
-      bigGoals: []
+      bigGoals: [],
+      bigGoalsSeeded: false
     };
   }
 
@@ -192,7 +199,10 @@ export class TrackerService {
       sectionToggles: { ...defaults.sectionToggles, ...partial.sectionToggles },
       personalGoals: partial.personalGoals ?? [],
       todoItems: partial.todoItems ?? [],
-      bigGoals: partial.bigGoals ?? []
+      bigGoals: partial.bigGoals ?? [],
+      // Legacy state predates this flag: if goals already exist, treat them as seeded
+      // so an existing customized list is never overwritten by the data-file defaults.
+      bigGoalsSeeded: partial.bigGoalsSeeded ?? (partial.bigGoals?.length ?? 0) > 0
     };
   }
 }

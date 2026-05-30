@@ -1,3 +1,91 @@
+// ─── Data-file types ──────────────────────────────────────────────────────────
+
+export interface GearItem {
+  name: string;
+  isFounderOnly?: boolean;
+}
+
+export interface IncarnonEntry {
+  name: string;
+  weapons: string[];
+}
+
+export interface ModEntry {
+  name: string;
+  maxRank: number;
+  category: string;
+}
+
+export interface SubsumeEntry {
+  warframe: string;
+  ability: string;
+}
+
+export interface BlueprintEntry {
+  name: string;
+  isOld?: boolean;
+}
+
+export interface VersionLogEntry {
+  date: string;
+  version: string;
+  description: string;
+  summary?: string;
+  details?: string;
+}
+
+export interface RailjackComponent {
+  house: string;
+  component: string;
+  bonus: string;
+}
+
+export interface TrackerData {
+  quests: string[];
+  gear: Record<string, GearItem[]>;
+  lichGear: Record<string, string[]>;
+  incarnon: IncarnonEntry[];
+  arcanes: Record<string, string[]>;
+  mods: ModEntry[];
+  subsume: SubsumeEntry[];
+  railjack: { intrinsics: string[]; components: RailjackComponent[] };
+  relics: Record<string, string[]>;
+  blueprints: Record<string, Record<string, BlueprintEntry[]>>;
+  items: Record<string, string[]>;
+  cosmetics: Record<string, Record<string, string[]>>;
+  collectable: Record<string, string[]>;
+  decorations: Record<string, string[]>;
+  codex: Record<string, string[]>;
+  market: Record<string, string[]>;
+  extra: Record<string, string[]>;
+  bigGoals: string[];
+  versionLog: VersionLogEntry[];
+  modularGear: Record<string, string[]>;
+  settingsDefinitions: Record<string, string | Record<string, string>>;
+}
+
+// ─── Checklist UI types ───────────────────────────────────────────────────────
+
+export interface ChecklistItem {
+  key: string;
+  label: string;
+  checked: boolean;
+  tag?: string;
+}
+
+/** Alias for ChecklistItem (view-model naming). */
+export type ChecklistItemView = ChecklistItem;
+
+export interface ChecklistGroup {
+  name: string;
+  items: ChecklistItem[];
+}
+
+/** Alias for ChecklistGroup (view-model naming). */
+export type ChecklistGroupView = ChecklistGroup;
+
+// ─── Tracker state types ──────────────────────────────────────────────────────
+
 export interface TrackerState {
   checkboxes: Record<string, boolean>;
   numberValues: Record<string, number>;
@@ -7,6 +95,8 @@ export interface TrackerState {
   personalGoals: PersonalGoal[];
   todoItems: TodoItem[];
   bigGoals: string[];
+  /** True once Big Goals have been seeded from the data file (or the user has edited them). Prevents re-seeding over an intentionally empty list. */
+  bigGoalsSeeded: boolean;
 }
 
 export interface TrackerSettings {

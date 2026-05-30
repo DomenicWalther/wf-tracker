@@ -1,7 +1,9 @@
-import { Component, inject, OnInit, signal, computed, effect, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, effect, ChangeDetectionStrategy } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
+import { TrackerData, IncarnonEntry } from '../../core/models/tracker.models';
 
 interface SectionCard {
   label: string;
@@ -184,11 +186,11 @@ interface SectionCard {
     }
   `]
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
 
-  private readonly data = signal<any>(null);
+  private readonly data = toSignal(this.dataService.getData());
 
   constructor() {
     effect(() => {
@@ -251,53 +253,49 @@ export class DashboardComponent implements OnInit {
     return card.total > 0 ? (card.completed / card.total) * 100 : 0;
   }
 
-  ngOnInit(): void {
-    this.dataService.getData().subscribe(d => this.data.set(d));
-  }
-
   private calcProgress(prefix: string, total: number): { completed: number; total: number } {
     const checkboxes = this.tracker.checkboxes();
     const completed = Object.keys(checkboxes).filter(k => k.startsWith(prefix + ':') && checkboxes[k]).length;
     return { completed, total };
   }
 
-  private calcGearProgress(d: any): { completed: number; total: number } {
+  private calcGearProgress(d: TrackerData): { completed: number; total: number } {
     return this.calcProgress('gear', this.gearTotal(d));
   }
 
-  private gearTotal(d: any): number {
-    if (!d?.gear) return 0;
-    return Object.values(d.gear as Record<string, any[]>).reduce((a, v) => a + v.length, 0);
+  private gearTotal(d: TrackerData): number {
+    if (!d.gear) return 0;
+    return Object.values(d.gear).reduce((a, v) => a + v.length, 0);
   }
 
-  private lichTotal(d: any): number {
-    if (!d?.lichGear) return 0;
-    return Object.values(d.lichGear as Record<string, any[]>).reduce((a, v) => a + v.length, 0);
+  private lichTotal(d: TrackerData): number {
+    if (!d.lichGear) return 0;
+    return Object.values(d.lichGear).reduce((a, v) => a + v.length, 0);
   }
 
-  private incarnonTotal(d: any): number {
-    if (!d?.incarnon) return 0;
-    return d.incarnon.reduce((a: number, f: any) => a + f.weapons.length, 0);
+  private incarnonTotal(d: TrackerData): number {
+    if (!d.incarnon) return 0;
+    return d.incarnon.reduce((a: number, f: IncarnonEntry) => a + f.weapons.length, 0);
   }
 
-  private arcaneTotal(d: any): number {
-    if (!d?.arcanes) return 0;
-    return Object.values(d.arcanes as Record<string, any[]>).reduce((a, v) => a + v.length, 0);
+  private arcaneTotal(d: TrackerData): number {
+    if (!d.arcanes) return 0;
+    return Object.values(d.arcanes).reduce((a, v) => a + v.length, 0);
   }
 
-  private rjTotal(d: any): number {
-    return (d?.railjack?.intrinsics?.length ?? 0) + (d?.railjack?.components?.length ?? 0);
+  private rjTotal(d: TrackerData): number {
+    return (d.railjack?.intrinsics?.length ?? 0) + (d.railjack?.components?.length ?? 0);
   }
 
-  private relicTotal(d: any): number {
-    if (!d?.relics) return 0;
-    return Object.values(d.relics as Record<string, any[]>).reduce((a, v) => a + v.length, 0);
+  private relicTotal(d: TrackerData): number {
+    if (!d.relics) return 0;
+    return Object.values(d.relics).reduce((a, v) => a + v.length, 0);
   }
 
-  private bpTotal(d: any): number {
-    if (!d?.blueprints) return 0;
+  private bpTotal(d: TrackerData): number {
+    if (!d.blueprints) return 0;
     let t = 0;
-    for (const cat of Object.values(d.blueprints as Record<string, Record<string, any[]>>)) {
+    for (const cat of Object.values(d.blueprints)) {
       for (const items of Object.values(cat)) {
         t += items.length;
       }
@@ -305,47 +303,47 @@ export class DashboardComponent implements OnInit {
     return t;
   }
 
-  private itemTotal(d: any): number {
-    if (!d?.items) return 0;
-    return Object.values(d.items as Record<string, any[]>).reduce((a, v) => a + v.length, 0);
+  private itemTotal(d: TrackerData): number {
+    if (!d.items) return 0;
+    return Object.values(d.items).reduce((a, v) => a + v.length, 0);
   }
 
-  private cosTotal(d: any): number {
-    if (!d?.cosmetics) return 0;
+  private cosTotal(d: TrackerData): number {
+    if (!d.cosmetics) return 0;
     let t = 0;
-    for (const cat of Object.values(d.cosmetics as Record<string, Record<string, any[]>>)) {
+    for (const cat of Object.values(d.cosmetics)) {
       for (const items of Object.values(cat)) t += items.length;
     }
     return t;
   }
 
-  private colTotal(d: any): number {
-    if (!d?.collectable) return 0;
-    return Object.values(d.collectable as Record<string, any[]>).reduce((a, v) => a + v.length, 0);
+  private colTotal(d: TrackerData): number {
+    if (!d.collectable) return 0;
+    return Object.values(d.collectable).reduce((a, v) => a + v.length, 0);
   }
 
-  private decTotal(d: any): number {
-    if (!d?.decorations) return 0;
-    return Object.values(d.decorations as Record<string, any[]>).reduce((a, v) => a + v.length, 0);
+  private decTotal(d: TrackerData): number {
+    if (!d.decorations) return 0;
+    return Object.values(d.decorations).reduce((a, v) => a + v.length, 0);
   }
 
-  private codexTotal(d: any): number {
-    if (!d?.codex) return 0;
-    return Object.values(d.codex as Record<string, any[]>).reduce((a, v) => a + v.length, 0);
+  private codexTotal(d: TrackerData): number {
+    if (!d.codex) return 0;
+    return Object.values(d.codex).reduce((a, v) => a + v.length, 0);
   }
 
-  private marketTotal(d: any): number {
-    if (!d?.market) return 0;
-    return Object.values(d.market as Record<string, any[]>).reduce((a, v) => a + v.length, 0);
+  private marketTotal(d: TrackerData): number {
+    if (!d.market) return 0;
+    return Object.values(d.market).reduce((a, v) => a + v.length, 0);
   }
 
-  private extraTotal(d: any): number {
-    if (!d?.extra) return 0;
-    return Object.values(d.extra as Record<string, any[]>).reduce((a, v) => a + v.length, 0);
+  private extraTotal(d: TrackerData): number {
+    if (!d.extra) return 0;
+    return Object.values(d.extra).reduce((a, v) => a + v.length, 0);
   }
 
-  private modGearTotal(d: any): number {
-    if (!d?.modularGear) return 0;
-    return Object.values(d.modularGear as Record<string, any[]>).reduce((a, v) => a + v.length, 0);
+  private modGearTotal(d: TrackerData): number {
+    if (!d.modularGear) return 0;
+    return Object.values(d.modularGear).reduce((a, v) => a + v.length, 0);
   }
 }

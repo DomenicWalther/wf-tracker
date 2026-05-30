@@ -1,6 +1,8 @@
-import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
+import { TrackerData, ChecklistGroup } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ChecklistComponent } from '../../shared/components/checklist/checklist.component';
 
@@ -32,10 +34,10 @@ import { ChecklistComponent } from '../../shared/components/checklist/checklist.
     .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }
   `]
 })
-export class CosmeticsComponent implements OnInit {
+export class CosmeticsComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
-  private readonly data = signal<any>(null);
+  private readonly data = toSignal(this.dataService.getData());
 
   readonly groups = computed(() => {
     const d = this.data();
@@ -49,43 +51,33 @@ export class CosmeticsComponent implements OnInit {
     return { completed, total: items.length };
   });
 
-  ngOnInit(): void {
-    this.dataService.getData().subscribe(d => this.data.set(d));
-  }
-
   onToggle(key: string): void {
     this.tracker.toggle(key);
-    this.data.set({ ...this.data() });
   }
 
   onBulkChange(event: { keys: string[]; value: boolean }): void {
     event.keys.forEach(k => {
       if (this.tracker.isChecked(k) !== event.value) this.tracker.toggle(k);
     });
-    this.data.set({ ...this.data() });
   }
 
-  private buildGroups(d: any): any[] {
-    const raw = d['cosmetics'];
+  private buildGroups(d: TrackerData): ChecklistGroup[] {
+    const raw = d.cosmetics;
     if (!raw) return [];
-    
-    if (typeof raw === 'object' && !Array.isArray(raw)) {
-      const groups = [];
-      for (const [cat, subs] of Object.entries(raw as Record<string, Record<string, string[]>>)) {
-        for (const [sub, items] of Object.entries(subs)) {
-          const groupName = cat + (sub !== 'General' ? ' – ' + sub : '');
-          groups.push({
-            name: groupName,
-            items: (items as string[]).map(name => ({
-              key: 'cos:' + name,
-              label: name,
-              checked: this.tracker.isChecked('cos:' + name)
-            }))
-          });
-        }
+    const groups: ChecklistGroup[] = [];
+    for (const [cat, subs] of Object.entries(raw)) {
+      for (const [sub, items] of Object.entries(subs)) {
+        const groupName = cat + (sub !== 'General' ? ' – ' + sub : '');
+        groups.push({
+          name: groupName,
+          items: items.map(name => ({
+            key: 'cos:' + name,
+            label: name,
+            checked: this.tracker.isChecked('cos:' + name)
+          }))
+        });
       }
-      return groups;
     }
-    return [];
+    return groups;
   }
 }

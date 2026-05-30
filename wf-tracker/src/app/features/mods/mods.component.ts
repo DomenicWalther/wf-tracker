@@ -1,6 +1,8 @@
-import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
+import { TrackerData, ChecklistGroup } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ChecklistComponent } from '../../shared/components/checklist/checklist.component';
 
@@ -32,10 +34,10 @@ import { ChecklistComponent } from '../../shared/components/checklist/checklist.
     .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }
   `]
 })
-export class ModsComponent implements OnInit {
+export class ModsComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
-  private readonly data = signal<any>(null);
+  private readonly data = toSignal(this.dataService.getData());
 
   readonly groups = computed(() => {
     const d = this.data();
@@ -49,39 +51,29 @@ export class ModsComponent implements OnInit {
     return { completed, total: items.length };
   });
 
-  ngOnInit(): void {
-    this.dataService.getData().subscribe(d => this.data.set(d));
-  }
-
   onToggle(key: string): void {
     this.tracker.toggle(key);
-    this.data.set({ ...this.data() });
   }
 
   onBulkChange(event: { keys: string[]; value: boolean }): void {
     event.keys.forEach(k => {
       if (this.tracker.isChecked(k) !== event.value) this.tracker.toggle(k);
     });
-    this.data.set({ ...this.data() });
   }
 
-  private buildGroups(d: any): any[] {
-    const raw = d['mods'];
+  private buildGroups(d: TrackerData): ChecklistGroup[] {
+    const raw = d.mods;
     if (!raw) return [];
-    
-    if (Array.isArray(raw)) {
-      const byCategory: Record<string, { key: string; label: string; checked: boolean }[]> = {};
-      for (const mod of (raw as { name: string; maxRank: number; category: string }[])) {
-        const cat = mod.category || 'General';
-        if (!byCategory[cat]) byCategory[cat] = [];
-        byCategory[cat].push({
-          key: 'mod:' + mod.name,
-          label: mod.name + ' (R' + mod.maxRank + ')',
-          checked: this.tracker.isChecked('mod:' + mod.name)
-        });
-      }
-      return Object.entries(byCategory).map(([name, items]) => ({ name, items }));
+    const byCategory: Record<string, { key: string; label: string; checked: boolean }[]> = {};
+    for (const mod of raw) {
+      const cat = mod.category || 'General';
+      if (!byCategory[cat]) byCategory[cat] = [];
+      byCategory[cat].push({
+        key: 'mod:' + mod.name,
+        label: mod.name + ' (R' + mod.maxRank + ')',
+        checked: this.tracker.isChecked('mod:' + mod.name)
+      });
     }
-    return [];
+    return Object.entries(byCategory).map(([name, items]) => ({ name, items }));
   }
 }

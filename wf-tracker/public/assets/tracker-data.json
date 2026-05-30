@@ -50,7 +50,7 @@
       },
       {
         "name": "Ash Prime",
-        "isFounderOnly": true
+        "isFounderOnly": false
       },
       {
         "name": "Atlas",
@@ -130,7 +130,7 @@
       },
       {
         "name": "Excalibur Prime",
-        "isFounderOnly": false
+        "isFounderOnly": true
       },
       {
         "name": "Excalibur Umbra",

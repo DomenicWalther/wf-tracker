@@ -1,6 +1,8 @@
-import { Component, inject, OnInit, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal, computed, effect, ChangeDetectionStrategy } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { SlicePipe } from '@angular/common';
 import { DataService } from '../../core/services/data.service';
+import { VersionLogEntry } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 
 @Component({
@@ -74,16 +76,23 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
     }
   `]
 })
-export class VersionLogComponent implements OnInit {
+export class VersionLogComponent {
   private readonly dataService = inject(DataService);
-  readonly log = signal<any[]>([]);
+  private readonly rawData = toSignal(this.dataService.getData());
   private openEntries = signal<Set<string>>(new Set());
 
-  ngOnInit(): void {
-    this.dataService.getData().subscribe(d => {
-      const entries = (d?.versionLog ?? []).reverse();
-      this.log.set(entries);
-      if (entries.length > 0) this.openEntries.set(new Set([entries[0].version]));
+  readonly log = computed<VersionLogEntry[]>(() => {
+    const d = this.rawData();
+    if (!d?.versionLog) return [];
+    return [...d.versionLog].reverse();
+  });
+
+  constructor() {
+    effect(() => {
+      const entries = this.log();
+      if (entries.length > 0 && this.openEntries().size === 0) {
+        this.openEntries.set(new Set([entries[0].version]));
+      }
     });
   }
 

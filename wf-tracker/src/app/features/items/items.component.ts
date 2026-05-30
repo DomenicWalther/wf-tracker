@@ -1,6 +1,8 @@
-﻿import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+﻿import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
+import { TrackerData, ChecklistGroup } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ChecklistComponent } from '../../shared/components/checklist/checklist.component';
 
@@ -32,10 +34,10 @@ import { ChecklistComponent } from '../../shared/components/checklist/checklist.
     .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }
   `]
 })
-export class ItemsComponent implements OnInit {
+export class ItemsComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
-  private readonly data = signal<any>(null);
+  private readonly data = toSignal(this.dataService.getData());
 
   readonly groups = computed(() => {
     const d = this.data();
@@ -49,36 +51,26 @@ export class ItemsComponent implements OnInit {
     return { completed, total: items.length };
   });
 
-  ngOnInit(): void {
-    this.dataService.getData().subscribe(d => this.data.set(d));
-  }
-
   onToggle(key: string): void {
     this.tracker.toggle(key);
-    this.data.set({ ...this.data() });
   }
 
   onBulkChange(event: { keys: string[]; value: boolean }): void {
     event.keys.forEach(k => {
       if (this.tracker.isChecked(k) !== event.value) this.tracker.toggle(k);
     });
-    this.data.set({ ...this.data() });
   }
 
-  private buildGroups(d: any): any[] {
-    const raw = d['items'];
+  private buildGroups(d: TrackerData): ChecklistGroup[] {
+    const raw = d.items;
     if (!raw) return [];
-    
-    if (typeof raw === 'object' && !Array.isArray(raw)) {
-      return Object.entries(raw as Record<string, string[]>).map(([group, items]) => ({
-        name: group.split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-        items: items.map(name => ({
-          key: 'item:' + name,
-          label: name,
-          checked: this.tracker.isChecked('item:' + name)
-        }))
-      }));
-    }
-    return [];
+    return Object.entries(raw).map(([group, items]) => ({
+      name: group.split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+      items: items.map(name => ({
+        key: 'item:' + name,
+        label: name,
+        checked: this.tracker.isChecked('item:' + name)
+      }))
+    }));
   }
 }
