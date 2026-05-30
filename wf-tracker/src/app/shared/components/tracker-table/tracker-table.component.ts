@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
 
 export interface TrackerColumn {
   key: string;
@@ -21,13 +21,13 @@ export interface TrackerRow {
         <thead>
           <tr>
             <th class="tt-col-name">Name</th>
-            @for (col of columns; track col.key; let ci = $index) {
+            @for (col of columns(); track col.key; let ci = $index) {
               <th class="tt-col-check" [class.tt-col-alt]="ci % 2 === 1">{{ col.label }}</th>
             }
           </tr>
         </thead>
         <tbody>
-          @for (row of rows; track row.name) {
+          @for (row of rows(); track row.name) {
             <tr [class]="row.rowCssClass || ''">
               <td class="tt-col-name">
                 {{ row.name }}
@@ -35,7 +35,7 @@ export interface TrackerRow {
                   <span class="tt-tag" [class]="tag.cssClass">{{ tag.label }}</span>
                 }
               </td>
-              @for (col of columns; track col.key; let ci = $index) {
+              @for (col of columns(); track col.key; let ci = $index) {
                 <td class="tt-col-check" [class.tt-col-alt]="ci % 2 === 1">
                   <input
                     type="checkbox"
@@ -101,12 +101,13 @@ export interface TrackerRow {
   `]
 })
 export class TrackerTableComponent {
-  @Input() columns: TrackerColumn[] = [];
-  @Input() rows: TrackerRow[] = [];
-  @Input() checkedFn: ((rowName: string, colKey: string) => boolean) | null = null;
-  @Output() toggle = new EventEmitter<{ rowName: string; colKey: string }>();
+  columns = input<TrackerColumn[]>([]);
+  rows = input<TrackerRow[]>([]);
+  checkedFn = input<((rowName: string, colKey: string) => boolean) | null>(null);
+  toggle = output<{ rowName: string; colKey: string }>();
 
   isChecked(rowName: string, colKey: string): boolean {
-    return this.checkedFn ? this.checkedFn(rowName, colKey) : false;
+    const fn = this.checkedFn();
+    return fn ? fn(rowName, colKey) : false;
   }
 }

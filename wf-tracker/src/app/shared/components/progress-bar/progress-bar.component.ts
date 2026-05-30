@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, computed, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-progress-bar',
@@ -7,11 +7,11 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
   template: `
     <div class="pb-wrapper">
       <div class="pb-header">
-        <span class="pb-label">{{ label }}</span>
-        <span class="pb-value">{{ completed }}/{{ total }} <span class="pb-pct">({{ pct.toFixed(1) }}%)</span></span>
+        <span class="pb-label">{{ label() }}</span>
+        <span class="pb-value">{{ completed() }}/{{ total() }} <span class="pb-pct">({{ pct().toFixed(1) }}%)</span></span>
       </div>
       <div class="progress-bar-bg">
-        <div class="progress-bar-fill" [style.width.%]="pct"></div>
+        <div class="progress-bar-fill" [style.width.%]="pct()"></div>
       </div>
     </div>
   `,
@@ -24,8 +24,8 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
   `]
 })
 export class ProgressBarComponent {
-  @Input() label = '';
-  @Input() completed = 0;
-  @Input() total = 0;
-  get pct(): number { return this.total > 0 ? (this.completed / this.total) * 100 : 0; }
+  label = input('');
+  completed = input(0);
+  total = input(0);
+  readonly pct = computed(() => this.total() > 0 ? (this.completed() / this.total()) * 100 : 0);
 }

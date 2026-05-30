@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, signal, computed, OnChanges, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, signal, computed, effect, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -159,17 +159,16 @@ import { FormsModule } from '@angular/forms';
     }
   `]
 })
-export class ChecklistComponent implements OnChanges {
-  @Input() groups: { name: string; items: { key: string; label: string; checked: boolean; tag?: string }[] }[] = [];
-  @Output() toggle = new EventEmitter<string>();
-  @Output() bulkChange = new EventEmitter<{ keys: string[]; value: boolean }>();
+export class ChecklistComponent {
+  groups = input<{ name: string; items: { key: string; label: string; checked: boolean; tag?: string }[] }[]>([]);
+  toggle = output<string>();
+  bulkChange = output<{ keys: string[]; value: boolean }>();
 
   searchQuery = '';
   private openGroups = signal<Set<string>>(new Set());
-  private readonly _groups = signal<{ name: string; items: { key: string; label: string; checked: boolean; tag?: string }[] }[]>([]);
 
   readonly filteredGroups = computed(() => {
-    const groups = this._groups();
+    const groups = this.groups();
     const q = this.searchQuery.toLowerCase();
     return groups.map(g => ({
       ...g,
@@ -180,11 +179,13 @@ export class ChecklistComponent implements OnChanges {
   readonly filteredItems = computed(() => this.filteredGroups().flatMap(g => g.items));
   readonly checkedCount = computed(() => this.filteredItems().filter(i => i.checked).length);
 
-  ngOnChanges(): void {
-    this._groups.set(this.groups);
-    if (this.openGroups().size === 0 && this.groups.length > 0) {
-      this.openGroups.set(new Set([this.groups[0].name]));
-    }
+  constructor() {
+    effect(() => {
+      const groups = this.groups();
+      if (groups.length > 0 && this.openGroups().size === 0) {
+        this.openGroups.set(new Set([groups[0].name]));
+      }
+    });
   }
 
   isGroupOpen(name: string): boolean {
@@ -209,7 +210,7 @@ export class ChecklistComponent implements OnChanges {
     this.searchQuery = q;
     // Open all groups when searching
     if (q) {
-      this.openGroups.set(new Set(this.groups.map(g => g.name)));
+      this.openGroups.set(new Set(this.groups().map(g => g.name)));
     }
   }
 

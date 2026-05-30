@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
 
 @Component({
@@ -8,18 +8,18 @@ import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
   template: `
     <div class="sh-wrapper">
       <div class="sh-title-row">
-        <h1 class="sh-title">{{ title }}</h1>
-        @if (total > 0) {
+        <h1 class="sh-title">{{ title() }}</h1>
+        @if (total() > 0) {
           <div class="sh-badge">
-            <span class="sh-count">{{ completed }}/{{ total }}</span>
+            <span class="sh-count">{{ completed() }}/{{ total() }}</span>
           </div>
         }
       </div>
-      @if (description) {
-        <p class="sh-desc">{{ description }}</p>
+      @if (description()) {
+        <p class="sh-desc">{{ description() }}</p>
       }
-      @if (total > 0) {
-        <app-progress-bar [label]="'Progress'" [completed]="completed" [total]="total" />
+      @if (total() > 0) {
+        <app-progress-bar [label]="'Progress'" [completed]="completed()" [total]="total()" />
       }
     </div>
   `,
@@ -62,8 +62,8 @@ import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
   `]
 })
 export class SectionHeaderComponent {
-  @Input() title = '';
-  @Input() description = '';
-  @Input() completed = 0;
-  @Input() total = 0;
+  title = input('');
+  description = input('');
+  completed = input(0);
+  total = input(0);
 }
