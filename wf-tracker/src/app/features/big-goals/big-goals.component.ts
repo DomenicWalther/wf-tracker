@@ -1,13 +1,13 @@
 import { Component, inject, computed, effect, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { FormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 
 @Component({
   selector: 'app-big-goals',
-  imports: [FormsModule, SectionHeaderComponent],
+  imports: [ReactiveFormsModule, SectionHeaderComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -21,10 +21,10 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
           class="goal-input"
           type="text"
           placeholder="Add a new big goal..."
-          [(ngModel)]="newGoalText"
+          [formControl]="newGoalControl"
           (keyup.enter)="addGoal()"
         />
-        <button class="add-btn" (click)="addGoal()" [disabled]="!newGoalText.trim()">+ Add</button>
+        <button class="add-btn" (click)="addGoal()" [disabled]="!newGoalControl.value.trim()">+ Add</button>
       </div>
 
       <div class="big-goals-list">
@@ -136,7 +136,7 @@ export class BigGoalsComponent {
   private readonly rawData = toSignal(this.dataService.getData());
 
   readonly goals = computed(() => this.tracker.bigGoals());
-  newGoalText = '';
+  readonly newGoalControl = new FormControl('', { nonNullable: true });
 
   constructor() {
     // Seed from tracker-data.json only once, the first time the user ever opens this
@@ -164,10 +164,10 @@ export class BigGoalsComponent {
   }
 
   addGoal(): void {
-    const text = this.newGoalText.trim();
+    const text = this.newGoalControl.value.trim();
     if (!text) return;
     this.tracker.addBigGoal(text);
-    this.newGoalText = '';
+    this.newGoalControl.setValue('');
   }
 
   deleteGoal(goal: string): void {

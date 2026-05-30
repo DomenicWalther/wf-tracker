@@ -1,6 +1,6 @@
 import { Component, inject, computed, ChangeDetectionStrategy, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { FormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
@@ -8,7 +8,7 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
 
 @Component({
   selector: 'app-lich-gear',
-  imports: [FormsModule, SectionHeaderComponent, ProgressBarComponent],
+  imports: [ReactiveFormsModule, SectionHeaderComponent, ProgressBarComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -20,7 +20,7 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
       />
 
       <div class="gear-search">
-        <input class="cl-search" type="text" placeholder="Search weapons..." [(ngModel)]="searchQuery" />
+        <input class="cl-search" type="text" placeholder="Search weapons..." [formControl]="searchControl" />
       </div>
 
       @for (group of filteredGroups(); track group.name) {
@@ -74,8 +74,8 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
         </div>
       }
 
-      @if (filteredGroups().length === 0 && searchQuery) {
-        <div class="empty">No items match "{{ searchQuery }}"</div>
+      @if (filteredGroups().length === 0 && searchQuery()) {
+        <div class="empty">No items match "{{ searchQuery() }}"</div>
       }
     </div>
   `,
@@ -150,7 +150,8 @@ export class LichGearComponent {
   private readonly rawData = toSignal(this.dataService.getData());
   private readonly openGroups = signal<Set<string>>(new Set());
 
-  searchQuery = '';
+  readonly searchControl = new FormControl('', { nonNullable: true });
+  protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
 
   readonly groups = computed<{ name: string; items: string[] }[]>(() => {
     const d = this.rawData();
@@ -162,7 +163,7 @@ export class LichGearComponent {
   });
 
   readonly filteredGroups = computed(() => {
-    const q = this.searchQuery.toLowerCase();
+    const q = this.searchQuery().toLowerCase();
     return this.groups().map(g => ({
       ...g,
       items: q ? g.items.filter(i => i.toLowerCase().includes(q)) : g.items

@@ -1,6 +1,6 @@
 import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { FormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
@@ -14,7 +14,7 @@ interface IncFamilyCard {
 
 @Component({
   selector: 'app-incarnon',
-  imports: [FormsModule, SectionHeaderComponent],
+  imports: [ReactiveFormsModule, SectionHeaderComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -30,7 +30,7 @@ interface IncFamilyCard {
           class="search"
           type="text"
           placeholder="Search families..."
-          [(ngModel)]="searchQuery"
+          [formControl]="searchControl"
         />
         <span class="stats">
           <span class="done">{{ progress().completed }}</span>
@@ -44,7 +44,7 @@ interface IncFamilyCard {
       @if (cards().length === 0) {
         <div class="loading">Loading...</div>
       } @else if (filteredCards().length === 0) {
-        <div class="empty">No families match "{{ searchQuery }}"</div>
+        <div class="empty">No families match "{{ searchQuery() }}"</div>
       } @else {
         <div class="grid">
           @for (card of filteredCards(); track card.key) {
@@ -185,7 +185,8 @@ export class IncarnonComponent {
   private readonly dataService = inject(DataService);
   private readonly data = toSignal(this.dataService.getData());
 
-  searchQuery = '';
+  readonly searchControl = new FormControl('', { nonNullable: true });
+  protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
 
   readonly cards = computed<IncFamilyCard[]>(() => {
     const d = this.data();
@@ -205,7 +206,7 @@ export class IncarnonComponent {
   });
 
   readonly filteredCards = computed(() => {
-    const q = this.searchQuery.toLowerCase();
+    const q = this.searchQuery().toLowerCase();
     return q
       ? this.cards().filter(c =>
           c.name.toLowerCase().includes(q) ||

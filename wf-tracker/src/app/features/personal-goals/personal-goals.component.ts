@@ -1,12 +1,12 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { PersonalGoal } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 
 @Component({
   selector: 'app-personal-goals',
-  imports: [FormsModule, SectionHeaderComponent],
+  imports: [ReactiveFormsModule, SectionHeaderComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -19,14 +19,14 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 
       <div class="goals-section">
         <div class="goals-section-title">Add New Goal</div>
-        <div class="add-goal-form">
-          <input class="goal-input" type="text" placeholder="Goal description..." [(ngModel)]="newGoalText" />
-          <select class="goal-select" [(ngModel)]="newGoalType">
+        <div class="add-goal-form" [formGroup]="addForm">
+          <input class="goal-input" type="text" placeholder="Goal description..." formControlName="text" />
+          <select class="goal-select" formControlName="type">
             <option value="checkbox">Completion (checkbox)</option>
             <option value="number">Number target</option>
           </select>
-          @if (newGoalType === 'number') {
-            <input class="goal-num" type="number" placeholder="Target #" [(ngModel)]="newGoalTarget" min="1" />
+          @if (addForm.controls.type.value === 'number') {
+            <input class="goal-num" type="number" placeholder="Target #" formControlName="target" min="1" />
           }
           <button class="add-btn" (click)="addGoal()">+ Add</button>
         </div>
@@ -44,7 +44,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
                     type="number"
                     class="goal-current"
                     [value]="goal.current ?? 0"
-                    (change)="updateCurrent(goal, +$any($event.target).value)"
+                    (change)="onCurrentChange(goal, $event)"
                     min="0"
                   />
                   <span class="goal-sep">/</span>
@@ -180,9 +180,11 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 export class PersonalGoalsComponent {
   private readonly tracker = inject(TrackerService);
 
-  newGoalText = '';
-  newGoalType: 'checkbox' | 'number' = 'checkbox';
-  newGoalTarget = 10;
+  readonly addForm = new FormGroup({
+    text: new FormControl('', { nonNullable: true }),
+    type: new FormControl<'checkbox' | 'number'>('checkbox', { nonNullable: true }),
+    target: new FormControl(10, { nonNullable: true }),
+  });
 
   readonly goals = this.tracker.personalGoals;
   readonly numberGoals = computed(() => this.goals().filter(g => g.type === 'number'));
@@ -197,19 +199,23 @@ export class PersonalGoalsComponent {
   });
 
   addGoal(): void {
-    const text = this.newGoalText.trim();
-    if (!text) return;
+    const { text, type, target } = this.addForm.getRawValue();
+    if (!text.trim()) return;
     const goal: PersonalGoal = {
       id: crypto.randomUUID(),
-      goal: text,
-      type: this.newGoalType,
-      current: this.newGoalType === 'number' ? 0 : undefined,
-      target: this.newGoalType === 'number' ? this.newGoalTarget : undefined,
+      goal: text.trim(),
+      type,
+      current: type === 'number' ? 0 : undefined,
+      target: type === 'number' ? target : undefined,
       completed: false
     };
     this.tracker.addPersonalGoal(goal);
-    this.newGoalText = '';
-    this.newGoalTarget = 10;
+    this.addForm.reset({ text: '', type: 'checkbox', target: 10 });
+  }
+
+  onCurrentChange(goal: PersonalGoal, event: Event): void {
+    const value = (event.target as HTMLInputElement).valueAsNumber;
+    this.updateCurrent(goal, Number.isNaN(value) ? 0 : value);
   }
 
   toggleGoal(goal: PersonalGoal): void {

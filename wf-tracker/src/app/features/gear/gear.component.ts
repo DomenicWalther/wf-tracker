@@ -1,13 +1,12 @@
-import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, signal, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { FormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { GearItem } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ProgressBarComponent } from '../../shared/components/progress-bar/progress-bar.component';
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
-import { signal } from '@angular/core';
 
 interface GearColumn {
   key: string;
@@ -17,7 +16,7 @@ interface GearColumn {
 
 @Component({
   selector: 'app-gear',
-  imports: [FormsModule, SectionHeaderComponent, ProgressBarComponent, TrackerTableComponent],
+  imports: [ReactiveFormsModule, SectionHeaderComponent, ProgressBarComponent, TrackerTableComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -29,7 +28,7 @@ interface GearColumn {
       />
 
       <div class="gear-search">
-        <input class="cl-search" type="text" placeholder="Search gear..." [(ngModel)]="searchQuery" />
+        <input class="cl-search" type="text" placeholder="Search gear..." [formControl]="searchControl" />
       </div>
 
       @for (section of gearSections(); track section.key) {
@@ -96,7 +95,9 @@ export class GearComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
   private readonly data = toSignal(this.dataService.getData());
-  searchQuery = '';
+
+  readonly searchControl = new FormControl('', { nonNullable: true });
+  private readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
 
   private readonly openSections = signal<Set<string>>(new Set(['warframes']));
 
@@ -200,7 +201,7 @@ export class GearComponent {
     if (!items) return [];
     const showFounder = this.tracker.settings().isFounder;
     const base = showFounder ? items : items.filter(i => !i.isFounderOnly);
-    const q = this.searchQuery.toLowerCase();
+    const q = this.searchQuery().toLowerCase();
     return q ? base.filter(i => i.name.toLowerCase().includes(q)) : base;
   }
 

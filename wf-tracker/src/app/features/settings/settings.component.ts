@@ -1,12 +1,13 @@
 import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { TrackerSettings, SectionToggles } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 
 @Component({
   selector: 'app-settings',
-  imports: [FormsModule, SectionHeaderComponent],
+  imports: [ReactiveFormsModule, SectionHeaderComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -15,17 +16,17 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
       <div class="settings-grid">
 
         <!-- GLOBAL -->
-        <div class="settings-card">
+        <div class="settings-card" [formGroup]="settingsForm">
           <div class="settings-card-title">Account Type</div>
           <label class="setting-row">
-            <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.isFounder" (ngModelChange)="save()" />
+            <input type="checkbox" class="wf-checkbox" formControlName="isFounder" />
             <div class="setting-info">
               <span class="setting-label">Founder</span>
               <span class="setting-desc">Unlock tracking for founder-only gear (Excalibur Prime etc.)</span>
             </div>
           </label>
           <label class="setting-row">
-            <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.includeConclave" (ngModelChange)="save()" />
+            <input type="checkbox" class="wf-checkbox" formControlName="includeConclave" />
             <div class="setting-info">
               <span class="setting-label">Include Conclave</span>
               <span class="setting-desc">Include conclave collections in tracking</span>
@@ -37,165 +38,191 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
         <div class="settings-card">
           <div class="settings-card-title">Section Toggles</div>
           <div class="settings-note">Enable or disable entire sections from counting towards overall %</div>
-          @for (toggle of sectionToggleList; track toggle.key) {
-            <label class="setting-row">
-              <input type="checkbox" class="wf-checkbox" [(ngModel)]="toggles[toggle.key]" (ngModelChange)="saveToggles()" />
-              <span class="setting-label">{{ toggle.label }}</span>
-            </label>
-          }
+          <div [formGroup]="togglesForm">
+            @for (toggle of sectionToggleList; track toggle.key) {
+              <label class="setting-row">
+                <input type="checkbox" class="wf-checkbox" [formControlName]="toggle.key" />
+                <span class="setting-label">{{ toggle.label }}</span>
+              </label>
+            }
+          </div>
         </div>
 
         <!-- GEAR -->
         <div class="settings-card">
           <div class="settings-card-title">Gear Tracking</div>
           <div class="settings-note">Additional columns tracked per gear item</div>
-          @for (opt of gearOptions; track opt.key) {
-            <label class="setting-row">
-              <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.gear[opt.key]" (ngModelChange)="save()" />
-              <div class="setting-info">
-                <span class="setting-label">{{ opt.label }}</span>
-                <span class="setting-desc">{{ opt.desc }}</span>
-              </div>
-            </label>
-          }
+          <div [formGroup]="gearGroup">
+            @for (opt of gearOptions; track opt.key) {
+              <label class="setting-row">
+                <input type="checkbox" class="wf-checkbox" [formControlName]="opt.key" />
+                <div class="setting-info">
+                  <span class="setting-label">{{ opt.label }}</span>
+                  <span class="setting-desc">{{ opt.desc }}</span>
+                </div>
+              </label>
+            }
+          </div>
         </div>
 
         <!-- INCARNON -->
         <div class="settings-card">
           <div class="settings-card-title">Incarnon</div>
-          <label class="setting-row">
-            <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.incarnon.completionist" (ngModelChange)="save()" />
-            <div class="setting-info">
-              <span class="setting-label">Incarnon Completionist</span>
-              <span class="setting-desc">Track adapters on all weapon variants, not just the primary one</span>
-            </div>
-          </label>
+          <div [formGroup]="incarnonGroup">
+            <label class="setting-row">
+              <input type="checkbox" class="wf-checkbox" formControlName="completionist" />
+              <div class="setting-info">
+                <span class="setting-label">Incarnon Completionist</span>
+                <span class="setting-desc">Track adapters on all weapon variants, not just the primary one</span>
+              </div>
+            </label>
+          </div>
         </div>
 
         <!-- ARCANES -->
         <div class="settings-card">
           <div class="settings-card-title">Arcanes</div>
-          <label class="setting-row">
-            <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.arcane.psycho" (ngModelChange)="save()" />
-            <div class="setting-info">
-              <span class="setting-label">Arcane Psycho</span>
-              <span class="setting-desc">Collect 1 of every arcane rank (Base, R1, R2, R3, R4)</span>
-            </div>
-          </label>
+          <div [formGroup]="arcaneGroup">
+            <label class="setting-row">
+              <input type="checkbox" class="wf-checkbox" formControlName="psycho" />
+              <div class="setting-info">
+                <span class="setting-label">Arcane Psycho</span>
+                <span class="setting-desc">Collect 1 of every arcane rank (Base, R1, R2, R3, R4)</span>
+              </div>
+            </label>
+          </div>
         </div>
 
         <!-- MODS -->
         <div class="settings-card">
           <div class="settings-card-title">Mods</div>
-          <label class="setting-row">
-            <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.mod.hoarder" (ngModelChange)="save()" />
-            <div class="setting-info">
-              <span class="setting-label">Mod Hoarder</span>
-              <span class="setting-desc">Track a copy of every mod at each rank level</span>
-            </div>
-          </label>
+          <div [formGroup]="modGroup">
+            <label class="setting-row">
+              <input type="checkbox" class="wf-checkbox" formControlName="hoarder" />
+              <div class="setting-info">
+                <span class="setting-label">Mod Hoarder</span>
+                <span class="setting-desc">Track a copy of every mod at each rank level</span>
+              </div>
+            </label>
+          </div>
         </div>
 
         <!-- RAILJACK -->
         <div class="settings-card">
           <div class="settings-card-title">Railjack</div>
-          <label class="setting-row">
-            <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.railjack.partHoarder" (ngModelChange)="save()" />
-            <div class="setting-info">
-              <span class="setting-label">RJ Part Hoarder</span>
-              <span class="setting-desc">Track all Railjack parts with best stats</span>
-            </div>
-          </label>
+          <div [formGroup]="railjackGroup">
+            <label class="setting-row">
+              <input type="checkbox" class="wf-checkbox" formControlName="partHoarder" />
+              <div class="setting-info">
+                <span class="setting-label">RJ Part Hoarder</span>
+                <span class="setting-desc">Track all Railjack parts with best stats</span>
+              </div>
+            </label>
+          </div>
         </div>
 
         <!-- RELICS -->
         <div class="settings-card">
           <div class="settings-card-title">Relics</div>
-          <label class="setting-row">
-            <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.relic.hoarder" (ngModelChange)="save()" />
-            <div class="setting-info">
-              <span class="setting-label">Relic Hoarder</span>
-              <span class="setting-desc">Track Exceptional, Flawless, and Radiant variants</span>
-            </div>
-          </label>
+          <div [formGroup]="relicGroup">
+            <label class="setting-row">
+              <input type="checkbox" class="wf-checkbox" formControlName="hoarder" />
+              <div class="setting-info">
+                <span class="setting-label">Relic Hoarder</span>
+                <span class="setting-desc">Track Exceptional, Flawless, and Radiant variants</span>
+              </div>
+            </label>
+          </div>
         </div>
 
         <!-- BLUEPRINTS -->
         <div class="settings-card">
           <div class="settings-card-title">Blueprints</div>
-          <label class="setting-row">
-            <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.blueprint.hoarder" (ngModelChange)="save()" />
-            <div class="setting-info">
-              <span class="setting-label">BP Hoarder</span>
-              <span class="setting-desc">Include old/impossible-to-get blueprints</span>
-            </div>
-          </label>
+          <div [formGroup]="blueprintGroup">
+            <label class="setting-row">
+              <input type="checkbox" class="wf-checkbox" formControlName="hoarder" />
+              <div class="setting-info">
+                <span class="setting-label">BP Hoarder</span>
+                <span class="setting-desc">Include old/impossible-to-get blueprints</span>
+              </div>
+            </label>
+          </div>
         </div>
 
         <!-- COSMETICS -->
         <div class="settings-card">
           <div class="settings-card-title">Cosmetics</div>
-          @for (opt of cosmeticsOptions; track opt.key) {
-            <label class="setting-row">
-              <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.cosmetics[opt.key]" (ngModelChange)="save()" />
-              <div class="setting-info">
-                <span class="setting-label">{{ opt.label }}</span>
-                <span class="setting-desc">{{ opt.desc }}</span>
-              </div>
-            </label>
-          }
+          <div [formGroup]="cosmeticsGroup">
+            @for (opt of cosmeticsOptions; track opt.key) {
+              <label class="setting-row">
+                <input type="checkbox" class="wf-checkbox" [formControlName]="opt.key" />
+                <div class="setting-info">
+                  <span class="setting-label">{{ opt.label }}</span>
+                  <span class="setting-desc">{{ opt.desc }}</span>
+                </div>
+              </label>
+            }
+          </div>
         </div>
 
         <!-- COLLECTABLE -->
         <div class="settings-card">
           <div class="settings-card-title">Collectables</div>
-          @for (opt of collectableOptions; track opt.key) {
-            <label class="setting-row">
-              <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.collectable[opt.key]" (ngModelChange)="save()" />
-              <div class="setting-info">
-                <span class="setting-label">{{ opt.label }}</span>
-                <span class="setting-desc">{{ opt.desc }}</span>
-              </div>
-            </label>
-          }
+          <div [formGroup]="collectableGroup">
+            @for (opt of collectableOptions; track opt.key) {
+              <label class="setting-row">
+                <input type="checkbox" class="wf-checkbox" [formControlName]="opt.key" />
+                <div class="setting-info">
+                  <span class="setting-label">{{ opt.label }}</span>
+                  <span class="setting-desc">{{ opt.desc }}</span>
+                </div>
+              </label>
+            }
+          </div>
         </div>
 
         <!-- DECORATIONS -->
         <div class="settings-card">
           <div class="settings-card-title">Decorations</div>
-          @for (opt of decorationsOptions; track opt.key) {
-            <label class="setting-row">
-              <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.decorations[opt.key]" (ngModelChange)="save()" />
-              <div class="setting-info">
-                <span class="setting-label">{{ opt.label }}</span>
-                <span class="setting-desc">{{ opt.desc }}</span>
-              </div>
-            </label>
-          }
+          <div [formGroup]="decorationsGroup">
+            @for (opt of decorationsOptions; track opt.key) {
+              <label class="setting-row">
+                <input type="checkbox" class="wf-checkbox" [formControlName]="opt.key" />
+                <div class="setting-info">
+                  <span class="setting-label">{{ opt.label }}</span>
+                  <span class="setting-desc">{{ opt.desc }}</span>
+                </div>
+              </label>
+            }
+          </div>
         </div>
 
         <!-- CODEX -->
         <div class="settings-card">
           <div class="settings-card-title">Codex</div>
-          <label class="setting-row">
-            <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.codex.old" (ngModelChange)="save()" />
-            <div class="setting-info">
-              <span class="setting-label">Include Old Scans</span>
-              <span class="setting-desc">Include now-impossible codex scans</span>
-            </div>
-          </label>
+          <div [formGroup]="codexGroup">
+            <label class="setting-row">
+              <input type="checkbox" class="wf-checkbox" formControlName="old" />
+              <div class="setting-info">
+                <span class="setting-label">Include Old Scans</span>
+                <span class="setting-desc">Include now-impossible codex scans</span>
+              </div>
+            </label>
+          </div>
         </div>
 
         <!-- MARKET -->
         <div class="settings-card">
           <div class="settings-card-title">Market</div>
-          <label class="setting-row">
-            <input type="checkbox" class="wf-checkbox" [(ngModel)]="settings.market.extra" (ngModelChange)="save()" />
-            <div class="setting-info">
-              <span class="setting-label">Extra Market Items</span>
-              <span class="setting-desc">Tennocon exclusive, event exclusive or time-locked items</span>
-            </div>
-          </label>
+          <div [formGroup]="marketGroup">
+            <label class="setting-row">
+              <input type="checkbox" class="wf-checkbox" formControlName="extra" />
+              <div class="setting-info">
+                <span class="setting-label">Extra Market Items</span>
+                <span class="setting-desc">Tennocon exclusive, event exclusive or time-locked items</span>
+              </div>
+            </label>
+          </div>
         </div>
 
         <!-- DATA MANAGEMENT -->
@@ -301,11 +328,50 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 export class SettingsComponent {
   private readonly tracker = inject(TrackerService);
 
-  settings: TrackerSettings = { ...this.tracker.settings() };
-  toggles: SectionToggles = { ...this.tracker.sectionToggles() };
-
   exportedJson = signal('');
   showResetConfirm = signal(false);
+
+  // ─── Build FormGroups from current service state ──────────────────────────
+
+  private buildBoolGroup(obj: object): FormGroup {
+    const controls: Record<string, FormControl<boolean>> = {};
+    for (const [key, value] of Object.entries(obj)) {
+      controls[key] = new FormControl(value as boolean, { nonNullable: true });
+    }
+    return new FormGroup(controls);
+  }
+
+  readonly gearGroup = this.buildBoolGroup(this.tracker.settings().gear);
+  readonly incarnonGroup = this.buildBoolGroup(this.tracker.settings().incarnon);
+  readonly arcaneGroup = this.buildBoolGroup(this.tracker.settings().arcane);
+  readonly modGroup = this.buildBoolGroup(this.tracker.settings().mod);
+  readonly railjackGroup = this.buildBoolGroup(this.tracker.settings().railjack);
+  readonly relicGroup = this.buildBoolGroup(this.tracker.settings().relic);
+  readonly blueprintGroup = this.buildBoolGroup(this.tracker.settings().blueprint);
+  readonly cosmeticsGroup = this.buildBoolGroup(this.tracker.settings().cosmetics);
+  readonly collectableGroup = this.buildBoolGroup(this.tracker.settings().collectable);
+  readonly decorationsGroup = this.buildBoolGroup(this.tracker.settings().decorations);
+  readonly codexGroup = this.buildBoolGroup(this.tracker.settings().codex);
+  readonly marketGroup = this.buildBoolGroup(this.tracker.settings().market);
+
+  readonly settingsForm = new FormGroup({
+    isFounder: new FormControl(this.tracker.settings().isFounder, { nonNullable: true }),
+    includeConclave: new FormControl(this.tracker.settings().includeConclave, { nonNullable: true }),
+    gear: this.gearGroup,
+    incarnon: this.incarnonGroup,
+    arcane: this.arcaneGroup,
+    mod: this.modGroup,
+    railjack: this.railjackGroup,
+    relic: this.relicGroup,
+    blueprint: this.blueprintGroup,
+    cosmetics: this.cosmeticsGroup,
+    collectable: this.collectableGroup,
+    decorations: this.decorationsGroup,
+    codex: this.codexGroup,
+    market: this.marketGroup,
+  });
+
+  readonly togglesForm = this.buildBoolGroup(this.tracker.sectionToggles());
 
   readonly sectionToggleList = [
     { key: 'quests' as const, label: 'Quests' },
@@ -369,12 +435,13 @@ export class SettingsComponent {
     { key: 'founder' as const, label: 'Founder', desc: 'Founder-exclusive decorations' },
   ];
 
-  save(): void {
-    this.tracker.updateSettings({ ...this.settings });
-  }
-
-  saveToggles(): void {
-    this.tracker.updateSectionToggles({ ...this.toggles });
+  constructor() {
+    this.settingsForm.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => {
+      this.tracker.updateSettings(this.settingsForm.getRawValue() as TrackerSettings);
+    });
+    this.togglesForm.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => {
+      this.tracker.updateSectionToggles(this.togglesForm.getRawValue() as SectionToggles);
+    });
   }
 
   exportData(): void {

@@ -1,9 +1,10 @@
 import { Component, input, output, signal, computed, effect, ChangeDetectionStrategy } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-checklist',
-  imports: [FormsModule],
+  imports: [ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="cl-wrapper">
@@ -12,8 +13,7 @@ import { FormsModule } from '@angular/forms';
           class="cl-search"
           type="text"
           placeholder="Search..."
-          [(ngModel)]="searchQuery"
-          (ngModelChange)="onSearch($event)"
+          [formControl]="searchControl"
         />
         <div class="cl-stats">
           <span class="cl-done">{{ checkedCount() }}</span>
@@ -53,7 +53,7 @@ import { FormsModule } from '@angular/forms';
       }
 
       @if (filteredGroups().length === 0) {
-        <div class="cl-empty">No items match "{{ searchQuery }}"</div>
+        <div class="cl-empty">No items match "{{ searchQuery() }}"</div>
       }
     </div>
   `,
@@ -164,12 +164,13 @@ export class ChecklistComponent {
   toggle = output<string>();
   bulkChange = output<{ keys: string[]; value: boolean }>();
 
-  searchQuery = '';
+  readonly searchControl = new FormControl('', { nonNullable: true });
+  protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
   private openGroups = signal<Set<string>>(new Set());
 
   readonly filteredGroups = computed(() => {
     const groups = this.groups();
-    const q = this.searchQuery.toLowerCase();
+    const q = this.searchQuery().toLowerCase();
     return groups.map(g => ({
       ...g,
       items: q ? g.items.filter(i => i.label.toLowerCase().includes(q)) : g.items
@@ -184,6 +185,11 @@ export class ChecklistComponent {
       const groups = this.groups();
       if (groups.length > 0 && this.openGroups().size === 0) {
         this.openGroups.set(new Set([groups[0].name]));
+      }
+    });
+    effect(() => {
+      if (this.searchQuery()) {
+        this.openGroups.set(new Set(this.groups().map(g => g.name)));
       }
     });
   }
@@ -204,14 +210,6 @@ export class ChecklistComponent {
   groupProgress(group: { items: { checked: boolean }[] }): string {
     const done = group.items.filter(i => i.checked).length;
     return `${done}/${group.items.length}`;
-  }
-
-  onSearch(q: string): void {
-    this.searchQuery = q;
-    // Open all groups when searching
-    if (q) {
-      this.openGroups.set(new Set(this.groups().map(g => g.name)));
-    }
   }
 
   onToggle(key: string): void {
