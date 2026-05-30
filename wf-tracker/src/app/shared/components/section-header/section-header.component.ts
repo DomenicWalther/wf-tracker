@@ -1,21 +1,26 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-section-header',
-  standalone: true,
-  imports: [CommonModule, ProgressBarComponent],
+  imports: [ProgressBarComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="sh-wrapper">
       <div class="sh-title-row">
         <h1 class="sh-title">{{ title }}</h1>
-        <div class="sh-badge" *ngIf="total > 0">
-          <span class="sh-count">{{ completed }}/{{ total }}</span>
-        </div>
+        @if (total > 0) {
+          <div class="sh-badge">
+            <span class="sh-count">{{ completed }}/{{ total }}</span>
+          </div>
+        }
       </div>
-      <p class="sh-desc" *ngIf="description">{{ description }}</p>
-      <app-progress-bar *ngIf="total > 0" [label]="'Progress'" [completed]="completed" [total]="total" />
+      @if (description) {
+        <p class="sh-desc">{{ description }}</p>
+      }
+      @if (total > 0) {
+        <app-progress-bar [label]="'Progress'" [completed]="completed" [total]="total" />
+      }
     </div>
   `,
   styles: [`

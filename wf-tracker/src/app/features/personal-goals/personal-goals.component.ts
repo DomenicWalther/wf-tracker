@@ -1,5 +1,4 @@
-import { Component, inject, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { PersonalGoal } from '../../core/models/tracker.models';
@@ -7,8 +6,8 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 
 @Component({
   selector: 'app-personal-goals',
-  standalone: true,
-  imports: [CommonModule, FormsModule, SectionHeaderComponent],
+  imports: [FormsModule, SectionHeaderComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
       <app-section-header

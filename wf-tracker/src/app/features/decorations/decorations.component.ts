@@ -1,5 +1,4 @@
-﻿import { Component, inject, OnInit, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+﻿import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
@@ -7,8 +6,8 @@ import { ChecklistComponent } from '../../shared/components/checklist/checklist.
 
 @Component({
   selector: 'app-decorations',
-  standalone: true,
-  imports: [CommonModule, SectionHeaderComponent, ChecklistComponent],
+  imports: [SectionHeaderComponent, ChecklistComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
       <app-section-header

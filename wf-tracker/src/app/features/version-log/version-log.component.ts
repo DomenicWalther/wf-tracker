@@ -1,12 +1,12 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit, signal, ChangeDetectionStrategy } from '@angular/core';
+import { SlicePipe } from '@angular/common';
 import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 
 @Component({
   selector: 'app-version-log',
-  standalone: true,
-  imports: [CommonModule, SectionHeaderComponent],
+  imports: [SlicePipe, SectionHeaderComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
       <app-section-header title="VERSION LOG" description="History of changes to the Warframe Completion Tracker spreadsheet." />

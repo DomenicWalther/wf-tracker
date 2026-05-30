@@ -1,5 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 export interface TrackerColumn {
   key: string;
@@ -14,8 +13,8 @@ export interface TrackerRow {
 
 @Component({
   selector: 'app-tracker-table',
-  standalone: true,
-  imports: [CommonModule],
+  imports: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="tt-wrapper">
       <table class="tt-table">

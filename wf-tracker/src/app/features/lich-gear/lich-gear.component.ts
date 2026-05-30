@@ -1,5 +1,4 @@
-import { Component, inject, OnInit, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
@@ -8,8 +7,8 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
 
 @Component({
   selector: 'app-lich-gear',
-  standalone: true,
-  imports: [CommonModule, FormsModule, SectionHeaderComponent, ProgressBarComponent],
+  imports: [FormsModule, SectionHeaderComponent, ProgressBarComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
       <app-section-header

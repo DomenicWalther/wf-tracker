@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet, SidebarComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="app-shell">
       <app-sidebar />
-      <main class="main-content" [class.sidebar-open]="true">
+      <main class="main-content">
         <router-outlet />
       </main>
     </div>

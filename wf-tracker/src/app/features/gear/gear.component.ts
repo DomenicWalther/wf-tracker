@@ -1,5 +1,4 @@
-import { Component, inject, OnInit, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
@@ -20,8 +19,8 @@ interface GearColumn {
 
 @Component({
   selector: 'app-gear',
-  standalone: true,
-  imports: [CommonModule, FormsModule, SectionHeaderComponent, ProgressBarComponent, TrackerTableComponent],
+  imports: [FormsModule, SectionHeaderComponent, ProgressBarComponent, TrackerTableComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
       <app-section-header

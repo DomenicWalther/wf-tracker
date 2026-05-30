@@ -1,6 +1,5 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { TrackerService } from '../../../core/services/tracker.service';
 
 interface NavItem {
@@ -58,46 +57,56 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
 
 @Component({
   selector: 'app-sidebar',
-  standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <aside class="sidebar" [class.collapsed]="collapsed()">
       <div class="sidebar-header">
-        <div class="logo" *ngIf="!collapsed()">
-          <span class="logo-wf">WF</span>
-          <span class="logo-text">TRACKER</span>
-        </div>
-        <div class="logo" *ngIf="collapsed()">
-          <span class="logo-wf">WF</span>
-        </div>
+        @if (!collapsed()) {
+          <div class="logo">
+            <span class="logo-wf">WF</span>
+            <span class="logo-text">TRACKER</span>
+          </div>
+        }
+        @if (collapsed()) {
+          <div class="logo">
+            <span class="logo-wf">WF</span>
+          </div>
+        }
         <button class="collapse-btn" (click)="toggleCollapsed()" title="Toggle sidebar">
           {{ collapsed() ? '›' : '‹' }}
         </button>
       </div>
 
-      <div class="overall-progress" *ngIf="!collapsed()">
-        <div class="progress-label">Overall Progress</div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" [style.width.%]="overallProgress()"></div>
+      @if (!collapsed()) {
+        <div class="overall-progress">
+          <div class="progress-label">Overall Progress</div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" [style.width.%]="overallProgress()"></div>
+          </div>
+          <div class="progress-value">
+            {{ overallProgress().toFixed(1) }}%
+            <span class="progress-counts">{{ tracker.totalTrackable().completed }}/{{ tracker.totalTrackable().total }}</span>
+          </div>
         </div>
-        <div class="progress-value">
-          {{ overallProgress().toFixed(1) }}%
-          <span class="progress-counts">{{ tracker.totalTrackable().completed }}/{{ tracker.totalTrackable().total }}</span>
-        </div>
-      </div>
+      }
 
       <nav class="nav-content">
         @for (group of groups; track group.group) {
-          <div class="nav-group" *ngIf="!collapsed()">
-            <div class="nav-group-label">{{ group.group }}</div>
-          </div>
+          @if (!collapsed()) {
+            <div class="nav-group">
+              <div class="nav-group-label">{{ group.group }}</div>
+            </div>
+          }
           @for (item of group.items; track item.route) {
             <a [routerLink]="item.route"
                routerLinkActive="active"
                class="nav-item"
                [title]="collapsed() ? item.label : ''">
               <span class="nav-icon">{{ item.icon }}</span>
-              <span class="nav-label" *ngIf="!collapsed()">{{ item.label }}</span>
+              @if (!collapsed()) {
+                <span class="nav-label">{{ item.label }}</span>
+              }
             </a>
           }
         }
