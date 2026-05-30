@@ -21,6 +21,7 @@ export const routes: Routes = [
   { path: 'market', loadComponent: () => import('./features/market/market.component').then(m => m.MarketComponent) },
   { path: 'extra', loadComponent: () => import('./features/extra/extra.component').then(m => m.ExtraComponent) },
   { path: 'modular-gear', loadComponent: () => import('./features/modular-gear/modular-gear.component').then(m => m.ModularGearComponent) },
+  { path: 'task-checklist', loadComponent: () => import('./features/task-checklist/task-checklist.component').then(m => m.TaskChecklistComponent) },
   { path: 'big-goals', loadComponent: () => import('./features/big-goals/big-goals.component').then(m => m.BigGoalsComponent) },
   { path: 'personal-goals', loadComponent: () => import('./features/personal-goals/personal-goals.component').then(m => m.PersonalGoalsComponent) },
   { path: 'settings', loadComponent: () => import('./features/settings/settings.component').then(m => m.SettingsComponent) },

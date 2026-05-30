@@ -53,6 +53,13 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
           <div class="settings-card-title">Gear Tracking</div>
           <div class="settings-note">Additional columns tracked per gear item</div>
           <div [formGroup]="gearGroup">
+            <label class="setting-row">
+              <input type="checkbox" class="wf-checkbox" formControlName="primeOnlyGear" />
+              <div class="setting-info">
+                <span class="setting-label">Prime Only</span>
+                <span class="setting-desc">Show gear tracking columns only on Prime variants; non-Prime items show Mastery only</span>
+              </div>
+            </label>
             @for (opt of gearOptions; track opt.key) {
               <label class="setting-row">
                 <input type="checkbox" class="wf-checkbox" [formControlName]="opt.key" />

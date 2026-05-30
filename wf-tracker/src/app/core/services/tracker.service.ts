@@ -191,11 +191,28 @@ export class TrackerService {
 
   private mergeWithDefaults(partial: Partial<TrackerState>): TrackerState {
     const defaults = this.defaultState();
+    const ps: Partial<TrackerSettings> = partial.settings ?? {};
+    const ds = defaults.settings;
     return {
       checkboxes: partial.checkboxes ?? {},
       numberValues: partial.numberValues ?? {},
       textValues: partial.textValues ?? {},
-      settings: { ...defaults.settings, ...partial.settings },
+      settings: {
+        ...ds, ...ps,
+        gear: { ...ds.gear, ...(ps.gear ?? {}) },
+        incarnon: { ...ds.incarnon, ...(ps.incarnon ?? {}) },
+        arcane: { ...ds.arcane, ...(ps.arcane ?? {}) },
+        mod: { ...ds.mod, ...(ps.mod ?? {}) },
+        railjack: { ...ds.railjack, ...(ps.railjack ?? {}) },
+        relic: { ...ds.relic, ...(ps.relic ?? {}) },
+        blueprint: { ...ds.blueprint, ...(ps.blueprint ?? {}) },
+        cosmetics: { ...ds.cosmetics, ...(ps.cosmetics ?? {}) },
+        collectable: { ...ds.collectable, ...(ps.collectable ?? {}) },
+        decorations: { ...ds.decorations, ...(ps.decorations ?? {}) },
+        codex: { ...ds.codex, ...(ps.codex ?? {}) },
+        market: { ...ds.market, ...(ps.market ?? {}) },
+        extra: { ...ds.extra, ...(ps.extra ?? {}) },
+      },
       sectionToggles: { ...defaults.sectionToggles, ...partial.sectionToggles },
       personalGoals: partial.personalGoals ?? [],
       todoItems: partial.todoItems ?? [],

@@ -118,6 +118,7 @@ export interface TrackerSettings {
 }
 
 export interface GearSettings {
+  primeOnlyGear: boolean;
   reactor: boolean;
   exilus: boolean;
   shards: boolean;
@@ -204,6 +205,7 @@ export const DEFAULT_SETTINGS: TrackerSettings = {
   isFounder: false,
   includeConclave: false,
   gear: {
+    primeOnlyGear: false,
     reactor: false, exilus: false, shards: false, tauForged: false,
     arcaneAdapter: false, maxBuild: false, auraForma: false,
     stanceForma: false, ampArcaneAdapter: false, lens: false

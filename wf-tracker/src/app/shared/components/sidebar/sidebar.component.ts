@@ -14,6 +14,7 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
     group: 'Overview',
     items: [
       { label: 'Dashboard', route: '/dashboard', icon: '⊞' },
+      { label: 'Task Checklist', route: '/task-checklist', icon: '✓' },
       { label: 'Settings', route: '/settings', icon: '⚙' },
       { label: 'Big Goals', route: '/big-goals', icon: '★' },
       { label: 'Personal Goals', route: '/personal-goals', icon: '◎' },

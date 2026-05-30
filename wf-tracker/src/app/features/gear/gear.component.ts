@@ -54,6 +54,9 @@ interface GearColumn {
                 [columns]="sectionActiveColumns(section.key)"
                 [rows]="toRows(filteredItems(section.items))"
                 [checkedFn]="checkedFn"
+                [disabledCellFn]="makeDisabledCellFn(section)"
+                [notesFn]="notesFn"
+                [setNoteFn]="setNoteFn"
                 (toggle)="toggleItem($event.rowName, $event.colKey)"
               />
             }
@@ -135,6 +138,8 @@ export class GearComponent {
     extras: ['mastery', 'maxBuild'],
   };
 
+  readonly primeOnlyGear = computed(() => this.tracker.settings().gear.primeOnlyGear);
+
   readonly activeColumns = computed(() => {
     const settings = this.tracker.settings().gear;
     return this.ALL_COLUMNS.filter(c => !c.settingKey || settings[c.settingKey as keyof typeof settings]);
@@ -158,21 +163,19 @@ export class GearComponent {
   readonly progress = computed(() => {
     const sections = this.gearSections();
     const cols = this.activeColumns();
+    const primeOnly = this.primeOnlyGear();
     let completed = 0, total = 0;
     for (const s of sections) {
-      const items = s.items ?? [];
-      const showFounder = this.tracker.settings().isFounder;
-      const visible = items.filter(i => showFounder || !i.isFounderOnly);
-      const sectionCols = this.SECTION_COLUMNS[s.key] ?? ['mastery'];
-      const activeCols = cols.filter(c => sectionCols.includes(c.key));
-      total += visible.length * activeCols.length;
-      completed += visible.reduce((a, item) =>
-        a + activeCols.filter(c => this.isChecked(item.name, c.key)).length, 0);
+      const p = this.sectionProgressFor(s, cols, primeOnly);
+      completed += p.completed;
+      total += p.total;
     }
     return { completed, total };
   });
 
   readonly checkedFn = (rowName: string, colKey: string) => this.isChecked(rowName, colKey);
+  readonly notesFn = (rowName: string) => this.tracker.getText(`gear:${rowName}:note`);
+  readonly setNoteFn = (rowName: string, value: string) => this.tracker.setText(`gear:${rowName}:note`, value);
 
   isChecked(itemName: string, colKey: string): boolean {
     return this.tracker.isChecked(`gear:${itemName}:${colKey}`);
@@ -202,6 +205,23 @@ export class GearComponent {
     });
   }
 
+  sectionHasExtraColumns(sectionKey: string): boolean {
+    const allowed = this.SECTION_COLUMNS[sectionKey] ?? ['mastery'];
+    return allowed.some(k => k !== 'mastery');
+  }
+
+  /** Returns true for non-prime items that have a prime counterpart in the section. */
+  private isGearDisabled(itemName: string, colKey: string, primeNames: Set<string>): boolean {
+    if (colKey === 'mastery') return false;
+    return primeNames.has(itemName + ' Prime') && !itemName.endsWith(' Prime');
+  }
+
+  makeDisabledCellFn(section: { key: string; items: GearItem[] }): ((rowName: string, colKey: string) => boolean) | null {
+    if (!this.primeOnlyGear() || !this.sectionHasExtraColumns(section.key)) return null;
+    const primeNames = new Set(this.filteredItems(section.items).map(i => i.name));
+    return (rowName, colKey) => this.isGearDisabled(rowName, colKey, primeNames);
+  }
+
   sectionActiveColumns(sectionKey: string): GearColumn[] {
     const allowed = this.SECTION_COLUMNS[sectionKey] ?? ['mastery'];
     return this.activeColumns().filter(c => allowed.includes(c.key));
@@ -216,13 +236,26 @@ export class GearComponent {
   }
 
   sectionProgress(section: { key: string; items: GearItem[] }): { completed: number; total: number } {
-    const cols = this.activeColumns();
+    return this.sectionProgressFor(section, this.activeColumns(), this.primeOnlyGear());
+  }
+
+  private sectionProgressFor(
+    section: { key: string; items: GearItem[] },
+    cols: GearColumn[],
+    primeOnly: boolean
+  ): { completed: number; total: number } {
     const sectionCols = this.SECTION_COLUMNS[section.key] ?? ['mastery'];
     const activeCols = cols.filter(c => sectionCols.includes(c.key));
     const items = this.filteredItems(section.items);
-    const total = items.length * activeCols.length;
-    const completed = items.reduce((a, item) =>
-      a + activeCols.filter(c => this.isChecked(item.name, c.key)).length, 0);
+    const disabledFn = primeOnly ? this.makeDisabledCellFn(section) : null;
+    let total = 0, completed = 0;
+    for (const item of items) {
+      for (const col of activeCols) {
+        if (disabledFn?.(item.name, col.key)) continue;
+        total++;
+        if (this.isChecked(item.name, col.key)) completed++;
+      }
+    }
     return { completed, total };
   }
 }
