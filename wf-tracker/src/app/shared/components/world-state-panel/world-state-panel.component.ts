@@ -178,9 +178,24 @@ export class WorldStatePanelComponent implements OnInit, OnDestroy {
   private refreshInterval: ReturnType<typeof setInterval> | null = null;
 
   ngOnInit(): void {
-    // tick every second for countdown display
-    this.tickInterval = setInterval(() => this.now.set(Date.now()), 1000);
-    // reload API data every 60 seconds
+    this.tickInterval = setInterval(() => {
+      const prev = this.now();
+      const current = Date.now();
+      this.now.set(current);
+
+      // reload when any cycle expires so the phase flips immediately
+      const ws = this.service.data();
+      if (ws && !this.service.loading()) {
+        const anyJustExpired = [ws.cetusCycle, ws.vallisCycle, ws.cambionCycle, ws.earthCycle]
+          .some(c => {
+            if (!c?.expiry) return false;
+            const expiry = new Date(c.expiry).getTime();
+            return expiry > prev && expiry <= current;
+          });
+        if (anyJustExpired) this.service.load();
+      }
+    }, 1000);
+    // also reload every 60 seconds as a fallback
     this.refreshInterval = setInterval(() => this.service.load(), 60_000);
   }
 
