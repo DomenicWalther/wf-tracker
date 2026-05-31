@@ -27,5 +27,6 @@ export const routes: Routes = [
   { path: 'goals', loadComponent: () => import('./features/personal-goals/personal-goals.component').then(m => m.PersonalGoalsComponent) },
   { path: 'settings', loadComponent: () => import('./features/settings/settings.component').then(m => m.SettingsComponent) },
   { path: 'version-log', loadComponent: () => import('./features/version-log/version-log.component').then(m => m.VersionLogComponent) },
+  { path: 'scan', loadChildren: () => import('./features/scan/scan.routes').then(m => m.SCAN_ROUTES) },
   { path: '**', redirectTo: 'dashboard' }
 ];

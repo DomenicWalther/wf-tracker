@@ -16,7 +16,7 @@ const {
   LayoutDashboard, ListChecks, Settings, Target,
   ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
   Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
-  ShoppingBag, Boxes, Component: ComponentIcon, History,
+  ShoppingBag, Boxes, Component: ComponentIcon, History, ScanLine,
 } = icons;
 
 const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
@@ -24,6 +24,7 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
     group: 'Overview',
     items: [
       { label: 'Dashboard',      route: '/dashboard',      icon: LayoutDashboard },
+      { label: 'Scan Screenshot', route: '/scan',           icon: ScanLine },
       { label: 'Task Checklist', route: '/task-checklist', icon: ListChecks },
       { label: 'Settings',       route: '/settings',       icon: Settings },
       { label: 'Goals', route: '/goals', icon: Target },
