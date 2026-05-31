@@ -8,7 +8,9 @@ export interface TrackerColumn {
 export interface TrackerRow {
   name: string;
   tags?: { label: string; cssClass: string }[];
+  subtitle?: string;
   rowCssClass?: string;
+  group?: string;
 }
 
 @Component({
@@ -38,14 +40,24 @@ export interface TrackerRow {
           </tr>
         </thead>
         <tbody>
-          @for (row of rows(); track row.name) {
+          @for (row of rows(); track row.name; let i = $index) {
+            @if (row.group && (i === 0 || rows()[i - 1].group !== row.group)) {
+              <tr class="tt-group-row" aria-hidden="true">
+                <td [attr.colspan]="columns().length + 1" class="tt-group-cell">{{ row.group }}</td>
+              </tr>
+            }
             <tr [class]="row.rowCssClass || ''" [class.tt-row-has-note]="hasNote(row.name)">
               <td class="tt-col-name">
                 <span class="tt-name-cell">
-                  <span>
-                    {{ row.name }}
-                    @for (tag of row.tags || []; track tag.label) {
-                      <span class="tt-tag" [class]="tag.cssClass">{{ tag.label }}</span>
+                  <span class="tt-name-text">
+                    <span class="tt-primary-name">
+                      {{ row.name }}
+                      @for (tag of row.tags || []; track tag.label) {
+                        <span class="tt-tag" [class]="tag.cssClass">{{ tag.label }}</span>
+                      }
+                    </span>
+                    @if (row.subtitle) {
+                      <span class="tt-subtitle">{{ row.subtitle }}</span>
                     }
                   </span>
                   @if (notesFn()) {
@@ -150,6 +162,17 @@ export interface TrackerRow {
       background: rgba(255,255,255,0.04);
     }
     .tt-table tr:hover td { background: var(--color-surface2) !important; }
+    .tt-group-cell {
+      padding: 5px 10px 3px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      background: var(--color-surface2) !important;
+      border-bottom: none;
+    }
+    .tt-group-row + tr td { border-top: none; }
     .tt-cell-disabled { color: var(--color-border); font-size: 11px; }
     .tt-tag {
       display: inline-block;
@@ -166,6 +189,21 @@ export interface TrackerRow {
       align-items: center;
       justify-content: space-between;
       gap: 6px;
+    }
+    .tt-name-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .tt-primary-name { white-space: nowrap; }
+    .tt-subtitle {
+      font-size: 10px;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 260px;
     }
     .tt-note-btn {
       flex-shrink: 0;

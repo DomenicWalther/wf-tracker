@@ -67,10 +67,19 @@ data['lichGear'] = lich
 ws = wb['INCARNON']
 incarnon_families = []
 current_family = None
+current_week = None
 for row in ws.iter_rows(min_row=6, values_only=True):
+    week_val = row[0]
+    if week_val is not None and not isinstance(week_val, bool):
+        try:
+            current_week = int(week_val)
+        except (ValueError, TypeError):
+            pass
     family_name = str_val(row[2])
     if family_name:
         current_family = {'name': family_name, 'weapons': []}
+        if current_week is not None:
+            current_family['week'] = current_week
         incarnon_families.append(current_family)
     weapon = str_val(row[4])
     if weapon and current_family:

@@ -1,26 +1,39 @@
-import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, signal, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
+import { currentIncarnonWeek } from '../../core/services/world-state.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
+import { ProgressBarComponent } from '../../shared/components/progress-bar/progress-bar.component';
+import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
 
-interface IncFamilyCard {
-  key: string;
-  name: string;
-  weapons: string[];
-  checked: boolean;
+const INCARNON_COLUMNS: TrackerColumn[] = [
+  { key: 'earned', label: 'Adapter Earned' },
+  { key: 'installed', label: 'Adapter Installed' },
+  { key: 'maxed', label: 'Evo Maxed' },
+];
+
+interface IncWeek {
+  label: string;
+  rows: TrackerRow[];
+  completed: number;
+  total: number;
+}
+
+function familyKey(familyName: string, stage: string): string {
+  return `incarnon:family:${familyName}:${stage}`;
 }
 
 @Component({
   selector: 'app-incarnon',
-  imports: [ReactiveFormsModule, SectionHeaderComponent],
+  imports: [ReactiveFormsModule, SectionHeaderComponent, ProgressBarComponent, TrackerTableComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
       <app-section-header
         title="INCARNON"
-        description="Track Incarnon adapter acquisition across all weapon families."
+        description="Track Incarnon adapter acquisition and evolution across all weapon families."
         [completed]="progress().completed"
         [total]="progress().total"
       />
@@ -29,67 +42,62 @@ interface IncFamilyCard {
         <input
           class="search"
           type="text"
-          placeholder="Search families..."
-          aria-label="Search"
+          placeholder="Search families or weapons..."
+          aria-label="Search incarnon families"
           [formControl]="searchControl"
         />
-        <span class="stats">
-          <span class="done">{{ progress().completed }}</span>
-          <span class="sep">/</span>
-          <span class="tot">{{ filteredCards().length }}</span>
-        </span>
-        <button type="button" class="btn" (click)="checkAll()">✓ All</button>
-        <button type="button" class="btn" (click)="uncheckAll()">✗ None</button>
       </div>
 
-      @if (cards().length === 0) {
-        <div class="loading">Loading...</div>
-      } @else if (filteredCards().length === 0) {
-        <div class="empty">No families match "{{ searchQuery() }}"</div>
+      @if (weeks().length === 0) {
+        <div class="empty">Loading...</div>
       } @else {
-        <div class="grid">
-          @for (card of filteredCards(); track card.key) {
-            <button
-              type="button"
-              class="card"
-              [class.done]="card.checked"
-              (click)="toggle(card.key)"
-              [attr.aria-pressed]="card.checked"
-              [attr.aria-label]="card.name"
-            >
-              <div class="card-top">
-                <span class="checkbox" [class.checked]="card.checked" aria-hidden="true">
-                  {{ card.checked ? '✓' : '' }}
-                </span>
-                <span class="family-name">{{ card.name }}</span>
-              </div>
-              @if (card.weapons.length > 1) {
-                <div class="variants">
-                  @for (w of card.weapons; track w) {
-                    <span class="variant-tag">{{ w }}</span>
+        <div class="weeks">
+          @for (week of weeks(); track week.label) {
+            <section class="week-section" [class.week-current]="week.label === currentWeekLabel" [attr.aria-label]="week.label">
+              <button
+                type="button"
+                class="week-header"
+                (click)="toggleWeek(week.label)"
+                [attr.aria-expanded]="isWeekOpen(week.label)"
+              >
+                <span class="week-arrow" aria-hidden="true">{{ isWeekOpen(week.label) ? '▾' : '▸' }}</span>
+                <span class="week-label">
+                  {{ week.label }}
+                  @if (week.label === currentWeekLabel) {
+                    <span class="week-now" aria-label="current week">NOW</span>
                   }
+                </span>
+                <app-progress-bar
+                  label=""
+                  [completed]="week.completed"
+                  [total]="week.total"
+                  style="flex: 0 0 200px"
+                />
+              </button>
+
+              @if (isWeekOpen(week.label)) {
+                <div class="week-body">
+                  <app-tracker-table
+                    [columns]="columns"
+                    [rows]="week.rows"
+                    [checkedFn]="checkedFn"
+                    (toggle)="toggleItem($event.rowName, $event.colKey)"
+                  />
                 </div>
               }
-            </button>
+            </section>
           }
         </div>
       }
     </div>
   `,
   styles: [`
-    .page { max-width: 1200px; }
-    .loading, .empty { padding: 40px; text-align: center; color: var(--color-text-muted); font-size: 13px; }
+    .page { max-width: 900px; }
 
-    .controls {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
+    .controls { margin-bottom: 16px; }
     .search {
-      flex: 1;
-      min-width: 180px;
+      width: 100%;
+      max-width: 400px;
       background: var(--color-surface2);
       border: 1px solid var(--color-border);
       color: var(--color-text);
@@ -99,97 +107,58 @@ interface IncFamilyCard {
       outline: none;
     }
     .search:focus { border-color: var(--color-gold); }
-    .stats { font-size: 13px; color: var(--color-text-muted); white-space: nowrap; }
-    .done { color: var(--color-gold); font-weight: 600; }
-    .sep { margin: 0 2px; }
-    .btn {
-      background: var(--color-surface2);
-      border: 1px solid var(--color-border);
-      color: var(--color-text-muted);
-      padding: 5px 10px;
-      border-radius: 4px;
-      font-size: 11px;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .btn:hover { border-color: var(--color-gold); color: var(--color-gold); }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 8px;
-    }
+    .weeks { display: flex; flex-direction: column; gap: 8px; }
 
-    .card {
-      background: var(--color-surface);
+    .week-section {
       border: 1px solid var(--color-border);
       border-radius: 6px;
-      padding: 10px 12px;
+      overflow: hidden;
+    }
+    .week-current {
+      border-color: var(--color-gold);
+    }
+    .week-current .week-header {
+      background: rgba(200, 155, 60, 0.08);
+    }
+    .week-now {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      background: var(--color-gold);
+      color: #000;
+      vertical-align: middle;
+    }
+
+    .week-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: var(--color-surface2);
       cursor: pointer;
-      transition: border-color 0.15s, background 0.15s;
-      user-select: none;
       width: 100%;
       text-align: left;
+      border: none;
       font: inherit;
       color: inherit;
     }
-    .card:hover { border-color: var(--color-gold); background: var(--color-surface2); }
-    .card.done { border-color: var(--color-gold); opacity: 0.55; }
-    .card.done:hover { opacity: 0.75; }
-
-    .card-top {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .checkbox {
-      width: 16px;
-      height: 16px;
-      border: 1.5px solid var(--color-border);
-      border-radius: 3px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      color: var(--color-gold);
-      flex-shrink: 0;
-      transition: border-color 0.15s, background 0.15s;
-    }
-    .checkbox.checked {
-      background: var(--color-gold);
-      border-color: var(--color-gold);
-      color: #000;
-      font-weight: 700;
-    }
-
-    .family-name {
-      font-size: 13px;
+    .week-header:hover { background: #1e1e2c; }
+    .week-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
+    .week-label {
+      flex: 1;
+      font-size: 14px;
       font-weight: 600;
       color: var(--color-text);
-      letter-spacing: 0.02em;
-    }
-    .card.done .family-name {
-      color: var(--color-text-muted);
-      text-decoration: line-through;
-      text-decoration-color: var(--color-gold);
     }
 
-    .variants {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-      margin-top: 7px;
-    }
-    .variant-tag {
-      font-size: 10px;
-      color: var(--color-text-muted);
-      background: var(--color-surface2);
-      border: 1px solid var(--color-border);
-      border-radius: 3px;
-      padding: 1px 5px;
-      line-height: 1.5;
-    }
+    .week-body { padding: 0; }
+
+    .empty { padding: 40px; text-align: center; color: var(--color-text-muted); font-size: 13px; }
   `]
 })
 export class IncarnonComponent {
@@ -198,49 +167,88 @@ export class IncarnonComponent {
   private readonly data = toSignal(this.dataService.getData());
 
   readonly searchControl = new FormControl('', { nonNullable: true });
-  protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
+  private readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
 
-  readonly cards = computed<IncFamilyCard[]>(() => {
+  readonly currentWeekLabel = `Week ${currentIncarnonWeek()}`;
+  private readonly openWeeks = signal<Set<string>>(new Set([this.currentWeekLabel]));
+
+  readonly columns = INCARNON_COLUMNS;
+
+  readonly checkedFn = (rowName: string, colKey: string) =>
+    this.tracker.isChecked(familyKey(rowName, colKey));
+
+  private readonly allWeeks = computed<IncWeek[]>(() => {
     const d = this.data();
     if (!d) return [];
-    const raw = d.incarnon ?? [];
-    const cards: IncFamilyCard[] = [];
-    for (const family of raw) {
-      if (family.name === '1 FAMILY') {
-        for (const w of family.weapons) {
-          cards.push({ key: 'incarnon:family:' + w, name: w, weapons: [], checked: this.tracker.isChecked('incarnon:family:' + w) });
+
+    const byWeek = new Map<string, TrackerRow[]>();
+
+    for (const entry of d.incarnon) {
+      const label = entry.week != null ? `Week ${entry.week}` : 'Duviri';
+      if (!byWeek.has(label)) byWeek.set(label, []);
+
+      if (entry.name === '1 FAMILY') {
+        // Each weapon is its own family
+        for (const w of entry.weapons) {
+          byWeek.get(label)!.push({ name: w });
         }
       } else {
-        cards.push({ key: 'incarnon:family:' + family.name, name: family.name, weapons: family.weapons, checked: this.tracker.isChecked('incarnon:family:' + family.name) });
+        byWeek.get(label)!.push({
+          name: entry.name,
+          subtitle: entry.weapons.length > 1 ? entry.weapons.join(' · ') : undefined,
+        });
       }
     }
-    return cards;
+
+    return Array.from(byWeek.entries()).map(([label, rows]) => {
+      let total = 0, completed = 0;
+      for (const row of rows) {
+        total += 3;
+        if (this.checkedFn(row.name, 'earned')) completed++;
+        if (this.checkedFn(row.name, 'installed')) completed++;
+        if (this.checkedFn(row.name, 'maxed')) completed++;
+      }
+      return { label, rows, total, completed };
+    });
   });
 
-  readonly filteredCards = computed(() => {
-    const q = this.searchQuery().toLowerCase();
-    return q
-      ? this.cards().filter(c =>
-          c.name.toLowerCase().includes(q) ||
-          c.weapons.some(w => w.toLowerCase().includes(q))
+  readonly weeks = computed<IncWeek[]>(() => {
+    const q = this.searchQuery().toLowerCase().trim();
+    if (!q) return this.allWeeks();
+
+    return this.allWeeks()
+      .map(week => ({
+        ...week,
+        rows: week.rows.filter(r =>
+          r.name.toLowerCase().includes(q) ||
+          (r.subtitle?.toLowerCase().includes(q) ?? false)
         )
-      : this.cards();
+      }))
+      .filter(w => w.rows.length > 0);
   });
 
   readonly progress = computed(() => {
-    const all = this.cards();
-    return { completed: all.filter(c => c.checked).length, total: all.length };
+    let total = 0, completed = 0;
+    for (const w of this.allWeeks()) {
+      total += w.total;
+      completed += w.completed;
+    }
+    return { completed, total };
   });
 
-  toggle(key: string): void {
-    this.tracker.toggle(key);
+  isWeekOpen(label: string): boolean {
+    return this.openWeeks().has(label);
   }
 
-  checkAll(): void {
-    this.filteredCards().filter(c => !c.checked).forEach(c => this.tracker.toggle(c.key));
+  toggleWeek(label: string): void {
+    this.openWeeks.update(s => {
+      const next = new Set(s);
+      if (next.has(label)) next.delete(label); else next.add(label);
+      return next;
+    });
   }
 
-  uncheckAll(): void {
-    this.filteredCards().filter(c => c.checked).forEach(c => this.tracker.toggle(c.key));
+  toggleItem(familyName: string, colKey: string): void {
+    this.tracker.toggle(familyKey(familyName, colKey));
   }
 }

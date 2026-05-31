@@ -8,6 +8,8 @@ export interface GearItem {
 export interface IncarnonEntry {
   name: string;
   weapons: string[];
+  /** Weekly rotation number (1-based). Absent for Duviri weapons. */
+  week?: number;
 }
 
 export interface ModEntry {

@@ -1,64 +1,74 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { LucideAngularModule, icons } from 'lucide-angular';
 import { TrackerService } from '../../../core/services/tracker.service';
+
+type LucideIconData = (typeof icons)[keyof typeof icons];
 
 interface NavItem {
   label: string;
   route: string;
-  icon: string;
+  icon: LucideIconData;
   section?: keyof import('../../../core/models/tracker.models').SectionToggles;
 }
+
+const {
+  LayoutDashboard, ListChecks, Settings, Trophy, Target,
+  ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
+  Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
+  ShoppingBag, Boxes, Component: ComponentIcon, History,
+} = icons;
 
 const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
   {
     group: 'Overview',
     items: [
-      { label: 'Dashboard', route: '/dashboard', icon: '⊞' },
-      { label: 'Task Checklist', route: '/task-checklist', icon: '✓' },
-      { label: 'Settings', route: '/settings', icon: '⚙' },
-      { label: 'Big Goals', route: '/big-goals', icon: '★' },
-      { label: 'Personal Goals', route: '/personal-goals', icon: '◎' },
+      { label: 'Dashboard',      route: '/dashboard',      icon: LayoutDashboard },
+      { label: 'Task Checklist', route: '/task-checklist', icon: ListChecks },
+      { label: 'Settings',       route: '/settings',       icon: Settings },
+      { label: 'Big Goals',      route: '/big-goals',      icon: Trophy },
+      { label: 'Personal Goals', route: '/personal-goals', icon: Target },
     ]
   },
   {
     group: 'Content',
     items: [
-      { label: 'Quests', route: '/quests', icon: '◈', section: 'quests' },
-      { label: 'Gear', route: '/gear', icon: '⚔', section: 'gear' },
-      { label: 'Lich Gear', route: '/lich-gear', icon: '☠', section: 'lichGear' },
-      { label: 'Incarnon', route: '/incarnon', icon: '◉', section: 'incarnon' },
-      { label: 'Arcanes', route: '/arcanes', icon: '✦', section: 'arcanes' },
-      { label: 'Mods', route: '/mods', icon: '▣', section: 'mods' },
-      { label: 'Subsume', route: '/subsume', icon: '⬡', section: 'subsume' },
-      { label: 'Railjack', route: '/railjack', icon: '◆', section: 'railjack' },
+      { label: 'Quests',    route: '/quests',    icon: ScrollText,   section: 'quests' },
+      { label: 'Gear',      route: '/gear',      icon: Sword,        section: 'gear' },
+      { label: 'Lich Gear', route: '/lich-gear', icon: Skull,        section: 'lichGear' },
+      { label: 'Incarnon',  route: '/incarnon',  icon: Zap,          section: 'incarnon' },
+      { label: 'Arcanes',   route: '/arcanes',   icon: Sparkles,     section: 'arcanes' },
+      { label: 'Mods',      route: '/mods',      icon: Layers,       section: 'mods' },
+      { label: 'Subsume',   route: '/subsume',   icon: FlaskConical, section: 'subsume' },
+      { label: 'Railjack',  route: '/railjack',  icon: Rocket,       section: 'railjack' },
     ]
   },
   {
     group: 'Collection',
     items: [
-      { label: 'Relics', route: '/relics', icon: '◇', section: 'relics' },
-      { label: 'Blueprints', route: '/blueprints', icon: '📋', section: 'blueprints' },
-      { label: 'Items', route: '/items', icon: '◻', section: 'items' },
-      { label: 'Cosmetics', route: '/cosmetics', icon: '◈', section: 'cosmetics' },
-      { label: 'Collectable', route: '/collectable', icon: '⊕', section: 'collectable' },
-      { label: 'Decorations', route: '/decorations', icon: '⊞', section: 'decorations' },
-      { label: 'Codex', route: '/codex', icon: '⊟', section: 'codex' },
-      { label: 'Market', route: '/market', icon: '◎', section: 'market' },
-      { label: 'Extra', route: '/extra', icon: '⊗', section: 'extra' },
-      { label: 'Modular Gear', route: '/modular-gear', icon: '⬢', section: 'modularGear' },
+      { label: 'Relics',       route: '/relics',        icon: Gem,         section: 'relics' },
+      { label: 'Blueprints',   route: '/blueprints',    icon: ClipboardList, section: 'blueprints' },
+      { label: 'Items',        route: '/items',         icon: Package,     section: 'items' },
+      { label: 'Cosmetics',    route: '/cosmetics',     icon: Palette,     section: 'cosmetics' },
+      { label: 'Collectable',  route: '/collectable',   icon: Archive,     section: 'collectable' },
+      { label: 'Decorations',  route: '/decorations',   icon: Flower2,     section: 'decorations' },
+      { label: 'Codex',        route: '/codex',         icon: BookOpen,    section: 'codex' },
+      { label: 'Market',       route: '/market',        icon: ShoppingBag, section: 'market' },
+      { label: 'Extra',        route: '/extra',         icon: Boxes,       section: 'extra' },
+      { label: 'Modular Gear', route: '/modular-gear',  icon: ComponentIcon, section: 'modularGear' },
     ]
   },
   {
     group: 'Info',
     items: [
-      { label: 'Version Log', route: '/version-log', icon: '◷' },
+      { label: 'Version Log', route: '/version-log', icon: History },
     ]
   }
 ];
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, LucideAngularModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <aside class="sidebar" [class.collapsed]="collapsed()">
@@ -111,7 +121,7 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
                routerLinkActive="active"
                class="nav-item"
                [title]="collapsed() ? item.label : ''">
-              <span class="nav-icon" aria-hidden="true">{{ item.icon }}</span>
+              <lucide-icon class="nav-icon" [img]="item.icon" [size]="15" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
               @if (!collapsed()) {
                 <span class="nav-label">{{ item.label }}</span>
               }
@@ -257,11 +267,10 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
       color: var(--color-accent-light);
     }
     .nav-icon {
-      font-size: 13px;
-      width: 18px;
-      text-align: center;
+      width: 15px;
+      height: 15px;
       flex-shrink: 0;
-      opacity: 0.75;
+      opacity: 0.65;
     }
     .nav-item.active .nav-icon,
     .nav-item:hover .nav-icon {

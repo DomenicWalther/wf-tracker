@@ -18,6 +18,16 @@ export interface WorldState {
 
 const BASE = 'https://api.warframestat.us/pc';
 
+/** Epoch: first Monday of the known Week 1 incarnon cycle (verified 2026-05-31 = Week 5). */
+const INCARNON_EPOCH_MS = new Date('2022-10-17T00:00:00.000Z').getTime();
+const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+const INCARNON_CYCLE = 8;
+
+export function currentIncarnonWeek(): number {
+  const weeksElapsed = Math.floor((Date.now() - INCARNON_EPOCH_MS) / WEEK_MS);
+  return (weeksElapsed % INCARNON_CYCLE) + 1;
+}
+
 @Injectable({ providedIn: 'root' })
 export class WorldStateService {
   private readonly _data = signal<WorldState | null>(null);
