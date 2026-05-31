@@ -1,7 +1,7 @@
 # WF Tracker — Continuation Plan
 
 > Drop this file into any new chat to pick up exactly where we left off.
-> Last updated: 2026-05-30
+> Last updated: 2026-05-31
 
 ---
 
@@ -80,6 +80,9 @@ Key format convention: `{prefix}:{itemName}` e.g. `gear:Ash:mastery`, `quest:Awa
 - TrackerService + DataService with `shareReplay` HTTP caching
 - `totalTrackable` signal keeps sidebar % accurate (set via `effect()` in dashboard)
 - localStorage persistence, export/reset in settings
+- **Lich Gear: multi-column table** — Obtained / 60% Element / Valence Fusion per weapon, collapsible groups, search ✅
+- **Task Checklist** — Daily/Weekly/Other sections with auto-reset (Warframe UTC times), sub-tasks, hide/restore, collapsible groups, per-task metadata (prereq/location/info), localStorage ✅
+- **World State panel** — live cycle data (Cetus/Orb Vallis/Cambion Drift/Earth) via warframestat.us, countdown timers, phase progress bars, auto-refresh every 60 s, manual refresh ✅
 
 ---
 
@@ -123,15 +126,15 @@ for i, row in enumerate(ws.iter_rows(min_row=1, max_row=600, values_only=True), 
 - [ ] **Sidebar overall % updates from non-dashboard pages** — currently the `effect()` only runs when Dashboard is active. Other pages should also push their section progress. Options: (a) move effect to app.ts, (b) use a shared `ProgressService` that subscribes to all data + checkboxes.
 
 ### Medium priority
-- [ ] **Mods: category grouping is broken** — all 1491 mods fall into a single "General" group because the category detection in extract_data.py isn't finding the category headers correctly. Need to map them properly (Warframe mods, Rifle mods, Shotgun mods, etc.)
+- [ ] **Mods: category grouping** — all 1491 mods currently group correctly at the component level (custom grouping logic in mods.component.ts), but underlying extraction may still lump them under "General". Verify in the running app; if grouping looks wrong, fix `extract_data.py` header detection.
 - [ ] **Search across all sections from sidebar** — global search bar that jumps to matching items
 - [ ] **Filter buttons per section** — e.g. "Show only unchecked", "Show only Founder items"
-- [ ] **Lich Gear: multi-column checkboxes** — each weapon has 3 columns (Obtained / 60% element / Elemental Vice). Currently it's a flat checklist. Should be a table like Gear.
-- [ ] **Incarnon: settings respect** — Incarnon Completionist setting should hide/show non-standard weapon variants
+- [ ] **Incarnon: completionist setting** — Incarnon Completionist flag should hide/show non-standard weapon variants
 - [ ] **Arcanes: Arcane Psycho setting** — when enabled, show rank columns (Base/R1/R2/R3/R4) per arcane; currently shows flat list
 - [ ] **Relics: Hoarder setting** — when enabled, show Exceptional/Flawless/Radiant columns per relic
 - [ ] **Blueprints: hoarder flag on items** — currently all blueprints show regardless of hoarder setting
 - [ ] **Codex: old setting** — greying out/hiding old impossible scans when setting is off
+- [ ] **World State: cycle-expiry auto-refresh** — when countdown reaches 0 the panel should trigger a reload immediately rather than waiting up to 60 s for the next scheduled refresh
 
 ### Nice to have
 - [ ] **Import from Excel** — parse a user's filled-out .xlsx to pre-populate checkboxes

@@ -262,13 +262,57 @@ export class DashboardComponent {
     return { completed, total };
   }
 
-  private calcGearProgress(d: TrackerData): { completed: number; total: number } {
-    return this.calcProgress('gear', this.gearTotal(d));
-  }
+  private readonly GEAR_SECTION_COLUMNS: Record<string, string[]> = {
+    warframes:      ['mastery', 'reactor', 'exilus', 'shards', 'tau', 'maxBuild', 'auraForma', 'lens'],
+    primaries:      ['mastery', 'reactor', 'arcaneAdapter', 'maxBuild'],
+    secondaries:    ['mastery', 'reactor', 'arcaneAdapter', 'maxBuild'],
+    melees:         ['mastery', 'reactor', 'arcaneAdapter', 'maxBuild', 'stanceForma'],
+    companions:     ['mastery', 'maxBuild'],
+    archwings:      ['mastery', 'maxBuild'],
+    archwingWeapons:['mastery', 'maxBuild'],
+    extras:         ['mastery', 'maxBuild'],
+  };
 
-  private gearTotal(d: TrackerData): number {
-    if (!d.gear) return 0;
-    return Object.values(d.gear).reduce((a, v) => a + v.length, 0);
+  private readonly GEAR_ALL_COLUMNS = [
+    { key: 'mastery',       settingKey: null },
+    { key: 'reactor',       settingKey: 'reactor' },
+    { key: 'exilus',        settingKey: 'exilus' },
+    { key: 'shards',        settingKey: 'shards' },
+    { key: 'tau',           settingKey: 'tauForged' },
+    { key: 'maxBuild',      settingKey: 'maxBuild' },
+    { key: 'auraForma',     settingKey: 'auraForma' },
+    { key: 'stanceForma',   settingKey: 'stanceForma' },
+    { key: 'lens',          settingKey: 'lens' },
+    { key: 'arcaneAdapter', settingKey: 'arcaneAdapter' },
+  ] as const;
+
+  private calcGearProgress(d: TrackerData): { completed: number; total: number } {
+    if (!d.gear) return { completed: 0, total: 0 };
+    const gearSettings = this.tracker.settings().gear;
+    const isFounder = this.tracker.settings().isFounder;
+    const primeOnly = gearSettings.primeOnlyGear;
+    const checkboxes = this.tracker.checkboxes();
+
+    const activeCols = this.GEAR_ALL_COLUMNS.filter(
+      c => !c.settingKey || gearSettings[c.settingKey as keyof typeof gearSettings]
+    );
+
+    let completed = 0, total = 0;
+    for (const [sectionKey, items] of Object.entries(d.gear)) {
+      const allowed = this.GEAR_SECTION_COLUMNS[sectionKey] ?? ['mastery'];
+      const sectionCols = activeCols.filter(c => allowed.includes(c.key));
+      const filteredItems = isFounder ? items : items.filter((i: { name: string; isFounderOnly?: boolean }) => !i.isFounderOnly);
+      const primeNames = primeOnly ? new Set(filteredItems.map((i: { name: string }) => i.name)) : null;
+
+      for (const item of filteredItems) {
+        for (const col of sectionCols) {
+          if (primeNames && col.key !== 'mastery' && primeNames.has(item.name + ' Prime') && !item.name.endsWith(' Prime')) continue;
+          total++;
+          if (checkboxes[`gear:${item.name}:${col.key}`]) completed++;
+        }
+      }
+    }
+    return { completed, total };
   }
 
   private lichTotal(d: TrackerData): number {

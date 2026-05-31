@@ -162,11 +162,15 @@ function allLeafIds(sectionId: string, tasks: Task[]): string[] {
 const STORAGE_KEY = 'wf-task-checklist';
 
 function loadState(): TaskState {
+  const defaults: TaskState = { dailyDate: '', weeklyDate: '', checked: {}, hidden: [], collapsed: [], showHidden: [] };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw) as TaskState;
+    if (raw) {
+      const parsed = JSON.parse(raw) as Partial<TaskState>;
+      return { ...defaults, ...parsed };
+    }
   } catch { /* ignore */ }
-  return { dailyDate: '', weeklyDate: '', checked: {}, hidden: [], collapsed: [], showHidden: [] };
+  return defaults;
 }
 
 function saveState(s: TaskState): void {

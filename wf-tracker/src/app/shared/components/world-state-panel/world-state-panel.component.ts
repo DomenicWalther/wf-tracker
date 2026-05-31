@@ -204,7 +204,7 @@ export class WorldStatePanelComponent implements OnInit, OnDestroy {
       ['Earth', ws.earthCycle, { true: ['Day', 'phase-day'], false: ['Night', 'phase-night'] }],
     ];
     return defs
-      .filter((d): d is [string, CycleState, Record<string, [string, string]>] => !!d[1])
+      .filter((d): d is [string, CycleState, Record<string, [string, string]>] => !!d[1] && !!d[1].expiry && !!d[1].activation)
       .map(([label, cycle, map]) => this.buildCycle(label, cycle, now, map));
   });
 
