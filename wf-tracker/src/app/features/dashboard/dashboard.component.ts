@@ -69,108 +69,126 @@ interface SectionCard {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 32px 0 24px;
+      padding: 36px 0 28px;
       border-bottom: 1px solid var(--color-border);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       gap: 24px;
     }
     .dashboard-title {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--color-gold);
-      letter-spacing: 0.1em;
-      margin: 0 0 4px;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-text);
+      letter-spacing: 0.06em;
+      margin: 0 0 5px;
     }
     .dashboard-subtitle {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--color-text-muted);
       margin: 0;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
     }
     .dashboard-overall {
       text-align: right;
+      flex-shrink: 0;
     }
     .overall-pct {
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--color-gold);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-accent-light);
       line-height: 1;
+      letter-spacing: -0.01em;
     }
     .overall-label {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--color-text-muted);
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-top: 4px;
+      margin-top: 5px;
+      font-weight: 600;
     }
     .rank-badge {
       display: inline-block;
-      margin-top: 6px;
+      margin-top: 8px;
       padding: 3px 10px;
       background: var(--color-surface2);
-      border: 1px solid var(--color-gold);
-      border-radius: 12px;
+      border: 1px solid var(--color-border);
+      border-radius: 99px;
       font-size: 11px;
-      color: var(--color-gold);
-      font-weight: 600;
-      letter-spacing: 0.05em;
+      color: var(--color-text-dim);
+      font-weight: 500;
+      letter-spacing: 0.03em;
     }
     .overall-bar {
       margin-bottom: 28px;
     }
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 10px;
+      margin-top: 24px;
     }
     .section-card {
       display: flex;
       align-items: center;
       gap: 14px;
-      padding: 16px;
+      padding: 14px 16px;
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: 8px;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: border-color var(--transition-mid), background var(--transition-mid), box-shadow var(--transition-mid);
       position: relative;
       overflow: hidden;
     }
     .section-card:hover:not(.disabled) {
-      border-color: var(--color-gold);
+      border-color: var(--color-accent);
       background: var(--color-surface2);
-      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .section-card:focus-visible {
+      outline: 2px solid var(--color-accent-light);
+      outline-offset: 2px;
     }
     .section-card.disabled {
-      opacity: 0.45;
+      opacity: 0.38;
+      pointer-events: none;
     }
     .card-icon {
-      font-size: 24px;
-      width: 36px;
-      text-align: center;
+      font-size: 18px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
-      color: var(--color-gold);
+      color: var(--color-accent);
+      background: var(--color-surface2);
+      border-radius: 6px;
+      transition: color var(--transition-fast);
+    }
+    .section-card:hover:not(.disabled) .card-icon {
+      color: var(--color-accent-light);
     }
     .card-body { flex: 1; min-width: 0; }
     .card-label {
       font-size: 13px;
       font-weight: 600;
       color: var(--color-text);
-      margin-bottom: 6px;
-      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
     }
     .card-progress {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
     .card-progress .progress-bar-bg { flex: 1; }
     .card-pct {
       font-size: 11px;
-      color: var(--color-gold);
+      color: var(--color-accent-light);
       font-weight: 600;
-      width: 38px;
+      width: 36px;
       text-align: right;
       flex-shrink: 0;
     }
@@ -180,12 +198,13 @@ interface SectionCard {
     }
     .card-disabled-badge {
       position: absolute;
-      top: 6px;
-      right: 8px;
+      top: 7px;
+      right: 9px;
       font-size: 9px;
       color: var(--color-text-muted);
       text-transform: uppercase;
       letter-spacing: 0.1em;
+      font-weight: 600;
     }
   `]
 })

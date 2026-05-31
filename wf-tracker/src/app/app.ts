@@ -21,10 +21,10 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
     }
     .main-content {
       flex: 1;
-      margin-left: 220px;
-      padding: 0 32px 32px;
+      margin-left: 216px;
+      padding: 0 36px 48px;
       min-width: 0;
-      transition: margin-left 0.2s ease;
+      transition: margin-left var(--transition-mid);
     }
   `]
 })

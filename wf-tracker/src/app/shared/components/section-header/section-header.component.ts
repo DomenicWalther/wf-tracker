@@ -25,39 +25,39 @@ import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
   `,
   styles: [`
     .sh-wrapper {
-      padding: 24px 0 20px;
+      padding: 28px 0 22px;
       border-bottom: 1px solid var(--color-border);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .sh-title-row {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .sh-title {
-      font-size: 22px;
+      font-size: 18px;
       font-weight: 700;
-      color: var(--color-gold);
-      letter-spacing: 0.05em;
+      color: var(--color-text);
+      letter-spacing: 0.03em;
       margin: 0;
     }
     .sh-badge {
       background: var(--color-surface2);
       border: 1px solid var(--color-border);
-      border-radius: 4px;
-      padding: 2px 8px;
+      border-radius: 99px;
+      padding: 2px 9px;
     }
     .sh-count {
-      font-size: 12px;
-      color: var(--color-text-muted);
-      font-weight: 600;
+      font-size: 11px;
+      color: var(--color-text-dim);
+      font-weight: 500;
     }
     .sh-desc {
       font-size: 12px;
       color: var(--color-text-muted);
-      margin: 0 0 12px;
-      line-height: 1.5;
+      margin: 0 0 14px;
+      line-height: 1.6;
     }
   `]
 })
