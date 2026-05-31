@@ -7,7 +7,10 @@
       "Bash(pip install *)",
       "PowerShell(python --version)",
       "PowerShell(pip --version)",
-      "PowerShell(pip install openpyxl 2>&1)"
+      "PowerShell(pip install openpyxl 2>&1)",
+      "Bash(Get-ChildItem -Path \"D:\\\\1 Arbeit\\\\4 - Programmieren\\\\2026\\\\wf-tracker\\\\wf-tracker\\\\src\" -Recurse -Directory)",
+      "Bash(Select-Object FullName)",
+      "Bash(Format-Table -AutoSize)"
     ]
   }
 }
