@@ -13,7 +13,7 @@ interface NavItem {
 }
 
 const {
-  LayoutDashboard, ListChecks, Settings, Trophy, Target,
+  LayoutDashboard, ListChecks, Settings, Target,
   ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
   Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
   ShoppingBag, Boxes, Component: ComponentIcon, History,
@@ -26,8 +26,7 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
       { label: 'Dashboard',      route: '/dashboard',      icon: LayoutDashboard },
       { label: 'Task Checklist', route: '/task-checklist', icon: ListChecks },
       { label: 'Settings',       route: '/settings',       icon: Settings },
-      { label: 'Big Goals',      route: '/big-goals',      icon: Trophy },
-      { label: 'Personal Goals', route: '/personal-goals', icon: Target },
+      { label: 'Goals', route: '/goals', icon: Target },
     ]
   },
   {

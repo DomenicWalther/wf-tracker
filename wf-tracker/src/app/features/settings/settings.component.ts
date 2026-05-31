@@ -237,10 +237,17 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
           <div class="settings-card-title">Data Management</div>
           <div class="data-actions">
             <button type="button" class="action-btn" (click)="exportData()">Export Progress</button>
+            <label class="action-btn" style="cursor:pointer">
+              Import Progress
+              <input #fileInput type="file" accept=".json" style="display:none" (change)="onFileSelected(fileInput)" />
+            </label>
             <button type="button" class="action-btn danger" (click)="confirmReset()">Reset All Progress</button>
           </div>
-          @if (exportedJson()) {
-            <textarea class="export-area" readonly [value]="exportedJson()"></textarea>
+          @if (importError()) {
+            <div class="import-error" role="alert">{{ importError() }}</div>
+          }
+          @if (importSuccess()) {
+            <div class="import-success" role="status">Import successful! Reloading…</div>
           }
           @if (showResetConfirm()) {
             <div class="confirm-box">
@@ -310,16 +317,15 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
     .action-btn:hover { background: var(--color-gold); color: #0a0a0f; }
     .action-btn.danger { border-color: var(--color-red); color: var(--color-red); }
     .action-btn.danger:hover { background: var(--color-red); color: white; }
-    .export-area {
-      width: 100%;
-      height: 120px;
-      background: var(--color-surface2);
-      border: 1px solid var(--color-border);
-      color: var(--color-text-muted);
-      font-size: 11px;
-      padding: 8px;
-      border-radius: 4px;
-      resize: vertical;
+    .import-error {
+      font-size: 12px;
+      color: var(--color-red);
+      margin-top: 8px;
+    }
+    .import-success {
+      font-size: 12px;
+      color: #4caf50;
+      margin-top: 8px;
     }
     .confirm-box {
       background: var(--color-surface2);
@@ -335,8 +341,9 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 export class SettingsComponent {
   private readonly tracker = inject(TrackerService);
 
-  exportedJson = signal('');
   showResetConfirm = signal(false);
+  importError = signal('');
+  importSuccess = signal(false);
 
   // ─── Build FormGroups from current service state ──────────────────────────
 
@@ -452,7 +459,35 @@ export class SettingsComponent {
   }
 
   exportData(): void {
-    this.exportedJson.set(this.tracker.exportState());
+    const json = this.tracker.exportState();
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'wf-tracker-progress.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  onFileSelected(input: HTMLInputElement): void {
+    const file = input.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const json = reader.result as string;
+        JSON.parse(json); // validate before importing
+        this.tracker.importState(json);
+        this.importError.set('');
+        this.importSuccess.set(true);
+        setTimeout(() => window.location.reload(), 800);
+      } catch {
+        this.importError.set('Invalid file. Please select a valid wf-tracker export.');
+        this.importSuccess.set(false);
+      }
+      input.value = '';
+    };
+    reader.readAsText(file);
   }
 
   confirmReset(): void {

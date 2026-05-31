@@ -11,7 +11,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
   template: `
     <div class="page">
       <app-section-header
-        title="PERSONAL GOALS"
+        title="GOALS"
         description="Set your own custom goals. Number goals track progress toward a target amount. Completion goals are simple checkboxes."
         [completed]="progress().completed"
         [total]="progress().total"
@@ -32,7 +32,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
         </div>
       </div>
 
-      @if (goals().length > 0) {
+      @if (numberGoals().length > 0) {
         <div class="goals-section">
           <div class="goals-section-title">Number Goals</div>
           <div class="goals-list">
@@ -61,7 +61,9 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
             }
           </div>
         </div>
+      }
 
+      @if (checkboxGoals().length > 0) {
         <div class="goals-section">
           <div class="goals-section-title">Completion Goals</div>
           <div class="goals-list">
@@ -80,8 +82,10 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
             }
           </div>
         </div>
-      } @else {
-        <div class="empty-state">No personal goals yet. Add one above!</div>
+      }
+
+      @if (goals().length === 0) {
+        <div class="empty-state">No goals yet. Add one above!</div>
       }
     </div>
   `,
@@ -217,15 +221,11 @@ export class PersonalGoalsComponent {
 
   onCurrentChange(goal: PersonalGoal, event: Event): void {
     const value = (event.target as HTMLInputElement).valueAsNumber;
-    this.updateCurrent(goal, Number.isNaN(value) ? 0 : value);
+    this.tracker.updatePersonalGoal({ ...goal, current: Number.isNaN(value) ? 0 : value });
   }
 
   toggleGoal(goal: PersonalGoal): void {
     this.tracker.updatePersonalGoal({ ...goal, completed: !goal.completed });
-  }
-
-  updateCurrent(goal: PersonalGoal, current: number): void {
-    this.tracker.updatePersonalGoal({ ...goal, current });
   }
 
   deleteGoal(id: string): void {

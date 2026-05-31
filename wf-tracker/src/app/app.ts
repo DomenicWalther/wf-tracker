@@ -1,11 +1,17 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { CommandPaletteComponent } from './shared/components/command-palette/command-palette.component';
+import { PaletteService } from './core/services/palette.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SidebarComponent],
+  imports: [RouterOutlet, SidebarComponent, CommandPaletteComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    '(document:keydown.control.k)': 'openPalette($event)',
+    '(document:keydown.meta.k)': 'openPalette($event)',
+  },
   template: `
     <div class="app-shell">
       <app-sidebar />
@@ -13,6 +19,7 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
         <router-outlet />
       </main>
     </div>
+    <app-command-palette />
   `,
   styles: [`
     .app-shell {
@@ -28,4 +35,11 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
     }
   `]
 })
-export class App {}
+export class App {
+  private readonly paletteService = inject(PaletteService);
+
+  openPalette(event: Event): void {
+    event.preventDefault();
+    this.paletteService.open();
+  }
+}

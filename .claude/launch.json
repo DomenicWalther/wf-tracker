@@ -4,8 +4,8 @@
     {
       "name": "wf-tracker",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "start", "--prefix", "wf-tracker", "--", "--port", "4200"],
-      "port": 4200
+      "runtimeArgs": ["run", "start", "--prefix", "wf-tracker", "--", "--port", "4201"],
+      "port": 4201
     }
   ]
 }

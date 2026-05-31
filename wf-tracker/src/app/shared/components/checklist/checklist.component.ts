@@ -1,6 +1,7 @@
-import { Component, input, output, signal, computed, effect, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, signal, computed, effect, inject, afterNextRender, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { PaletteService } from '../../../core/services/palette.service';
 
 @Component({
   selector: 'app-checklist',
@@ -191,6 +192,7 @@ export class ChecklistComponent {
   toggle = output<string>();
   bulkChange = output<{ keys: string[]; value: boolean }>();
 
+  private readonly paletteService = inject(PaletteService);
   readonly searchControl = new FormControl('', { nonNullable: true });
   protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
   private openGroups = signal<Set<string>>(new Set());
@@ -218,6 +220,11 @@ export class ChecklistComponent {
       if (this.searchQuery()) {
         this.openGroups.set(new Set(this.groups().map(g => g.name)));
       }
+    });
+
+    afterNextRender(() => {
+      const q = this.paletteService.consumePendingSearch();
+      if (q) this.searchControl.setValue(q);
     });
   }
 
