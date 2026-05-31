@@ -336,7 +336,7 @@ export class DashboardComponent {
 
   private lichTotal(d: TrackerData): number {
     if (!d.lichGear) return 0;
-    return Object.values(d.lichGear).reduce((a, v) => a + v.length, 0);
+    return Object.values(d.lichGear).reduce((a, v) => a + v.length, 0) * 3;
   }
 
   private incarnonTotal(d: TrackerData): number {
