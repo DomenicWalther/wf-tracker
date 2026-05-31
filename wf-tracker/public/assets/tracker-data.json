@@ -11687,7 +11687,7 @@
     },
     {
       "warframe": "Baruuk",
-      "ability": "Endless Lullaby"
+      "ability": "Lull"
     },
     {
       "warframe": "Caliban",
@@ -11724,6 +11724,10 @@
     {
       "warframe": "Excalibur",
       "ability": "Radial Blind"
+    },
+    {
+      "warframe": "Follie",
+      "ability": "Self Portrait"
     },
     {
       "warframe": "Frost",

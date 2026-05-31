@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { TrackerData, IncarnonEntry } from '../../core/models/tracker.models';
+import { WorldStatePanelComponent } from '../../shared/components/world-state-panel/world-state-panel.component';
 
 interface SectionCard {
   label: string;
@@ -16,7 +17,7 @@ interface SectionCard {
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterLink],
+  imports: [RouterLink, WorldStatePanelComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -37,6 +38,8 @@ interface SectionCard {
           <div class="progress-bar-fill" [style.width.%]="overallPct()"></div>
         </div>
       </div>
+
+      <app-world-state-panel />
 
       <div class="cards-grid">
         @for (card of cards(); track card.route) {
