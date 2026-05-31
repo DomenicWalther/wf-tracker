@@ -64,19 +64,19 @@ interface CycleDisplay {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: 8px;
-      padding: 14px 16px 12px;
+      padding: 14px 16px 14px;
       margin-bottom: 24px;
     }
     .ws-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .ws-title {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       color: var(--color-text-muted);
       text-transform: uppercase;
     }
@@ -89,16 +89,17 @@ interface CycleDisplay {
       padding: 2px 4px;
       border-radius: 4px;
       line-height: 1;
-      transition: color 0.15s;
+      transition: color var(--transition-fast);
     }
-    .ws-refresh:hover:not([disabled]) { color: var(--color-gold); }
+    .ws-refresh:hover:not([disabled]) { color: var(--color-accent-light); }
     .ws-refresh[disabled] { cursor: default; opacity: 0.5; }
+    .ws-refresh:focus-visible { outline: 2px solid var(--color-accent-light); outline-offset: 2px; }
     @keyframes spin { to { transform: rotate(360deg); } }
     .spinning { display: inline-block; animation: spin 0.8s linear infinite; }
     .ws-cycles {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 12px;
+      gap: 14px;
     }
     .ws-cycle { display: flex; flex-direction: column; gap: 5px; }
     .ws-cycle-top {
@@ -107,44 +108,44 @@ interface CycleDisplay {
       align-items: baseline;
     }
     .ws-cycle-label {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
       color: var(--color-text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
     }
     .ws-cycle-phase {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
-    .phase-day    { color: #f5c842; }
-    .phase-night  { color: #7ab3e0; }
-    .phase-warm   { color: #e07a5f; }
-    .phase-cold   { color: #81b3d2; }
-    .phase-fass   { color: #e0704a; }
-    .phase-vome   { color: #9b8fc2; }
+    .phase-day    { color: #d4a840; }
+    .phase-night  { color: #6a9fc0; }
+    .phase-warm   { color: #c8624a; }
+    .phase-cold   { color: #6898b8; }
+    .phase-fass   { color: #c85830; }
+    .phase-vome   { color: #8870b0; }
     .ws-bar-track {
-      height: 4px;
-      background: var(--color-border);
-      border-radius: 2px;
+      height: 3px;
+      background: var(--color-surface3);
+      border-radius: 99px;
       overflow: hidden;
     }
     .ws-bar-fill {
       height: 100%;
-      border-radius: 2px;
+      border-radius: 99px;
       transition: width 1s linear;
     }
-    .ws-bar-fill.phase-day   { background: #f5c842; }
-    .ws-bar-fill.phase-night { background: #7ab3e0; }
-    .ws-bar-fill.phase-warm  { background: #e07a5f; }
-    .ws-bar-fill.phase-cold  { background: #81b3d2; }
-    .ws-bar-fill.phase-fass  { background: #e0704a; }
-    .ws-bar-fill.phase-vome  { background: #9b8fc2; }
+    .ws-bar-fill.phase-day   { background: #d4a840; }
+    .ws-bar-fill.phase-night { background: #6a9fc0; }
+    .ws-bar-fill.phase-warm  { background: #c8624a; }
+    .ws-bar-fill.phase-cold  { background: #6898b8; }
+    .ws-bar-fill.phase-fass  { background: #c85830; }
+    .ws-bar-fill.phase-vome  { background: #8870b0; }
     .ws-time {
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--color-text);
       font-variant-numeric: tabular-nums;
     }
@@ -157,7 +158,7 @@ interface CycleDisplay {
       background: none;
       border: none;
       cursor: pointer;
-      color: var(--color-gold);
+      color: var(--color-accent-light);
       font-size: 12px;
       padding: 0;
       text-decoration: underline;

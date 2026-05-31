@@ -69,7 +69,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       flex-wrap: wrap;
     }
     .cl-search {
@@ -78,38 +78,48 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
       background: var(--color-surface2);
       border: 1px solid var(--color-border);
       color: var(--color-text);
-      padding: 6px 10px;
-      border-radius: 4px;
+      padding: 6px 11px;
+      border-radius: 6px;
       font-size: 13px;
       outline: none;
+      transition: border-color var(--transition-fast);
     }
     .cl-search:focus {
-      border-color: var(--color-gold);
+      border-color: var(--color-accent);
+    }
+    .cl-search:focus-visible {
+      outline: 2px solid var(--color-accent-light);
+      outline-offset: 2px;
     }
     .cl-stats {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--color-text-muted);
       white-space: nowrap;
     }
-    .cl-done { color: var(--color-gold); font-weight: 600; }
-    .cl-sep { margin: 0 2px; }
+    .cl-done { color: var(--color-accent-light); font-weight: 600; }
+    .cl-sep { margin: 0 2px; color: var(--color-text-muted); }
     .cl-btn {
       background: var(--color-surface2);
       border: 1px solid var(--color-border);
       color: var(--color-text-muted);
-      padding: 5px 10px;
-      border-radius: 4px;
+      padding: 5px 11px;
+      border-radius: 6px;
       font-size: 11px;
+      font-weight: 500;
       cursor: pointer;
-      transition: all 0.15s;
+      transition: border-color var(--transition-fast), color var(--transition-fast);
     }
     .cl-btn:hover {
-      border-color: var(--color-gold);
-      color: var(--color-gold);
+      border-color: var(--color-accent);
+      color: var(--color-accent-light);
+    }
+    .cl-btn:focus-visible {
+      outline: 2px solid var(--color-accent-light);
+      outline-offset: 2px;
     }
     .cl-group {
       border: 1px solid var(--color-border);
-      border-radius: 6px;
+      border-radius: 8px;
       margin-bottom: 8px;
       overflow: hidden;
     }
@@ -117,7 +127,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 12px;
+      padding: 9px 13px;
       background: var(--color-surface2);
       cursor: pointer;
       user-select: none;
@@ -126,13 +136,18 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
       border: none;
       font: inherit;
       color: inherit;
+      transition: background var(--transition-fast);
     }
     .cl-group-header:hover {
-      background: #1e1e2c;
+      background: var(--color-surface3);
     }
-    .cl-group-arrow { color: var(--color-gold); font-size: 12px; width: 12px; }
-    .cl-group-name { flex: 1; font-size: 13px; font-weight: 600; color: var(--color-text); letter-spacing: 0.03em; }
-    .cl-group-progress { font-size: 11px; color: var(--color-text-muted); }
+    .cl-group-header:focus-visible {
+      outline: 2px solid var(--color-accent-light);
+      outline-offset: -2px;
+    }
+    .cl-group-arrow { color: var(--color-accent); font-size: 11px; width: 12px; opacity: 0.8; }
+    .cl-group-name { flex: 1; font-size: 12.5px; font-weight: 600; color: var(--color-text); letter-spacing: 0.02em; }
+    .cl-group-progress { font-size: 11px; color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
     .cl-items {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -142,11 +157,11 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
     .cl-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 7px 12px;
+      gap: 9px;
+      padding: 7px 13px;
       background: var(--color-surface);
       cursor: pointer;
-      transition: background 0.1s;
+      transition: background var(--transition-fast);
     }
     .cl-item:hover {
       background: var(--color-surface2);
@@ -154,17 +169,18 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
     .cl-item.checked .cl-item-name {
       color: var(--color-text-muted);
       text-decoration: line-through;
-      text-decoration-color: var(--color-gold);
+      text-decoration-color: var(--color-accent);
+      text-decoration-thickness: 1px;
     }
     .cl-item-name {
       font-size: 12px;
       color: var(--color-text);
       flex: 1;
-      line-height: 1.3;
+      line-height: 1.4;
     }
     .cl-empty {
       text-align: center;
-      padding: 40px;
+      padding: 48px;
       color: var(--color-text-muted);
       font-size: 13px;
     }

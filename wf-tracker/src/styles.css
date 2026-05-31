@@ -1,16 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #0a0a0f;
-  --color-surface: #12121a;
-  --color-surface2: #1a1a26;
-  --color-border: #2a2a3a;
-  --color-gold: #c89b3c;
-  --color-gold-light: #e8bf6a;
-  --color-text: #d4c5a0;
-  --color-text-muted: #7a7060;
-  --color-green: #4caf7d;
-  --color-red: #e05a5a;
+  --color-bg: #0d0d14;
+  --color-surface: #13131e;
+  --color-surface2: #1a1a28;
+  --color-surface3: #202030;
+  --color-border: #252538;
+
+  --color-accent: #a07830;
+  --color-accent-light: #c49a50;
+
+  /* backward-compat aliases — used by components not yet migrated */
+  --color-gold: var(--color-accent);
+  --color-gold-light: var(--color-accent-light);
+
+  --color-text: #c8bfaa;
+  --color-text-dim: #8a8070;
+  --color-text-muted: #5a5448;
+
+  --color-green: #3d9e68;
+  --color-red: #c04848;
+
+  --transition-fast: 0.12s ease;
+  --transition-mid: 0.2s ease;
 }
 
 * {
@@ -20,18 +32,21 @@
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   margin: 0;
   overflow-x: hidden;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-surface);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -40,25 +55,25 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gold);
+  background: var(--color-accent);
 }
 
 .wf-checkbox {
   appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border: 1.5px solid var(--color-border);
   border-radius: 3px;
-  background: var(--color-surface);
+  background: var(--color-surface2);
   cursor: pointer;
   position: relative;
   flex-shrink: 0;
-  transition: all 0.15s ease;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
 }
 
 .wf-checkbox:checked {
-  background: var(--color-gold);
-  border-color: var(--color-gold);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .wf-checkbox:checked::after {
@@ -66,56 +81,61 @@ body {
   position: absolute;
   left: 4px;
   top: 1px;
-  width: 6px;
-  height: 10px;
-  border: 2px solid #0a0a0f;
+  width: 5px;
+  height: 9px;
+  border: 1.5px solid #0d0d14;
   border-top: none;
   border-left: none;
   transform: rotate(45deg);
 }
 
 .wf-checkbox:hover:not(:checked) {
-  border-color: var(--color-gold);
+  border-color: var(--color-accent);
+}
+
+.wf-checkbox:focus-visible {
+  outline: 2px solid var(--color-accent-light);
+  outline-offset: 2px;
 }
 
 .progress-bar-bg {
-  background: var(--color-surface2);
-  border-radius: 4px;
+  background: var(--color-surface3);
+  border-radius: 99px;
   overflow: hidden;
-  height: 6px;
+  height: 4px;
 }
 
 .progress-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
-  border-radius: 4px;
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+  border-radius: 99px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section-tag {
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 2px 6px;
+  padding: 1px 5px;
   border-radius: 3px;
   border: 1px solid;
 }
 
 .tag-founder {
-  color: #ff9a3c;
-  border-color: #ff9a3c40;
-  background: #ff9a3c10;
+  color: #d4884a;
+  border-color: #d4884a30;
+  background: #d4884a0e;
 }
 
 .tag-old {
-  color: #888;
-  border-color: #88888840;
-  background: #88888810;
+  color: #6a6460;
+  border-color: #6a646040;
+  background: #6a64600c;
 }
 
 .tag-extra {
-  color: #c88;
-  border-color: #c8888840;
-  background: #c8888810;
+  color: #a87878;
+  border-color: #a8787840;
+  background: #a878780c;
 }

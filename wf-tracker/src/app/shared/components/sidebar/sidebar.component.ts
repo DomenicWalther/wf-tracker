@@ -123,13 +123,13 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
   `,
   styles: [`
     .sidebar {
-      width: 220px;
+      width: 216px;
       min-height: 100vh;
       background: var(--color-surface);
       border-right: 1px solid var(--color-border);
       display: flex;
       flex-direction: column;
-      transition: width 0.2s ease;
+      transition: width var(--transition-mid);
       position: fixed;
       top: 0;
       left: 0;
@@ -138,67 +138,76 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
       overflow-x: hidden;
     }
     .sidebar.collapsed {
-      width: 50px;
+      width: 48px;
     }
     .sidebar-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 12px;
+      padding: 14px 12px;
       border-bottom: 1px solid var(--color-border);
-      min-height: 60px;
+      min-height: 56px;
+      flex-shrink: 0;
     }
     .logo {
       display: flex;
       align-items: center;
       gap: 8px;
+      overflow: hidden;
     }
     .logo-wf {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 800;
-      color: var(--color-gold);
-      letter-spacing: 0.1em;
+      color: var(--color-accent-light);
+      letter-spacing: 0.12em;
+      flex-shrink: 0;
     }
     .logo-text {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
       color: var(--color-text-muted);
+      white-space: nowrap;
     }
     .collapse-btn {
       background: none;
       border: 1px solid var(--color-border);
       color: var(--color-text-muted);
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       border-radius: 4px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      transition: border-color var(--transition-fast), color var(--transition-fast);
     }
     .collapse-btn:hover {
-      border-color: var(--color-gold);
-      color: var(--color-gold);
+      border-color: var(--color-accent);
+      color: var(--color-accent-light);
+    }
+    .collapse-btn:focus-visible {
+      outline: 2px solid var(--color-accent-light);
+      outline-offset: 2px;
     }
     .overall-progress {
-      padding: 12px 16px;
+      padding: 12px 14px;
       border-bottom: 1px solid var(--color-border);
     }
     .progress-label {
-      font-size: 10px;
+      font-size: 9px;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       color: var(--color-text-muted);
-      margin-bottom: 6px;
+      margin-bottom: 7px;
+      font-weight: 600;
     }
     .progress-value {
-      font-size: 12px;
-      color: var(--color-gold);
-      text-align: right;
-      margin-top: 4px;
+      font-size: 11px;
+      color: var(--color-accent-light);
+      margin-top: 5px;
       font-weight: 600;
       display: flex;
       justify-content: space-between;
@@ -211,55 +220,68 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
     }
     .nav-content {
       flex: 1;
-      padding: 8px 0;
+      padding: 6px 0 12px;
     }
     .nav-group {
-      padding: 12px 16px 4px;
+      padding: 14px 14px 3px;
     }
     .nav-group-label {
       font-size: 9px;
       font-weight: 700;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--color-text-muted);
     }
     .nav-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 16px;
-      color: var(--color-text);
+      gap: 9px;
+      padding: 7px 14px;
+      color: var(--color-text-dim);
       text-decoration: none;
       font-size: 13px;
       border-left: 2px solid transparent;
-      transition: all 0.15s ease;
+      transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
     }
     .nav-item:hover {
       background: var(--color-surface2);
-      color: var(--color-gold-light);
+      color: var(--color-text);
+    }
+    .nav-item:focus-visible {
+      outline: 2px solid var(--color-accent-light);
+      outline-offset: -2px;
     }
     .nav-item.active {
-      border-left-color: var(--color-gold);
+      border-left-color: var(--color-accent);
       background: var(--color-surface2);
-      color: var(--color-gold);
+      color: var(--color-accent-light);
     }
     .nav-icon {
-      font-size: 14px;
-      width: 20px;
+      font-size: 13px;
+      width: 18px;
       text-align: center;
       flex-shrink: 0;
+      opacity: 0.75;
+    }
+    .nav-item.active .nav-icon,
+    .nav-item:hover .nav-icon {
+      opacity: 1;
     }
     .nav-label {
       white-space: nowrap;
       overflow: hidden;
+      font-size: 12.5px;
     }
     .collapsed .nav-item {
-      padding: 10px;
+      padding: 9px;
       justify-content: center;
     }
     .collapsed .nav-item.active {
       border-left-color: transparent;
       background: var(--color-surface2);
+    }
+    .collapsed .nav-icon {
+      width: auto;
     }
   `]
 })

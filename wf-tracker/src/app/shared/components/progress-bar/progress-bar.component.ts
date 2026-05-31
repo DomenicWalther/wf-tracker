@@ -17,9 +17,9 @@ import { Component, input, computed, ChangeDetectionStrategy } from '@angular/co
   `,
   styles: [`
     .pb-wrapper { margin-bottom: 4px; }
-    .pb-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
-    .pb-label { font-size: 13px; color: var(--color-text); }
-    .pb-value { font-size: 12px; color: var(--color-gold); font-weight: 600; }
+    .pb-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    .pb-label { font-size: 12px; color: var(--color-text-dim); font-weight: 500; }
+    .pb-value { font-size: 12px; color: var(--color-accent-light); font-weight: 600; }
     .pb-pct { color: var(--color-text-muted); font-weight: 400; }
   `]
 })
