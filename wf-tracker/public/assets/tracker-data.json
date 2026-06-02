@@ -1470,9 +1470,6 @@
         "isFounderOnly": false
       },
       {
-        "name": "Dual Coda Torxica"
-      },
-      {
         "name": "Dual Toxocyst",
         "isFounderOnly": false
       },
@@ -1681,11 +1678,8 @@
         "isFounderOnly": false
       },
       {
-        "name": "Riot 848",
+        "name": "Riot-848",
         "isFounderOnly": false
-      },
-      {
-        "name": "Riot-848"
       },
       {
         "name": "Sagek Prime",
@@ -28404,6 +28398,12 @@
       "version": "v1.2",
       "description": "Pinned Bar, Gear Families & More",
       "details": "New features and fixes:\n- Floating Pinned Bar: a configurable bar you can pin to the screen showing World State cycles and your Task Checklist at a glance\n- Gear variants (e.g. Wraith, Vandal, Prisma) now grouped into collapsible families\n- Tracker rows can now be individually toggled open for more granular sub-item tracking\n- Exilus Adapter tracking added to Gear\n- Arcanes now support per-rank tracking for Psycho and Hoarder collection modes\n- Sidebar shows badge counts for pages with unfinished items while collapsed\n- Fixed dashboard section totals not respecting your settings"
+    },
+    {
+      "version": "v1.3",
+      "date": "2026-06-02",
+      "description": "Mobile Layout, New Theme & Command Palette Improvements",
+      "details": "Quality-of-life update focused on accessibility and polish:\n- Mobile-responsive layout: sidebar, tables and panels now adapt to small screens\n- New Neutral-Dark theme variant; theme can be switched directly from the sidebar\n- Command palette now supports multi-word fuzzy search and indexes more item types\n- Data corrections: arcane sections reorganised, Sirocco removed from Primary Weapons, Sporothrix typo fixed, duplicate weapon entries removed\n- Checklist task descriptions restored to their original in-game phrasing"
     }
   ],
   "modularGear": {
