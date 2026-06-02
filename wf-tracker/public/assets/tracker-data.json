@@ -658,11 +658,8 @@
         "isFounderOnly": false
       },
       {
-        "name": "Coda Sporothix",
+        "name": "Coda Sporothrix",
         "isFounderOnly": false
-      },
-      {
-        "name": "Coda Sporothrix"
       },
       {
         "name": "Coda Synapse",
@@ -694,10 +691,6 @@
       },
       {
         "name": "Dera Vandal"
-      },
-      {
-        "name": "Derea Vandal",
-        "isFounderOnly": false
       },
       {
         "name": "Dex Sybaris",
@@ -3682,7 +3675,7 @@
       "Motovore",
       "Pathocyst",
       "Pox",
-      "Sporothix",
+      "Sporothrix",
       "Synapse",
       "Tysis"
     ]

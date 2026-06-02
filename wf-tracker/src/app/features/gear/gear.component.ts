@@ -129,8 +129,8 @@ export class GearComponent {
       { key: 'melees',      label: 'Melee Weapons',     items: d.gear['melees']      ?? [] },
       { key: 'companions',  label: 'Companions',        items: d.gear['companions']  ?? [] },
       { key: 'archwings',   label: 'Vehicles',          items: d.gear['archwings']   ?? [] },
-      { key: 'archGuns',    label: 'Arch Guns',         items: d.gear['archGuns']    ?? [] },
-      { key: 'archMelee',   label: 'Arch Melee',        items: d.gear['archMelee']   ?? [] },
+      { key: 'archGuns',    label: 'Archguns',          items: d.gear['archGuns']    ?? [] },
+      { key: 'archMelee',   label: 'Archmelee',         items: d.gear['archMelee']   ?? [] },
       { key: 'amps',        label: 'Amps',              items: d.gear['amps']        ?? [] },
       { key: 'extras',      label: 'Extra Gear',        items: d.gear['extras']      ?? [] },
     ];

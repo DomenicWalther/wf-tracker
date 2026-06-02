@@ -200,6 +200,7 @@ export class WorldStatePanelComponent implements OnInit, OnDestroy {
   private readonly now = signal(Date.now());
   private tickInterval: ReturnType<typeof setInterval> | null = null;
   private refreshInterval: ReturnType<typeof setInterval> | null = null;
+  private lastRefreshAttemptMs = 0;
 
   ngOnInit(): void {
     this.tickInterval = setInterval(() => {
@@ -210,13 +211,21 @@ export class WorldStatePanelComponent implements OnInit, OnDestroy {
       // reload when any cycle expires so the phase flips immediately
       const ws = this.service.data();
       if (ws && !this.service.loading()) {
-        const anyJustExpired = [ws.cetusCycle, ws.vallisCycle, ws.cambionCycle, ws.earthCycle]
-          .some(c => {
-            if (!c?.expiry) return false;
-            const expiry = new Date(c.expiry).getTime();
-            return expiry > prev && expiry <= current;
-          });
-        if (anyJustExpired) this.service.load();
+        const cycles = [ws.cetusCycle, ws.vallisCycle, ws.cambionCycle, ws.earthCycle];
+        const anyJustExpired = cycles.some(c => {
+          if (!c?.expiry) return false;
+          const expiry = new Date(c.expiry).getTime();
+          return expiry > prev && expiry <= current;
+        });
+        // also catch stale data: API returned an already-past expiry after a reload
+        const anyStale = !anyJustExpired && cycles.some(c => {
+          if (!c?.expiry) return false;
+          return new Date(c.expiry).getTime() <= current;
+        });
+        if ((anyJustExpired || anyStale) && current - this.lastRefreshAttemptMs > 5_000) {
+          this.lastRefreshAttemptMs = current;
+          this.service.load();
+        }
       }
     }, 1000);
     // also reload every 60 seconds as a fallback
