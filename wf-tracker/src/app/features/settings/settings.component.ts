@@ -356,7 +356,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
       cursor: pointer;
       transition: all 0.15s;
     }
-    .action-btn:hover { background: var(--color-gold); color: #0a0a0f; }
+    .action-btn:hover { background: var(--color-gold); color: var(--color-bg); }
     .action-btn.danger { border-color: var(--color-red); color: var(--color-red); }
     .action-btn.danger:hover { background: var(--color-red); color: white; }
     .import-error {

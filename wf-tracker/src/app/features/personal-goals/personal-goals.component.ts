@@ -133,7 +133,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
       background: var(--color-gold);
       border: none;
       border-radius: 4px;
-      color: #0a0a0f;
+      color: var(--color-bg);
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;

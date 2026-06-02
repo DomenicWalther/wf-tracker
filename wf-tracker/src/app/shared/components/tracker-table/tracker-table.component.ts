@@ -154,7 +154,7 @@ export interface TrackerRow {
       position: sticky;
       top: 0;
       z-index: 2;
-      background: #16161f;
+      background: var(--color-surface2);
       padding: 6px 10px;
       text-align: center;
       font-size: 10px;
@@ -166,7 +166,7 @@ export interface TrackerRow {
       white-space: nowrap;
     }
     .tt-table th.tt-col-name { text-align: left; }
-    .tt-table th.tt-col-alt { background: #0a0a14; }
+    .tt-table th.tt-col-alt { background: var(--color-bg); }
     .tt-col-toggle {
       width: 100%;
       background: none;
@@ -212,10 +212,10 @@ export interface TrackerRow {
     .tt-group-row + tr td { border-top: none; }
     .tt-cell-disabled { color: var(--color-border); font-size: 11px; }
     .tt-multi {
-      display: inline-flex;
+      display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 3px 10px;
     }
     .tt-multi-item {

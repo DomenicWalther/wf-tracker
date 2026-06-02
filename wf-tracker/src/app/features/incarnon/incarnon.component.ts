@@ -148,7 +148,7 @@ function familyKey(familyName: string, stage: string): string {
       font: inherit;
       color: inherit;
     }
-    .week-header:hover { background: #1e1e2c; }
+    .week-header:hover { background: var(--color-surface3); }
     .week-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
     .week-label {
       flex: 1;

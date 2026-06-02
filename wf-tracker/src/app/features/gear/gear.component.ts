@@ -94,7 +94,7 @@ import { buildGearFamilies, countGearSection, gearFamilyId, gearVariantLabel } f
       font: inherit;
       color: inherit;
     }
-    .gear-section-header:hover { background: #1e1e2c; }
+    .gear-section-header:hover { background: var(--color-surface3); }
     .gear-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
     .gear-section-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--color-text); }
   `]

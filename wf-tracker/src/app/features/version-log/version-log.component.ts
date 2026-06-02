@@ -11,7 +11,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
-      <app-section-header title="VERSION LOG" description="History of changes to the Warframe Completion Tracker spreadsheet." />
+      <app-section-header title="VERSION LOG" description="History of changes to the Warframe Completion Tracker web app." />
       <div class="version-list">
         @for (entry of log(); track entry.version) {
           <div class="version-entry">
