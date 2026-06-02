@@ -101,6 +101,13 @@ export interface TrackerState {
   bigGoalsSeeded: boolean;
 }
 
+export type PinnedWidget = 'world-state' | 'task-checklist';
+
+export interface PinnedBarSettings {
+  widgets: PinnedWidget[];
+  hiddenCycles: string[];
+}
+
 export interface TrackerSettings {
   isFounder: boolean;
   includeConclave: boolean;
@@ -117,6 +124,7 @@ export interface TrackerSettings {
   codex: { old: boolean };
   market: { extra: boolean };
   extra: { prime: boolean; plat: boolean; founder: boolean };
+  pinnedBar: PinnedBarSettings;
 }
 
 export interface GearSettings {
@@ -126,6 +134,7 @@ export interface GearSettings {
   shards: boolean;
   tauForged: boolean;
   arcaneAdapter: boolean;
+  exilusAdapter: boolean;
   maxBuild: boolean;
   auraForma: boolean;
   stanceForma: boolean;
@@ -209,7 +218,7 @@ export const DEFAULT_SETTINGS: TrackerSettings = {
   gear: {
     primeOnlyGear: false,
     reactor: false, exilus: false, shards: false, tauForged: false,
-    arcaneAdapter: false, maxBuild: false, auraForma: false,
+    arcaneAdapter: false, exilusAdapter: false, maxBuild: false, auraForma: false,
     stanceForma: false, ampArcaneAdapter: false, lens: false
   },
   incarnon: { completionist: false },
@@ -226,7 +235,8 @@ export const DEFAULT_SETTINGS: TrackerSettings = {
   decorations: { primeAccess: false, events: false, nightwave: false, old: false, extra: false, founder: false },
   codex: { old: false },
   market: { extra: false },
-  extra: { prime: false, plat: false, founder: false }
+  extra: { prime: false, plat: false, founder: false },
+  pinnedBar: { widgets: [], hiddenCycles: [] }
 };
 
 export const DEFAULT_SECTION_TOGGLES: SectionToggles = {
