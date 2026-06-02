@@ -1,4 +1,4 @@
-import { Component, inject, computed, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
@@ -7,12 +7,9 @@ import { GearItem } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ProgressBarComponent } from '../../shared/components/progress-bar/progress-bar.component';
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
-
-interface GearColumn {
-  key: string;
-  label: string;
-  settingKey?: string;
-}
+import { ALL_GEAR_COLUMNS, GEAR_SECTION_COLUMNS, GearColumnDef } from '../../core/config/gear-columns';
+import { createToggleSet } from '../../core/utils/toggle-set';
+import { buildGearFamilies, countGearSection, gearFamilyId, gearVariantLabel } from '../../core/utils/gear-variants';
 
 @Component({
   selector: 'app-gear',
@@ -52,12 +49,11 @@ interface GearColumn {
             @if (isSectionOpen(section.key)) {
               <app-tracker-table
                 [columns]="sectionActiveColumns(section.key)"
-                [rows]="toRows(filteredItems(section.items))"
+                [rows]="toRows(section.items)"
                 [checkedFn]="checkedFn"
-                [disabledCellFn]="makeDisabledCellFn(section)"
                 [notesFn]="notesFn"
                 [setNoteFn]="setNoteFn"
-                (toggle)="toggleItem($event.rowName, $event.colKey)"
+                (toggle)="toggleItem($event.rowName, $event.colKey, $event.subKey)"
               />
             }
           </div>
@@ -101,7 +97,6 @@ interface GearColumn {
     .gear-section-header:hover { background: #1e1e2c; }
     .gear-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
     .gear-section-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--color-text); }
-    :host ::ng-deep .tt-tag-founder { color: #ff9a3c; }
   `]
 })
 export class GearComponent {
@@ -112,37 +107,16 @@ export class GearComponent {
   readonly searchControl = new FormControl('', { nonNullable: true });
   private readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
 
-  private readonly openSections = signal<Set<string>>(new Set(['warframes']));
+  private readonly openSections = createToggleSet(['warframes']);
 
-  readonly ALL_COLUMNS: GearColumn[] = [
-    { key: 'mastery', label: 'Mastery' },
-    { key: 'reactor', label: 'Reactor', settingKey: 'reactor' },
-    { key: 'exilus', label: 'Exilus', settingKey: 'exilus' },
-    { key: 'shards', label: '5 Shards', settingKey: 'shards' },
-    { key: 'tau', label: 'Tau', settingKey: 'tauForged' },
-    { key: 'maxBuild', label: 'Max Build', settingKey: 'maxBuild' },
-    { key: 'auraForma', label: 'Aura Forma', settingKey: 'auraForma' },
-    { key: 'stanceForma', label: 'Stance Forma', settingKey: 'stanceForma' },
-    { key: 'lens', label: 'Lens', settingKey: 'lens' },
-    { key: 'arcaneAdapter', label: 'Arcane Adapter', settingKey: 'arcaneAdapter' },
-  ];
-
-  readonly SECTION_COLUMNS: Record<string, string[]> = {
-    warframes: ['mastery', 'reactor', 'exilus', 'shards', 'tau', 'maxBuild', 'auraForma', 'lens'],
-    primaries: ['mastery', 'reactor', 'arcaneAdapter', 'maxBuild'],
-    secondaries: ['mastery', 'reactor', 'arcaneAdapter', 'maxBuild'],
-    melees: ['mastery', 'reactor', 'arcaneAdapter', 'maxBuild', 'stanceForma'],
-    companions: ['mastery', 'maxBuild'],
-    archwings: ['mastery', 'maxBuild'],
-    archwingWeapons: ['mastery', 'maxBuild'],
-    extras: ['mastery', 'maxBuild'],
-  };
+  readonly ALL_COLUMNS: GearColumnDef[] = ALL_GEAR_COLUMNS;
+  readonly SECTION_COLUMNS: Record<string, string[]> = GEAR_SECTION_COLUMNS;
 
   readonly primeOnlyGear = computed(() => this.tracker.settings().gear.primeOnlyGear);
 
   readonly activeColumns = computed(() => {
     const settings = this.tracker.settings().gear;
-    return this.ALL_COLUMNS.filter(c => !c.settingKey || settings[c.settingKey as keyof typeof settings]);
+    return this.ALL_COLUMNS.filter(c => !c.settingKey || (settings as unknown as Record<string, unknown>)[c.settingKey]);
   });
 
   readonly gearSections = computed(() => {
@@ -173,7 +147,7 @@ export class GearComponent {
     return { completed, total };
   });
 
-  readonly checkedFn = (rowName: string, colKey: string) => this.isChecked(rowName, colKey);
+  readonly checkedFn = (rowName: string, colKey: string, subKey?: string) => this.isChecked(subKey ?? rowName, colKey);
   readonly notesFn = (rowName: string) => this.tracker.getText(`gear:${rowName}:note`);
   readonly setNoteFn = (rowName: string, value: string) => this.tracker.setText(`gear:${rowName}:note`, value);
 
@@ -181,56 +155,77 @@ export class GearComponent {
     return this.tracker.isChecked(`gear:${itemName}:${colKey}`);
   }
 
-  toggleItem(itemName: string, colKey: string): void {
-    this.tracker.toggle(`gear:${itemName}:${colKey}`);
+  /** Mastery is keyed per variant (`subKey`); upgrade columns share the family key (`rowName`). */
+  toggleItem(itemName: string, colKey: string, subKey?: string): void {
+    this.tracker.toggle(`gear:${subKey ?? itemName}:${colKey}`);
   }
 
-  toRows(items: GearItem[]): TrackerRow[] {
-    return items.map(item => ({
+  private toNormalRow(item: GearItem): TrackerRow {
+    return {
       name: item.name,
       tags: item.isFounderOnly ? [{ label: 'Founder', cssClass: 'tt-tag-founder' }] : [],
       rowCssClass: item.isFounderOnly ? 'founder-row' : '',
-    }));
+    };
   }
 
-  isSectionOpen(key: string): boolean {
-    return this.openSections().has(key);
-  }
+  /**
+   * Builds table rows. With "Prime Only" on, variant families collapse into one
+   * row: a per-variant Mastery checkbox group plus shared upgrade columns. With
+   * it off, every item is its own full row.
+   */
+  toRows(items: GearItem[]): TrackerRow[] {
+    const visible = this.filteredItems(items);
+    if (!this.primeOnlyGear()) return visible.map(item => this.toNormalRow(item));
 
-  toggleSection(key: string): void {
-    this.openSections.update(s => {
-      const next = new Set(s);
-      if (next.has(key)) next.delete(key); else next.add(key);
-      return next;
+    // Family ids/sizes come from the full (founder-included) section so grouping
+    // stays stable regardless of the founder/search filters.
+    const familySize = new Map<string, number>();
+    for (const f of buildGearFamilies(items.map(i => i.name))) familySize.set(f.id, f.members.length);
+    const fullNames = new Set(items.map(i => i.name));
+
+    const groups = new Map<string, GearItem[]>();
+    const order: string[] = [];
+    for (const item of visible) {
+      const id = gearFamilyId(item.name, fullNames);
+      if (!groups.has(id)) { groups.set(id, []); order.push(id); }
+      groups.get(id)!.push(item);
+    }
+
+    return order.map(id => {
+      const members = groups.get(id)!;
+      if ((familySize.get(id) ?? 1) <= 1) return this.toNormalRow(members[0]);
+      const sorted = [...members].sort((a, b) => (a.name === id ? -1 : 0) - (b.name === id ? -1 : 0));
+      return {
+        name: id,
+        multiCells: {
+          mastery: sorted.map(m => ({ key: m.name, label: gearVariantLabel(m.name, id), founder: m.isFounderOnly })),
+        },
+      };
     });
   }
 
-  sectionHasExtraColumns(sectionKey: string): boolean {
-    const allowed = this.SECTION_COLUMNS[sectionKey] ?? ['mastery'];
-    return allowed.some(k => k !== 'mastery');
+  isSectionOpen(key: string): boolean {
+    return this.openSections.has(key);
   }
 
-  /** Returns true for non-prime items that have a prime counterpart in the section. */
-  private isGearDisabled(itemName: string, colKey: string, primeNames: Set<string>): boolean {
-    if (colKey === 'mastery') return false;
-    return primeNames.has(itemName + ' Prime') && !itemName.endsWith(' Prime');
+  toggleSection(key: string): void {
+    this.openSections.toggle(key);
   }
 
-  makeDisabledCellFn(section: { key: string; items: GearItem[] }): ((rowName: string, colKey: string) => boolean) | null {
-    if (!this.primeOnlyGear() || !this.sectionHasExtraColumns(section.key)) return null;
-    const primeNames = new Set(this.filteredItems(section.items).map(i => i.name));
-    return (rowName, colKey) => this.isGearDisabled(rowName, colKey, primeNames);
-  }
-
-  sectionActiveColumns(sectionKey: string): GearColumn[] {
+  sectionActiveColumns(sectionKey: string): GearColumnDef[] {
     const allowed = this.SECTION_COLUMNS[sectionKey] ?? ['mastery'];
     return this.activeColumns().filter(c => allowed.includes(c.key));
   }
 
-  filteredItems(items: GearItem[]): GearItem[] {
+  /** Founder filter only — used for progress so the bars don't react to search. */
+  private founderItems(items: GearItem[]): GearItem[] {
     if (!items) return [];
-    const showFounder = this.tracker.settings().isFounder;
-    const base = showFounder ? items : items.filter(i => !i.isFounderOnly);
+    return this.tracker.settings().isFounder ? items : items.filter(i => !i.isFounderOnly);
+  }
+
+  /** Founder + search filter — used for rendering rows. */
+  filteredItems(items: GearItem[]): GearItem[] {
+    const base = this.founderItems(items);
     const q = this.searchQuery().toLowerCase();
     return q ? base.filter(i => i.name.toLowerCase().includes(q)) : base;
   }
@@ -241,21 +236,25 @@ export class GearComponent {
 
   private sectionProgressFor(
     section: { key: string; items: GearItem[] },
-    cols: GearColumn[],
+    cols: GearColumnDef[],
     primeOnly: boolean
   ): { completed: number; total: number } {
     const sectionCols = this.SECTION_COLUMNS[section.key] ?? ['mastery'];
     const activeCols = cols.filter(c => sectionCols.includes(c.key));
-    const items = this.filteredItems(section.items);
-    const disabledFn = primeOnly ? this.makeDisabledCellFn(section) : null;
-    let total = 0, completed = 0;
-    for (const item of items) {
-      for (const col of activeCols) {
-        if (disabledFn?.(item.name, col.key)) continue;
-        total++;
-        if (this.isChecked(item.name, col.key)) completed++;
+    const items = this.founderItems(section.items);
+
+    if (!primeOnly) {
+      let total = 0, completed = 0;
+      for (const item of items) {
+        for (const col of activeCols) {
+          total++;
+          if (this.isChecked(item.name, col.key)) completed++;
+        }
       }
+      return { completed, total };
     }
-    return { completed, total };
+
+    const upgradeCols = activeCols.filter(c => c.key !== 'mastery').map(c => c.key);
+    return countGearSection(items.map(i => i.name), upgradeCols, (n, col) => this.isChecked(n, col));
   }
 }

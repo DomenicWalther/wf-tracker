@@ -1,14 +1,30 @@
-import { Component, inject, computed, ChangeDetectionStrategy, signal } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ProgressBarComponent } from '../../shared/components/progress-bar/progress-bar.component';
+import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
+import { createToggleSet } from '../../core/utils/toggle-set';
+
+const LICH_COLUMNS: TrackerColumn[] = [
+  { key: 'obtained', label: 'Obtained' },
+  { key: '60',       label: '60%' },
+  { key: 'vf',       label: 'Val. Fusion' },
+];
+
+/** Maps a lich item + column key to its storage key.
+ *  obtained → lich:<item>  (legacy format, no suffix)
+ *  others   → lich:<item>:<col>
+ */
+function lichKey(item: string, col: string): string {
+  return col === 'obtained' ? 'lich:' + item : 'lich:' + item + ':' + col;
+}
 
 @Component({
   selector: 'app-lich-gear',
-  imports: [ReactiveFormsModule, SectionHeaderComponent, ProgressBarComponent],
+  imports: [ReactiveFormsModule, SectionHeaderComponent, ProgressBarComponent, TrackerTableComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -41,43 +57,12 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
             />
           </button>
           @if (isGroupOpen(group.name)) {
-            <div class="gear-table-wrapper">
-              <table class="gear-table">
-                <thead>
-                  <tr>
-                    <th class="col-name">Name</th>
-                    <th class="col-check">Obtained</th>
-                    <th class="col-check">60%</th>
-                    <th class="col-check">Val. Fusion</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @for (item of group.items; track item) {
-                    <tr>
-                      <td class="col-name">{{ item }}</td>
-                      <td class="col-check">
-                        <input type="checkbox" class="wf-checkbox"
-                          [checked]="isChecked(item, 'obtained')"
-                          (change)="toggle(item, 'obtained')"
-                          [attr.aria-label]="item + ' - Obtained'" />
-                      </td>
-                      <td class="col-check">
-                        <input type="checkbox" class="wf-checkbox"
-                          [checked]="isChecked(item, '60')"
-                          (change)="toggle(item, '60')"
-                          [attr.aria-label]="item + ' - 60%'" />
-                      </td>
-                      <td class="col-check">
-                        <input type="checkbox" class="wf-checkbox"
-                          [checked]="isChecked(item, 'vf')"
-                          (change)="toggle(item, 'vf')"
-                          [attr.aria-label]="item + ' - Valence Fusion'" />
-                      </td>
-                    </tr>
-                  }
-                </tbody>
-              </table>
-            </div>
+            <app-tracker-table
+              [columns]="columns"
+              [rows]="toRows(group.items)"
+              [checkedFn]="checkedFn"
+              (toggle)="toggleItem($event.rowName, $event.colKey)"
+            />
           }
         </div>
       }
@@ -124,31 +109,6 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
     .gear-section-header:hover { background: #1e1e2c; }
     .gear-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
     .gear-section-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--color-text); }
-    .gear-table-wrapper { overflow-x: auto; }
-    .gear-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-    }
-    .gear-table th {
-      background: #111119;
-      padding: 6px 10px;
-      text-align: center;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      border-bottom: 1px solid var(--color-border);
-    }
-    .gear-table th.col-name { text-align: left; }
-    .gear-table td {
-      padding: 5px 10px;
-      border-bottom: 1px solid var(--color-border);
-      text-align: center;
-    }
-    .gear-table td.col-name { text-align: left; color: var(--color-text); white-space: nowrap; }
-    .gear-table tr:hover td { background: var(--color-surface2); }
     .empty {
       text-align: center;
       padding: 40px;
@@ -161,10 +121,15 @@ export class LichGearComponent {
   private readonly trackerService = inject(TrackerService);
   private readonly dataService = inject(DataService);
   private readonly rawData = toSignal(this.dataService.getData());
-  private readonly openGroups = signal<Set<string>>(new Set());
+  private readonly openGroups = createToggleSet();
 
   readonly searchControl = new FormControl('', { nonNullable: true });
   protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
+
+  readonly columns = LICH_COLUMNS;
+
+  readonly checkedFn = (rowName: string, colKey: string): boolean =>
+    this.trackerService.isChecked(lichKey(rowName, colKey));
 
   readonly groups = computed<{ name: string; items: string[] }[]>(() => {
     const d = this.rawData();
@@ -186,45 +151,36 @@ export class LichGearComponent {
   readonly progress = computed(() => {
     let completed = 0, total = 0;
     for (const g of this.groups()) {
-      for (const item of g.items) {
-        total += 3;
-        if (this.trackerService.isChecked('lich:' + item)) completed++;
-        if (this.trackerService.isChecked('lich:' + item + ':60')) completed++;
-        if (this.trackerService.isChecked('lich:' + item + ':vf')) completed++;
-      }
+      const p = this.groupProgress(g);
+      completed += p.completed;
+      total += p.total;
     }
     return { completed, total };
   });
 
-  isChecked(item: string, col: string): boolean {
-    const key = col === 'obtained' ? 'lich:' + item : 'lich:' + item + ':' + col;
-    return this.trackerService.isChecked(key);
+  toRows(items: string[]): TrackerRow[] {
+    return items.map(name => ({ name }));
   }
 
-  toggle(item: string, col: string): void {
-    const key = col === 'obtained' ? 'lich:' + item : 'lich:' + item + ':' + col;
-    this.trackerService.toggle(key);
+  toggleItem(item: string, col: string): void {
+    this.trackerService.toggle(lichKey(item, col));
   }
 
   isGroupOpen(name: string): boolean {
-    return this.openGroups().has(name);
+    return this.openGroups.has(name);
   }
 
   toggleGroup(name: string): void {
-    this.openGroups.update(s => {
-      const next = new Set(s);
-      if (next.has(name)) next.delete(name); else next.add(name);
-      return next;
-    });
+    this.openGroups.toggle(name);
   }
 
   groupProgress(group: { items: string[] }): { completed: number; total: number } {
-    let completed = 0;
     const total = group.items.length * 3;
+    let completed = 0;
     for (const item of group.items) {
-      if (this.trackerService.isChecked('lich:' + item)) completed++;
-      if (this.trackerService.isChecked('lich:' + item + ':60')) completed++;
-      if (this.trackerService.isChecked('lich:' + item + ':vf')) completed++;
+      for (const col of LICH_COLUMNS) {
+        if (this.trackerService.isChecked(lichKey(item, col.key))) completed++;
+      }
     }
     return { completed, total };
   }

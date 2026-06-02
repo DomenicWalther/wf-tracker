@@ -1,4 +1,4 @@
-import { Component, inject, computed, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
@@ -7,6 +7,7 @@ import { currentIncarnonWeek } from '../../core/services/world-state.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ProgressBarComponent } from '../../shared/components/progress-bar/progress-bar.component';
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
+import { createToggleSet } from '../../core/utils/toggle-set';
 
 const INCARNON_COLUMNS: TrackerColumn[] = [
   { key: 'earned', label: 'Adapter Earned' },
@@ -170,7 +171,7 @@ export class IncarnonComponent {
   private readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
 
   readonly currentWeekLabel = `Week ${currentIncarnonWeek()}`;
-  private readonly openWeeks = signal<Set<string>>(new Set([this.currentWeekLabel]));
+  private readonly openWeeks = createToggleSet([`Week ${currentIncarnonWeek()}`]);
 
   readonly columns = INCARNON_COLUMNS;
 
@@ -180,6 +181,7 @@ export class IncarnonComponent {
   private readonly allWeeks = computed<IncWeek[]>(() => {
     const d = this.data();
     if (!d) return [];
+    const completionist = this.tracker.settings().incarnon.completionist;
 
     const byWeek = new Map<string, TrackerRow[]>();
 
@@ -187,8 +189,8 @@ export class IncarnonComponent {
       const label = entry.week != null ? `Week ${entry.week}` : 'Duviri';
       if (!byWeek.has(label)) byWeek.set(label, []);
 
-      if (entry.name === '1 FAMILY') {
-        // Each weapon is its own family
+      if (completionist || entry.name === '1 FAMILY') {
+        // Each weapon is its own row
         for (const w of entry.weapons) {
           byWeek.get(label)!.push({ name: w });
         }
@@ -237,15 +239,11 @@ export class IncarnonComponent {
   });
 
   isWeekOpen(label: string): boolean {
-    return this.openWeeks().has(label);
+    return this.openWeeks.has(label);
   }
 
   toggleWeek(label: string): void {
-    this.openWeeks.update(s => {
-      const next = new Set(s);
-      if (next.has(label)) next.delete(label); else next.add(label);
-      return next;
-    });
+    this.openWeeks.toggle(label);
   }
 
   toggleItem(familyName: string, colKey: string): void {
