@@ -45,11 +45,17 @@ export class WorldStateService {
   load(): void {
     this._loading.set(true);
     this._error.set(null);
+    const fetchCycle = (path: string): Promise<CycleState> =>
+      fetch(`${BASE}/${path}`).then(r => {
+        if (!r.ok) throw new Error(`HTTP ${r.status} for ${path}`);
+        return r.json() as Promise<CycleState>;
+      });
+
     Promise.all([
-      fetch(`${BASE}/cetusCycle`).then(r => r.json() as Promise<CycleState>),
-      fetch(`${BASE}/vallisCycle`).then(r => r.json() as Promise<CycleState>),
-      fetch(`${BASE}/cambionCycle`).then(r => r.json() as Promise<CycleState>),
-      fetch(`${BASE}/earthCycle`).then(r => r.json() as Promise<CycleState>),
+      fetchCycle('cetusCycle'),
+      fetchCycle('vallisCycle'),
+      fetchCycle('cambionCycle'),
+      fetchCycle('earthCycle'),
     ]).then(([cetusCycle, vallisCycle, cambionCycle, earthCycle]) => {
       this._data.set({ cetusCycle, vallisCycle, cambionCycle, earthCycle });
       this._loading.set(false);

@@ -2,6 +2,7 @@ import {
   Component,
   ChangeDetectionStrategy,
   inject,
+  input,
   signal,
   computed,
   OnInit,
@@ -22,18 +23,20 @@ interface CycleDisplay {
   selector: 'app-world-state-panel',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <section class="ws-panel" aria-label="World State — open-world cycles">
-      <div class="ws-header">
-        <span class="ws-title">WORLD STATE</span>
-        <button
-          class="ws-refresh"
-          (click)="refresh()"
-          [attr.aria-label]="'Refresh world state'"
-          [disabled]="service.loading()"
-        >
-          <span [class.spinning]="service.loading()" aria-hidden="true">⟳</span>
-        </button>
-      </div>
+    <section class="ws-panel" [class.ws-compact]="compact()" aria-label="World State — open-world cycles">
+      @if (!compact()) {
+        <div class="ws-header">
+          <span class="ws-title">WORLD STATE</span>
+          <button
+            class="ws-refresh"
+            (click)="refresh()"
+            [attr.aria-label]="'Refresh world state'"
+            [disabled]="service.loading()"
+          >
+            <span [class.spinning]="service.loading()" aria-hidden="true">⟳</span>
+          </button>
+        </div>
+      }
 
       @if (service.error()) {
         <p class="ws-error" role="alert">Failed to load world state. <button (click)="refresh()">Retry</button></p>
@@ -168,10 +171,31 @@ interface CycleDisplay {
       color: var(--color-text-muted);
       padding: 4px 0;
     }
+
+    /* ── Compact mode (pinned bar) ── */
+    .ws-compact {
+      border: none;
+      border-radius: 0;
+      padding: 8px 14px;
+      margin-bottom: 0;
+      height: 100%;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+    .ws-compact .ws-cycles {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+    }
+    .ws-compact .ws-cycle-label { font-size: 9px; }
+    .ws-compact .ws-cycle-phase { font-size: 9px; }
+    .ws-compact .ws-time { font-size: 11px; }
   `],
 })
 export class WorldStatePanelComponent implements OnInit, OnDestroy {
   readonly service = inject(WorldStateService);
+
+  readonly hiddenCycles = input<string[]>([]);
+  readonly compact = input(false);
 
   private readonly now = signal(Date.now());
   private tickInterval: ReturnType<typeof setInterval> | null = null;
@@ -219,8 +243,10 @@ export class WorldStatePanelComponent implements OnInit, OnDestroy {
       ['Cambion Drift', ws.cambionCycle, { fass: ['Fass', 'phase-fass'], vome: ['Vome', 'phase-vome'], true: ['Fass', 'phase-fass'], false: ['Vome', 'phase-vome'] }],
       ['Earth', ws.earthCycle, { true: ['Day', 'phase-day'], false: ['Night', 'phase-night'] }],
     ];
+    const hidden = this.hiddenCycles();
     return defs
       .filter((d): d is [string, CycleState, Record<string, [string, string]>] => !!d[1] && !!d[1].expiry && !!d[1].activation)
+      .filter(([label]) => !hidden.includes(label))
       .map(([label, cycle, map]) => this.buildCycle(label, cycle, now, map));
   });
 
