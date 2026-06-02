@@ -559,9 +559,6 @@
                                        "isFounderOnly":  false
                                    },
                                    {
-                                       "name":  "Ax-52"
-                                   },
-                                   {
                                        "name":  "AX-52",
                                        "isFounderOnly":  false
                                    },
@@ -898,21 +895,12 @@
                                        "isFounderOnly":  false
                                    },
                                    {
-                                       "name":  "Mk1-Braton"
-                                   },
-                                   {
                                        "name":  "MK1-Braton",
                                        "isFounderOnly":  false
                                    },
                                    {
-                                       "name":  "Mk1-Paris"
-                                   },
-                                   {
                                        "name":  "MK1-Paris",
                                        "isFounderOnly":  false
-                                   },
-                                   {
-                                       "name":  "Mk1-Strun"
                                    },
                                    {
                                        "name":  "MK1-Strun",
@@ -1499,9 +1487,6 @@
                                          "isFounderOnly":  false
                                      },
                                      {
-                                         "name":  "Efv-8 Mars"
-                                     },
-                                     {
                                          "name":  "EFV-8 Mars",
                                          "isFounderOnly":  false
                                      },
@@ -1646,14 +1631,8 @@
                                          "isFounderOnly":  false
                                      },
                                      {
-                                         "name":  "Mk1-Furis"
-                                     },
-                                     {
                                          "name":  "MK1-Furis",
                                          "isFounderOnly":  false
-                                     },
-                                     {
-                                         "name":  "Mk1-Kunai"
                                      },
                                      {
                                          "name":  "MK1-Kunai",
@@ -2624,14 +2603,8 @@
                                     "isFounderOnly":  false
                                 },
                                 {
-                                    "name":  "Mk1-Bo"
-                                },
-                                {
                                     "name":  "MK1-Bo",
                                     "isFounderOnly":  false
-                                },
-                                {
-                                    "name":  "Mk1-Furax"
                                 },
                                 {
                                     "name":  "MK1-Furax",
@@ -3705,6 +3678,7 @@
                                   "Bramma",
                                   "Chakkhurr",
                                   "Drakgoon",
+                                  "Ghoulsaw",
                                   "Grattler",
                                   "Hek",
                                   "Hind",
@@ -3729,6 +3703,7 @@
                                    "Cycron",
                                    "Detron",
                                    "Plinx",
+                                   "Quanta",
                                    "Envoy",
                                    "Diplos",
                                    "Spirex",
@@ -3740,6 +3715,7 @@
                                ],
                      "coda":  [
                                   "Bassocyst",
+                                  "Bubonico",
                                   "Catabolyst",
                                   "Caustacyst",
                                   "Dual Torxica",
@@ -3761,7 +3737,7 @@
                                          "Braton",
                                          "Braton Prime",
                                          "Braton Vandal",
-                                         "Mk1-Braton"
+                                         "MK1-Braton"
                                      ],
                          "week":  1
                      },
@@ -3769,7 +3745,7 @@
                          "name":  "Kunai",
                          "weapons":  [
                                          "Kunai",
-                                         "Mk1-Kunai"
+                                         "MK1-Kunai"
                                      ],
                          "week":  1
                      },
@@ -3785,7 +3761,7 @@
                      {
                          "name":  "Paris",
                          "weapons":  [
-                                         "Mk1-Paris",
+                                         "MK1-Paris",
                                          "Paris",
                                          "Paris Prime"
                                      ],
@@ -3845,7 +3821,7 @@
                          "weapons":  [
                                          "Bo",
                                          "Bo Prime",
-                                         "Mk1-Bo"
+                                         "MK1-Bo"
                                      ],
                          "week":  3
                      },
@@ -3854,7 +3830,7 @@
                          "weapons":  [
                                          "Furax",
                                          "Furax Wraith",
-                                         "Mk1-Furax"
+                                         "MK1-Furax"
                                      ],
                          "week":  3
                      },
@@ -3862,7 +3838,7 @@
                          "name":  "Furis",
                          "weapons":  [
                                          "Furis",
-                                         "Mk1-Furis"
+                                         "MK1-Furis"
                                      ],
                          "week":  3
                      },
@@ -3878,7 +3854,7 @@
                      {
                          "name":  "Strun",
                          "weapons":  [
-                                         "Mk1-Strun",
+                                         "MK1-Strun",
                                          "Strun",
                                          "Strun Prime",
                                          "Strun Wraith"
@@ -4174,14 +4150,11 @@
                                      "Cascadia Flare",
                                      "Cascadia Overcharge",
                                      "Conjunction Voltage",
-                                     "Deadhead",
-                                     "Dexterity",
                                      "Encumber",
                                      "Enervate",
                                      "Fortifier",
                                      "Irradiate",
                                      "Kinship",
-                                     "Merciless",
                                      "Outburst",
                                      "Shiver",
                                      "Surge",
@@ -6625,11 +6598,6 @@
                      "category":  "General"
                  },
                  {
-                     "name":  "Necrophagic Vigor",
-                     "maxRank":  5,
-                     "category":  "General"
-                 },
-                 {
                      "name":  "Negate",
                      "maxRank":  5,
                      "category":  "General"
@@ -7846,11 +7814,6 @@
                  },
                  {
                      "name":  "Adrenaline Boost",
-                     "maxRank":  3,
-                     "category":  "General"
-                 },
-                 {
-                     "name":  "Aegis Gale",
                      "maxRank":  3,
                      "category":  "General"
                  },
@@ -14646,7 +14609,7 @@
                                                        "isOld":  false
                                                    },
                                                    {
-                                                       "name":  "Ax-52",
+                                                       "name":  "AX-52",
                                                        "isOld":  false
                                                    },
                                                    {
@@ -17102,10 +17065,6 @@
                                                            "isOld":  false
                                                        },
                                                        {
-                                                           "name":  "Thalys",
-                                                           "isOld":  false
-                                                       },
-                                                       {
                                                            "name":  "Twin Gremlins",
                                                            "isOld":  false
                                                        },
@@ -18175,10 +18134,6 @@
                                                           },
                                                           {
                                                               "name":  "Gara Prime Chassis",
-                                                              "isOld":  false
-                                                          },
-                                                          {
-                                                              "name":  "Gara Prime Neuroptics",
                                                               "isOld":  false
                                                           },
                                                           {
@@ -20146,7 +20101,6 @@
                                                         "Zephyr Strafe",
                                                         "Styanax Ares",
                                                         "Ember Technopyre",
-                                                        "Zephyr Hagoromo",
                                                         "Gauss Profitas",
                                                         "Octavia Netrahymn",
                                                         "Hildryn Sarcostema",
@@ -20550,7 +20504,6 @@
                                                                    "Eleanor Gemini",
                                                                    "Lettie Gemini",
                                                                    "Quincy Gemini",
-                                                                   "Chroma Zunlong",
                                                                    "Excalibur Obsidian (PS Exclusive)",
                                                                    "Oberon Obsidian (PS Exclusive)",
                                                                    "Excalibur Jade (Xbox Exclusive)",
@@ -21129,11 +21082,9 @@
                                                                    "Corazon",
                                                                    "Merulina Prime",
                                                                    "Boolean",
-                                                                   "Artifex",
                                                                    "Neurovyre Prime",
                                                                    "Caranthele",
                                                                    "Aculea",
-                                                                   "Corazon",
                                                                    "K.O.L. Drippy-Assisted Tactical",
                                                                    "Conquera Uplift",
                                                                    "Lustratus Conquest",
@@ -21404,7 +21355,6 @@
                                                                 "Dex Raksaka Chest Guard",
                                                                 "Dex Raksaka Shoulder Guards",
                                                                 "Dex Raksaka Knee Guards",
-                                                                "Harmony Ribbon",
                                                                 "Lodestar Chest Plate",
                                                                 "Lodestar Shoulder Plates",
                                                                 "Lodestar Leg Plates",
@@ -21481,7 +21431,6 @@
                                                                 "Frost Heirloom Armor",
                                                                 "Volt Prime Armor",
                                                                 "Left Eos Prime Shoulder Plates",
-                                                                "Left Prisma Daedalus Shoulder Plates",
                                                                 "Right Prisma Daedalus Spurs",
                                                                 "Right Prisma Edo Spurs",
                                                                 "Left Prisma Edo Spurs",
@@ -21553,8 +21502,7 @@
                                                                 "Invictus Apex",
                                                                 "Erato",
                                                                 "Valkyr Heirloom",
-                                                                "Fumulo",
-                                                                "Erato"
+                                                                "Fumulo"
                                                             ],
                                                   "Helmets":  [
                                                                   "Ash Locust",
@@ -23451,7 +23399,6 @@
                                        "PostiTV",
                                        "Potato",
                                        "Pride I",
-                                       "Pride I",
                                        "Pride II",
                                        "Pride III",
                                        "Pride IV",
@@ -24341,7 +24288,6 @@
                                        "Cycle Three",
                                        "Cycle Two",
                                        "Cycuta Prime",
-                                       "Cycuta Prime",
                                        "Dante\u0027s Noctua",
                                        "Day of the Dead",
                                        "Deca Heirloom",
@@ -24735,7 +24681,6 @@
                                         "Eight Claw",
                                         "Emblem of The Hunt",
                                         "Emissary",
-                                        "Eyes of Blight",
                                         "Eyes of Blight",
                                         "False Profit",
                                         "Frightening Flock",
@@ -25716,7 +25661,6 @@
                                         "Ki\u0027teer",
                                         "Mood",
                                         "Verv",
-                                        "Carrion",
                                         "Necramite",
                                         "Maggot Prime",
                                         "Liset (Nightwave)",
@@ -25726,8 +25670,7 @@
                                         "M-09 Efervon Tank",
                                         "Scuttler",
                                         "Merulina Prime",
-                                        "Domestik Ki\u0027teer (Lavender Ice)",
-                                        "Domestik Caliber Drone"
+                                        "Domestik Ki\u0027teer (Lavender Ice)"
                                     ],
                         "Plants":  [
                                        "Autumnal Bonsai",
@@ -26787,7 +26730,6 @@
                                   "Kavor Defector 4",
                                   "Kela De Thaym",
                                   "Knave Specter",
-                                  "Kosma Butcher",
                                   "Kosma Butcher",
                                   "Kosma Cutter",
                                   "Kosma Elite Lancer",
@@ -28342,47 +28284,6 @@
                                              "Wakeup Call",
                                              "Walking On Air",
                                              "XL Frosty",
-                                             "Argon Combo #2",
-                                             "Breathless",
-                                             "Burgerfest",
-                                             "Catscratch Fever",
-                                             "Crushing Chills",
-                                             "Doktor\u0027s Orders",
-                                             "Fly, Fly!",
-                                             "Going Steady",
-                                             "Hi-Score",
-                                             "It Sees You",
-                                             "Old Pizza",
-                                             "Only Knives",
-                                             "Optimism",
-                                             "Panic Call",
-                                             "Resolutions",
-                                             "Reverse-O",
-                                             "Slippery Customer",
-                                             "Spinnin\u0027 Around",
-                                             "Super Scavenger",
-                                             "Through My Heart",
-                                             "Too Hot",
-                                             "Vintage Tech",
-                                             "Wakeup Call",
-                                             "Walking On Air",
-                                             "XL Frosty",
-                                             "Blister Stalk",
-                                             "Borica",
-                                             "Devil\u0027s Cap",
-                                             "Dull Button",
-                                             "Ferrofungus",
-                                             "Gamma Berry",
-                                             "Ironwood",
-                                             "Muck Bonnet",
-                                             "Nonono",
-                                             "Reeking Puffball",
-                                             "Spring Popper",
-                                             "Thorn Tooth",
-                                             "Thunder-Button",
-                                             "Violet\u0027s Bane",
-                                             "Vomval Trumpet",
-                                             "Winter Spear",
                                              "Blister Stalk",
                                              "Borica",
                                              "Devil\u0027s Cap",
@@ -30395,7 +30296,6 @@
                                      "Feverspine + Arc Twelve + Wingnut",
                                      "Feverspine + Arc Twelve + Dink-A-Donk",
                                      "Feverspine + Arc Twelve + Two-Sloops",
-                                     "Feverspine + Arc Twelve + Nodulite",
                                      "Feverspine + Hothead + Beaky",
                                      "Feverspine + Hothead + Wingnut",
                                      "Feverspine + Hothead + Dink-A-Donk",
@@ -30445,7 +30345,6 @@
                                      "Flatbelly + Arc Twelve + Wingnut",
                                      "Flatbelly + Arc Twelve + Dink-A-Donk",
                                      "Flatbelly + Arc Twelve + Two-Sloops",
-                                     "Flatbelly + Arc Twelve + Nodulite",
                                      "Flatbelly + Hothead + Beaky",
                                      "Flatbelly + Hothead + Wingnut",
                                      "Flatbelly + Hothead + Dink-A-Donk",
@@ -30470,7 +30369,6 @@
                                      "Needlenose + Arc Twelve + Wingnut",
                                      "Needlenose + Arc Twelve + Dink-A-Donk",
                                      "Needlenose + Arc Twelve + Two-Sloops",
-                                     "Needlenose + Arc Twelve + Nodulite",
                                      "Needlenose + Hothead + Beaky",
                                      "Needlenose + Hothead + Wingnut",
                                      "Needlenose + Hothead + Dink-A-Donk",
@@ -30495,7 +30393,6 @@
                                      "Runway + Arc Twelve + Wingnut",
                                      "Runway + Arc Twelve + Dink-A-Donk",
                                      "Runway + Arc Twelve + Two-Sloops",
-                                     "Runway + Arc Twelve + Nodulite",
                                      "Runway + Hothead + Beaky",
                                      "Runway + Hothead + Wingnut",
                                      "Runway + Hothead + Dink-A-Donk",
