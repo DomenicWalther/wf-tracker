@@ -5,6 +5,7 @@ import { DataService } from '../../core/services/data.service';
 import { TrackerData, ChecklistGroup } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ChecklistComponent } from '../../shared/components/checklist/checklist.component';
+import { applyBulkChange } from '../../core/utils/checklist.utils';
 
 @Component({
   selector: 'app-cosmetics',
@@ -29,10 +30,7 @@ import { ChecklistComponent } from '../../shared/components/checklist/checklist.
       }
     </div>
   `,
-  styles: [`
-    .page { max-width: 1200px; }
-    .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }
-  `]
+  styles: [`.page { max-width: 1200px; } .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }`]
 })
 export class CosmeticsComponent {
   private readonly tracker = inject(TrackerService);
@@ -47,34 +45,33 @@ export class CosmeticsComponent {
 
   readonly progress = computed(() => {
     const items = this.groups().flatMap(g => g.items);
-    const completed = items.filter(i => i.checked).length;
-    return { completed, total: items.length };
+    return { completed: items.filter(i => i.checked).length, total: items.length };
   });
 
-  onToggle(key: string): void {
-    this.tracker.toggle(key);
-  }
+  onToggle(key: string): void { this.tracker.toggle(key); }
 
   onBulkChange(event: { keys: string[]; value: boolean }): void {
-    event.keys.forEach(k => {
-      if (this.tracker.isChecked(k) !== event.value) this.tracker.toggle(k);
-    });
+    applyBulkChange(event, k => this.tracker.isChecked(k), k => this.tracker.toggle(k));
   }
 
   private buildGroups(d: TrackerData): ChecklistGroup[] {
     const raw = d.cosmetics;
     if (!raw) return [];
+    const s = this.tracker.settings().cosmetics;
     const groups: ChecklistGroup[] = [];
     for (const [cat, subs] of Object.entries(raw)) {
+      if (cat === 'TENNOGEN' && !s.tennogen) continue;
       for (const [sub, items] of Object.entries(subs)) {
+        if (cat === 'TENNOGEN' && sub === 'CONSOLE' && !s.consoleExclusive) continue;
+        if (cat === 'REMAINING COSMETICS' && sub === 'Extra' && !s.extra) continue;
         const groupName = cat + (sub !== 'General' ? ' – ' + sub : '');
         groups.push({
           name: groupName,
           items: items.map(name => ({
             key: 'cos:' + name,
             label: name,
-            checked: this.tracker.isChecked('cos:' + name)
-          }))
+            checked: this.tracker.isChecked('cos:' + name),
+          })),
         });
       }
     }

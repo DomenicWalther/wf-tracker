@@ -2,9 +2,9 @@ import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/c
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
-import { TrackerData, ChecklistGroup } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ChecklistComponent } from '../../shared/components/checklist/checklist.component';
+import { buildFlatGroups, titleCase, applyBulkChange } from '../../core/utils/checklist.utils';
 
 @Component({
   selector: 'app-relics',
@@ -29,10 +29,7 @@ import { ChecklistComponent } from '../../shared/components/checklist/checklist.
       }
     </div>
   `,
-  styles: [`
-    .page { max-width: 1200px; }
-    .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }
-  `]
+  styles: [`.page { max-width: 1200px; } .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }`]
 })
 export class RelicsComponent {
   private readonly tracker = inject(TrackerService);
@@ -40,37 +37,30 @@ export class RelicsComponent {
   private readonly data = toSignal(this.dataService.getData());
 
   readonly groups = computed(() => {
-    const d = this.data();
-    if (!d) return [];
-    return this.buildGroups(d);
+    const raw = this.data()?.relics;
+    if (!raw) return [];
+    if (!this.tracker.settings().relic.hoarder) {
+      return buildFlatGroups(raw, 'relic:', k => this.tracker.isChecked(k));
+    }
+    return Object.entries(raw).map(([group, items]) => ({
+      name: titleCase(group),
+      items: items.flatMap(name => [
+        { key: `relic:${name}`,            label: name,                     checked: this.tracker.isChecked(`relic:${name}`) },
+        { key: `relic:${name}:exceptional`, label: `${name} (Exceptional)`, checked: this.tracker.isChecked(`relic:${name}:exceptional`) },
+        { key: `relic:${name}:flawless`,    label: `${name} (Flawless)`,    checked: this.tracker.isChecked(`relic:${name}:flawless`) },
+        { key: `relic:${name}:radiant`,     label: `${name} (Radiant)`,     checked: this.tracker.isChecked(`relic:${name}:radiant`) },
+      ]),
+    }));
   });
 
   readonly progress = computed(() => {
     const items = this.groups().flatMap(g => g.items);
-    const completed = items.filter(i => i.checked).length;
-    return { completed, total: items.length };
+    return { completed: items.filter(i => i.checked).length, total: items.length };
   });
 
-  onToggle(key: string): void {
-    this.tracker.toggle(key);
-  }
+  onToggle(key: string): void { this.tracker.toggle(key); }
 
   onBulkChange(event: { keys: string[]; value: boolean }): void {
-    event.keys.forEach(k => {
-      if (this.tracker.isChecked(k) !== event.value) this.tracker.toggle(k);
-    });
-  }
-
-  private buildGroups(d: TrackerData): ChecklistGroup[] {
-    const raw = d.relics;
-    if (!raw) return [];
-    return Object.entries(raw).map(([group, items]) => ({
-      name: group.split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-      items: items.map(name => ({
-        key: 'relic:' + name,
-        label: name,
-        checked: this.tracker.isChecked('relic:' + name)
-      }))
-    }));
+    applyBulkChange(event, k => this.tracker.isChecked(k), k => this.tracker.toggle(k));
   }
 }

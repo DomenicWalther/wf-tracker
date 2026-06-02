@@ -5,6 +5,7 @@ import { DataService } from '../../core/services/data.service';
 import { TrackerData, ChecklistGroup, BlueprintEntry } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ChecklistComponent } from '../../shared/components/checklist/checklist.component';
+import { applyBulkChange } from '../../core/utils/checklist.utils';
 
 @Component({
   selector: 'app-blueprints',
@@ -47,12 +48,10 @@ export class BlueprintsComponent {
     return { completed: items.filter(i => i.checked).length, total: items.length };
   });
 
-  onToggle(key: string): void {
-    this.tracker.toggle(key);
-  }
+  onToggle(key: string): void { this.tracker.toggle(key); }
 
   onBulkChange(event: { keys: string[]; value: boolean }): void {
-    event.keys.forEach(k => { if (this.tracker.isChecked(k) !== event.value) this.tracker.toggle(k); });
+    applyBulkChange(event, k => this.tracker.isChecked(k), k => this.tracker.toggle(k));
   }
 
   private buildGroups(d: TrackerData): ChecklistGroup[] {
@@ -68,8 +67,8 @@ export class BlueprintsComponent {
             key: 'bp:' + i.name,
             label: i.name,
             checked: this.tracker.isChecked('bp:' + i.name),
-            tag: i.isOld ? 'old' : undefined
-          }))
+            tag: i.isOld ? 'old' : undefined,
+          })),
         });
       }
     }
