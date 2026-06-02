@@ -5,12 +5,27 @@ export interface TrackerColumn {
   label: string;
 }
 
+export interface TrackerCellSub {
+  /** Identity suffix for this sub-checkbox (e.g. the variant name). */
+  key: string;
+  /** Short label shown next to the checkbox (e.g. "Base", "Prime", "Kuva"). */
+  label: string;
+  /** Render the label in the founder colour. */
+  founder?: boolean;
+}
+
 export interface TrackerRow {
   name: string;
   tags?: { label: string; cssClass: string }[];
   subtitle?: string;
   rowCssClass?: string;
   group?: string;
+  /**
+   * Per-column override: render multiple labelled checkboxes in a single cell
+   * instead of one. Keyed by column key. Each sub-checkbox is addressed by
+   * `(row.name, colKey, sub.key)`.
+   */
+  multiCells?: Record<string, TrackerCellSub[]>;
 }
 
 @Component({
@@ -50,12 +65,19 @@ export interface TrackerRow {
               <td class="tt-col-name">
                 <span class="tt-name-cell">
                   <span class="tt-name-text">
-                    <span class="tt-primary-name">
+                    <button
+                      type="button"
+                      class="tt-primary-name tt-name-btn"
+                      [class.tt-name-full]="isRowFull(row.name)"
+                      [attr.aria-pressed]="isRowFull(row.name)"
+                      [attr.aria-label]="'Toggle all checkboxes for ' + row.name"
+                      (click)="toggleRow(row.name)"
+                    >
                       {{ row.name }}
                       @for (tag of row.tags || []; track tag.label) {
                         <span class="tt-tag" [class]="tag.cssClass">{{ tag.label }}</span>
                       }
-                    </span>
+                    </button>
                     @if (row.subtitle) {
                       <span class="tt-subtitle">{{ row.subtitle }}</span>
                     }
@@ -74,7 +96,22 @@ export interface TrackerRow {
               </td>
               @for (col of columns(); track col.key; let ci = $index) {
                 <td class="tt-col-check" [class.tt-col-alt]="ci % 2 === 1">
-                  @if (isCellDisabled(row.name, col.key)) {
+                  @if (subCellsFor(row, col.key); as subs) {
+                    <span class="tt-multi">
+                      @for (sub of subs; track sub.key) {
+                        <label class="tt-multi-item" [class.tt-multi-founder]="sub.founder">
+                          <input
+                            type="checkbox"
+                            class="wf-checkbox"
+                            [checked]="isChecked(row.name, col.key, sub.key)"
+                            (change)="toggle.emit({ rowName: row.name, colKey: col.key, subKey: sub.key })"
+                            [attr.aria-label]="row.name + ' ' + sub.label + ' - ' + col.label"
+                          />
+                          <span class="tt-multi-label">{{ sub.label }}</span>
+                        </label>
+                      }
+                    </span>
+                  } @else if (isCellDisabled(row.name, col.key)) {
                     <span class="tt-cell-disabled" aria-hidden="true">—</span>
                   } @else {
                     <input
@@ -174,6 +211,24 @@ export interface TrackerRow {
     }
     .tt-group-row + tr td { border-top: none; }
     .tt-cell-disabled { color: var(--color-border); font-size: 11px; }
+    .tt-multi {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 3px 10px;
+    }
+    .tt-multi-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      cursor: pointer;
+      font-size: 10px;
+      color: var(--color-text-muted);
+    }
+    .tt-multi-item:hover { color: var(--color-text); }
+    .tt-multi-label { user-select: none; white-space: nowrap; }
+    .tt-multi-founder .tt-multi-label { color: #ff9a3c; }
     .tt-tag {
       display: inline-block;
       margin-left: 6px;
@@ -184,6 +239,7 @@ export interface TrackerRow {
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
+    .tt-tag-founder { color: #ff9a3c; }
     .tt-name-cell {
       display: flex;
       align-items: center;
@@ -197,6 +253,19 @@ export interface TrackerRow {
       min-width: 0;
     }
     .tt-primary-name { white-space: nowrap; }
+    .tt-name-btn {
+      background: none;
+      border: none;
+      font: inherit;
+      color: inherit;
+      padding: 0;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .tt-name-btn:hover { color: var(--color-gold); }
+    .tt-name-btn:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 1px; }
+    .tt-name-btn.tt-name-full { color: var(--color-gold); }
     .tt-subtitle {
       font-size: 10px;
       color: var(--color-text-muted);
@@ -243,11 +312,11 @@ export interface TrackerRow {
 export class TrackerTableComponent {
   columns = input<TrackerColumn[]>([]);
   rows = input<TrackerRow[]>([]);
-  checkedFn = input<((rowName: string, colKey: string) => boolean) | null>(null);
+  checkedFn = input<((rowName: string, colKey: string, subKey?: string) => boolean) | null>(null);
   disabledCellFn = input<((rowName: string, colKey: string) => boolean) | null>(null);
   notesFn = input<((rowName: string) => string) | null>(null);
   setNoteFn = input<((rowName: string, value: string) => void) | null>(null);
-  toggle = output<{ rowName: string; colKey: string }>();
+  toggle = output<{ rowName: string; colKey: string; subKey?: string }>();
 
   private readonly openNotes = signal<Set<string>>(new Set());
 
@@ -276,9 +345,14 @@ export class TrackerTableComponent {
     this.setNoteFn()?.(rowName, value);
   }
 
-  isChecked(rowName: string, colKey: string): boolean {
+  /** The multi-checkbox sub-cells for a given cell, or null for a normal cell. */
+  subCellsFor(row: TrackerRow, colKey: string): TrackerCellSub[] | null {
+    return row.multiCells?.[colKey] ?? null;
+  }
+
+  isChecked(rowName: string, colKey: string, subKey?: string): boolean {
     const fn = this.checkedFn();
-    return fn ? fn(rowName, colKey) : false;
+    return fn ? fn(rowName, colKey, subKey) : false;
   }
 
   isCellDisabled(rowName: string, colKey: string): boolean {
@@ -286,25 +360,72 @@ export class TrackerTableComponent {
     return fn ? fn(rowName, colKey) : false;
   }
 
-  /** True when every row in the column is already checked. */
-  isColumnFull(colKey: string): boolean {
-    const rows = this.rows();
-    return rows.length > 0 && rows.every(row => this.isChecked(row.name, colKey));
+  /** Toggleable checkbox units in a row (one per normal cell, one per sub-cell). */
+  private rowUnits(rowName: string): { colKey: string; subKey?: string }[] {
+    const row = this.rows().find(r => r.name === rowName);
+    const units: { colKey: string; subKey?: string }[] = [];
+    for (const col of this.columns()) {
+      const subs = row?.multiCells?.[col.key];
+      if (subs) {
+        for (const sub of subs) units.push({ colKey: col.key, subKey: sub.key });
+      } else if (!this.isCellDisabled(rowName, col.key)) {
+        units.push({ colKey: col.key });
+      }
+    }
+    return units;
+  }
+
+  /** Toggleable checkbox units in a column across all rows. */
+  private columnUnits(colKey: string): { rowName: string; subKey?: string }[] {
+    const units: { rowName: string; subKey?: string }[] = [];
+    for (const row of this.rows()) {
+      const subs = row.multiCells?.[colKey];
+      if (subs) {
+        for (const sub of subs) units.push({ rowName: row.name, subKey: sub.key });
+      } else if (!this.isCellDisabled(row.name, colKey)) {
+        units.push({ rowName: row.name });
+      }
+    }
+    return units;
+  }
+
+  /** True when every checkbox in the row is already checked. */
+  isRowFull(rowName: string): boolean {
+    const units = this.rowUnits(rowName);
+    return units.length > 0 && units.every(u => this.isChecked(rowName, u.colKey, u.subKey));
   }
 
   /**
-   * Smart-toggles a whole column: if every cell is already checked it clears the
-   * column, otherwise it fills the remaining cells. Reuses the per-cell `toggle`
+   * Smart-toggles a whole row: if every checkbox is already checked it clears the
+   * row, otherwise it fills the remaining ones. Reuses the per-cell `toggle`
    * output so every page using this table gets the behaviour for free.
    */
+  toggleRow(rowName: string): void {
+    const clearing = this.isRowFull(rowName);
+    for (const u of this.rowUnits(rowName)) {
+      if (clearing || !this.isChecked(rowName, u.colKey, u.subKey)) {
+        this.toggle.emit({ rowName, colKey: u.colKey, subKey: u.subKey });
+      }
+    }
+  }
+
+  /** True when every checkbox in the column is already checked. */
+  isColumnFull(colKey: string): boolean {
+    const units = this.columnUnits(colKey);
+    return units.length > 0 && units.every(u => this.isChecked(u.rowName, colKey, u.subKey));
+  }
+
+  /**
+   * Smart-toggles a whole column: if every checkbox is already checked it clears
+   * the column, otherwise it fills the remaining ones.
+   */
   toggleColumn(colKey: string): void {
-    const rows = this.rows();
-    if (rows.length === 0) return;
+    const units = this.columnUnits(colKey);
+    if (units.length === 0) return;
     const clearing = this.isColumnFull(colKey);
-    for (const row of rows) {
-      if (this.isCellDisabled(row.name, colKey)) continue;
-      if (clearing || !this.isChecked(row.name, colKey)) {
-        this.toggle.emit({ rowName: row.name, colKey });
+    for (const u of units) {
+      if (clearing || !this.isChecked(u.rowName, colKey, u.subKey)) {
+        this.toggle.emit({ rowName: u.rowName, colKey, subKey: u.subKey });
       }
     }
   }
