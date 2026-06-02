@@ -61,11 +61,11 @@ export const SECTIONS: TaskSection[] = [
   {
     id: 'daily', title: 'Daily Tasks', resetType: 'daily',
     tasks: [
-      { id: 'daily_login',          label: 'Log In',                    description: 'Collect the daily login reward.' },
-      { id: 'daily_craft_forma',    label: 'Crafting (Forma)',           description: 'Start building a new Forma (and collect finished ones).', location: 'Foundry' },
-      { id: 'daily_craft_other',    label: 'Crafting (Other)',           description: 'Craft daily resources/items using reusable blueprints.', location: 'Foundry' },
-      { id: 'daily_syndicate_gain', label: 'Faction Syndicates',        description: 'Gain daily standing cap with your pledged Syndicate(s).' },
-      { id: 'daily_syndicate_spend',label: 'Faction Syndicates (Spend)',description: 'If maxed on standing, spend it (Relic packs, Vosfor packs, etc.).', location: 'Syndicates Terminal' },
+      { id: 'daily_login',          label: 'Log In',                    description: 'Pick up your daily login reward.' },
+      { id: 'daily_craft_forma',    label: 'Crafting (Forma)',           description: 'Queue a new Forma build and claim any that have finished.', location: 'Foundry' },
+      { id: 'daily_craft_other',    label: 'Crafting (Other)',           description: 'Check reusable blueprints and craft any daily resources or items.', location: 'Foundry' },
+      { id: 'daily_syndicate_gain', label: 'Faction Syndicates',        description: 'Earn standing with your active Syndicate(s) up to the daily cap.' },
+      { id: 'daily_syndicate_spend',label: 'Faction Syndicates (Spend)',description: 'Cap reached? Spend standing on Relic packs, Vosfor packs, or other rewards.', location: 'Syndicates Terminal' },
       {
         id: 'daily_world_syndicates', label: 'World Syndicates (Standing)', isParent: true,
         subtasks: [
@@ -82,16 +82,16 @@ export const SECTIONS: TaskSection[] = [
           { id: 'daily_world_syndicate_hex',       label: 'The Hex',          location: 'Höllvania Central Mall',     prereq: 'The Hex (Quest)' },
         ]
       },
-      { id: 'daily_dark_sector',  label: 'Dark Sector Mission',     description: 'Complete one Dark Sector mission for double credits (if needed & pre-Index).', location: 'Navigation' },
-      { id: 'daily_sortie',       label: 'Sortie',                  description: 'Complete the 3 daily Sortie missions.',                          location: 'Navigation',   prereq: 'The War Within' },
-      { id: 'daily_focus',        label: 'Focus',                   description: 'Max out daily Focus gain (e.g., via Sanctuary Onslaught).',      prereq: 'The Second Dream' },
-      { id: 'daily_steel_path',   label: 'Steel Path Incursions',   description: 'Complete daily Steel Path missions for Steel Essence.',          prereq: 'Steel Path unlocked' },
+      { id: 'daily_dark_sector',  label: 'Dark Sector Mission',     description: 'Run one Dark Sector mission for the credit bonus (useful before the Index).', location: 'Navigation' },
+      { id: 'daily_sortie',       label: 'Sortie',                  description: 'Clear all three Sortie stages for today.',                       location: 'Navigation',   prereq: 'The War Within' },
+      { id: 'daily_focus',        label: 'Focus',                   description: 'Hit the daily Focus cap — Sanctuary Onslaught is the fastest method.', prereq: 'The Second Dream' },
+      { id: 'daily_steel_path',   label: 'Steel Path Incursions',   description: 'Finish the daily Steel Path missions to collect Steel Essence.', prereq: 'Steel Path unlocked' },
       {
         id: 'daily_vendors', label: 'Vendors', isParent: true,
         subtasks: [
-          { id: 'daily_acrithis',    label: 'Acrithis', description: 'Check daily Arcane and Captura offering.',        location: 'Duviri/Dormizone' },
-          { id: 'daily_ticker_crew', label: 'Ticker',   description: 'Check available railjack crew to hire.',           location: 'Fortuna, Venus', prereq: 'Rising Tide & Command Intrinsics 1' },
-          { id: 'daily_marie',       label: 'Marie',    description: 'Purchase Operator and amp mods.',                  location: 'La Cathédrale, Deimos', prereq: 'The Old Peace' },
+          { id: 'daily_acrithis',    label: 'Acrithis', description: "Browse today's Arcane and Captura scene offering.",  location: 'Duviri/Dormizone' },
+          { id: 'daily_ticker_crew', label: 'Ticker',   description: 'See if any useful Railjack crew members are for hire.', location: 'Fortuna, Venus', prereq: 'Rising Tide & Command Intrinsics 1' },
+          { id: 'daily_marie',       label: 'Marie',    description: 'Browse her rotating stock of Operator and Amp mods.',  location: 'La Cathédrale, Deimos', prereq: 'The Old Peace' },
         ]
       },
     ]
@@ -99,35 +99,35 @@ export const SECTIONS: TaskSection[] = [
   {
     id: 'weekly', title: 'Weekly Tasks', resetType: 'weekly',
     tasks: [
-      { id: 'weekly_nightwave_complete', label: 'Nightwave',              description: 'Complete relevant weekly Nightwave missions.' },
-      { id: 'weekly_nightwave_spend',    label: 'Nightwave (Spend)',       description: 'Spend Nightwave credits if needed (Aura mods, Catalysts/Reactors, etc.).' },
-      { id: 'weekly_ayatan',             label: 'Ayatan Treasure Hunt',   description: "Complete Maroo's weekly mission for an Ayatan Sculpture.", location: "Maroo's Bazaar, Mars" },
-      { id: 'weekly_clem',               label: 'Help Clem',              description: 'Help Clem with his weekly survival, or he will die.',       location: 'Any Relay', prereq: 'A Man of Few Words' },
-      { id: 'weekly_kahl_garrison',      label: 'Break Narmer',           description: "Complete Kahl's weekly mission for Stock.",                 location: "Drifter's Camp, Earth", prereq: 'Veilbreaker' },
-      { id: 'weekly_archon_hunt',        label: 'Archon Hunt',            description: 'Complete the weekly Archon Hunt for a guaranteed Archon Shard.', location: 'Navigation', prereq: 'The New War' },
-      { id: 'weekly_duviri_circuit',     label: 'Duviri Circuit (Normal)',     description: 'Check weekly Warframe options & run Circuit if desired.',   prereq: 'The Duviri Paradox' },
-      { id: 'weekly_duviri_circuit_sp',  label: 'Duviri Circuit (Steel Path)', description: 'Check weekly Incarnon Adapters & run Circuit if desired.', prereq: 'Steel Path unlocked & The Duviri Paradox' },
+      { id: 'weekly_nightwave_complete', label: 'Nightwave',              description: 'Knock out the weekly Nightwave challenges to earn NW Standing.' },
+      { id: 'weekly_nightwave_spend',    label: 'Nightwave (Spend)',       description: 'Spend accumulated Nightwave credits on Aura mods, Catalysts, Reactors, or other rewards.' },
+      { id: 'weekly_ayatan',             label: 'Ayatan Treasure Hunt',   description: "Run Maroo's weekly mission to earn a free Ayatan Sculpture.", location: "Maroo's Bazaar, Mars" },
+      { id: 'weekly_clem',               label: 'Help Clem',              description: "Run Clem's weekly Survival mission — he counts on you.",      location: 'Any Relay', prereq: 'A Man of Few Words' },
+      { id: 'weekly_kahl_garrison',      label: 'Break Narmer',           description: "Play through Kahl's weekly mission to earn Stock for the Garrison shop.", location: "Drifter's Camp, Earth", prereq: 'Veilbreaker' },
+      { id: 'weekly_archon_hunt',        label: 'Archon Hunt',            description: 'Clear all three Archon Hunt stages for a guaranteed Archon Shard reward.', location: 'Navigation', prereq: 'The New War' },
+      { id: 'weekly_duviri_circuit',     label: 'Duviri Circuit (Normal)',     description: 'Check the weekly Warframe selection and run the Circuit if any suit your build.',  prereq: 'The Duviri Paradox' },
+      { id: 'weekly_duviri_circuit_sp',  label: 'Duviri Circuit (Steel Path)', description: 'Check the weekly Incarnon Adapter pool and run the Steel Path Circuit if desired.', prereq: 'Steel Path unlocked & The Duviri Paradox' },
       {
         id: 'weekly_search_pulses', label: 'Search Pulses', description: 'Use 5 weekly search pulses on Netracells and Archimedeas.', isParent: true,
         subtasks: [
-          { id: 'weekly_netracells', label: 'Netracells',                description: 'Complete up to 5 weekly Netracell missions for Archon Shard chances.', location: 'Sanctum Anatomica, Deimos', prereq: 'Whispers in the Walls',  info: 'Costs 1 Search Pulse per mission' },
-          { id: 'weekly_eda',        label: 'Elite Deep Archimedea',     description: 'Attempt weekly Elite Deep Archimedea for Archon Shard chances (endgame).',      location: 'Sanctum Anatomica, Deimos', prereq: 'Rank 5 Cavia',            info: 'Costs 2 Search Pulses to unlock' },
-          { id: 'weekly_eta',        label: 'Elite Temporal Archimedea', description: 'Attempt weekly Elite Temporal Archimedea for Archon Shard chances (endgame).', location: 'Höllvania Central Mall',     prereq: 'Rank 5 The Hex',          info: 'Costs 2 Search Pulses to unlock' },
+          { id: 'weekly_netracells', label: 'Netracells',                description: 'Run up to 5 Netracell missions this week for a chance at Archon Shards.', location: 'Sanctum Anatomica, Deimos', prereq: 'Whispers in the Walls',  info: 'Costs 1 Search Pulse per mission' },
+          { id: 'weekly_eda',        label: 'Elite Deep Archimedea',     description: 'Take on the Elite Deep Archimedea for strong Archon Shard drop chances (endgame content).', location: 'Sanctum Anatomica, Deimos', prereq: 'Rank 5 Cavia',            info: 'Costs 2 Search Pulses to unlock' },
+          { id: 'weekly_eta',        label: 'Elite Temporal Archimedea', description: 'Take on the Elite Temporal Archimedea for strong Archon Shard drop chances (endgame content).', location: 'Höllvania Central Mall',     prereq: 'Rank 5 The Hex',          info: 'Costs 2 Search Pulses to unlock' },
         ]
       },
-      { id: 'weekly_calendar',       label: '1999 Calendar',             description: 'Complete weekly Calendar tasks.',           location: 'POM-2 PC (Base of Operations)', prereq: 'The Hex' },
-      { id: 'weekly_invigorations',  label: 'Helminth Invigorations',    description: 'Use weekly Helminth Invigorations.',        prereq: 'Rank 5 Entrati' },
-      { id: 'weekly_descendia',      label: 'The Descendia (Normal)',    description: 'Weekly Tower gamemode for various resources.', location: 'Dark Refractory (Base of Operations)' },
-      { id: 'weekly_descendia_sp',   label: 'The Descendia (Steel Path)', description: 'Weekly Tower gamemode for various resources.', location: 'Dark Refractory (Base of Operations)' },
+      { id: 'weekly_calendar',       label: '1999 Calendar',             description: 'Finish this week\'s Calendar objectives in 1999.',     location: 'POM-2 PC (Base of Operations)', prereq: 'The Hex' },
+      { id: 'weekly_invigorations',  label: 'Helminth Invigorations',    description: 'Apply your weekly Helminth Invigorations to your Warframes.', prereq: 'Rank 5 Entrati' },
+      { id: 'weekly_descendia',      label: 'The Descendia (Normal)',    description: 'Climb the weekly Descendia Tower for resources and rewards.', location: 'Dark Refractory (Base of Operations)' },
+      { id: 'weekly_descendia_sp',   label: 'The Descendia (Steel Path)', description: 'Tackle the harder Steel Path version of the Descendia Tower.', location: 'Dark Refractory (Base of Operations)' },
       {
         id: 'weekly_vendors', label: 'Vendors', isParent: true,
         subtasks: [
-          { id: 'weekly_iron_wake',  label: 'Paladino',           description: 'Trade Riven Slivers.',                                                    location: 'Iron Wake, Earth',          prereq: 'The Chains of Harrow' },
-          { id: 'weekly_yonta',      label: 'Archimedian Yonta',  description: 'Buy weekly Kuva with Voidplumes.',                                         location: 'Chrysalith, Zariman',        prereq: 'Angels of the Zariman' },
-          { id: 'weekly_acridies',   label: 'Acrithis',           description: 'Check wares and spend Pathos Clamps if desired.',                          location: 'Duviri/Dormizone',           prereq: 'The Duviri Paradox' },
-          { id: 'weekly_teshin',     label: 'Teshin (Steel Path)', description: "Check Teshin's Steel Essence shop (Umbra Forma every 8 weeks).",          location: 'Any Relay',                  prereq: 'Steel Path unlocked' },
-          { id: 'weekly_bird3',      label: 'Bird 3',             description: 'Buy the weekly Archon Shard for 30 000 Cavia Standing.',                   location: 'Sanctum Anatomica, Deimos', prereq: 'Rank 5 Cavia' },
-          { id: 'weekly_nightcap',   label: 'Nightcap',           description: 'Trade Fergolyte for Kuva and an Ayatan Sculpture.',                        location: 'Fortuna, Venus',             prereq: 'The New War' },
+          { id: 'weekly_iron_wake',  label: 'Paladino',           description: 'Exchange Riven Slivers with Paladino.',                                   location: 'Iron Wake, Earth',          prereq: 'The Chains of Harrow' },
+          { id: 'weekly_yonta',      label: 'Archimedian Yonta',  description: 'Convert Voidplumes into Kuva via her weekly trade.',                       location: 'Chrysalith, Zariman',        prereq: 'Angels of the Zariman' },
+          { id: 'weekly_acridies',   label: 'Acrithis',           description: 'Browse her weekly stock and spend Pathos Clamps — Catalysts and Reactors are worth prioritising.', location: 'Duviri/Dormizone', prereq: 'The Duviri Paradox' },
+          { id: 'weekly_teshin',     label: 'Teshin (Steel Path)', description: "Browse Teshin's Steel Essence shop — Umbra Forma rotates in every 8 weeks.", location: 'Any Relay',                prereq: 'Steel Path unlocked' },
+          { id: 'weekly_bird3',      label: 'Bird 3',             description: 'Spend 30 000 Cavia Standing to purchase the weekly Archon Shard.',          location: 'Sanctum Anatomica, Deimos', prereq: 'Rank 5 Cavia' },
+          { id: 'weekly_nightcap',   label: 'Nightcap',           description: 'Hand over Fergolyte in exchange for Kuva and an Ayatan Sculpture.',         location: 'Fortuna, Venus',             prereq: 'The New War' },
         ]
       },
     ]
@@ -135,10 +135,10 @@ export const SECTIONS: TaskSection[] = [
   {
     id: 'other', title: 'Other / Periodic', resetType: 'other',
     tasks: [
-      { id: 'other_baro',                label: "Baro Ki'Teer",       description: "Check Baro Ki'Teer's inventory and purchase desired items with Ducats.", location: 'Relay with Symbol' },
-      { id: 'other_grandmother_tokens',  label: 'Mend the Family',   description: 'Purchase Family Tokens from Grandmother (every 8 hours).', location: 'Necralisk, Deimos',          prereq: 'Heart of Deimos' },
-      { id: 'other_yonta_voidplumes',    label: 'Trade for Voidplumes', description: 'Trade with Yonta (every 8 hours).',                       location: 'Chrysalith, Zariman',        prereq: 'Angels of the Zariman' },
-      { id: 'other_loid_voca',           label: 'Trade for Voca',     description: 'Trade with Loid (every 8 hours).',                          location: 'Sanctum Anatomica, Deimos', prereq: 'Whispers in the Walls' },
+      { id: 'other_baro',                label: "Baro Ki'Teer",       description: "Browse Baro's rotating stock and spend Ducats on anything worth picking up.", location: 'Relay with Symbol' },
+      { id: 'other_grandmother_tokens',  label: 'Mend the Family',   description: 'Buy Family Tokens from Grandmother — her stock refreshes every 8 hours.', location: 'Necralisk, Deimos', prereq: 'Heart of Deimos' },
+      { id: 'other_yonta_voidplumes',    label: 'Trade for Voidplumes', description: "Pick up Voidplumes from Yonta's 8-hour rotating trade.", location: 'Chrysalith, Zariman',        prereq: 'Angels of the Zariman' },
+      { id: 'other_loid_voca',           label: 'Trade for Voca',     description: "Grab Voca from Loid's 8-hour rotating trade.",             location: 'Sanctum Anatomica, Deimos', prereq: 'Whispers in the Walls' },
     ]
   }
 ];

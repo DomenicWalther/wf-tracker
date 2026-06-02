@@ -16,7 +16,6 @@ import { TaskChecklistService, SECTIONS, TaskSection, Task } from '../../core/se
       />
 
       <p class="hint">
-        Remember: you don't have to do everything — prioritize tasks based on your current goals.
         <span class="hint-dim">Tasks you don't want to see can be hidden individually.</span>
       </p>
 
