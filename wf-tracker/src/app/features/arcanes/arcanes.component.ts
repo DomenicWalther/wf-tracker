@@ -2,9 +2,9 @@ import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/c
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
-import { TrackerData, ChecklistGroup } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ChecklistComponent } from '../../shared/components/checklist/checklist.component';
+import { buildFlatGroups, titleCase, applyBulkChange } from '../../core/utils/checklist.utils';
 
 @Component({
   selector: 'app-arcanes',
@@ -29,10 +29,7 @@ import { ChecklistComponent } from '../../shared/components/checklist/checklist.
       }
     </div>
   `,
-  styles: [`
-    .page { max-width: 1200px; }
-    .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }
-  `]
+  styles: [`.page { max-width: 1200px; } .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }`]
 })
 export class ArcanesComponent {
   private readonly tracker = inject(TrackerService);
@@ -40,37 +37,32 @@ export class ArcanesComponent {
   private readonly data = toSignal(this.dataService.getData());
 
   readonly groups = computed(() => {
-    const d = this.data();
-    if (!d) return [];
-    return this.buildGroups(d);
+    const raw = this.data()?.arcanes;
+    if (!raw) return [];
+    if (!this.tracker.settings().arcane.psycho) {
+      return buildFlatGroups(raw, 'arcane:', k => this.tracker.isChecked(k));
+    }
+    const ranks = ['Base', 'R1', 'R2', 'R3', 'R4'];
+    return Object.entries(raw).map(([group, items]) => ({
+      name: titleCase(group),
+      items: items.flatMap(name =>
+        ranks.map((rank, i) => ({
+          key: `arcane:${name}:r${i}`,
+          label: `${name} (${rank})`,
+          checked: this.tracker.isChecked(`arcane:${name}:r${i}`),
+        }))
+      ),
+    }));
   });
 
   readonly progress = computed(() => {
     const items = this.groups().flatMap(g => g.items);
-    const completed = items.filter(i => i.checked).length;
-    return { completed, total: items.length };
+    return { completed: items.filter(i => i.checked).length, total: items.length };
   });
 
-  onToggle(key: string): void {
-    this.tracker.toggle(key);
-  }
+  onToggle(key: string): void { this.tracker.toggle(key); }
 
   onBulkChange(event: { keys: string[]; value: boolean }): void {
-    event.keys.forEach(k => {
-      if (this.tracker.isChecked(k) !== event.value) this.tracker.toggle(k);
-    });
-  }
-
-  private buildGroups(d: TrackerData): ChecklistGroup[] {
-    const raw = d.arcanes;
-    if (!raw) return [];
-    return Object.entries(raw).map(([group, items]) => ({
-      name: group.split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-      items: items.map(name => ({
-        key: 'arcane:' + name,
-        label: name,
-        checked: this.tracker.isChecked('arcane:' + name)
-      }))
-    }));
+    applyBulkChange(event, k => this.tracker.isChecked(k), k => this.tracker.toggle(k));
   }
 }

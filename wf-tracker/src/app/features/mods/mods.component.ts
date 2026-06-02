@@ -5,6 +5,7 @@ import { DataService } from '../../core/services/data.service';
 import { TrackerData, ChecklistGroup } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { ChecklistComponent } from '../../shared/components/checklist/checklist.component';
+import { applyBulkChange } from '../../core/utils/checklist.utils';
 
 @Component({
   selector: 'app-mods',
@@ -29,10 +30,7 @@ import { ChecklistComponent } from '../../shared/components/checklist/checklist.
       }
     </div>
   `,
-  styles: [`
-    .page { max-width: 1200px; }
-    .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }
-  `]
+  styles: [`.page { max-width: 1200px; } .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }`]
 })
 export class ModsComponent {
   private readonly tracker = inject(TrackerService);
@@ -47,32 +45,32 @@ export class ModsComponent {
 
   readonly progress = computed(() => {
     const items = this.groups().flatMap(g => g.items);
-    const completed = items.filter(i => i.checked).length;
-    return { completed, total: items.length };
+    return { completed: items.filter(i => i.checked).length, total: items.length };
   });
 
-  onToggle(key: string): void {
-    this.tracker.toggle(key);
-  }
+  onToggle(key: string): void { this.tracker.toggle(key); }
 
   onBulkChange(event: { keys: string[]; value: boolean }): void {
-    event.keys.forEach(k => {
-      if (this.tracker.isChecked(k) !== event.value) this.tracker.toggle(k);
-    });
+    applyBulkChange(event, k => this.tracker.isChecked(k), k => this.tracker.toggle(k));
   }
 
   private buildGroups(d: TrackerData): ChecklistGroup[] {
     const raw = d.mods;
     if (!raw) return [];
+    const hoarder = this.tracker.settings().mod.hoarder;
     const byCategory: Record<string, { key: string; label: string; checked: boolean }[]> = {};
     for (const mod of raw) {
       const cat = mod.category || 'General';
       if (!byCategory[cat]) byCategory[cat] = [];
-      byCategory[cat].push({
-        key: 'mod:' + mod.name,
-        label: mod.name + ' (R' + mod.maxRank + ')',
-        checked: this.tracker.isChecked('mod:' + mod.name)
-      });
+      if (hoarder) {
+        for (let r = 0; r <= mod.maxRank; r++) {
+          const key = `mod:${mod.name}:r${r}`;
+          byCategory[cat].push({ key, label: `${mod.name} (R${r})`, checked: this.tracker.isChecked(key) });
+        }
+      } else {
+        const key = `mod:${mod.name}`;
+        byCategory[cat].push({ key, label: `${mod.name} (R${mod.maxRank})`, checked: this.tracker.isChecked(key) });
+      }
     }
     return Object.entries(byCategory).map(([name, items]) => ({ name, items }));
   }
