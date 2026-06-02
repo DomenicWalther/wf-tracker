@@ -25,6 +25,14 @@
   --transition-mid: 0.2s ease;
 }
 
+[data-theme="neutral-dark"] {
+  --color-bg: #0e0e0e;
+  --color-surface: #141414;
+  --color-surface2: #1a1a1a;
+  --color-surface3: #212121;
+  --color-border: #282828;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -83,7 +91,7 @@ body {
   top: 1px;
   width: 5px;
   height: 9px;
-  border: 1.5px solid #0d0d14;
+  border: 1.5px solid var(--color-bg);
   border-top: none;
   border-left: none;
   transform: rotate(45deg);

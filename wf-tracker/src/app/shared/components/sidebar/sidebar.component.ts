@@ -2,6 +2,8 @@ import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@a
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LucideAngularModule, icons } from 'lucide-angular';
 import { TrackerService } from '../../../core/services/tracker.service';
+import { ThemeService } from '../../../core/services/theme.service';
+import { PaletteService } from '../../../core/services/palette.service';
 
 type LucideIconData = (typeof icons)[keyof typeof icons];
 
@@ -16,7 +18,7 @@ const {
   LayoutDashboard, ListChecks, Settings, Target,
   ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
   Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
-  ShoppingBag, Boxes, Component: ComponentIcon, History, ScanLine,
+  ShoppingBag, Boxes, Component: ComponentIcon, History, ScanLine, SunMoon, Search,
 } = icons;
 
 const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
@@ -133,12 +135,41 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
           }
         }
       </nav>
+
+      <div class="sidebar-footer">
+        <button
+          type="button"
+          class="search-hint-btn"
+          (click)="palette.open()"
+          aria-label="Open command palette"
+          title="Open command palette"
+        >
+          <lucide-icon [img]="searchIcon" [size]="14" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
+          @if (!collapsed()) {
+            <span class="search-hint-text">Search…</span>
+            <kbd class="search-hint-kbd">Ctrl K</kbd>
+          }
+        </button>
+        <button
+          type="button"
+          class="theme-btn"
+          (click)="theme.toggle()"
+          [title]="theme.isNeutralDark() ? 'Switch to blue-tinted theme' : 'Switch to neutral dark theme'"
+          [attr.aria-label]="theme.isNeutralDark() ? 'Switch to blue-tinted theme' : 'Switch to neutral dark theme'"
+          [attr.aria-pressed]="theme.isNeutralDark()"
+        >
+          <lucide-icon [img]="sunMoonIcon" [size]="14" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
+          @if (!collapsed()) {
+            <span>{{ theme.isNeutralDark() ? 'Blue Tint' : 'Neutral Dark' }}</span>
+          }
+        </button>
+      </div>
     </aside>
   `,
   styles: [`
     .sidebar {
       width: 216px;
-      min-height: 100vh;
+      height: 100vh;
       background: var(--color-surface);
       border-right: 1px solid var(--color-border);
       display: flex;
@@ -148,8 +179,12 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
       top: 0;
       left: 0;
       z-index: 100;
-      overflow-y: auto;
       overflow-x: hidden;
+    }
+    .nav-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 6px 0 12px;
     }
     .sidebar.collapsed {
       width: 48px;
@@ -232,10 +267,6 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
       color: var(--color-text-muted);
       font-weight: 400;
     }
-    .nav-content {
-      flex: 1;
-      padding: 6px 0 12px;
-    }
     .nav-group {
       padding: 14px 14px 3px;
     }
@@ -312,13 +343,97 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
       padding: 1px 4px;
       flex-shrink: 0;
     }
+    .sidebar-footer {
+      padding: 8px 8px 12px;
+      border-top: 1px solid var(--color-border);
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .search-hint-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      padding: 6px 8px;
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: 5px;
+      color: var(--color-text-muted);
+      font-size: 12px;
+      cursor: pointer;
+      transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .search-hint-btn:hover {
+      border-color: var(--color-gold);
+      color: var(--color-gold-light);
+      background: var(--color-surface2);
+    }
+    .search-hint-btn:focus-visible {
+      outline: 2px solid var(--color-gold-light);
+      outline-offset: 2px;
+    }
+    .search-hint-text {
+      flex: 1;
+      text-align: left;
+    }
+    .search-hint-kbd {
+      background: var(--color-surface2);
+      border: 1px solid var(--color-border);
+      border-radius: 3px;
+      padding: 1px 5px;
+      font-size: 10px;
+      font-family: inherit;
+      color: var(--color-text-muted);
+      flex-shrink: 0;
+    }
+    .collapsed .search-hint-btn {
+      justify-content: center;
+      padding: 6px;
+    }
+    .theme-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      padding: 6px 8px;
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: 5px;
+      color: var(--color-text-muted);
+      font-size: 12px;
+      cursor: pointer;
+      transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .theme-btn:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent-light);
+      background: var(--color-surface2);
+    }
+    .theme-btn:focus-visible {
+      outline: 2px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+    .collapsed .theme-btn {
+      justify-content: center;
+      padding: 6px;
+    }
   `]
 })
 export class SidebarComponent {
   readonly tracker = inject(TrackerService);
+  readonly theme = inject(ThemeService);
+  readonly palette = inject(PaletteService);
 
   readonly groups = NAV_GROUPS;
   readonly collapsed = signal(false);
+  readonly sunMoonIcon = SunMoon;
+  readonly searchIcon = Search;
 
   readonly overallProgress = computed(() => {
     const { completed, total } = this.tracker.totalTrackable();
