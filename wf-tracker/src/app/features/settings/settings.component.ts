@@ -1,8 +1,8 @@
-import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
-import { TrackerSettings, SectionToggles } from '../../core/models/tracker.models';
+import { TrackerSettings, SectionToggles, PinnedWidget } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 
 @Component({
@@ -57,7 +57,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
               <input type="checkbox" class="wf-checkbox" formControlName="primeOnlyGear" />
               <div class="setting-info">
                 <span class="setting-label">Prime Only</span>
-                <span class="setting-desc">Show gear tracking columns only on Prime variants; non-Prime items show Mastery only</span>
+                <span class="setting-desc">Group variant families (Prime / Kuva / Tenet / Vandal / Wraith…) into one row: track Mastery per variant, but share a single set of upgrade columns since you only fully build one</span>
               </div>
             </label>
             @for (opt of gearOptions; track opt.key) {
@@ -232,6 +232,48 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
           </div>
         </div>
 
+        <!-- PINNED BAR -->
+        <div class="settings-card full-width">
+          <div class="settings-card-title">Pinned Bar</div>
+          <div class="settings-note">Pin widgets to a bar at the bottom of the screen so they're always visible.</div>
+
+          <div class="pinned-widgets-section">
+            <div class="settings-sub-title">Widgets</div>
+            @for (widget of pinnedWidgetOptions; track widget.id) {
+              <label class="setting-row">
+                <input
+                  type="checkbox"
+                  class="wf-checkbox"
+                  [checked]="isPinnedWidgetEnabled(widget.id)"
+                  (change)="togglePinnedWidget(widget.id)"
+                />
+                <div class="setting-info">
+                  <span class="setting-label">{{ widget.label }}</span>
+                  <span class="setting-desc">{{ widget.desc }}</span>
+                </div>
+              </label>
+            }
+          </div>
+
+          @if (isPinnedWidgetEnabled('world-state')) {
+            <div class="pinned-cycles-section">
+              <div class="settings-sub-title">Hidden Cycles</div>
+              <div class="settings-note">Uncheck cycles you don't want to see in the pinned bar.</div>
+              @for (cycle of allCycles; track cycle) {
+                <label class="setting-row">
+                  <input
+                    type="checkbox"
+                    class="wf-checkbox"
+                    [checked]="!isCycleHidden(cycle)"
+                    (change)="toggleHiddenCycle(cycle)"
+                  />
+                  <span class="setting-label">{{ cycle }}</span>
+                </label>
+              }
+            </div>
+          }
+        </div>
+
         <!-- DATA MANAGEMENT -->
         <div class="settings-card full-width">
           <div class="settings-card-title">Data Management</div>
@@ -327,6 +369,16 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
       color: #4caf50;
       margin-top: 8px;
     }
+    .settings-sub-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin: 10px 0 6px;
+    }
+    .pinned-widgets-section,
+    .pinned-cycles-section { margin-bottom: 4px; }
     .confirm-box {
       background: var(--color-surface2);
       border: 1px solid var(--color-red);
@@ -414,6 +466,7 @@ export class SettingsComponent {
     { key: 'shards' as const, label: '5 Shards', desc: 'Track 5 archon shards in each frame' },
     { key: 'tauForged' as const, label: 'Tau-Forged Shards', desc: 'All shards must be tau-forged' },
     { key: 'arcaneAdapter' as const, label: 'Arcane Adapter', desc: 'Arcane adapter on all gear' },
+    { key: 'exilusAdapter' as const, label: 'Exilus Adapter', desc: 'Exilus adapter on weapons (primary, secondary, melee)' },
     { key: 'maxBuild' as const, label: 'Max Build', desc: 'Min-maxed build on all gear' },
     { key: 'auraForma' as const, label: 'Aura Forma', desc: 'Aura forma on all frames' },
     { key: 'stanceForma' as const, label: 'Stance Forma', desc: 'Stance forma on all melee' },
@@ -440,6 +493,13 @@ export class SettingsComponent {
     { key: 'extra' as const, label: 'Extra', desc: 'Heavily restricted items' },
   ];
 
+  readonly pinnedWidgetOptions: { id: PinnedWidget; label: string; desc: string }[] = [
+    { id: 'world-state',    label: 'World State',    desc: 'Open-world cycle timers (Cetus, Orb Vallis, etc.)' },
+    { id: 'task-checklist', label: 'Task Checklist', desc: 'Scrollable list of incomplete daily and weekly tasks' },
+  ];
+
+  readonly allCycles = ['Cetus', 'Orb Vallis', 'Cambion Drift', 'Earth'];
+
   readonly decorationsOptions = [
     { key: 'primeAccess' as const, label: 'Prime Access', desc: 'PA pack decorations' },
     { key: 'events' as const, label: 'Events', desc: 'Event and operation rewards' },
@@ -451,7 +511,8 @@ export class SettingsComponent {
 
   constructor() {
     this.settingsForm.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => {
-      this.tracker.updateSettings(this.settingsForm.getRawValue() as TrackerSettings);
+      const pinnedBar = this.tracker.settings().pinnedBar;
+      this.tracker.updateSettings({ ...this.settingsForm.getRawValue() as TrackerSettings, pinnedBar });
     });
     this.togglesForm.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => {
       this.tracker.updateSectionToggles(this.togglesForm.getRawValue() as SectionToggles);
@@ -488,6 +549,30 @@ export class SettingsComponent {
       input.value = '';
     };
     reader.readAsText(file);
+  }
+
+  isPinnedWidgetEnabled(widget: PinnedWidget): boolean {
+    return this.tracker.settings().pinnedBar.widgets.includes(widget);
+  }
+
+  togglePinnedWidget(widget: PinnedWidget): void {
+    const current = this.tracker.settings().pinnedBar;
+    const widgets = current.widgets.includes(widget)
+      ? current.widgets.filter(w => w !== widget)
+      : [...current.widgets, widget];
+    this.tracker.updatePinnedBarSettings({ ...current, widgets });
+  }
+
+  isCycleHidden(cycle: string): boolean {
+    return this.tracker.settings().pinnedBar.hiddenCycles.includes(cycle);
+  }
+
+  toggleHiddenCycle(cycle: string): void {
+    const current = this.tracker.settings().pinnedBar;
+    const hiddenCycles = current.hiddenCycles.includes(cycle)
+      ? current.hiddenCycles.filter(c => c !== cycle)
+      : [...current.hiddenCycles, cycle];
+    this.tracker.updatePinnedBarSettings({ ...current, hiddenCycles });
   }
 
   confirmReset(): void {
