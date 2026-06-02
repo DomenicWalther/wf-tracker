@@ -1,15 +1,26 @@
 /**
  * Fast prefix/substring fuzzy scorer used by the command palette.
  * Returns a score 0–100 (0 = no match, higher = better match).
+ * Supports multi-word queries: all tokens must match somewhere in the text.
  */
-export function fuzzyScore(label: string, query: string): number {
+export function fuzzyScore(text: string, query: string): number {
   if (!query) return 0;
-  const l = label.toLowerCase();
-  if (l === query) return 100;
-  if (l.startsWith(query)) return 80;
-  const words = l.split(/[\s\-_()[\]]/);
-  if (words.some(w => w.startsWith(query))) return 60;
-  if (l.includes(query)) return 40;
+  const tokens = query.split(/\s+/).filter(Boolean);
+  if (tokens.length > 1) {
+    const scores = tokens.map(t => singleTokenScore(text, t));
+    if (scores.some(s => s === 0)) return 0;
+    return Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+  }
+  return singleTokenScore(text, query);
+}
+
+function singleTokenScore(text: string, token: string): number {
+  const l = text.toLowerCase();
+  if (l === token) return 100;
+  if (l.startsWith(token)) return 80;
+  const words = l.split(/[\s\-_·()[\]]/);
+  if (words.some(w => w.startsWith(token))) return 60;
+  if (l.includes(token)) return 40;
   return 0;
 }
 

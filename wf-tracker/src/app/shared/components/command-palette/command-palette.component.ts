@@ -1,6 +1,6 @@
 import {
   Component, inject, signal, computed, ChangeDetectionStrategy,
-  ElementRef, viewChild, effect, afterNextRender
+  ElementRef, viewChild, effect
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +9,9 @@ import { DecimalPipe } from '@angular/common';
 import { DataService } from '../../../core/services/data.service';
 import { TrackerService } from '../../../core/services/tracker.service';
 import { PaletteService } from '../../../core/services/palette.service';
-import { TrackerData } from '../../../core/models/tracker.models';
+import { TrackerData, TrackerSettings, GearSettings } from '../../../core/models/tracker.models';
+import { ALL_GEAR_COLUMNS, GEAR_SECTION_COLUMNS } from '../../../core/config/gear-columns';
+import { buildGearFamilies, gearFamilyId } from '../../../core/utils/gear-variants';
 import { fuzzyScore } from '../../../core/utils/fuzzy-match';
 
 type EntryType = 'item' | 'nav' | 'action';
@@ -57,9 +59,10 @@ const ACTION_ENTRIES: IndexEntry[] = [
   { type: 'action', label: 'Export data', sublabel: 'Download backup JSON', actionId: 'export' },
 ];
 
-function buildItemIndex(data: TrackerData | undefined): IndexEntry[] {
+function buildItemIndex(data: TrackerData | undefined, settings: TrackerSettings | undefined): IndexEntry[] {
   if (!data) return [];
   const out: IndexEntry[] = [];
+  const gearSettings = settings?.gear;
 
   for (const name of data.quests ?? []) {
     out.push({ type: 'item', label: name, sublabel: 'Quests', key: 'quest:' + name, route: '/quests' });
@@ -72,8 +75,26 @@ function buildItemIndex(data: TrackerData | undefined): IndexEntry[] {
     ['archwingWeapons', 'Gear — Archwing Weapons'], ['extras', 'Gear — Extra'],
   ];
   for (const [sKey, sublabel] of gearSections) {
-    for (const item of data.gear?.[sKey] ?? []) {
-      out.push({ type: 'item', label: item.name, sublabel, key: `gear:${item.name}:mastery`, route: '/gear' });
+    const items = data.gear?.[sKey] ?? [];
+    const itemNames = items.map((i: { name: string }) => i.name);
+    const nameSet = new Set(itemNames);
+    const families = buildGearFamilies(itemNames);
+    const allowedCols = GEAR_SECTION_COLUMNS[sKey] ?? ['mastery'];
+    const upgradeCols = ALL_GEAR_COLUMNS.filter(col =>
+      col.key !== 'mastery' &&
+      allowedCols.includes(col.key) &&
+      (col.settingKey === null || (gearSettings?.[col.settingKey as keyof GearSettings] ?? false))
+    );
+
+    // Mastery: one entry per variant
+    for (const name of itemNames) {
+      out.push({ type: 'item', label: name, sublabel: `${sublabel} · Mastery`, key: `gear:${name}:mastery`, route: '/gear' });
+    }
+    // Upgrade columns: one entry per family (keyed on base name, matching gear component)
+    for (const family of families) {
+      for (const col of upgradeCols) {
+        out.push({ type: 'item', label: family.id, sublabel: `${sublabel} · ${col.label}`, key: `gear:${family.id}:${col.key}`, route: '/gear' });
+      }
     }
   }
 
@@ -85,7 +106,9 @@ function buildItemIndex(data: TrackerData | undefined): IndexEntry[] {
   }
 
   for (const entry of data.incarnon ?? []) {
-    out.push({ type: 'item', label: entry.name, sublabel: 'Incarnon', key: `incarnon:family:${entry.name}:earned`, route: '/incarnon' });
+    for (const [stageKey, stageLabel] of [['earned', 'Adapter Earned'], ['installed', 'Adapter Installed'], ['maxed', 'Evo Maxed']] as [string, string][]) {
+      out.push({ type: 'item', label: entry.name, sublabel: `Incarnon · ${stageLabel}`, key: `incarnon:family:${entry.name}:${stageKey}`, route: '/incarnon' });
+    }
   }
 
   for (const [group, items] of Object.entries(data.arcanes ?? {})) {
@@ -423,7 +446,7 @@ export class CommandPaletteComponent {
   });
 
   private readonly data = toSignal(this.dataService.getData());
-  private readonly itemIndex = computed(() => buildItemIndex(this.data()));
+  private readonly itemIndex = computed(() => buildItemIndex(this.data(), this.tracker.settings()));
   protected readonly itemCount = computed(() => this.itemIndex().length);
 
   protected readonly selectedIndex = signal(0);
@@ -438,7 +461,7 @@ export class CommandPaletteComponent {
     // Focus input when palette opens; reset when it closes
     effect(() => {
       if (this.paletteService.isOpen()) {
-        afterNextRender(() => this.searchInputEl()?.nativeElement.focus());
+        queueMicrotask(() => this.searchInputEl()?.nativeElement.focus());
       } else {
         this.searchControl.setValue('', { emitEvent: false });
         this.selectedIndex.set(0);
@@ -465,7 +488,7 @@ export class CommandPaletteComponent {
     const itemResults: (ResultEntry & { score: number })[] = [];
     for (const entry of this.itemIndex()) {
       if (uncheckedOnly && (checkboxes[entry.key!] ?? false)) continue;
-      const score = ql ? fuzzyScore(entry.label, ql) : 50;
+      const score = ql ? fuzzyScore(entry.label + ' ' + entry.sublabel, ql) : 50;
       if (score > 0) {
         itemResults.push({ ...toResult(entry), score });
       }
@@ -475,10 +498,11 @@ export class CommandPaletteComponent {
     const metaResults: ResultEntry[] = uncheckedOnly
       ? []
       : [...NAV_ENTRIES, ...ACTION_ENTRIES]
-          .filter(e => !ql || fuzzyScore(e.label, ql) > 0)
+          .filter(e => !ql || fuzzyScore(e.label + ' ' + e.sublabel, ql) > 0)
           .map(toResult);
 
-    const slots = Math.max(0, 12 - metaResults.length);
+    const cap = q ? 24 : 12;
+    const slots = Math.max(0, cap - metaResults.length);
     return [...metaResults, ...itemResults.slice(0, slots)];
   });
 
@@ -554,7 +578,7 @@ export class CommandPaletteComponent {
   }
 
   private scrollSelectedIntoView(): void {
-    afterNextRender(() => {
+    queueMicrotask(() => {
       const list = this.resultsListEl()?.nativeElement;
       const selected = list?.querySelector('.selected');
       selected?.scrollIntoView({ block: 'nearest' });
