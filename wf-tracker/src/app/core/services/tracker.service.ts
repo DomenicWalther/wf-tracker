@@ -10,6 +10,8 @@ import { countGearSection } from '../utils/gear-variants';
 
 const STORAGE_KEY = 'wf-tracker-state';
 
+const LIMITED_ARCANE_GROUPS_SERVICE = new Set(['operator', 'amp', 'kitgun', 'zaw']);
+
 @Injectable({ providedIn: 'root' })
 export class TrackerService {
   private readonly dataService = inject(DataService);
@@ -240,8 +242,15 @@ export class TrackerService {
 
   private arcaneTotal(d: TrackerData, settings: TrackerSettings): number {
     if (!d.arcanes) return 0;
-    const base = Object.values(d.arcanes).reduce((a, v) => a + v.length, 0);
-    return settings.arcane.psycho ? base * 5 : base;
+    if (!settings.arcane.psycho) {
+      return Object.values(d.arcanes).reduce((a, v) => a + v.length, 0) * 2;
+    }
+    // Psycho mode: standard groups = 6 columns (owned + r1–r4 + maxed),
+    // limited groups (operator/amp/kitgun/zaw) = 4 columns (owned + r1–r2 + maxed).
+    return Object.entries(d.arcanes).reduce((total, [group, items]) => {
+      const perItem = LIMITED_ARCANE_GROUPS_SERVICE.has(group) ? 4 : 6;
+      return total + items.length * perItem;
+    }, 0);
   }
 
   private modTotal(d: TrackerData, settings: TrackerSettings): number {
