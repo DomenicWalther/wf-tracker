@@ -120,10 +120,14 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
             <a [routerLink]="item.route"
                routerLinkActive="active"
                class="nav-item"
-               [title]="collapsed() ? item.label : ''">
+               [class.section-disabled]="isSectionDisabled(item.section)"
+               [title]="collapsed() ? item.label : (isSectionDisabled(item.section) ? item.label + ' (excluded from %)' : '')">
               <lucide-icon class="nav-icon" [img]="item.icon" [size]="15" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
               @if (!collapsed()) {
                 <span class="nav-label">{{ item.label }}</span>
+                @if (isSectionDisabled(item.section)) {
+                  <span class="section-off-badge" aria-label="excluded from overall percentage">off</span>
+                }
               }
             </a>
           }
@@ -292,6 +296,22 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
     .collapsed .nav-icon {
       width: auto;
     }
+    .section-disabled {
+      opacity: 0.45;
+    }
+    .section-off-badge {
+      margin-left: auto;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      background: var(--color-surface2);
+      border: 1px solid var(--color-border);
+      border-radius: 3px;
+      padding: 1px 4px;
+      flex-shrink: 0;
+    }
   `]
 })
 export class SidebarComponent {
@@ -304,6 +324,11 @@ export class SidebarComponent {
     const { completed, total } = this.tracker.totalTrackable();
     return total > 0 ? (completed / total) * 100 : 0;
   });
+
+  isSectionDisabled(section: keyof import('../../../core/models/tracker.models').SectionToggles | undefined): boolean {
+    if (!section) return false;
+    return !this.tracker.sectionToggles()[section];
+  }
 
   toggleCollapsed(): void {
     this.collapsed.update(v => !v);

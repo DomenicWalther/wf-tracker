@@ -1,6 +1,6 @@
 import {
   Component, inject, signal, computed, ChangeDetectionStrategy,
-  ViewChild, ElementRef, effect, afterNextRender
+  ElementRef, viewChild, effect, afterNextRender
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -10,6 +10,7 @@ import { DataService } from '../../../core/services/data.service';
 import { TrackerService } from '../../../core/services/tracker.service';
 import { PaletteService } from '../../../core/services/palette.service';
 import { TrackerData } from '../../../core/models/tracker.models';
+import { fuzzyScore } from '../../../core/utils/fuzzy-match';
 
 type EntryType = 'item' | 'nav' | 'action';
 
@@ -55,17 +56,6 @@ const NAV_ENTRIES: IndexEntry[] = [
 const ACTION_ENTRIES: IndexEntry[] = [
   { type: 'action', label: 'Export data', sublabel: 'Download backup JSON', actionId: 'export' },
 ];
-
-function fuzzyScore(label: string, query: string): number {
-  if (!query) return 0;
-  const l = label.toLowerCase();
-  if (l === query) return 100;
-  if (l.startsWith(query)) return 80;
-  const words = l.split(/[\s\-_()[\]]/);
-  if (words.some(w => w.startsWith(query))) return 60;
-  if (l.includes(query)) return 40;
-  return 0;
-}
 
 function buildItemIndex(data: TrackerData | undefined): IndexEntry[] {
   if (!data) return [];
@@ -420,8 +410,8 @@ export class CommandPaletteComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
 
-  @ViewChild('searchInput') private searchInputEl?: ElementRef<HTMLInputElement>;
-  @ViewChild('resultsList') private resultsListEl?: ElementRef<HTMLUListElement>;
+  private readonly searchInputEl = viewChild<ElementRef<HTMLInputElement>>('searchInput');
+  private readonly resultsListEl = viewChild<ElementRef<HTMLUListElement>>('resultsList');
 
   protected readonly searchControl = new FormControl('', { nonNullable: true });
   protected readonly rawQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
@@ -448,7 +438,7 @@ export class CommandPaletteComponent {
     // Focus input when palette opens; reset when it closes
     effect(() => {
       if (this.paletteService.isOpen()) {
-        setTimeout(() => this.searchInputEl?.nativeElement.focus(), 0);
+        afterNextRender(() => this.searchInputEl()?.nativeElement.focus());
       } else {
         this.searchControl.setValue('', { emitEvent: false });
         this.selectedIndex.set(0);
@@ -564,10 +554,10 @@ export class CommandPaletteComponent {
   }
 
   private scrollSelectedIntoView(): void {
-    setTimeout(() => {
-      const list = this.resultsListEl?.nativeElement;
+    afterNextRender(() => {
+      const list = this.resultsListEl()?.nativeElement;
       const selected = list?.querySelector('.selected');
       selected?.scrollIntoView({ block: 'nearest' });
-    }, 0);
+    });
   }
 }
