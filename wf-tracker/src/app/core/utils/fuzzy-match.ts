@@ -1,3 +1,18 @@
+/**
+ * Fast prefix/substring fuzzy scorer used by the command palette.
+ * Returns a score 0–100 (0 = no match, higher = better match).
+ */
+export function fuzzyScore(label: string, query: string): number {
+  if (!query) return 0;
+  const l = label.toLowerCase();
+  if (l === query) return 100;
+  if (l.startsWith(query)) return 80;
+  const words = l.split(/[\s\-_()[\]]/);
+  if (words.some(w => w.startsWith(query))) return 60;
+  if (l.includes(query)) return 40;
+  return 0;
+}
+
 function levenshtein(a: string, b: string): number {
   const m = a.length, n = b.length;
   const dp: number[][] = Array.from({ length: m + 1 }, (_, i) =>
