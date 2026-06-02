@@ -1,15 +1,27 @@
-import { Component, inject, computed, effect, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
+import { LucideAngularModule, icons } from 'lucide-angular';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
-import { TrackerData, IncarnonEntry } from '../../core/models/tracker.models';
+import { TrackerData, IncarnonEntry, SectionToggles } from '../../core/models/tracker.models';
 import { WorldStatePanelComponent } from '../../shared/components/world-state-panel/world-state-panel.component';
+import { ALL_GEAR_COLUMNS, GEAR_SECTION_COLUMNS } from '../../core/config/gear-columns';
+import { countGearSection } from '../../core/utils/gear-variants';
+
+type LucideIconData = (typeof icons)[keyof typeof icons];
+
+const {
+  ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
+  Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
+  ShoppingBag, Boxes, Component: ComponentIcon,
+} = icons;
 
 interface SectionCard {
+  key: keyof SectionToggles;
   label: string;
   route: string;
-  icon: string;
+  icon: LucideIconData;
   completed: number;
   total: number;
   enabled: boolean;
@@ -17,7 +29,7 @@ interface SectionCard {
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterLink, WorldStatePanelComponent],
+  imports: [RouterLink, WorldStatePanelComponent, LucideAngularModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -44,7 +56,9 @@ interface SectionCard {
       <div class="cards-grid">
         @for (card of cards(); track card.route) {
           <a [routerLink]="card.route" class="section-card" [class.disabled]="!card.enabled">
-            <div class="card-icon">{{ card.icon }}</div>
+            <div class="card-icon">
+              <lucide-icon [img]="card.icon" [size]="18" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
+            </div>
             <div class="card-body">
               <div class="card-label">{{ card.label }}</div>
               <div class="card-progress">
@@ -154,7 +168,6 @@ interface SectionCard {
       pointer-events: none;
     }
     .card-icon {
-      font-size: 18px;
       width: 32px;
       height: 32px;
       display: flex;
@@ -214,48 +227,36 @@ export class DashboardComponent {
 
   private readonly data = toSignal(this.dataService.getData());
 
-  constructor() {
-    effect(() => {
-      const enabledCards = this.cards().filter(c => c.enabled && c.total > 0);
-      const done = enabledCards.reduce((a, c) => a + c.completed, 0);
-      const total = enabledCards.reduce((a, c) => a + c.total, 0);
-      this.tracker.setOverallProgress(done, total);
-    });
-  }
-
   readonly cards = computed<SectionCard[]>(() => {
     const d = this.data();
     if (!d) return [];
     const toggles = this.tracker.sectionToggles();
 
     return [
-      { label: 'Quests', route: '/quests', icon: '◈', enabled: toggles.quests, ...this.calcProgress('quest', d.quests?.length ?? 0) },
-      { label: 'Gear', route: '/gear', icon: '⚔', enabled: toggles.gear, ...this.calcGearProgress(d) },
-      { label: 'Lich Gear', route: '/lich-gear', icon: '☠', enabled: toggles.lichGear, ...this.calcProgress('lich', this.lichTotal(d)) },
-      { label: 'Incarnon', route: '/incarnon', icon: '◉', enabled: toggles.incarnon, ...this.calcProgress('incarnon', this.incarnonTotal(d)) },
-      { label: 'Arcanes', route: '/arcanes', icon: '✦', enabled: toggles.arcanes, ...this.calcProgress('arcane', this.arcaneTotal(d)) },
-      { label: 'Mods', route: '/mods', icon: '▣', enabled: toggles.mods, ...this.calcProgress('mod', d.mods?.length ?? 0) },
-      { label: 'Subsume', route: '/subsume', icon: '⬡', enabled: toggles.subsume, ...this.calcProgress('subsume', d.subsume?.length ?? 0) },
-      { label: 'Railjack', route: '/railjack', icon: '◆', enabled: toggles.railjack, ...this.calcProgress('rj', this.rjTotal(d)) },
-      { label: 'Relics', route: '/relics', icon: '◇', enabled: toggles.relics, ...this.calcProgress('relic', this.relicTotal(d)) },
-      { label: 'Blueprints', route: '/blueprints', icon: '📋', enabled: toggles.blueprints, ...this.calcProgress('bp', this.bpTotal(d)) },
-      { label: 'Items', route: '/items', icon: '◻', enabled: toggles.items, ...this.calcProgress('item', this.itemTotal(d)) },
-      { label: 'Cosmetics', route: '/cosmetics', icon: '◈', enabled: toggles.cosmetics, ...this.calcProgress('cos', this.cosTotal(d)) },
-      { label: 'Collectable', route: '/collectable', icon: '⊕', enabled: toggles.collectable, ...this.calcProgress('col', this.colTotal(d)) },
-      { label: 'Decorations', route: '/decorations', icon: '⊞', enabled: toggles.decorations, ...this.calcProgress('dec', this.decTotal(d)) },
-      { label: 'Codex', route: '/codex', icon: '⊟', enabled: toggles.codex, ...this.calcProgress('codex', this.codexTotal(d)) },
-      { label: 'Market', route: '/market', icon: '◎', enabled: toggles.market, ...this.calcProgress('market', this.marketTotal(d)) },
-      { label: 'Extra', route: '/extra', icon: '⊗', enabled: toggles.extra, ...this.calcProgress('extra', this.extraTotal(d)) },
-      { label: 'Modular Gear', route: '/modular-gear', icon: '⬢', enabled: toggles.modularGear, ...this.calcProgress('mod_gear', this.modGearTotal(d)) },
-    ];
+      { key: 'quests',     label: 'Quests',       route: '/quests',       icon: ScrollText,    enabled: toggles.quests,      ...this.calcProgress('quest',    d.quests?.length ?? 0) },
+      { key: 'gear',       label: 'Gear',          route: '/gear',         icon: Sword,         enabled: toggles.gear,        ...this.calcGearProgress(d) },
+      { key: 'lichGear',   label: 'Lich Gear',     route: '/lich-gear',    icon: Skull,         enabled: toggles.lichGear,    ...this.calcProgress('lich',     this.lichTotal(d)) },
+      { key: 'incarnon',   label: 'Incarnon',      route: '/incarnon',     icon: Zap,           enabled: toggles.incarnon,    ...this.calcProgress('incarnon', this.incarnonTotal(d)) },
+      { key: 'arcanes',    label: 'Arcanes',       route: '/arcanes',      icon: Sparkles,      enabled: toggles.arcanes,     ...this.calcProgress('arcane',   this.arcaneTotal(d)) },
+      { key: 'mods',       label: 'Mods',          route: '/mods',         icon: Layers,        enabled: toggles.mods,        ...this.calcProgress('mod',      this.modTotal(d)) },
+      { key: 'subsume',    label: 'Subsume',       route: '/subsume',      icon: FlaskConical,  enabled: toggles.subsume,     ...this.calcProgress('subsume',  d.subsume?.length ?? 0) },
+      { key: 'railjack',   label: 'Railjack',      route: '/railjack',     icon: Rocket,        enabled: toggles.railjack,    ...this.calcProgress('rj',       this.rjTotal(d)) },
+      { key: 'relics',     label: 'Relics',        route: '/relics',       icon: Gem,           enabled: toggles.relics,      ...this.calcProgress('relic',    this.relicTotal(d)) },
+      { key: 'blueprints', label: 'Blueprints',    route: '/blueprints',   icon: ClipboardList, enabled: toggles.blueprints,  ...this.calcProgress('bp',       this.bpTotal(d)) },
+      { key: 'items',      label: 'Items',         route: '/items',        icon: Package,       enabled: toggles.items,       ...this.calcProgress('item',     this.itemTotal(d)) },
+      { key: 'cosmetics',  label: 'Cosmetics',     route: '/cosmetics',    icon: Palette,       enabled: toggles.cosmetics,   ...this.calcProgress('cos',      this.cosTotal(d)) },
+      { key: 'collectable',label: 'Collectable',   route: '/collectable',  icon: Archive,       enabled: toggles.collectable, ...this.calcProgress('col',      this.colTotal(d)) },
+      { key: 'decorations',label: 'Decorations',   route: '/decorations',  icon: Flower2,       enabled: toggles.decorations, ...this.calcProgress('dec',      this.decTotal(d)) },
+      { key: 'codex',      label: 'Codex',         route: '/codex',        icon: BookOpen,      enabled: toggles.codex,       ...this.calcProgress('codex',    this.codexTotal(d)) },
+      { key: 'market',     label: 'Market',        route: '/market',       icon: ShoppingBag,   enabled: toggles.market,      ...this.calcProgress('market',   this.marketTotal(d)) },
+      { key: 'extra',      label: 'Extra',         route: '/extra',        icon: Boxes,         enabled: toggles.extra,       ...this.calcProgress('extra',    this.extraTotal(d)) },
+      { key: 'modularGear',label: 'Modular Gear',  route: '/modular-gear', icon: ComponentIcon, enabled: toggles.modularGear, ...this.calcProgress('mod_gear', this.modGearTotal(d)) },
+    ] as SectionCard[];
   });
 
   readonly overallPct = computed(() => {
-    const enabled = this.cards().filter(c => c.enabled && c.total > 0);
-    if (!enabled.length) return 0;
-    const done = enabled.reduce((a, c) => a + c.completed, 0);
-    const total = enabled.reduce((a, c) => a + c.total, 0);
-    return total > 0 ? (done / total) * 100 : 0;
+    const { completed, total } = this.tracker.totalTrackable();
+    return total > 0 ? (completed / total) * 100 : 0;
   });
 
   readonly rankName = computed(() => {
@@ -281,29 +282,6 @@ export class DashboardComponent {
     return { completed, total };
   }
 
-  private readonly GEAR_SECTION_COLUMNS: Record<string, string[]> = {
-    warframes:      ['mastery', 'reactor', 'exilus', 'shards', 'tau', 'maxBuild', 'auraForma', 'lens'],
-    primaries:      ['mastery', 'reactor', 'arcaneAdapter', 'maxBuild'],
-    secondaries:    ['mastery', 'reactor', 'arcaneAdapter', 'maxBuild'],
-    melees:         ['mastery', 'reactor', 'arcaneAdapter', 'maxBuild', 'stanceForma'],
-    companions:     ['mastery', 'maxBuild'],
-    archwings:      ['mastery', 'maxBuild'],
-    archwingWeapons:['mastery', 'maxBuild'],
-    extras:         ['mastery', 'maxBuild'],
-  };
-
-  private readonly GEAR_ALL_COLUMNS = [
-    { key: 'mastery',       settingKey: null },
-    { key: 'reactor',       settingKey: 'reactor' },
-    { key: 'exilus',        settingKey: 'exilus' },
-    { key: 'shards',        settingKey: 'shards' },
-    { key: 'tau',           settingKey: 'tauForged' },
-    { key: 'maxBuild',      settingKey: 'maxBuild' },
-    { key: 'auraForma',     settingKey: 'auraForma' },
-    { key: 'stanceForma',   settingKey: 'stanceForma' },
-    { key: 'lens',          settingKey: 'lens' },
-    { key: 'arcaneAdapter', settingKey: 'arcaneAdapter' },
-  ] as const;
 
   private calcGearProgress(d: TrackerData): { completed: number; total: number } {
     if (!d.gear) return { completed: 0, total: 0 };
@@ -312,24 +290,32 @@ export class DashboardComponent {
     const primeOnly = gearSettings.primeOnlyGear;
     const checkboxes = this.tracker.checkboxes();
 
-    const activeCols = this.GEAR_ALL_COLUMNS.filter(
-      c => !c.settingKey || gearSettings[c.settingKey as keyof typeof gearSettings]
+    const activeCols = ALL_GEAR_COLUMNS.filter(
+      c => !c.settingKey || (gearSettings as unknown as Record<string, unknown>)[c.settingKey]
     );
+
+    const isChecked = (name: string, col: string) => !!checkboxes[`gear:${name}:${col}`];
 
     let completed = 0, total = 0;
     for (const [sectionKey, items] of Object.entries(d.gear)) {
-      const allowed = this.GEAR_SECTION_COLUMNS[sectionKey] ?? ['mastery'];
+      const allowed = GEAR_SECTION_COLUMNS[sectionKey] ?? ['mastery'];
       const sectionCols = activeCols.filter(c => allowed.includes(c.key));
       const filteredItems = isFounder ? items : items.filter((i: { name: string; isFounderOnly?: boolean }) => !i.isFounderOnly);
-      const primeNames = primeOnly ? new Set(filteredItems.map((i: { name: string }) => i.name)) : null;
 
-      for (const item of filteredItems) {
-        for (const col of sectionCols) {
-          if (primeNames && col.key !== 'mastery' && primeNames.has(item.name + ' Prime') && !item.name.endsWith(' Prime')) continue;
-          total++;
-          if (checkboxes[`gear:${item.name}:${col.key}`]) completed++;
+      if (!primeOnly) {
+        for (const item of filteredItems) {
+          for (const col of sectionCols) {
+            total++;
+            if (isChecked(item.name, col.key)) completed++;
+          }
         }
+        continue;
       }
+
+      const upgradeCols = sectionCols.filter(c => c.key !== 'mastery').map(c => c.key);
+      const r = countGearSection(filteredItems.map((i: { name: string }) => i.name), upgradeCols, isChecked);
+      total += r.total;
+      completed += r.completed;
     }
     return { completed, total };
   }
@@ -339,31 +325,51 @@ export class DashboardComponent {
     return Object.values(d.lichGear).reduce((a, v) => a + v.length, 0) * 3;
   }
 
+  private modTotal(d: TrackerData): number {
+    if (!d.mods) return 0;
+    if (this.tracker.settings().mod.hoarder) {
+      return d.mods.reduce((a, m) => a + m.maxRank + 1, 0);
+    }
+    return d.mods.length;
+  }
+
   private incarnonTotal(d: TrackerData): number {
     if (!d.incarnon) return 0;
-    return d.incarnon.reduce((a: number, f: IncarnonEntry) => a + f.weapons.length, 0);
+    const completionist = this.tracker.settings().incarnon.completionist;
+    const rows = d.incarnon.reduce((a: number, f: IncarnonEntry) =>
+      a + (completionist || f.name === '1 FAMILY' ? f.weapons.length : 1), 0);
+    return rows * 3;
   }
 
   private arcaneTotal(d: TrackerData): number {
     if (!d.arcanes) return 0;
-    return Object.values(d.arcanes).reduce((a, v) => a + v.length, 0);
+    const base = Object.values(d.arcanes).reduce((a, v) => a + v.length, 0);
+    return this.tracker.settings().arcane.psycho ? base * 5 : base;
   }
 
   private rjTotal(d: TrackerData): number {
-    return (d.railjack?.intrinsics?.length ?? 0) + (d.railjack?.components?.length ?? 0);
+    const intrinsics = d.railjack?.intrinsics?.length ?? 0;
+    const components = d.railjack?.components ?? [];
+    if (this.tracker.settings().railjack.partHoarder) {
+      return intrinsics + components.length;
+    }
+    const unique = new Set(components.map((c: { house: string; component: string }) => c.house + ':' + c.component));
+    return intrinsics + unique.size;
   }
 
   private relicTotal(d: TrackerData): number {
     if (!d.relics) return 0;
-    return Object.values(d.relics).reduce((a, v) => a + v.length, 0);
+    const base = Object.values(d.relics).reduce((a, v) => a + v.length, 0);
+    return this.tracker.settings().relic.hoarder ? base * 4 : base;
   }
 
   private bpTotal(d: TrackerData): number {
     if (!d.blueprints) return 0;
+    const showOld = this.tracker.settings().blueprint.hoarder;
     let t = 0;
     for (const cat of Object.values(d.blueprints)) {
       for (const items of Object.values(cat)) {
-        t += items.length;
+        t += showOld ? items.length : items.filter(i => !i.isOld).length;
       }
     }
     return t;
@@ -376,21 +382,31 @@ export class DashboardComponent {
 
   private cosTotal(d: TrackerData): number {
     if (!d.cosmetics) return 0;
+    const s = this.tracker.settings().cosmetics;
     let t = 0;
-    for (const cat of Object.values(d.cosmetics)) {
-      for (const items of Object.values(cat)) t += items.length;
+    for (const [cat, subs] of Object.entries(d.cosmetics)) {
+      if (cat === 'TENNOGEN' && !s.tennogen) continue;
+      for (const [sub, items] of Object.entries(subs)) {
+        if (cat === 'TENNOGEN' && sub === 'CONSOLE' && !s.consoleExclusive) continue;
+        if (cat === 'REMAINING COSMETICS' && sub === 'Extra' && !s.extra) continue;
+        t += items.length;
+      }
     }
     return t;
   }
 
   private colTotal(d: TrackerData): number {
     if (!d.collectable) return 0;
-    return Object.values(d.collectable).reduce((a, v) => a + v.length, 0);
+    const s = this.tracker.settings().collectable;
+    return Object.entries(d.collectable).reduce((a, [key, v]) =>
+      a + (key === 'OLD IMPOSSIBLE GLYPHS' && !s.old ? 0 : v.length), 0);
   }
 
   private decTotal(d: TrackerData): number {
     if (!d.decorations) return 0;
-    return Object.values(d.decorations).reduce((a, v) => a + v.length, 0);
+    const s = this.tracker.settings().decorations;
+    return Object.entries(d.decorations).reduce((a, [key, v]) =>
+      a + (key === 'Tennocon Locked' && !s.extra ? 0 : v.length), 0);
   }
 
   private codexTotal(d: TrackerData): number {
