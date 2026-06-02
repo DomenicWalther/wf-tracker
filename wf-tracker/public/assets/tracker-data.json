@@ -1864,10 +1864,6 @@
         "isFounderOnly": false
       },
       {
-        "name": "Akaten",
-        "isFounderOnly": false
-      },
-      {
         "name": "Amanata",
         "isFounderOnly": false
       },
@@ -1912,15 +1908,7 @@
         "isFounderOnly": false
       },
       {
-        "name": "Bad Baby",
-        "isFounderOnly": false
-      },
-      {
         "name": "Balla",
-        "isFounderOnly": false
-      },
-      {
-        "name": "Batoten",
         "isFounderOnly": false
       },
       {
@@ -2171,14 +2159,6 @@
         "isFounderOnly": false
       },
       {
-        "name": "Feverspine",
-        "isFounderOnly": false
-      },
-      {
-        "name": "Flatbelly",
-        "isFounderOnly": false
-      },
-      {
         "name": "Fragor",
         "isFounderOnly": false
       },
@@ -2393,10 +2373,6 @@
       },
       {
         "name": "Lacera",
-        "isFounderOnly": false
-      },
-      {
-        "name": "Lacerten",
         "isFounderOnly": false
       },
       {
@@ -2635,10 +2611,6 @@
       },
       {
         "name": "Rumblejack",
-        "isFounderOnly": false
-      },
-      {
-        "name": "Runway",
         "isFounderOnly": false
       },
       {
@@ -2945,6 +2917,14 @@
         "isFounderOnly": false
       },
       {
+        "name": "Akaten",
+        "isFounderOnly": false
+      },
+      {
+        "name": "Batoten",
+        "isFounderOnly": false
+      },
+      {
         "name": "Bhaira Hound",
         "isFounderOnly": false
       },
@@ -3053,6 +3033,10 @@
         "isFounderOnly": false
       },
       {
+        "name": "Lacerten",
+        "isFounderOnly": false
+      },
+      {
         "name": "Lambeo Moa",
         "isFounderOnly": false
       },
@@ -3078,10 +3062,6 @@
       },
       {
         "name": "Nautilus Prime",
-        "isFounderOnly": false
-      },
-      {
-        "name": "Needlenose",
         "isFounderOnly": false
       },
       {
@@ -3267,7 +3247,23 @@
         "isFounderOnly": false
       },
       {
-        "name": "K-Drive",
+        "name": "Bad Baby",
+        "isFounderOnly": false
+      },
+      {
+        "name": "Feverspine",
+        "isFounderOnly": false
+      },
+      {
+        "name": "Flatbelly",
+        "isFounderOnly": false
+      },
+      {
+        "name": "Needlenose",
+        "isFounderOnly": false
+      },
+      {
+        "name": "Runway",
         "isFounderOnly": false
       }
     ],
