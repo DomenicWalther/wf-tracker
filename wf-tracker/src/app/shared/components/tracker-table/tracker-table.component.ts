@@ -145,6 +145,10 @@ export interface TrackerRow {
     </div>
   `,
   styles: [`
+    .tt-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
     .tt-table {
       width: 100%;
       border-collapse: collapse;

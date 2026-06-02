@@ -88,6 +88,17 @@ interface SectionCard {
       margin-bottom: 24px;
       gap: 24px;
     }
+    @media (max-width: 600px) {
+      .dashboard-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 0 20px;
+        gap: 16px;
+      }
+      .dashboard-overall {
+        text-align: left;
+      }
+    }
     .dashboard-title {
       font-size: 22px;
       font-weight: 700;

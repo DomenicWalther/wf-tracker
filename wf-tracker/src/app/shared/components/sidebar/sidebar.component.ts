@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, input, output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LucideAngularModule, icons } from 'lucide-angular';
 import { TrackerService } from '../../../core/services/tracker.service';
@@ -73,7 +73,10 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
   imports: [RouterLink, RouterLinkActive, LucideAngularModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <aside class="sidebar" [class.collapsed]="collapsed()">
+    @if (mobileOpen()) {
+      <div class="sidebar-overlay" (click)="mobileClose.emit()" aria-hidden="true"></div>
+    }
+    <aside class="sidebar" [class.collapsed]="collapsed()" [class.mobile-open]="mobileOpen()">
       <div class="sidebar-header">
         @if (!collapsed()) {
           <div class="logo">
@@ -123,7 +126,8 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
                routerLinkActive="active"
                class="nav-item"
                [class.section-disabled]="isSectionDisabled(item.section)"
-               [title]="collapsed() ? item.label : (isSectionDisabled(item.section) ? item.label + ' (excluded from %)' : '')">
+               [title]="collapsed() ? item.label : (isSectionDisabled(item.section) ? item.label + ' (excluded from %)' : '')"
+               (click)="mobileClose.emit()">
               <lucide-icon class="nav-icon" [img]="item.icon" [size]="15" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
               @if (!collapsed()) {
                 <span class="nav-label">{{ item.label }}</span>
@@ -423,12 +427,37 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
       justify-content: center;
       padding: 6px;
     }
+    .sidebar-overlay {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        translate: -100% 0;
+        width: 216px;
+        z-index: 200;
+        transition: translate var(--transition-mid);
+      }
+      .sidebar.mobile-open {
+        translate: 0 0;
+      }
+      .sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 199;
+        cursor: pointer;
+      }
+    }
   `]
 })
 export class SidebarComponent {
   readonly tracker = inject(TrackerService);
   readonly theme = inject(ThemeService);
   readonly palette = inject(PaletteService);
+
+  readonly mobileOpen = input<boolean>(false);
+  readonly mobileClose = output<void>();
 
   readonly groups = NAV_GROUPS;
   readonly collapsed = signal(false);
