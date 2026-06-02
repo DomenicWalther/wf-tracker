@@ -1,0 +1,19 @@
+# Normalize all text files to LF in the repo; git will not convert on checkout
+* text=auto eol=lf
+
+# Force these to always be LF (no CRLF conversion ever)
+*.json text eol=lf
+*.ts   text eol=lf
+*.html text eol=lf
+*.css  text eol=lf
+*.scss text eol=lf
+*.md   text eol=lf
+
+# True binaries — no line-ending processing at all
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.ico  binary
+*.svg  binary
+*.woff binary
+*.woff2 binary

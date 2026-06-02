@@ -123,14 +123,16 @@ export class GearComponent {
     const d = this.data();
     if (!d?.gear) return [];
     return [
-      { key: 'warframes', label: 'Warframes', items: d.gear['warframes'] ?? [] },
-      { key: 'primaries', label: 'Primary Weapons', items: d.gear['primaries'] ?? [] },
+      { key: 'warframes',   label: 'Warframes',         items: d.gear['warframes']   ?? [] },
+      { key: 'primaries',   label: 'Primary Weapons',   items: d.gear['primaries']   ?? [] },
       { key: 'secondaries', label: 'Secondary Weapons', items: d.gear['secondaries'] ?? [] },
-      { key: 'melees', label: 'Melee Weapons', items: d.gear['melees'] ?? [] },
-      { key: 'companions', label: 'Companions', items: d.gear['companions'] ?? [] },
-      { key: 'archwings', label: 'Archwings', items: d.gear['archwings'] ?? [] },
-      { key: 'archwingWeapons', label: 'Archwing Weapons', items: d.gear['archwingWeapons'] ?? [] },
-      { key: 'extras', label: 'Extra Gear', items: d.gear['extras'] ?? [] },
+      { key: 'melees',      label: 'Melee Weapons',     items: d.gear['melees']      ?? [] },
+      { key: 'companions',  label: 'Companions',        items: d.gear['companions']  ?? [] },
+      { key: 'archwings',   label: 'Vehicles',          items: d.gear['archwings']   ?? [] },
+      { key: 'archGuns',    label: 'Arch Guns',         items: d.gear['archGuns']    ?? [] },
+      { key: 'archMelee',   label: 'Arch Melee',        items: d.gear['archMelee']   ?? [] },
+      { key: 'amps',        label: 'Amps',              items: d.gear['amps']        ?? [] },
+      { key: 'extras',      label: 'Extra Gear',        items: d.gear['extras']      ?? [] },
     ];
   });
 

@@ -32,3 +32,6 @@ Thumbs.db
 # Python (data extraction scripts)
 __pycache__/
 *.pyc
+
+# Claude Code agent worktrees
+.claude/worktrees/

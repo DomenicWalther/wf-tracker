@@ -30,12 +30,14 @@ export const ALL_GEAR_COLUMNS: GearColumnDef[] = [
  * Canonical — the Gear page is the source of truth; dashboard must match this exactly.
  */
 export const GEAR_SECTION_COLUMNS: Record<string, string[]> = {
-  warframes:       ['mastery', 'reactor', 'exilus', 'shards', 'tau', 'maxBuild', 'auraForma', 'lens'],
-  primaries:       ['mastery', 'reactor', 'arcaneAdapter', 'exilusAdapter', 'maxBuild'],
-  secondaries:     ['mastery', 'reactor', 'arcaneAdapter', 'exilusAdapter', 'maxBuild'],
-  melees:          ['mastery', 'reactor', 'arcaneAdapter', 'exilusAdapter', 'maxBuild', 'stanceForma'],
-  companions:      ['mastery', 'maxBuild'],
-  archwings:       ['mastery', 'maxBuild'],
-  archwingWeapons: ['mastery', 'maxBuild'],
-  extras:          ['mastery', 'maxBuild'],
+  warframes:  ['mastery', 'reactor', 'exilus', 'shards', 'tau', 'maxBuild', 'auraForma', 'lens'],
+  primaries:  ['mastery', 'reactor', 'arcaneAdapter', 'exilusAdapter', 'maxBuild'],
+  secondaries:['mastery', 'reactor', 'arcaneAdapter', 'exilusAdapter', 'maxBuild'],
+  melees:     ['mastery', 'reactor', 'arcaneAdapter', 'exilusAdapter', 'maxBuild', 'stanceForma'],
+  companions: ['mastery', 'maxBuild'],
+  archwings:  ['mastery', 'maxBuild'],
+  archGuns:   ['mastery', 'maxBuild'],
+  archMelee:  ['mastery', 'maxBuild', 'stanceForma'],
+  amps:       ['mastery', 'maxBuild'],
+  extras:     ['mastery', 'maxBuild'],
 };
