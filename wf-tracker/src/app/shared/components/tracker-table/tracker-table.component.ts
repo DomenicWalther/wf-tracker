@@ -1,8 +1,9 @@
-import { Component, input, output, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 
 export interface TrackerColumn {
   key: string;
   label: string;
+  icon?: string;
 }
 
 export interface TrackerCellSub {
@@ -34,34 +35,63 @@ export interface TrackerRow {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="tt-wrapper">
+      <div class="tt-controls">
+        <button
+          type="button"
+          class="tt-pill-btn"
+          [class.active]="sortIncompleteFirst()"
+          [attr.aria-pressed]="sortIncompleteFirst()"
+          (click)="sortIncompleteFirst.update(v => !v)"
+        >Incomplete First</button>
+        <button
+          type="button"
+          class="tt-pill-btn"
+          [class.active]="hideComplete()"
+          [attr.aria-pressed]="hideComplete()"
+          (click)="hideComplete.update(v => !v)"
+        >{{ hideComplete() ? 'Show All' : 'Hide Complete' }}</button>
+      </div>
       <table class="tt-table">
         <thead>
           <tr>
             <th class="tt-col-name">Name</th>
             @for (col of columns(); track col.key; let ci = $index) {
-              <th class="tt-col-check" [class.tt-col-alt]="ci % 2 === 1">
+              <th
+                class="tt-col-check"
+                [class.tt-col-alt]="ci % 2 === 1"
+                [class.tt-col-icon]="!!col.icon"
+              >
                 <button
                   type="button"
                   class="tt-col-toggle"
                   [class.tt-col-full]="isColumnFull(col.key)"
                   [attr.aria-pressed]="isColumnFull(col.key)"
                   [attr.aria-label]="'Toggle all ' + col.label"
+                  [title]="col.label"
                   (click)="toggleColumn(col.key)"
                 >
-                  {{ col.label }}
+                  @if (col.icon) {
+                    <span aria-hidden="true">{{ col.icon }}</span>
+                  } @else {
+                    {{ col.label }}
+                  }
                 </button>
               </th>
             }
           </tr>
         </thead>
         <tbody>
-          @for (row of rows(); track row.name; let i = $index) {
-            @if (row.group && (i === 0 || rows()[i - 1].group !== row.group)) {
+          @for (row of displayRows(); track row.name; let i = $index) {
+            @if (row.group && (i === 0 || displayRows()[i - 1].group !== row.group)) {
               <tr class="tt-group-row" aria-hidden="true">
                 <td [attr.colspan]="columns().length + 1" class="tt-group-cell">{{ row.group }}</td>
               </tr>
             }
-            <tr [class]="row.rowCssClass || ''" [class.tt-row-has-note]="hasNote(row.name)">
+            <tr
+              [class]="row.rowCssClass || ''"
+              [class.tt-row-has-note]="hasNote(row.name)"
+              [class.tt-row-complete]="isRowFull(row.name)"
+            >
               <td class="tt-col-name">
                 <span class="tt-name-cell">
                   <span class="tt-name-text">
@@ -149,6 +179,28 @@ export interface TrackerRow {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
+    .tt-controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .tt-pill-btn {
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface2);
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .tt-pill-btn:hover { color: var(--color-text); border-color: var(--color-text-muted); }
+    .tt-pill-btn:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 2px; }
+    .tt-pill-btn.active { border-color: var(--color-gold); color: var(--color-gold); background: rgba(200,155,60,0.10); }
     .tt-table {
       width: 100%;
       border-collapse: collapse;
@@ -171,6 +223,8 @@ export interface TrackerRow {
     }
     .tt-table th.tt-col-name { text-align: left; }
     .tt-table th.tt-col-alt { background: var(--color-bg); }
+    .tt-col-icon { min-width: 36px; width: 36px; }
+    .tt-col-icon .tt-col-toggle { font-size: 14px; padding: 2px; }
     .tt-col-toggle {
       width: 100%;
       background: none;
@@ -311,6 +365,9 @@ export interface TrackerRow {
       box-sizing: border-box;
     }
     .tt-note-textarea:focus { outline: none; border-color: var(--color-gold); }
+    .tt-row-complete td { opacity: 0.45; }
+    .tt-row-complete .tt-primary-name { text-decoration: line-through; color: var(--color-text-muted); }
+    .tt-row-complete:hover td { opacity: 0.6; }
   `]
 })
 export class TrackerTableComponent {
@@ -321,6 +378,25 @@ export class TrackerTableComponent {
   notesFn = input<((rowName: string) => string) | null>(null);
   setNoteFn = input<((rowName: string, value: string) => void) | null>(null);
   toggle = output<{ rowName: string; colKey: string; subKey?: string }>();
+
+  readonly hideComplete = signal(false);
+  readonly sortIncompleteFirst = signal(false);
+
+  readonly displayRows = computed(() => {
+    let rows = this.rows();
+    if (this.sortIncompleteFirst()) {
+      const incomplete: TrackerRow[] = [];
+      const complete: TrackerRow[] = [];
+      for (const r of rows) {
+        (this.isRowFull(r.name) ? complete : incomplete).push(r);
+      }
+      rows = [...incomplete, ...complete];
+    }
+    if (this.hideComplete()) {
+      rows = rows.filter(r => !this.isRowFull(r.name));
+    }
+    return rows;
+  });
 
   private readonly openNotes = signal<Set<string>>(new Set());
 
