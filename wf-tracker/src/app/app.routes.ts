@@ -22,6 +22,7 @@ export const routes: Routes = [
   { path: 'extra', loadComponent: () => import('./features/extra/extra.component').then(m => m.ExtraComponent) },
   { path: 'modular-gear', loadComponent: () => import('./features/modular-gear/modular-gear.component').then(m => m.ModularGearComponent) },
   { path: 'task-checklist', loadComponent: () => import('./features/task-checklist/task-checklist.component').then(m => m.TaskChecklistComponent) },
+  { path: 'honoria', loadComponent: () => import('./features/honoria/honoria.component').then(m => m.HonoriaComponent) },
   { path: 'big-goals', redirectTo: 'goals', pathMatch: 'full' },
   { path: 'personal-goals', redirectTo: 'goals', pathMatch: 'full' },
   { path: 'goals', loadComponent: () => import('./features/personal-goals/personal-goals.component').then(m => m.PersonalGoalsComponent) },

@@ -18,7 +18,7 @@ const {
   LayoutDashboard, ListChecks, Settings, Target,
   ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
   Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
-  ShoppingBag, Boxes, Component: ComponentIcon, History, ScanLine, SunMoon, Search,
+  ShoppingBag, Boxes, Component: ComponentIcon, History, ScanLine, SunMoon, Search, Award,
 } = icons;
 
 const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
@@ -35,6 +35,7 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
   {
     group: 'Content',
     items: [
+      { label: 'Honoria',   route: '/honoria',   icon: Award },
       { label: 'Quests',    route: '/quests',    icon: ScrollText,   section: 'quests' },
       { label: 'Gear',      route: '/gear',      icon: Sword,        section: 'gear' },
       { label: 'Lich Gear', route: '/lich-gear', icon: Skull,        section: 'lichGear' },
