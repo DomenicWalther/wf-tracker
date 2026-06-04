@@ -17,6 +17,33 @@ const {
   ShoppingBag, Boxes, Component: ComponentIcon,
 } = icons;
 
+const PREFIX_MAP: Record<string, { label: string; route: string }> = {
+  gear:     { label: 'Gear',        route: '/gear' },
+  arcane:   { label: 'Arcanes',     route: '/arcanes' },
+  quest:    { label: 'Quests',      route: '/quests' },
+  mod:      { label: 'Mods',        route: '/mods' },
+  lich:     { label: 'Lich Gear',   route: '/lich-gear' },
+  relic:    { label: 'Relics',      route: '/relics' },
+  incarnon: { label: 'Incarnon',    route: '/incarnon' },
+  subsume:  { label: 'Subsume',     route: '/subsume' },
+  rj:       { label: 'Railjack',    route: '/railjack' },
+  cos:      { label: 'Cosmetics',   route: '/cosmetics' },
+  bp:       { label: 'Blueprints',  route: '/blueprints' },
+  item:     { label: 'Items',       route: '/items' },
+  col:      { label: 'Collectable', route: '/collectable' },
+  dec:      { label: 'Decorations', route: '/decorations' },
+  codex:    { label: 'Codex',       route: '/codex' },
+  market:   { label: 'Market',      route: '/market' },
+  extra:    { label: 'Extra',       route: '/extra' },
+};
+
+interface WhatsNextItem {
+  label: string;
+  section: string;
+  pct: number;
+  route: string;
+}
+
 interface SectionCard {
   key: keyof SectionToggles;
   label: string;
@@ -50,6 +77,24 @@ interface SectionCard {
           <div class="progress-bar-fill" [style.width.%]="overallPct()"></div>
         </div>
       </div>
+
+      @if (whatNext().length > 0) {
+        <section class="whats-next" aria-label="What's next">
+          <h2 class="whats-next-heading">WHAT'S NEXT</h2>
+          <div class="whats-next-list">
+            @for (item of whatNext(); track item.label + item.section) {
+              <a [routerLink]="item.route" class="wn-chip">
+                <span class="wn-tag">{{ item.section }}</span>
+                <span class="wn-name">{{ item.label }}</span>
+                <span class="wn-bar-wrap" aria-hidden="true">
+                  <span class="wn-bar-fill" [style.width.%]="item.pct"></span>
+                </span>
+                <span class="wn-pct">{{ item.pct.toFixed(0) }}%</span>
+              </a>
+            }
+          </div>
+        </section>
+      }
 
       <app-world-state-panel />
 
@@ -145,6 +190,73 @@ interface SectionCard {
     }
     .overall-bar {
       margin-bottom: 28px;
+    }
+    .whats-next {
+      margin-bottom: 20px;
+    }
+    .whats-next-heading {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent-light);
+      margin: 0 0 10px;
+    }
+    .whats-next-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .wn-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: 12px;
+      color: var(--color-text);
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+    }
+    .wn-chip:hover {
+      border-color: var(--color-accent);
+      background: var(--color-surface2);
+    }
+    .wn-chip:focus-visible {
+      outline: 2px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+    .wn-tag {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .wn-name { font-weight: 500; }
+    .wn-bar-wrap {
+      display: inline-block;
+      width: 40px;
+      height: 4px;
+      background: var(--color-surface2);
+      border-radius: 2px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .wn-bar-fill {
+      display: block;
+      height: 100%;
+      background: var(--color-accent);
+      border-radius: 2px;
+    }
+    .wn-pct {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--color-accent-light);
+      width: 28px;
+      text-align: right;
     }
     .cards-grid {
       display: grid;
@@ -265,6 +377,32 @@ export class DashboardComponent {
     ] as SectionCard[];
   });
 
+  readonly whatNext = computed<WhatsNextItem[]>(() => {
+    const checkboxes = this.tracker.checkboxes();
+    const groups = new Map<string, { total: number; completed: number }>();
+    for (const key of Object.keys(checkboxes)) {
+      const parts = key.split(':');
+      if (parts.length < 2) continue;
+      const base = parts[0] + ':' + parts[1];
+      const existing = groups.get(base) ?? { total: 0, completed: 0 };
+      existing.total++;
+      if (checkboxes[key]) existing.completed++;
+      groups.set(base, existing);
+    }
+    const items: WhatsNextItem[] = [];
+    for (const [base, counts] of groups) {
+      if (counts.completed === 0 || counts.completed >= counts.total) continue;
+      const colonIdx = base.indexOf(':');
+      const prefix = base.slice(0, colonIdx);
+      const name = base.slice(colonIdx + 1);
+      const meta = PREFIX_MAP[prefix];
+      if (!meta) continue;
+      items.push({ label: name, section: meta.label, pct: (counts.completed / counts.total) * 100, route: meta.route });
+    }
+    items.sort((a, b) => b.pct - a.pct);
+    return items.slice(0, 5);
+  });
+
   readonly overallPct = computed(() => {
     const { completed, total } = this.tracker.totalTrackable();
     return total > 0 ? (completed / total) * 100 : 0;
@@ -292,7 +430,6 @@ export class DashboardComponent {
     const completed = Object.keys(checkboxes).filter(k => k.startsWith(prefix + ':') && checkboxes[k]).length;
     return { completed, total };
   }
-
 
   private calcGearProgress(d: TrackerData): { completed: number; total: number } {
     if (!d.gear) return { completed: 0, total: 0 };
