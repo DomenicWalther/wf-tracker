@@ -180,6 +180,7 @@ export interface SectionToggles {
   subsume: boolean;
   railjack: boolean;
   relics: boolean;
+  honoria: boolean;
   blueprints: boolean;
   items: boolean;
   cosmetics: boolean;
@@ -243,5 +244,5 @@ export const DEFAULT_SECTION_TOGGLES: SectionToggles = {
   quests: true, gear: true, lichGear: true, incarnon: true, arcanes: true,
   mods: true, subsume: false, railjack: false, relics: false, blueprints: false,
   items: false, cosmetics: false, collectable: false, decorations: false,
-  codex: false, market: false, extra: false, modularGear: false
+  codex: false, market: false, extra: false, modularGear: false, honoria: true
 };

@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { LucideAngularModule, icons } from 'lucide-angular';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
+import { HonoriaService } from '../../core/services/honoria.service';
 import { TrackerData, IncarnonEntry, SectionToggles } from '../../core/models/tracker.models';
 import { WorldStatePanelComponent } from '../../shared/components/world-state-panel/world-state-panel.component';
 import { ALL_GEAR_COLUMNS, GEAR_SECTION_COLUMNS } from '../../core/config/gear-columns';
@@ -14,7 +15,7 @@ type LucideIconData = (typeof icons)[keyof typeof icons];
 const {
   ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
   Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
-  ShoppingBag, Boxes, Component: ComponentIcon,
+  ShoppingBag, Boxes, Component: ComponentIcon, Award,
 } = icons;
 
 const PREFIX_MAP: Record<string, { label: string; route: string }> = {
@@ -347,6 +348,7 @@ interface SectionCard {
 export class DashboardComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
+  private readonly honoria = inject(HonoriaService);
 
   private readonly data = toSignal(this.dataService.getData());
 
@@ -374,6 +376,7 @@ export class DashboardComponent {
       { key: 'market',     label: 'Market',        route: '/market',       icon: ShoppingBag,   enabled: toggles.market,      ...this.calcProgress('market',   this.marketTotal(d)) },
       { key: 'extra',      label: 'Extra',         route: '/extra',        icon: Boxes,         enabled: toggles.extra,       ...this.calcProgress('extra',    this.extraTotal(d)) },
       { key: 'modularGear',label: 'Modular Gear',  route: '/modular-gear', icon: ComponentIcon, enabled: toggles.modularGear, ...this.calcProgress('mod_gear', this.modGearTotal(d)) },
+      { key: 'honoria',    label: 'Honoria',       route: '/honoria',      icon: Award,         enabled: toggles.honoria,    completed: this.honoria.completed(), total: this.honoria.total },
     ] as SectionCard[];
   });
 

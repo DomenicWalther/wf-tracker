@@ -7,6 +7,7 @@ import {
 import { DataService } from './data.service';
 import { ALL_GEAR_COLUMNS, GEAR_SECTION_COLUMNS } from '../config/gear-columns';
 import { countGearSection } from '../utils/gear-variants';
+import { HonoriaService } from './honoria.service';
 
 const STORAGE_KEY = 'wf-tracker-state';
 
@@ -16,6 +17,7 @@ const LIMITED_ARCANE_GROUPS_SERVICE = new Set(['operator', 'amp', 'kitgun', 'zaw
 export class TrackerService {
   private readonly dataService = inject(DataService);
   private readonly data = toSignal(this.dataService.getData());
+  readonly honoria = inject(HonoriaService);
   private readonly state = signal<TrackerState>(this.loadState());
 
   readonly checkboxes = computed(() => this.state().checkboxes);
@@ -65,6 +67,10 @@ export class TrackerService {
       if (!toggles[key] || sectionTotal === 0) continue;
       completed += count(prefix);
       total += sectionTotal;
+    }
+    if (toggles.honoria) {
+      completed += this.honoria.completed();
+      total += this.honoria.total;
     }
     return { completed, total };
   });
