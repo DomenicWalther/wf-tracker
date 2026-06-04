@@ -358,6 +358,7 @@ export class DashboardComponent {
     const toggles = this.tracker.sectionToggles();
 
     return [
+      { key: 'honoria',    label: 'Honoria',       route: '/honoria',      icon: Award,         enabled: toggles.honoria,    completed: this.honoria.completed(), total: this.honoria.total },
       { key: 'quests',     label: 'Quests',       route: '/quests',       icon: ScrollText,    enabled: toggles.quests,      ...this.calcProgress('quest',    d.quests?.length ?? 0) },
       { key: 'gear',       label: 'Gear',          route: '/gear',         icon: Sword,         enabled: toggles.gear,        ...this.calcGearProgress(d) },
       { key: 'lichGear',   label: 'Lich Gear',     route: '/lich-gear',    icon: Skull,         enabled: toggles.lichGear,    ...this.calcProgress('lich',     this.lichTotal(d)) },
@@ -376,7 +377,6 @@ export class DashboardComponent {
       { key: 'market',     label: 'Market',        route: '/market',       icon: ShoppingBag,   enabled: toggles.market,      ...this.calcProgress('market',   this.marketTotal(d)) },
       { key: 'extra',      label: 'Extra',         route: '/extra',        icon: Boxes,         enabled: toggles.extra,       ...this.calcProgress('extra',    this.extraTotal(d)) },
       { key: 'modularGear',label: 'Modular Gear',  route: '/modular-gear', icon: ComponentIcon, enabled: toggles.modularGear, ...this.calcProgress('mod_gear', this.modGearTotal(d)) },
-      { key: 'honoria',    label: 'Honoria',       route: '/honoria',      icon: Award,         enabled: toggles.honoria,    completed: this.honoria.completed(), total: this.honoria.total },
     ] as SectionCard[];
   });
 
