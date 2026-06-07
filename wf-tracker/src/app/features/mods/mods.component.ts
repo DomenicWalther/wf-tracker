@@ -126,6 +126,7 @@ export class ModsComponent {
   readonly searchControl = new FormControl('', { nonNullable: true });
   protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
   private readonly openGroups = signal<Set<string>>(new Set());
+  private groupsInitialized = false;
 
   readonly modGroups = computed<ModGroup[]>(() => {
     const mods = this.data()?.mods;
@@ -185,10 +186,11 @@ export class ModsComponent {
   });
 
   constructor() {
-    // Open first group by default
+    // Open first group on first load only
     effect(() => {
       const groups = this.modGroups();
-      if (groups.length > 0 && this.openGroups().size === 0) {
+      if (groups.length > 0 && !this.groupsInitialized) {
+        this.groupsInitialized = true;
         this.openGroups.set(new Set([groups[0].name]));
       }
     });

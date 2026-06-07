@@ -148,6 +148,7 @@ export class ArcanesComponent {
   readonly searchControl = new FormControl('', { nonNullable: true });
   protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
   private readonly openGroups = signal<Set<string>>(new Set());
+  private groupsInitialized = false;
 
   readonly arcaneGroups = computed<ArcaneGroup[]>(() => {
     const raw = this.data()?.arcanes;
@@ -177,7 +178,8 @@ export class ArcanesComponent {
   constructor() {
     effect(() => {
       const groups = this.arcaneGroups();
-      if (groups.length > 0 && this.openGroups().size === 0) {
+      if (groups.length > 0 && !this.groupsInitialized) {
+        this.groupsInitialized = true;
         this.openGroups.set(new Set([groups[0].name]));
       }
     });
