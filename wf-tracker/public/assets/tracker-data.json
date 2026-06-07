@@ -4181,7 +4181,7 @@
 		{
 			"name": "Accumulating Whipclaw",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Adaptation",
@@ -4251,7 +4251,7 @@
 		{
 			"name": "Assimilate",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Augur Accord",
@@ -4281,7 +4281,7 @@
 		{
 			"name": "Avenging Truth",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Balefire Surge",
@@ -4311,7 +4311,7 @@
 		{
 			"name": "Blinding Reave",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Blood For Energy",
@@ -4336,12 +4336,12 @@
 		{
 			"name": "Capacitance",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Cataclysmic Continuum",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Catalyzing Shields",
@@ -4351,12 +4351,12 @@
 		{
 			"name": "Cathode Current",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Celestial Stomp",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Champion's Blessing",
@@ -4366,22 +4366,22 @@
 		{
 			"name": "Chaos Sphere",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Chilling Globe",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Chromatic Blade",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Cold Snap",
 			"maxRank": 3,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Condition's Perfection",
@@ -4406,7 +4406,7 @@
 		{
 			"name": "Creeping Terrify",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Crowd Dispersion",
@@ -4436,12 +4436,12 @@
 		{
 			"name": "Desiccation's Curse",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Despoil",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Diamond Skin",
@@ -4451,7 +4451,7 @@
 		{
 			"name": "Disarming Purity",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Discipline's Merit",
@@ -4461,12 +4461,12 @@
 		{
 			"name": "Divine Retribution",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Duality",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Efficient Transferral",
@@ -4476,17 +4476,17 @@
 		{
 			"name": "Elemental Sandstorm",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Elusive Retribution",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Empowered Quiver",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Endless Lullaby",
@@ -4521,7 +4521,7 @@
 		{
 			"name": "Energy Field",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Energy Inversion",
@@ -4536,22 +4536,22 @@
 		{
 			"name": "Energy Transfer",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Entropy Burst",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Entropy Detonation",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Enveloping Cloud",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Equilibrium",
@@ -4561,27 +4561,27 @@
 		{
 			"name": "Eroding Blight",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Escape Velocity",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Eternal War",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Everlasting Ward",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Exothermic",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Fass",
@@ -4596,7 +4596,7 @@
 		{
 			"name": "Fatal Teleport",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Fear Sense",
@@ -4606,7 +4606,7 @@
 		{
 			"name": "Fireball Frenzy",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Firewalker",
@@ -4751,7 +4751,7 @@
 		{
 			"name": "Fracturing Crush",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Fracturing Wind",
@@ -4761,12 +4761,12 @@
 		{
 			"name": "Funnel Clouds",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Furious Javelin",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Gaia's Tragedy",
@@ -4776,17 +4776,17 @@
 		{
 			"name": "Gastro",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Gilded Truth",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Gleaming Blight",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Gourmand",
@@ -4796,32 +4796,32 @@
 		{
 			"name": "Greedy Pull",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Guardian Armor",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Guided Effigy",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Hall of Malevolence",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Hallowed Eruption",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Hallowed Reckoning",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Handspring",
@@ -4836,7 +4836,7 @@
 		{
 			"name": "Healing Flame",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Health Conversion",
@@ -4846,7 +4846,7 @@
 		{
 			"name": "Hearty Nourishment",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Heavy Impact",
@@ -4856,12 +4856,12 @@
 		{
 			"name": "Hushed Invisibility",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Hysterical Assault",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Iatric Mycelium",
@@ -4871,22 +4871,22 @@
 		{
 			"name": "Icy Avalanche",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Immolated Radiance",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Infiltrate",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Insatiable",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Insulation",
@@ -4901,12 +4901,12 @@
 		{
 			"name": "Intrepid Stand",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Irradiating Disarm",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Jade's Judgment",
@@ -4926,17 +4926,17 @@
 		{
 			"name": "Larva Burst",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Lasting Covenant",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Lasting Purity",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Lingering Transmutation",
@@ -4981,7 +4981,7 @@
 		{
 			"name": "Mesmer Shield",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Metal Fiber",
@@ -4991,7 +4991,7 @@
 		{
 			"name": "Mind Freak",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Mobilize",
@@ -5006,7 +5006,7 @@
 		{
 			"name": "Molecular Fission",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Motus Impact",
@@ -5041,7 +5041,7 @@
 		{
 			"name": "Negation Armor",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Netra",
@@ -5051,12 +5051,12 @@
 		{
 			"name": "Neutralizing Justice",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Neutron Star",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Odomedic",
@@ -5066,12 +5066,12 @@
 		{
 			"name": "Omikuji's Fortune",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Ore Gaze",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Oull",
@@ -5086,7 +5086,7 @@
 		{
 			"name": "Pacifying Bolts",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Parasitic Vitality",
@@ -5096,32 +5096,32 @@
 		{
 			"name": "Path of Statues",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Peaceful Provocation",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Phoenix Renewal",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Piercing Roar",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Pilfering Strangledome",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Pilfering Swarm",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Pistol Scavenger",
@@ -5151,7 +5151,7 @@
 		{
 			"name": "Primal Rage",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Primed Continuity",
@@ -5181,7 +5181,7 @@
 		{
 			"name": "Prolonged Paralysis",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Provoked",
@@ -5191,7 +5191,7 @@
 		{
 			"name": "Pyroclastic Flow",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Quick Thinking",
@@ -5206,7 +5206,7 @@
 		{
 			"name": "Razorwing Blitz",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Recrystalize",
@@ -5236,17 +5236,17 @@
 		{
 			"name": "Regenerative Molt",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Reinforcing Stomp",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Repair Dispensary",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Repelling Bastille",
@@ -5256,7 +5256,7 @@
 		{
 			"name": "Resonating Quake",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Retribution",
@@ -5271,12 +5271,12 @@
 		{
 			"name": "Rift Haven",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Rift Torrent",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Ris",
@@ -5286,7 +5286,7 @@
 		{
 			"name": "Rising Storm",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Rolling Guard",
@@ -5296,12 +5296,12 @@
 		{
 			"name": "Rousing Plunder",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Rubble Heap",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Rush",
@@ -5316,27 +5316,27 @@
 		{
 			"name": "Safeguard",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Safeguard Switch",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Savage Silence",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Savior Decoy",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Seeking Shuriken",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Seismic Palm",
@@ -5346,17 +5346,17 @@
 		{
 			"name": "Shattered Storm",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Shield of Shadows",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Shock Trooper",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Shotgun Scavenger",
@@ -5366,7 +5366,7 @@
 		{
 			"name": "Smoke Shadow",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Sniper Scavenger",
@@ -5376,7 +5376,7 @@
 		{
 			"name": "Soul Survivor",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Sovereign Outcast",
@@ -5386,12 +5386,12 @@
 		{
 			"name": "Spectral Spirit",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Spectrosiphon",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Speed Drift",
@@ -5416,7 +5416,7 @@
 		{
 			"name": "Staggering Shield",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Stalking Fan",
@@ -5436,7 +5436,7 @@
 		{
 			"name": "Stinging Truth",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Streamline",
@@ -5476,12 +5476,12 @@
 		{
 			"name": "Tectonic Fracture",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Tesla Bank",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Tharros Lethality",
@@ -5506,17 +5506,17 @@
 		{
 			"name": "Tidal Impunity",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Titanic Rumbler",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Total Eclipse",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Toxin Resistance",
@@ -5531,7 +5531,7 @@
 		{
 			"name": "Transistor Shield",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Tribunal",
@@ -5541,7 +5541,7 @@
 		{
 			"name": "Ulfrun's Endurance",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Umbral Fiber",
@@ -5566,7 +5566,7 @@
 		{
 			"name": "Vampire Leech",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Vampiric Grasp",
@@ -5611,7 +5611,7 @@
 		{
 			"name": "Warding Thurible",
 			"maxRank": 3,
-			"category": "Warframe"
+			"category": "Augment"
 		},
 		{
 			"name": "Warm Coat",
@@ -5711,7 +5711,7 @@
 		{
 			"name": "Abundant Mutation",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Accelerated Blast",
@@ -5721,7 +5721,7 @@
 		{
 			"name": "Acid Shells",
 			"maxRank": 5,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Adhesive Blast",
@@ -5731,22 +5731,22 @@
 		{
 			"name": "Airburst Rounds",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Amalgam Argonak Metal Auger",
 			"maxRank": 5,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Amalgam Daikyu Target Acquired",
 			"maxRank": 5,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Amalgam Javlok Magazine Warp",
 			"maxRank": 5,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Amalgam Serration",
@@ -5786,7 +5786,7 @@
 		{
 			"name": "Ballistic Bullseye",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Bane of Corpus",
@@ -5936,7 +5936,7 @@
 		{
 			"name": "Concentrated Arrow",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Contagious Spread",
@@ -5986,7 +5986,7 @@
 		{
 			"name": "Deadly Sequence",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Depleted Reload",
@@ -6021,12 +6021,12 @@
 		{
 			"name": "Efficient Beams",
 			"maxRank": 5,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Entropy Flight",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Fanged Fusillade",
@@ -6316,7 +6316,7 @@
 		{
 			"name": "Fomorian Accelerant",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Four Riders",
@@ -6331,7 +6331,7 @@
 		{
 			"name": "Freeze Force",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Frigid Blast",
@@ -6461,7 +6461,7 @@
 		{
 			"name": "Magnetized Discharge",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Malignant Force",
@@ -6486,7 +6486,7 @@
 		{
 			"name": "Muzzle Flash",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Nano-Applicator",
@@ -6496,7 +6496,7 @@
 		{
 			"name": "Napalm Grenades",
 			"maxRank": 5,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Narrow Barrel",
@@ -6506,7 +6506,7 @@
 		{
 			"name": "Nightwatch Napalm",
 			"maxRank": 5,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "North Wind",
@@ -6526,7 +6526,7 @@
 		{
 			"name": "Piercing Navigator",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Point Blank",
@@ -6686,7 +6686,7 @@
 		{
 			"name": "Resonance",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Reverse Rotorswell",
@@ -6726,7 +6726,7 @@
 		{
 			"name": "Scattered Justice",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Scattering Inferno",
@@ -6781,7 +6781,7 @@
 		{
 			"name": "Shattering Justice",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Shell Compression",
@@ -6801,7 +6801,7 @@
 		{
 			"name": "Shocking Speed",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Shotgun Ammo Mutation",
@@ -6906,7 +6906,7 @@
 		{
 			"name": "Static Discharge",
 			"maxRank": 5,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Stormbringer",
@@ -6941,7 +6941,7 @@
 		{
 			"name": "Tether Grenades",
 			"maxRank": 5,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Thermite Rounds",
@@ -7031,7 +7031,7 @@
 		{
 			"name": "Voltage Sequence",
 			"maxRank": 3,
-			"category": "Primary"
+			"category": "Augment"
 		},
 		{
 			"name": "Voltaic Strike",
@@ -7136,7 +7136,7 @@
 		{
 			"name": "Entropy Spike",
 			"maxRank": 3,
-			"category": "Secondary"
+			"category": "Augment"
 		},
 		{
 			"name": "Expel Corpus",
@@ -7166,7 +7166,7 @@
 		{
 			"name": "Explosive Legerdemain",
 			"maxRank": 3,
-			"category": "Secondary"
+			"category": "Augment"
 		},
 		{
 			"name": "Flawed Barrel Diffusion",
@@ -7551,7 +7551,7 @@
 		{
 			"name": "Reactive Storm",
 			"maxRank": 3,
-			"category": "Secondary"
+			"category": "Augment"
 		},
 		{
 			"name": "Reawaken",
@@ -7586,7 +7586,7 @@
 		{
 			"name": "Sequence Burn",
 			"maxRank": 3,
-			"category": "Secondary"
+			"category": "Augment"
 		},
 		{
 			"name": "Sharpened Bullets",
@@ -7646,7 +7646,7 @@
 		{
 			"name": "Target Fixation",
 			"maxRank": 3,
-			"category": "Secondary"
+			"category": "Augment"
 		},
 		{
 			"name": "Targeting Receptor",
@@ -7661,12 +7661,12 @@
 		{
 			"name": "Thermagnetic Shells",
 			"maxRank": 3,
-			"category": "Secondary"
+			"category": "Augment"
 		},
 		{
 			"name": "Toxic Sequence",
 			"maxRank": 3,
-			"category": "Secondary"
+			"category": "Augment"
 		},
 		{
 			"name": "Trick Mag",
@@ -7691,7 +7691,7 @@
 		{
 			"name": "Amalgam Furax Body Count",
 			"maxRank": 5,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Amalgam Organ Shatter",
@@ -7701,7 +7701,7 @@
 		{
 			"name": "Amalgam Ripkas True Steel",
 			"maxRank": 5,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Astral Slash",
@@ -7726,7 +7726,7 @@
 		{
 			"name": "Blade of Truth",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Blazing Steel",
@@ -7761,12 +7761,12 @@
 		{
 			"name": "Bursting Mass",
 			"maxRank": 5,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Calm & Frenzy",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Cataclysmic Gate",
@@ -7781,7 +7781,7 @@
 		{
 			"name": "Coil Recharge",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Collision Force",
@@ -7811,12 +7811,12 @@
 		{
 			"name": "Conductive Sphere",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Contagion Cloud",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Corrupt Charge",
@@ -7826,7 +7826,7 @@
 		{
 			"name": "Counter Pulse",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Covert Lethality",
@@ -7856,7 +7856,7 @@
 		{
 			"name": "Dark Propagation",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Dreamer's Wrath",
@@ -7886,7 +7886,7 @@
 		{
 			"name": "Enraged",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Extend",
@@ -8016,12 +8016,12 @@
 		{
 			"name": "Fused Crucible",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Fused Reservoir",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Gale Kick",
@@ -8096,7 +8096,7 @@
 		{
 			"name": "Ironclad Charge",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Jagged Edge",
@@ -8106,7 +8106,7 @@
 		{
 			"name": "Justice Blades",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Killing Blow",
@@ -8206,7 +8206,7 @@
 		{
 			"name": "Partitioned Mallet",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Piercing Hit",
@@ -8236,7 +8236,7 @@
 		{
 			"name": "Prey of Dynar",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Primed Deadly Efficiency",
@@ -8276,7 +8276,7 @@
 		{
 			"name": "Radiant Finish",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Reach",
@@ -8286,7 +8286,7 @@
 		{
 			"name": "Reaping Chakram",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Reflex Coil",
@@ -8311,7 +8311,7 @@
 		{
 			"name": "Revealing Spores",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Sacrificial Pressure",
@@ -8346,7 +8346,7 @@
 		{
 			"name": "Shadow Haze",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Sharpened Claws",
@@ -8366,7 +8366,7 @@
 		{
 			"name": "Smite Infusion",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Spoiled Strike",
@@ -8381,7 +8381,7 @@
 		{
 			"name": "Stockpiled Blight",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Stunning Speed",
@@ -8416,7 +8416,7 @@
 		{
 			"name": "Swing Line",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Tempered Blade",
@@ -8426,7 +8426,7 @@
 		{
 			"name": "Toxic Blight",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "True Punishment",
@@ -8451,7 +8451,7 @@
 		{
 			"name": "Viral Tempest",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Volatile Recompense",
@@ -8481,7 +8481,7 @@
 		{
 			"name": "Winds of Purity",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Worm's Torment",
@@ -8496,7 +8496,7 @@
 		{
 			"name": "Wrecking Wall",
 			"maxRank": 3,
-			"category": "Melee"
+			"category": "Augment"
 		},
 		{
 			"name": "Astral Twilight",
@@ -8726,7 +8726,7 @@
 		{
 			"name": "Abating Link",
 			"maxRank": 3,
-			"category": "Companion"
+			"category": "Augment"
 		},
 		{
 			"name": "Acidic Spittle",
@@ -9051,7 +9051,7 @@
 		{
 			"name": "Hunter's Bonesaw",
 			"maxRank": 5,
-			"category": "Companion"
+			"category": "Augment"
 		},
 		{
 			"name": "Immunity Resistance",
@@ -9091,7 +9091,7 @@
 		{
 			"name": "Jet Stream",
 			"maxRank": 3,
-			"category": "Companion"
+			"category": "Augment"
 		},
 		{
 			"name": "Jugulus Barbs",
@@ -9251,12 +9251,12 @@
 		{
 			"name": "Mending Splinters",
 			"maxRank": 3,
-			"category": "Companion"
+			"category": "Augment"
 		},
 		{
 			"name": "Merulina Guardian",
 			"maxRank": 3,
-			"category": "Companion"
+			"category": "Augment"
 		},
 		{
 			"name": "Metem-Erun",
@@ -9356,7 +9356,7 @@
 		{
 			"name": "Pool of Life",
 			"maxRank": 5,
-			"category": "Companion"
+			"category": "Augment"
 		},
 		{
 			"name": "Pounce",
@@ -9636,7 +9636,7 @@
 		{
 			"name": "Teeming Virulence",
 			"maxRank": 3,
-			"category": "Companion"
+			"category": "Augment"
 		},
 		{
 			"name": "Tek Assault",
@@ -9731,12 +9731,12 @@
 		{
 			"name": "Venari Bodyguard",
 			"maxRank": 3,
-			"category": "Companion"
+			"category": "Augment"
 		},
 		{
 			"name": "Venom Dose",
 			"maxRank": 3,
-			"category": "Companion"
+			"category": "Augment"
 		},
 		{
 			"name": "Venom Teeth",
@@ -9776,7 +9776,7 @@
 		{
 			"name": "Wild Frenzy",
 			"maxRank": 5,
-			"category": "Companion"
+			"category": "Augment"
 		},
 		{
 			"name": "Worm Away",
@@ -9806,7 +9806,7 @@
 		{
 			"name": "Aegis Gale",
 			"maxRank": 3,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Aerial Ace",
@@ -9831,7 +9831,7 @@
 		{
 			"name": "Afterburner",
 			"maxRank": 3,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Amar's Anguish",
@@ -9926,17 +9926,17 @@
 		{
 			"name": "Bright Purity",
 			"maxRank": 3,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Clip Delegation",
 			"maxRank": 5,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Conductor",
 			"maxRank": 3,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Containment Breach",
@@ -9966,7 +9966,7 @@
 		{
 			"name": "Dread Ward",
 			"maxRank": 3,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Electrified Barrel",
@@ -9976,7 +9976,7 @@
 		{
 			"name": "Electromagnetic Shielding",
 			"maxRank": 5,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Energy Generator",
@@ -10006,7 +10006,7 @@
 		{
 			"name": "Exposing Harpoon",
 			"maxRank": 5,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Focused Prospectus",
@@ -10041,12 +10041,12 @@
 		{
 			"name": "Ironclad Flight",
 			"maxRank": 3,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Kinetic Ricochet",
 			"maxRank": 5,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Laser Sight",
@@ -10076,7 +10076,7 @@
 		{
 			"name": "Meticulous Aim",
 			"maxRank": 5,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Nebula Bore",
@@ -10106,7 +10106,7 @@
 		{
 			"name": "Photon Repeater",
 			"maxRank": 3,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Piercing Step",
@@ -10171,7 +10171,7 @@
 		{
 			"name": "Rift Strike",
 			"maxRank": 5,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Shivering Contagion",
@@ -10191,7 +10191,7 @@
 		{
 			"name": "Surging Dash",
 			"maxRank": 3,
-			"category": "Archwing"
+			"category": "Augment"
 		},
 		{
 			"name": "Synergized Prospectus",
@@ -10361,7 +10361,7 @@
 		{
 			"name": "Anchored Glide",
 			"maxRank": 5,
-			"category": "K-Drive"
+			"category": "Augment"
 		},
 		{
 			"name": "Anti-Grav Grenade",
@@ -10486,7 +10486,7 @@
 		{
 			"name": "Sonic Fracture",
 			"maxRank": 3,
-			"category": "K-Drive"
+			"category": "Augment"
 		},
 		{
 			"name": "Thrash Landing",
@@ -10546,7 +10546,7 @@
 		{
 			"name": "Beguiling Lantern",
 			"maxRank": 5,
-			"category": "Railjack"
+			"category": "Augment"
 		},
 		{
 			"name": "Breach Quanta",
@@ -10606,7 +10606,7 @@
 		{
 			"name": "Flux Overdrive",
 			"maxRank": 5,
-			"category": "Railjack"
+			"category": "Augment"
 		},
 		{
 			"name": "Form Up",
@@ -10706,7 +10706,7 @@
 		{
 			"name": "Photon Overcharge",
 			"maxRank": 5,
-			"category": "Railjack"
+			"category": "Augment"
 		},
 		{
 			"name": "Predator",
@@ -10796,12 +10796,12 @@
 		{
 			"name": "Temporal Artillery",
 			"maxRank": 3,
-			"category": "Railjack"
+			"category": "Augment"
 		},
 		{
 			"name": "Temporal Erosion",
 			"maxRank": 3,
-			"category": "Railjack"
+			"category": "Augment"
 		},
 		{
 			"name": "Tether",
@@ -10841,7 +10841,7 @@
 		{
 			"name": "Vulcan Blitz",
 			"maxRank": 5,
-			"category": "Railjack"
+			"category": "Augment"
 		},
 		{
 			"name": "Warhead",
@@ -10866,7 +10866,7 @@
 		{
 			"name": "Afterburn",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Agile Aim",
@@ -10901,7 +10901,7 @@
 		{
 			"name": "Antimatter Mine",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Apex Predator",
@@ -11001,12 +11001,12 @@
 		{
 			"name": "Deceptive Bond",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Defiled Reckoning",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Deft Tempo",
@@ -11021,7 +11021,7 @@
 		{
 			"name": "Discharge Strike",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Dividing Blades",
@@ -11161,12 +11161,12 @@
 		{
 			"name": "Hysterical Fixation",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Ice Wave Impedance",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Impaler Munitions",
@@ -11181,7 +11181,7 @@
 		{
 			"name": "Iron Shrapnel",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Kill Switch",
@@ -11191,7 +11191,7 @@
 		{
 			"name": "Kinetic Collision",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Lashing Coil",
@@ -11256,7 +11256,7 @@
 		{
 			"name": "Mesa's Waltz",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Meteor Munitions",
@@ -11316,7 +11316,7 @@
 		{
 			"name": "Power of Three",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Precision Munition",
@@ -11326,7 +11326,7 @@
 		{
 			"name": "Prism Guard",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Prize Kill",
@@ -11336,17 +11336,17 @@
 		{
 			"name": "Purging Slash",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Purifying Flames",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Push & Pull",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Quaking Hand",
@@ -11366,7 +11366,7 @@
 		{
 			"name": "Recharge Barrier",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Recover",
@@ -11416,12 +11416,12 @@
 		{
 			"name": "Rumbled",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Sapping Reach",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Scarlet Hurricane",
@@ -11461,7 +11461,7 @@
 		{
 			"name": "Shield Overload",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Shrapnel Rounds",
@@ -11476,12 +11476,12 @@
 		{
 			"name": "Signal Flare",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Singularity",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Skull Shots",
@@ -11506,7 +11506,7 @@
 		{
 			"name": "Spring-Loaded Broadhead",
 			"maxRank": 5,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Spry Sights",
@@ -11566,7 +11566,7 @@
 		{
 			"name": "Tear Gas",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Tempered Bound",
@@ -11601,7 +11601,7 @@
 		{
 			"name": "Vexing Retaliation",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		},
 		{
 			"name": "Vicious Approach",
@@ -11621,7 +11621,7 @@
 		{
 			"name": "Ward Recovery",
 			"maxRank": 3,
-			"category": "Conclave"
+			"category": "Augment"
 		}
 	],
 	"subsume": [
