@@ -38,7 +38,7 @@ interface CycleDisplay {
         </div>
       }
 
-      @if (service.error()) {
+      @if (service.error() && !cycles().length) {
         <p class="ws-error" role="alert">Failed to load world state. <button (click)="refresh()">Retry</button></p>
       } @else if (service.loading() && !cycles().length) {
         <div class="ws-loading" aria-busy="true">Loading…</div>
