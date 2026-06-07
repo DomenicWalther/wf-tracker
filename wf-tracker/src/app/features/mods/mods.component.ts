@@ -7,7 +7,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
 
 const CATEGORY_ORDER = [
-  'Warframe', 'Aura', 'Primary', 'Secondary', 'Melee', 'Stance',
+  'Warframe', 'Augment', 'Aura', 'Primary', 'Secondary', 'Melee', 'Stance',
   'Companion', 'Archwing', 'Necramech', 'K-Drive', 'Railjack', 'Conclave',
 ];
 
