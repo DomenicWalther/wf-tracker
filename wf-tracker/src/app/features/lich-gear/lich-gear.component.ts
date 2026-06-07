@@ -14,12 +14,21 @@ const LICH_COLUMNS: TrackerColumn[] = [
   { key: 'vf',       label: 'Val. Fusion' },
 ];
 
+const EPHEMERA_COLUMNS: TrackerColumn[] = [
+  { key: 'obtained', label: 'Obtained' },
+];
+
 /** Maps a lich item + column key to its storage key.
  *  obtained → lich:<item>  (legacy format, no suffix)
  *  others   → lich:<item>:<col>
  */
 function lichKey(item: string, col: string): string {
   return col === 'obtained' ? 'lich:' + item : 'lich:' + item + ':' + col;
+}
+
+/** Ephemera share their storage key with Collectables for 1:1 sync. */
+function ephemeraKey(item: string): string {
+  return 'col:' + item;
 }
 
 @Component({
@@ -30,7 +39,7 @@ function lichKey(item: string, col: string): string {
     <div class="page">
       <app-section-header
         title="LICH GEAR"
-        description="Track Kuva, Tenet, and Coda weapons. Each weapon needs to be obtained, reach 60%+ element, and achieve Valence Fusion."
+        description="Track Kuva, Tenet, and Coda weapons. Each weapon needs to be obtained, reach 60%+ element, and achieve Valence Fusion. Ephemera obtained here sync with Collectables."
         [completed]="progress().completed"
         [total]="progress().total"
       />
@@ -58,10 +67,10 @@ function lichKey(item: string, col: string): string {
           </button>
           @if (isGroupOpen(group.name)) {
             <app-tracker-table
-              [columns]="columns"
+              [columns]="group.isEphemera ? ephemeraColumns : columns"
               [rows]="toRows(group.items)"
-              [checkedFn]="checkedFn"
-              (toggle)="toggleItem($event.rowName, $event.colKey)"
+              [checkedFn]="group.isEphemera ? ephemeraCheckedFn : checkedFn"
+              (toggle)="toggleItem($event.rowName, $event.colKey, group.isEphemera)"
             />
           }
         </div>
@@ -127,16 +136,22 @@ export class LichGearComponent {
   protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
 
   readonly columns = LICH_COLUMNS;
+  readonly ephemeraColumns = EPHEMERA_COLUMNS;
 
   readonly checkedFn = (rowName: string, colKey: string): boolean =>
     this.trackerService.isChecked(lichKey(rowName, colKey));
 
-  readonly groups = computed<{ name: string; items: string[] }[]>(() => {
+  readonly ephemeraCheckedFn = (rowName: string, _colKey: string): boolean =>
+    this.trackerService.isChecked(ephemeraKey(rowName));
+
+  readonly groups = computed<{ key: string; name: string; items: string[]; isEphemera: boolean }[]>(() => {
     const d = this.rawData();
     if (!d?.lichGear) return [];
-    return Object.entries(d.lichGear).map(([group, items]) => ({
-      name: group.split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-      items
+    return Object.entries(d.lichGear).map(([key, items]) => ({
+      key,
+      name: key.split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+      items,
+      isEphemera: key.includes('ephemera'),
     }));
   });
 
@@ -162,8 +177,8 @@ export class LichGearComponent {
     return items.map(name => ({ name }));
   }
 
-  toggleItem(item: string, col: string): void {
-    this.trackerService.toggle(lichKey(item, col));
+  toggleItem(item: string, col: string, isEphemera: boolean): void {
+    this.trackerService.toggle(isEphemera ? ephemeraKey(item) : lichKey(item, col));
   }
 
   isGroupOpen(name: string): boolean {
@@ -174,7 +189,11 @@ export class LichGearComponent {
     this.openGroups.toggle(name);
   }
 
-  groupProgress(group: { items: string[] }): { completed: number; total: number } {
+  groupProgress(group: { items: string[]; isEphemera: boolean }): { completed: number; total: number } {
+    if (group.isEphemera) {
+      const completed = group.items.filter(item => this.trackerService.isChecked(ephemeraKey(item))).length;
+      return { completed, total: group.items.length };
+    }
     const total = group.items.length * 3;
     let completed = 0;
     for (const item of group.items) {
