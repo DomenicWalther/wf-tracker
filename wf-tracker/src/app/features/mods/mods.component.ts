@@ -7,8 +7,15 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
 
 const CATEGORY_ORDER = [
-  'Warframe', 'Augment', 'Aura', 'Primary', 'Secondary', 'Melee', 'Stance',
-  'Companion', 'Archwing', 'Necramech', 'K-Drive', 'Railjack', 'Conclave',
+  'Warframe', 'Warframe Augment', 'Aura',
+  'Primary', 'Primary Augment',
+  'Secondary', 'Secondary Augment',
+  'Melee', 'Melee Augment', 'Stance',
+  'Companion',
+  'Archwing', 'Archwing Augment',
+  'Necramech', 'K-Drive', 'Railjack',
+  'Conclave', 'Conclave Augment',
+  'Augment',
 ];
 
 interface ModGroup {
@@ -138,7 +145,7 @@ export class ModsComponent {
     const byCategory = new Map<string, typeof mods>();
     for (const cat of CATEGORY_ORDER) byCategory.set(cat, []);
     for (const mod of mods) {
-      if (mod.category === 'Conclave' && !includeConclave) continue;
+      if ((mod.category === 'Conclave' || mod.category === 'Conclave Augment') && !includeConclave) continue;
       const cat = mod.category ?? 'Warframe';
       if (!byCategory.has(cat)) byCategory.set(cat, []);
       byCategory.get(cat)!.push(mod);
