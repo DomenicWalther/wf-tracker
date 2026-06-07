@@ -4351,7 +4351,7 @@
 		{
 			"name": "Cathode Current",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Celestial Stomp",
@@ -4461,7 +4461,7 @@
 		{
 			"name": "Divine Retribution",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Duality",
@@ -4481,7 +4481,7 @@
 		{
 			"name": "Elusive Retribution",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Empowered Quiver",
@@ -4581,7 +4581,7 @@
 		{
 			"name": "Exothermic",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Fass",
@@ -4776,7 +4776,7 @@
 		{
 			"name": "Gastro",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Gilded Truth",
@@ -4801,7 +4801,7 @@
 		{
 			"name": "Guardian Armor",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Guided Effigy",
@@ -4846,7 +4846,7 @@
 		{
 			"name": "Hearty Nourishment",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Heavy Impact",
@@ -4901,7 +4901,7 @@
 		{
 			"name": "Intrepid Stand",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Irradiating Disarm",
@@ -4981,7 +4981,7 @@
 		{
 			"name": "Mesmer Shield",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Metal Fiber",
@@ -5041,7 +5041,7 @@
 		{
 			"name": "Negation Armor",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Netra",
@@ -5066,7 +5066,7 @@
 		{
 			"name": "Omikuji's Fortune",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Ore Gaze",
@@ -5296,7 +5296,7 @@
 		{
 			"name": "Rousing Plunder",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Rubble Heap",
@@ -5346,7 +5346,7 @@
 		{
 			"name": "Shattered Storm",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Shield of Shadows",
@@ -5386,7 +5386,7 @@
 		{
 			"name": "Spectral Spirit",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Spectrosiphon",
@@ -5481,7 +5481,7 @@
 		{
 			"name": "Tesla Bank",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Tharros Lethality",
@@ -5541,7 +5541,7 @@
 		{
 			"name": "Ulfrun's Endurance",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Umbral Fiber",
@@ -5711,7 +5711,7 @@
 		{
 			"name": "Abundant Mutation",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Accelerated Blast",
@@ -5731,7 +5731,7 @@
 		{
 			"name": "Airburst Rounds",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Amalgam Argonak Metal Auger",
@@ -7551,7 +7551,7 @@
 		{
 			"name": "Reactive Storm",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Reawaken",
@@ -7781,7 +7781,7 @@
 		{
 			"name": "Coil Recharge",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Collision Force",
@@ -7811,7 +7811,7 @@
 		{
 			"name": "Conductive Sphere",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Contagion Cloud",
@@ -7856,7 +7856,7 @@
 		{
 			"name": "Dark Propagation",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Dreamer's Wrath",
@@ -8016,7 +8016,7 @@
 		{
 			"name": "Fused Crucible",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Fused Reservoir",
@@ -8236,7 +8236,7 @@
 		{
 			"name": "Prey of Dynar",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Primed Deadly Efficiency",
@@ -8496,7 +8496,7 @@
 		{
 			"name": "Wrecking Wall",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Astral Twilight",
@@ -9806,7 +9806,7 @@
 		{
 			"name": "Aegis Gale",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Aerial Ace",
@@ -10796,7 +10796,7 @@
 		{
 			"name": "Temporal Artillery",
 			"maxRank": 3,
-			"category": "Augment"
+			"category": "Warframe Augment"
 		},
 		{
 			"name": "Temporal Erosion",
