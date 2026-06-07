@@ -511,7 +511,7 @@ export class DashboardComponent {
   private relicTotal(d: TrackerData): number {
     if (!d.relics) return 0;
     const base = Object.values(d.relics).reduce((a, v) => a + v.length, 0);
-    return this.tracker.settings().relic.hoarder ? base * 4 : base;
+    return base * (this.tracker.settings().relic.hoarder ? 4 : 2);
   }
 
   private bpTotal(d: TrackerData): number {

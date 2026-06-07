@@ -276,7 +276,7 @@ export class TrackerService {
   private relicTotal(d: TrackerData, settings: TrackerSettings): number {
     if (!d.relics) return 0;
     const base = Object.values(d.relics).reduce((a, v) => a + v.length, 0);
-    return settings.relic.hoarder ? base * 4 : base;
+    return base * (settings.relic.hoarder ? 4 : 2);
   }
 
   private bpTotal(d: TrackerData, settings: TrackerSettings): number {

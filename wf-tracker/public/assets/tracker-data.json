@@ -1,4 +1,4 @@
-﻿{
+{
 	"quests": [
 		"Awakening",
 		"Vor's Prize",
@@ -12890,9 +12890,13 @@
 			"H6",
 			"H7",
 			"H8",
+			"I",
 			"I1",
 			"I2",
 			"I3",
+			"II",
+			"III",
+			"IV",
 			"K1",
 			"K2",
 			"K3",
@@ -12994,6 +12998,10 @@
 			"V11",
 			"V12",
 			"V13",
+			"Vanguard C1",
+			"Vanguard E1",
+			"Vanguard M1",
+			"Vanguard P1",
 			"W1",
 			"W2",
 			"W3",
@@ -13001,15 +13009,7 @@
 			"Y1",
 			"Y2",
 			"Z1",
-			"Z2",
-			"Vanguard C1",
-			"Vanguard E1",
-			"Vanguard M1",
-			"Vanguard P1",
-			"I",
-			"II",
-			"III",
-			"IV"
+			"Z2"
 		]
 	},
 	"blueprints": {
