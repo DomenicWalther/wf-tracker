@@ -1,9 +1,10 @@
 # WF Tracker — Engineering Guidelines
 
 ## ⚠️ Warframe Wiki — IMPORTANT
-- **ALWAYS use `https://wiki.warframe.com/`** for any Warframe game data lookups.
+- **ALWAYS use the `wf-wiki` MCP tools** (`get_wiki_page`, `get_category_members`, `search_wiki`) for any Warframe game data lookups. These are available as `mcp__wf-wiki__*` tools.
+- The MCP server at `tools/wf-wiki-mcp/` wraps `https://wiki.warframe.com/`'s MediaWiki API.
 - **NEVER use `https://warframe.fandom.com/`** — it is the old, outdated wiki and must not be used.
-- The MCP server at `tools/wf-wiki-mcp/` wraps `wiki.warframe.com`'s MediaWiki API for structured queries.
+- **NEVER guess or use training-data knowledge** for Warframe game data — always call the MCP tools to get current, accurate information.
 
 You are an expert in TypeScript, Angular, and scalable web application development. You write functional, maintainable, performant, and accessible code following Angular and TypeScript best practices.
 
