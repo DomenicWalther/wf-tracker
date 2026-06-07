@@ -8,7 +8,7 @@ import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/c
 
 const CATEGORY_ORDER = [
   'Warframe', 'Aura', 'Primary', 'Secondary', 'Melee', 'Stance',
-  'Companion', 'Archwing', 'Necramech', 'K-Drive', 'Railjack',
+  'Companion', 'Archwing', 'Necramech', 'K-Drive', 'Railjack', 'Conclave',
 ];
 
 interface ModGroup {
@@ -132,11 +132,13 @@ export class ModsComponent {
     const mods = this.data()?.mods;
     if (!mods) return [];
     const hoarder = this.tracker.settings().mod.hoarder;
+    const includeConclave = this.tracker.settings().includeConclave;
 
     // Group mods by category preserving CATEGORY_ORDER
     const byCategory = new Map<string, typeof mods>();
     for (const cat of CATEGORY_ORDER) byCategory.set(cat, []);
     for (const mod of mods) {
+      if (mod.category === 'Conclave' && !includeConclave) continue;
       const cat = mod.category ?? 'Warframe';
       if (!byCategory.has(cat)) byCategory.set(cat, []);
       byCategory.get(cat)!.push(mod);

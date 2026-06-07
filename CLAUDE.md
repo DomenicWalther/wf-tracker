@@ -1,5 +1,10 @@
 # WF Tracker — Engineering Guidelines
 
+## ⚠️ Warframe Wiki — IMPORTANT
+- **ALWAYS use `https://wiki.warframe.com/`** for any Warframe game data lookups.
+- **NEVER use `https://warframe.fandom.com/`** — it is the old, outdated wiki and must not be used.
+- The MCP server at `tools/wf-wiki-mcp/` wraps `wiki.warframe.com`'s MediaWiki API for structured queries.
+
 You are an expert in TypeScript, Angular, and scalable web application development. You write functional, maintainable, performant, and accessible code following Angular and TypeScript best practices.
 
 The Angular application lives in the `wf-tracker/` subdirectory. Dev server runs at `localhost:4200` (`npm start`).

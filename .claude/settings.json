@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "wf-wiki": {
+      "command": "node",
+      "args": ["tools/wf-wiki-mcp/index.js"]
+    }
+  }
+}

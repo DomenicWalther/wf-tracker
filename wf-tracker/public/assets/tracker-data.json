@@ -4189,16 +4189,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Adept Surge",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Adrenaline Boost",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Aerodynamic",
       "maxRank": 5,
       "category": "Warframe"
@@ -4219,17 +4209,7 @@
       "category": "Warframe"
     },
     {
-      "name": "Anticipation",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Antimatter Absorb",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Antimatter Mine",
       "maxRank": 3,
       "category": "Warframe"
     },
@@ -4344,11 +4324,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Brain Storm",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Brief Respite",
       "maxRank": 5,
       "category": "Warframe"
@@ -4444,11 +4419,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Cunning Aspect",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Cunning Drift",
       "maxRank": 5,
       "category": "Warframe"
@@ -4469,11 +4439,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Defiled Reckoning",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Desiccation's Curse",
       "maxRank": 3,
       "category": "Warframe"
@@ -4489,11 +4454,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Directed Convergence",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Disarming Purity",
       "maxRank": 3,
       "category": "Warframe"
@@ -4505,11 +4465,6 @@
     },
     {
       "name": "Divine Retribution",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Draining Gloom",
       "maxRank": 3,
       "category": "Warframe"
     },
@@ -4530,11 +4485,6 @@
     },
     {
       "name": "Elusive Retribution",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Emergent Aftermath",
       "maxRank": 3,
       "category": "Warframe"
     },
@@ -4650,11 +4600,6 @@
     },
     {
       "name": "Fear Sense",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Final Act",
       "maxRank": 3,
       "category": "Warframe"
     },
@@ -4914,11 +4859,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Heightened Reflexes",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Hushed Invisibility",
       "maxRank": 3,
       "category": "Warframe"
@@ -4929,17 +4869,7 @@
       "category": "Warframe"
     },
     {
-      "name": "Hysterical Fixation",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Iatric Mycelium",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Ice Wave Impedance",
       "maxRank": 3,
       "category": "Warframe"
     },
@@ -5004,11 +4934,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Kill Switch",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Larva Burst",
       "maxRank": 3,
       "category": "Warframe"
@@ -5054,11 +4979,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Mafic Rain",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Martyr Symbiosis",
       "maxRank": 3,
       "category": "Warframe"
@@ -5066,11 +4986,6 @@
     {
       "name": "Mentor's Legacy",
       "maxRank": 1,
-      "category": "Warframe"
-    },
-    {
-      "name": "Mesa's Waltz",
-      "maxRank": 3,
       "category": "Warframe"
     },
     {
@@ -5100,16 +5015,6 @@
     },
     {
       "name": "Molecular Fission",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Momentary Pause",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Mortal Conduct",
       "maxRank": 3,
       "category": "Warframe"
     },
@@ -5234,11 +5139,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Power of Three",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Precision Intensify",
       "maxRank": 5,
       "category": "Warframe"
@@ -5279,11 +5179,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Prism Guard",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Prolonged Paralysis",
       "maxRank": 3,
       "category": "Warframe"
@@ -5294,17 +5189,7 @@
       "category": "Warframe"
     },
     {
-      "name": "Purifying Flames",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Pyroclastic Flow",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Quaking Hand",
       "maxRank": 3,
       "category": "Warframe"
     },
@@ -5325,11 +5210,6 @@
     },
     {
       "name": "Recrystalize",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Recuperate",
       "maxRank": 3,
       "category": "Warframe"
     },
@@ -5419,11 +5299,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Rumbled",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Rush",
       "maxRank": 5,
       "category": "Warframe"
@@ -5464,11 +5339,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Shadow Harvest",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Shattered Storm",
       "maxRank": 3,
       "category": "Warframe"
@@ -5479,17 +5349,7 @@
       "category": "Warframe"
     },
     {
-      "name": "Shield Overload",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Shock Trooper",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Singularity",
       "maxRank": 3,
       "category": "Warframe"
     },
@@ -5545,11 +5405,6 @@
     },
     {
       "name": "Stalking Fan",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Static Alacrity",
       "maxRank": 3,
       "category": "Warframe"
     },
@@ -5709,11 +5564,6 @@
       "category": "Warframe"
     },
     {
-      "name": "Vexing Retaliation",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
       "name": "Vigor",
       "maxRank": 5,
       "category": "Warframe"
@@ -5740,11 +5590,6 @@
     },
     {
       "name": "Votive Onslaught",
-      "maxRank": 3,
-      "category": "Warframe"
-    },
-    {
-      "name": "Ward Recovery",
       "maxRank": 3,
       "category": "Warframe"
     },
@@ -5984,11 +5829,6 @@
       "category": "Primary"
     },
     {
-      "name": "Argent Scourge",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Argon Scope",
       "maxRank": 5,
       "category": "Primary"
@@ -6039,22 +5879,12 @@
       "category": "Primary"
     },
     {
-      "name": "Biting Piranha",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Bladed Rounds",
       "maxRank": 5,
       "category": "Primary"
     },
     {
       "name": "Blaze",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Blind Shot",
       "maxRank": 3,
       "category": "Primary"
     },
@@ -6080,11 +5910,6 @@
     },
     {
       "name": "Breach Loader",
-      "maxRank": 5,
-      "category": "Primary"
-    },
-    {
-      "name": "Broad Eye",
       "maxRank": 5,
       "category": "Primary"
     },
@@ -6194,21 +6019,6 @@
       "category": "Primary"
     },
     {
-      "name": "Crash Shot",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Crashing Havoc",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Crashing Timber",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Creeping Bullseye",
       "maxRank": 5,
       "category": "Primary"
@@ -6269,16 +6079,6 @@
       "category": "Primary"
     },
     {
-      "name": "Double Tap",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Double-Barrel Drift",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Dreaded Killshot",
       "maxRank": 5,
       "category": "Primary"
@@ -6289,18 +6089,8 @@
       "category": "Primary"
     },
     {
-      "name": "Eagle Eye",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Efficient Beams",
       "maxRank": 5,
-      "category": "Primary"
-    },
-    {
-      "name": "Eject Magazine",
-      "maxRank": 3,
       "category": "Primary"
     },
     {
@@ -6354,22 +6144,12 @@
       "category": "Primary"
     },
     {
-      "name": "Feathered Arrows",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Fever Strike",
       "maxRank": 5,
       "category": "Primary"
     },
     {
       "name": "Firestorm",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Flak Shot",
       "maxRank": 3,
       "category": "Primary"
     },
@@ -6634,16 +6414,6 @@
       "category": "Primary"
     },
     {
-      "name": "Focused Acceleration",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Follow Through",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Four Riders",
       "maxRank": 3,
       "category": "Primary"
@@ -6699,11 +6469,6 @@
       "category": "Primary"
     },
     {
-      "name": "Gorgon Frenzy",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Hammer Shot",
       "maxRank": 3,
       "category": "Primary"
@@ -6714,18 +6479,8 @@
       "category": "Primary"
     },
     {
-      "name": "Hawk Eye",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Heavy Caliber",
       "maxRank": 10,
-      "category": "Primary"
-    },
-    {
-      "name": "Heavy Warhead",
-      "maxRank": 3,
       "category": "Primary"
     },
     {
@@ -6764,32 +6519,12 @@
       "category": "Primary"
     },
     {
-      "name": "Hydraulic Barrel",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Hydraulic Chamber",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Hydraulic Gauge",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Hypothermic Shell",
       "maxRank": 3,
       "category": "Primary"
     },
     {
       "name": "Ice Storm",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Impaler Munitions",
       "maxRank": 3,
       "category": "Primary"
     },
@@ -6809,37 +6544,7 @@
       "category": "Primary"
     },
     {
-      "name": "Iron Shrapnel",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Jolt",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Lie In Wait",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Lock and Load",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Loose Chamber",
-      "maxRank": 5,
-      "category": "Primary"
-    },
-    {
-      "name": "Loose Hatch",
-      "maxRank": 5,
-      "category": "Primary"
-    },
-    {
-      "name": "Lucky Shot",
       "maxRank": 3,
       "category": "Primary"
     },
@@ -6879,11 +6584,6 @@
       "category": "Primary"
     },
     {
-      "name": "Measured Burst",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Mending Shot",
       "maxRank": 10,
       "category": "Primary"
@@ -6891,11 +6591,6 @@
     {
       "name": "Metal Auger",
       "maxRank": 5,
-      "category": "Primary"
-    },
-    {
-      "name": "Meteor Munitions",
-      "maxRank": 3,
       "category": "Primary"
     },
     {
@@ -7129,11 +6824,6 @@
       "category": "Primary"
     },
     {
-      "name": "Razor Munitions",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Razor Shot",
       "maxRank": 5,
       "category": "Primary"
@@ -7170,11 +6860,6 @@
     },
     {
       "name": "Rime Rounds",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Ripper Rounds",
       "maxRank": 3,
       "category": "Primary"
     },
@@ -7239,11 +6924,6 @@
       "category": "Primary"
     },
     {
-      "name": "Serrated Rounds",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Serration",
       "maxRank": 10,
       "category": "Primary"
@@ -7299,11 +6979,6 @@
       "category": "Primary"
     },
     {
-      "name": "Shrapnel Rounds",
-      "maxRank": 1,
-      "category": "Primary"
-    },
-    {
       "name": "Shrapnel Shot",
       "maxRank": 5,
       "category": "Primary"
@@ -7319,22 +6994,12 @@
       "category": "Primary"
     },
     {
-      "name": "Signal Flare",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Silent Battery",
       "maxRank": 3,
       "category": "Primary"
     },
     {
       "name": "Sinister Reach",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Skull Shots",
       "maxRank": 3,
       "category": "Primary"
     },
@@ -7369,11 +7034,6 @@
       "category": "Primary"
     },
     {
-      "name": "Snap Shot",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Sniper Ammo Mutation",
       "maxRank": 5,
       "category": "Primary"
@@ -7394,11 +7054,6 @@
       "category": "Primary"
     },
     {
-      "name": "Spring-Loaded Broadhead",
-      "maxRank": 5,
-      "category": "Primary"
-    },
-    {
       "name": "Spring-Loaded Chamber",
       "maxRank": 5,
       "category": "Primary"
@@ -7414,11 +7069,6 @@
       "category": "Primary"
     },
     {
-      "name": "Sudden Justice",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
       "name": "Suppress",
       "maxRank": 3,
       "category": "Primary"
@@ -7431,11 +7081,6 @@
     {
       "name": "Tactical Pump",
       "maxRank": 5,
-      "category": "Primary"
-    },
-    {
-      "name": "Tainted Hydra",
-      "maxRank": 3,
       "category": "Primary"
     },
     {
@@ -7485,11 +7130,6 @@
     },
     {
       "name": "Tractor Beam",
-      "maxRank": 3,
-      "category": "Primary"
-    },
-    {
-      "name": "Triple Tap",
       "maxRank": 3,
       "category": "Primary"
     },
@@ -7574,18 +7214,8 @@
       "category": "Primary"
     },
     {
-      "name": "Agile Aim",
-      "maxRank": 3,
-      "category": "Secondary"
-    },
-    {
       "name": "Amalgam Barrel Diffusion",
       "maxRank": 5,
-      "category": "Secondary"
-    },
-    {
-      "name": "Ambush Optics",
-      "maxRank": 3,
       "category": "Secondary"
     },
     {
@@ -7641,11 +7271,6 @@
     {
       "name": "Deep Freeze",
       "maxRank": 5,
-      "category": "Secondary"
-    },
-    {
-      "name": "Deft Tempo",
-      "maxRank": 3,
       "category": "Secondary"
     },
     {
@@ -7756,11 +7381,6 @@
     {
       "name": "Galvanized Shot",
       "maxRank": 10,
-      "category": "Secondary"
-    },
-    {
-      "name": "Gun Glide",
-      "maxRank": 3,
       "category": "Secondary"
     },
     {
@@ -7964,11 +7584,6 @@
       "category": "Secondary"
     },
     {
-      "name": "Quick Charge",
-      "maxRank": 3,
-      "category": "Secondary"
-    },
-    {
       "name": "Quickdraw",
       "maxRank": 5,
       "category": "Secondary"
@@ -7994,16 +7609,6 @@
       "category": "Secondary"
     },
     {
-      "name": "Recharge Barrier",
-      "maxRank": 3,
-      "category": "Secondary"
-    },
-    {
-      "name": "Reflex Draw",
-      "maxRank": 3,
-      "category": "Secondary"
-    },
-    {
       "name": "Rubedo-Lined Barrel",
       "maxRank": 5,
       "category": "Secondary"
@@ -8019,11 +7624,6 @@
       "category": "Secondary"
     },
     {
-      "name": "Secondary Wind",
-      "maxRank": 3,
-      "category": "Secondary"
-    },
-    {
       "name": "Semi-Pistol Cannonade",
       "maxRank": 5,
       "category": "Secondary"
@@ -8031,16 +7631,6 @@
     {
       "name": "Sharpened Bullets",
       "maxRank": 5,
-      "category": "Secondary"
-    },
-    {
-      "name": "Shred Shot",
-      "maxRank": 3,
-      "category": "Secondary"
-    },
-    {
-      "name": "Spry Sights",
-      "maxRank": 3,
       "category": "Secondary"
     },
     {
@@ -8194,11 +7784,6 @@
       "category": "Melee"
     },
     {
-      "name": "Bounty Hunter",
-      "maxRank": 5,
-      "category": "Melee"
-    },
-    {
       "name": "Burning Hate",
       "maxRank": 5,
       "category": "Melee"
@@ -8214,11 +7799,6 @@
       "category": "Melee"
     },
     {
-      "name": "Calculated Spring",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Calm & Frenzy",
       "maxRank": 3,
       "category": "Melee"
@@ -8230,11 +7810,6 @@
     },
     {
       "name": "Catapult",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Celestial Nightfall",
       "maxRank": 3,
       "category": "Melee"
     },
@@ -8299,11 +7874,6 @@
       "category": "Melee"
     },
     {
-      "name": "Counterweight",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Covert Lethality",
       "maxRank": 3,
       "category": "Melee"
@@ -8359,16 +7929,6 @@
       "category": "Melee"
     },
     {
-      "name": "Discharge Strike",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Dividing Blades",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Dreamer's Wrath",
       "maxRank": 3,
       "category": "Melee"
@@ -8409,17 +7969,7 @@
       "category": "Melee"
     },
     {
-      "name": "Fateful Truth",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Final Harbinger",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Final Tap",
       "maxRank": 3,
       "category": "Melee"
     },
@@ -8629,11 +8179,6 @@
       "category": "Melee"
     },
     {
-      "name": "Grinloked",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Guardian Derision",
       "maxRank": 5,
       "category": "Melee"
@@ -8649,11 +8194,6 @@
       "category": "Melee"
     },
     {
-      "name": "Heartseeker",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Heavy Trauma",
       "maxRank": 5,
       "category": "Melee"
@@ -8661,11 +8201,6 @@
     {
       "name": "Hyperstrike",
       "maxRank": 5,
-      "category": "Melee"
-    },
-    {
-      "name": "Impenetrable Offense",
-      "maxRank": 3,
       "category": "Melee"
     },
     {
@@ -8691,16 +8226,6 @@
     {
       "name": "Killing Blow",
       "maxRank": 5,
-      "category": "Melee"
-    },
-    {
-      "name": "Kinetic Collision",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Last Herald",
-      "maxRank": 3,
       "category": "Melee"
     },
     {
@@ -8739,11 +8264,6 @@
       "category": "Melee"
     },
     {
-      "name": "Martial Fury",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Melee Elementalist",
       "maxRank": 5,
       "category": "Melee"
@@ -8779,16 +8299,6 @@
       "category": "Melee"
     },
     {
-      "name": "No Current Leap",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Noble Cadence",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Opportunity's Reach",
       "maxRank": 3,
       "category": "Melee"
@@ -8815,11 +8325,6 @@
     },
     {
       "name": "Partitioned Mallet",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Piercing Fury",
       "maxRank": 3,
       "category": "Melee"
     },
@@ -8889,21 +8394,6 @@
       "category": "Melee"
     },
     {
-      "name": "Prize Kill",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Purging Slash",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Push & Pull",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Quickening",
       "maxRank": 3,
       "category": "Melee"
@@ -8944,11 +8434,6 @@
       "category": "Melee"
     },
     {
-      "name": "Relentless Assault",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Relentless Combination",
       "maxRank": 3,
       "category": "Melee"
@@ -8964,22 +8449,7 @@
       "category": "Melee"
     },
     {
-      "name": "Rending Wind",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Revealing Spores",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Rising Skill",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Rising Steel",
       "maxRank": 3,
       "category": "Melee"
     },
@@ -8994,11 +8464,6 @@
       "category": "Melee"
     },
     {
-      "name": "Sapping Reach",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Savagery",
       "maxRank": 5,
       "category": "Melee"
@@ -9006,11 +8471,6 @@
     {
       "name": "Scattering Strike",
       "maxRank": 5,
-      "category": "Melee"
-    },
-    {
-      "name": "Searing Leap",
-      "maxRank": 1,
       "category": "Melee"
     },
     {
@@ -9024,17 +8484,7 @@
       "category": "Melee"
     },
     {
-      "name": "Serrated Edges",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Shadow Haze",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Sharpened Blade",
       "maxRank": 3,
       "category": "Melee"
     },
@@ -9074,16 +8524,6 @@
       "category": "Melee"
     },
     {
-      "name": "Soaring Strike",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Soft Hands",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Spinning Needle",
       "maxRank": 3,
       "category": "Melee"
@@ -9099,22 +8539,12 @@
       "category": "Melee"
     },
     {
-      "name": "Star Divide",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Stinging Thorn",
       "maxRank": 3,
       "category": "Melee"
     },
     {
       "name": "Stockpiled Blight",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Strafing Slide",
       "maxRank": 3,
       "category": "Melee"
     },
@@ -9164,18 +8594,8 @@
       "category": "Melee"
     },
     {
-      "name": "Sword Alone",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Tempered Blade",
       "maxRank": 5,
-      "category": "Melee"
-    },
-    {
-      "name": "Tempered Bound",
-      "maxRank": 3,
       "category": "Melee"
     },
     {
@@ -9209,27 +8629,12 @@
       "category": "Melee"
     },
     {
-      "name": "Vanquished Prey",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Vengeful Revenant",
       "maxRank": 3,
       "category": "Melee"
     },
     {
-      "name": "Venomous Rise",
-      "maxRank": 1,
-      "category": "Melee"
-    },
-    {
       "name": "Vermillion Storm",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Vicious Approach",
       "maxRank": 3,
       "category": "Melee"
     },
@@ -9244,11 +8649,6 @@
       "category": "Melee"
     },
     {
-      "name": "Vital Systems Bypass",
-      "maxRank": 3,
-      "category": "Melee"
-    },
-    {
       "name": "Volatile Recompense",
       "maxRank": 3,
       "category": "Melee"
@@ -9256,11 +8656,6 @@
     {
       "name": "Volcanic Edge",
       "maxRank": 3,
-      "category": "Melee"
-    },
-    {
-      "name": "Voltaic Lance",
-      "maxRank": 1,
       "category": "Melee"
     },
     {
@@ -9384,11 +8779,6 @@
       "category": "Stance"
     },
     {
-      "name": "Scarlet Hurricane",
-      "maxRank": 3,
-      "category": "Stance"
-    },
-    {
       "name": "Abating Link",
       "maxRank": 3,
       "category": "Companion"
@@ -9416,11 +8806,6 @@
     {
       "name": "Anti-V",
       "maxRank": 1,
-      "category": "Companion"
-    },
-    {
-      "name": "Apex Predator",
-      "maxRank": 5,
       "category": "Companion"
     },
     {
@@ -9524,11 +8909,6 @@
       "category": "Companion"
     },
     {
-      "name": "Deceptive Bond",
-      "maxRank": 3,
-      "category": "Companion"
-    },
-    {
       "name": "Dig",
       "maxRank": 5,
       "category": "Companion"
@@ -9626,11 +9006,6 @@
     {
       "name": "Hard Reset",
       "maxRank": 1,
-      "category": "Companion"
-    },
-    {
-      "name": "Hastened Steps",
-      "maxRank": 3,
       "category": "Companion"
     },
     {
@@ -9770,11 +9145,6 @@
     },
     {
       "name": "Kinetic Friction",
-      "maxRank": 3,
-      "category": "Companion"
-    },
-    {
-      "name": "Lashing Coil",
       "maxRank": 3,
       "category": "Companion"
     },
@@ -9949,11 +9319,6 @@
       "category": "Companion"
     },
     {
-      "name": "Night Stalker",
-      "maxRank": 5,
-      "category": "Companion"
-    },
-    {
       "name": "Omn-Evi",
       "maxRank": 5,
       "category": "Companion"
@@ -10024,11 +9389,6 @@
       "category": "Companion"
     },
     {
-      "name": "Precision Munition",
-      "maxRank": 1,
-      "category": "Companion"
-    },
-    {
       "name": "Predator",
       "maxRank": 5,
       "category": "Companion"
@@ -10084,11 +9444,6 @@
       "category": "Companion"
     },
     {
-      "name": "Recover",
-      "maxRank": 3,
-      "category": "Companion"
-    },
-    {
       "name": "Regen",
       "maxRank": 5,
       "category": "Companion"
@@ -10121,11 +9476,6 @@
     {
       "name": "Revenge",
       "maxRank": 5,
-      "category": "Companion"
-    },
-    {
-      "name": "Rime Vault",
-      "maxRank": 1,
       "category": "Companion"
     },
     {
@@ -10239,11 +9589,6 @@
       "category": "Companion"
     },
     {
-      "name": "Stand Ground",
-      "maxRank": 5,
-      "category": "Companion"
-    },
-    {
       "name": "Stasis Field",
       "maxRank": 5,
       "category": "Companion"
@@ -10279,11 +9624,6 @@
       "category": "Companion"
     },
     {
-      "name": "Surplus Diverters",
-      "maxRank": 5,
-      "category": "Companion"
-    },
-    {
       "name": "Swift Bite",
       "maxRank": 3,
       "category": "Companion"
@@ -10299,16 +9639,6 @@
       "category": "Companion"
     },
     {
-      "name": "Tactical Reload",
-      "maxRank": 3,
-      "category": "Companion"
-    },
-    {
-      "name": "Tactical Retreat",
-      "maxRank": 3,
-      "category": "Companion"
-    },
-    {
       "name": "Talsek-An",
       "maxRank": 5,
       "category": "Companion"
@@ -10316,11 +9646,6 @@
     {
       "name": "Tandem Bond",
       "maxRank": 5,
-      "category": "Companion"
-    },
-    {
-      "name": "Tear Gas",
-      "maxRank": 3,
       "category": "Companion"
     },
     {
@@ -10386,11 +9711,6 @@
     {
       "name": "Turbo Protect",
       "maxRank": 1,
-      "category": "Companion"
-    },
-    {
-      "name": "Twitch",
-      "maxRank": 3,
       "category": "Companion"
     },
     {
@@ -10529,22 +9849,7 @@
       "category": "Archwing"
     },
     {
-      "name": "Afterburn",
-      "maxRank": 3,
-      "category": "Archwing"
-    },
-    {
       "name": "Afterburner",
-      "maxRank": 3,
-      "category": "Archwing"
-    },
-    {
-      "name": "Air Recon",
-      "maxRank": 5,
-      "category": "Archwing"
-    },
-    {
-      "name": "Air Thrusters",
       "maxRank": 3,
       "category": "Archwing"
     },
@@ -10574,11 +9879,6 @@
       "category": "Archwing"
     },
     {
-      "name": "Anti-Flak Plating",
-      "maxRank": 3,
-      "category": "Archwing"
-    },
-    {
       "name": "Anti-Grav Array",
       "maxRank": 3,
       "category": "Archwing"
@@ -10596,21 +9896,6 @@
     {
       "name": "Argon Plating",
       "maxRank": 5,
-      "category": "Archwing"
-    },
-    {
-      "name": "Armored Acrobatics",
-      "maxRank": 3,
-      "category": "Archwing"
-    },
-    {
-      "name": "Armored Evade",
-      "maxRank": 3,
-      "category": "Archwing"
-    },
-    {
-      "name": "Armored Recovery",
-      "maxRank": 3,
       "category": "Archwing"
     },
     {
@@ -10759,11 +10044,6 @@
       "category": "Archwing"
     },
     {
-      "name": "Explosive Demise",
-      "maxRank": 5,
-      "category": "Archwing"
-    },
-    {
       "name": "Exposing Harpoon",
       "maxRank": 5,
       "category": "Archwing"
@@ -10780,11 +10060,6 @@
     },
     {
       "name": "Fortifying Fire",
-      "maxRank": 5,
-      "category": "Archwing"
-    },
-    {
-      "name": "Full Capacity",
       "maxRank": 5,
       "category": "Archwing"
     },
@@ -10854,16 +10129,6 @@
       "category": "Archwing"
     },
     {
-      "name": "Loaded Capacity",
-      "maxRank": 5,
-      "category": "Archwing"
-    },
-    {
-      "name": "Loose Magazine",
-      "maxRank": 5,
-      "category": "Archwing"
-    },
-    {
       "name": "Mag Locks",
       "maxRank": 5,
       "category": "Archwing"
@@ -10881,11 +10146,6 @@
     {
       "name": "Magnetic Strafe",
       "maxRank": 3,
-      "category": "Archwing"
-    },
-    {
-      "name": "Maximum Capacity",
-      "maxRank": 5,
       "category": "Archwing"
     },
     {
@@ -10939,21 +10199,6 @@
       "category": "Archwing"
     },
     {
-      "name": "Overcharge Detectors",
-      "maxRank": 5,
-      "category": "Archwing"
-    },
-    {
-      "name": "Overcharged",
-      "maxRank": 5,
-      "category": "Archwing"
-    },
-    {
-      "name": "Overview",
-      "maxRank": 5,
-      "category": "Archwing"
-    },
-    {
       "name": "Particle Ram",
       "maxRank": 10,
       "category": "Archwing"
@@ -10966,11 +10211,6 @@
     {
       "name": "Piercing Step",
       "maxRank": 5,
-      "category": "Archwing"
-    },
-    {
-      "name": "Plan B",
-      "maxRank": 3,
       "category": "Archwing"
     },
     {
@@ -11120,11 +10360,6 @@
     },
     {
       "name": "Thermal Transfer",
-      "maxRank": 3,
-      "category": "Archwing"
-    },
-    {
-      "name": "Thundermiter",
       "maxRank": 3,
       "category": "Archwing"
     },
@@ -11424,11 +10659,6 @@
       "category": "Railjack"
     },
     {
-      "name": "Calculated Victory",
-      "maxRank": 3,
-      "category": "Railjack"
-    },
-    {
       "name": "Combat Reload",
       "maxRank": 5,
       "category": "Railjack"
@@ -11622,6 +10852,776 @@
       "name": "Xata Invocation",
       "maxRank": 3,
       "category": "Railjack"
+    },
+    {
+      "name": "Adept Surge",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Adrenaline Boost",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Afterburn",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Agile Aim",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Air Recon",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Air Thrusters",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Ambush Optics",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Anti-Flak Plating",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Anticipation",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Antimatter Mine",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Apex Predator",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Argent Scourge",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Armored Acrobatics",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Armored Evade",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Armored Recovery",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Biting Piranha",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Blind Shot",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Bounty Hunter",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Brain Storm",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Broad Eye",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Calculated Spring",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Calculated Victory",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Celestial Nightfall",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Counterweight",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Crash Shot",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Crashing Havoc",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Crashing Timber",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Cunning Aspect",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Deceptive Bond",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Defiled Reckoning",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Deft Tempo",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Directed Convergence",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Discharge Strike",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Dividing Blades",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Double Tap",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Double-Barrel Drift",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Draining Gloom",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Eagle Eye",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Eject Magazine",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Emergent Aftermath",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Explosive Demise",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Fateful Truth",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Feathered Arrows",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Final Act",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Final Tap",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Flak Shot",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Focused Acceleration",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Follow Through",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Full Capacity",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Gorgon Frenzy",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Grinloked",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Gun Glide",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Hastened Steps",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Hawk Eye",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Heartseeker",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Heavy Warhead",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Heightened Reflexes",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Hydraulic Barrel",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Hydraulic Chamber",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Hydraulic Gauge",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Hysterical Fixation",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Ice Wave Impedance",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Impaler Munitions",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Impenetrable Offense",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Iron Shrapnel",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Kill Switch",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Kinetic Collision",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Lashing Coil",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Last Herald",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Lie In Wait",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Loaded Capacity",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Lock and Load",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Loose Chamber",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Loose Hatch",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Loose Magazine",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Lucky Shot",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Mafic Rain",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Martial Fury",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Maximum Capacity",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Measured Burst",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Mesa's Waltz",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Meteor Munitions",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Momentary Pause",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Mortal Conduct",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Night Stalker",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "No Current Leap",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Noble Cadence",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Overcharge Detectors",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Overcharged",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Overview",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Piercing Fury",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Plan B",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Power of Three",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Precision Munition",
+      "maxRank": 1,
+      "category": "Conclave"
+    },
+    {
+      "name": "Prism Guard",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Prize Kill",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Purging Slash",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Purifying Flames",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Push & Pull",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Quaking Hand",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Quick Charge",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Razor Munitions",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Recharge Barrier",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Recover",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Recuperate",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Reflex Draw",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Relentless Assault",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Rending Wind",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Rime Vault",
+      "maxRank": 1,
+      "category": "Conclave"
+    },
+    {
+      "name": "Ripper Rounds",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Rising Skill",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Rising Steel",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Rumbled",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Sapping Reach",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Scarlet Hurricane",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Searing Leap",
+      "maxRank": 1,
+      "category": "Conclave"
+    },
+    {
+      "name": "Secondary Wind",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Serrated Edges",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Serrated Rounds",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Shadow Harvest",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Sharpened Blade",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Shield Overload",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Shrapnel Rounds",
+      "maxRank": 1,
+      "category": "Conclave"
+    },
+    {
+      "name": "Shred Shot",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Signal Flare",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Singularity",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Skull Shots",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Snap Shot",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Soaring Strike",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Soft Hands",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Spring-Loaded Broadhead",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Spry Sights",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Stand Ground",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Star Divide",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Static Alacrity",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Strafing Slide",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Sudden Justice",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Surplus Diverters",
+      "maxRank": 5,
+      "category": "Conclave"
+    },
+    {
+      "name": "Sword Alone",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Tactical Reload",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Tactical Retreat",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Tainted Hydra",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Tear Gas",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Tempered Bound",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Thundermiter",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Triple Tap",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Twitch",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Vanquished Prey",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Venomous Rise",
+      "maxRank": 1,
+      "category": "Conclave"
+    },
+    {
+      "name": "Vexing Retaliation",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Vicious Approach",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Vital Systems Bypass",
+      "maxRank": 3,
+      "category": "Conclave"
+    },
+    {
+      "name": "Voltaic Lance",
+      "maxRank": 1,
+      "category": "Conclave"
+    },
+    {
+      "name": "Ward Recovery",
+      "maxRank": 3,
+      "category": "Conclave"
     }
   ],
   "subsume": [
