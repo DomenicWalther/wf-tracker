@@ -15,7 +15,6 @@ const CATEGORY_ORDER = [
   'Archwing', 'Archwing Augment',
   'Necramech', 'K-Drive', 'Railjack',
   'Conclave', 'Conclave Augment',
-  'Augment',
 ];
 
 interface ModGroup {
