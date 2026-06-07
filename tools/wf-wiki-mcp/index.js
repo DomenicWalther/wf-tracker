@@ -71,6 +71,31 @@ server.tool(
   }
 );
 
+// ── get_pages_categories ─────────────────────────────────────────────────────
+server.tool(
+  'get_pages_categories',
+  'Fetch the wiki categories for up to 50 pages in a single request. Returns a map of page title → category list. Use this for bulk mod auditing instead of calling get_wiki_page 1489 times.',
+  {
+    titles: z.array(z.string()).min(1).max(50).describe('List of exact wiki page titles (max 50 per call)'),
+  },
+  async ({ titles }) => {
+    const data = await mwFetch({
+      action: 'query',
+      titles: titles.join('|'),
+      prop: 'categories',
+      cllimit: '500',
+      clshow: '!hidden',
+    });
+    const pages = Object.values(data.query.pages);
+    const results = pages.map(p => {
+      const cats = (p.categories ?? []).map(c => c.title.replace(/^Category:/, ''));
+      const missing = p.missing ? ' [NOT FOUND]' : '';
+      return `${p.title}${missing}: ${cats.length ? cats.join(', ') : '(no categories)'}`;
+    });
+    return { content: [{ type: 'text', text: results.join('\n') }] };
+  }
+);
+
 // ── start ────────────────────────────────────────────────────────────────────
 const transport = new StdioServerTransport();
 await server.connect(transport);
