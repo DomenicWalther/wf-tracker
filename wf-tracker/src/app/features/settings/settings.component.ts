@@ -34,6 +34,18 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
           </label>
         </div>
 
+        <!-- DISPLAY -->
+        <div class="settings-card" [formGroup]="settingsForm">
+          <div class="settings-card-title">Display</div>
+          <label class="setting-row">
+            <input type="checkbox" class="wf-checkbox" formControlName="showWikiLinks" />
+            <div class="setting-info">
+              <span class="setting-label">Wiki Links</span>
+              <span class="setting-desc">Show a wiki link icon next to each item in tracker tables</span>
+            </div>
+          </label>
+        </div>
+
         <!-- SECTION TOGGLES -->
         <div class="settings-card">
           <div class="settings-card-title">Section Toggles</div>
@@ -423,6 +435,7 @@ export class SettingsComponent {
   readonly settingsForm = new FormGroup({
     isFounder: new FormControl(this.tracker.settings().isFounder, { nonNullable: true }),
     includeConclave: new FormControl(this.tracker.settings().includeConclave, { nonNullable: true }),
+    showWikiLinks: new FormControl(this.tracker.settings().showWikiLinks, { nonNullable: true }),
     gear: this.gearGroup,
     incarnon: this.incarnonGroup,
     arcane: this.arcaneGroup,

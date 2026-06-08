@@ -111,6 +111,7 @@ export interface PinnedBarSettings {
 export interface TrackerSettings {
   isFounder: boolean;
   includeConclave: boolean;
+  showWikiLinks: boolean;
   gear: GearSettings;
   incarnon: { completionist: boolean };
   arcane: { psycho: boolean };
@@ -237,6 +238,7 @@ export const DEFAULT_SETTINGS: TrackerSettings = {
   codex: { old: false },
   market: { extra: false },
   extra: { prime: false, plat: false, founder: false },
+  showWikiLinks: false,
   pinnedBar: { widgets: [], hiddenCycles: [] }
 };
 

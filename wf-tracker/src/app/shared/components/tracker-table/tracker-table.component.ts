@@ -1,4 +1,5 @@
-import { Component, input, output, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, signal, computed, inject, ChangeDetectionStrategy } from '@angular/core';
+import { TrackerService } from '../../../core/services/tracker.service';
 
 export interface TrackerColumn {
   key: string;
@@ -121,6 +122,16 @@ export interface TrackerRow {
                       [attr.aria-label]="(isNoteOpen(row.name) ? 'Hide' : 'Show') + ' note for ' + row.name"
                       (click)="toggleNote(row.name)"
                     >✎</button>
+                  }
+                  @if (showWikiLinks()) {
+                    <a
+                      class="tt-wiki-btn"
+                      [href]="wikiUrl(row.name)"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      [attr.aria-label]="'Open wiki page for ' + row.name"
+                      title="Open wiki page"
+                    >W</a>
                   }
                 </span>
               </td>
@@ -348,6 +359,26 @@ export interface TrackerRow {
     .tt-note-btn:hover { opacity: 1; color: var(--color-gold); }
     .tt-note-btn:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 1px; }
     .tt-note-btn-active { opacity: 1; color: var(--color-gold); }
+    .tt-wiki-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+      background: rgba(200,155,60,0.12);
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      opacity: 0.5;
+      transition: opacity 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .tt-wiki-btn:hover { opacity: 1; color: var(--color-gold); border-color: var(--color-gold); }
+    .tt-wiki-btn:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 1px; }
     .tt-row-has-note td { background: rgba(200, 155, 60, 0.06) !important; }
     .tt-row-has-note td.tt-col-alt { background: rgba(200, 155, 60, 0.10) !important; }
     .tt-note-row td { padding: 0 10px 8px; border-bottom: 1px solid var(--color-border); }
@@ -371,6 +402,14 @@ export interface TrackerRow {
   `]
 })
 export class TrackerTableComponent {
+  private readonly tracker = inject(TrackerService);
+
+  readonly showWikiLinks = computed(() => this.tracker.settings().showWikiLinks);
+
+  wikiUrl(name: string): string {
+    return `https://wiki.warframe.com/w/${encodeURIComponent(name.replace(/ /g, '_'))}`;
+  }
+
   columns = input<TrackerColumn[]>([]);
   rows = input<TrackerRow[]>([]);
   checkedFn = input<((rowName: string, colKey: string, subKey?: string) => boolean) | null>(null);
