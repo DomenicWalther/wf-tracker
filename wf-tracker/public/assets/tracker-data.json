@@ -28423,6 +28423,24 @@
       "date": "2026-06-02",
       "description": "Mobile Layout, New Theme & Command Palette Improvements",
       "details": "Quality-of-life update focused on accessibility and polish:\n- Mobile-responsive layout: sidebar, tables and panels now adapt to small screens\n- New Neutral-Dark theme variant; theme can be switched directly from the sidebar\n- Command palette now supports multi-word fuzzy search and indexes more item types\n- Data corrections: arcane sections reorganised, Sirocco removed from Primary Weapons, Sporothrix typo fixed, duplicate weapon entries removed\n- Checklist task descriptions restored to their original in-game phrasing"
+    },
+    {
+      "version": "v1.4",
+      "date": "2026-06-04",
+      "description": "Honoria Titles, What's Next & Tracker Table Filters",
+      "details": "New page, dashboard widget and table improvements:\n- Honoria Titles: new page tracking all Honoria title unlocks, integrated into the dashboard and overall progress\n- \"What's Next\" dashboard widget highlighting partially completed categories so you always know where to focus\n- Tracker tables now support filter and sort controls, plus column icon badges\n- Fixed dashboard card order to match sidebar navigation"
+    },
+    {
+      "version": "v1.5",
+      "date": "2026-06-07",
+      "description": "Mods Overhaul — Tracker Table, Categories & Data Audit",
+      "details": "Full rework of the Mods page backed by a complete wiki audit:\n- Mods page migrated to the unified tracker-table layout with Owned, Maxed and Hoarder Rank columns\n- All 1489 mods categorised by equipment slot (Warframe, Primary, Secondary, Melee, Companion, Archwing, etc.)\n- Augments split into a dedicated Augment category with per-Warframe groups, replacing the previous flat list\n- Collapsible per-category tables matching the Arcanes layout; all sections can now be fully collapsed\n- Added Conclave as a distinct mod category\n- 200+ mod category misassignments corrected following a full wiki audit (141 initial pass + 74 follow-up + 7 Conclave corrections)\n- Mods sorted by category then alphabetically within each group"
+    },
+    {
+      "version": "v1.6",
+      "date": "2026-06-08",
+      "description": "Relics Tracker Table, Lich Ephemera & Wiki Links",
+      "details": "Further tracker improvements and data additions:\n- Relics page migrated to tracker-table with dedicated Owned and Radiant columns\n- Lich Gear: Adversary Ephemera sections added for Kuva and Tenet liches, synced with the Collectables page\n- World State: migrated to the tenno.tools API after warframestat.us became unavailable\n- Tracker tables now show wiki links for each item (can be toggled off in settings)"
     }
   ],
   "modularGear": {
