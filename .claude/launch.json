@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "start", "--prefix", "wf-tracker", "--", "--port", "4201"],
       "port": 4201
+    },
+    {
+      "name": "wf-tracker-redesign",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start", "--prefix", ".claude/worktrees/linear-redesign/wf-tracker", "--", "--port", "4202"],
+      "port": 4202
     }
   ]
 }
