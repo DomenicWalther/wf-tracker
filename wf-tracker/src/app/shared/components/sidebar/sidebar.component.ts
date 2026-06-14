@@ -18,7 +18,7 @@ const {
   LayoutDashboard, ListChecks, Settings, Target,
   ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
   Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
-  ShoppingBag, Boxes, Component: ComponentIcon, History, ScanLine, SunMoon, Search, Award,
+  ShoppingBag, Boxes, Component: ComponentIcon, History, ScanLine, SunMoon, Search, Award, Sticker,
 } = icons;
 
 const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
@@ -42,6 +42,7 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
       { label: 'Incarnon',  route: '/incarnon',  icon: Zap,          section: 'incarnon' },
       { label: 'Arcanes',   route: '/arcanes',   icon: Sparkles,     section: 'arcanes' },
       { label: 'Mods',      route: '/mods',      icon: Layers,       section: 'mods' },
+      { label: 'Atragraph', route: '/atragraph', icon: Sticker,      section: 'atragraph' },
       { label: 'Subsume',   route: '/subsume',   icon: FlaskConical, section: 'subsume' },
       { label: 'Railjack',  route: '/railjack',  icon: Rocket,       section: 'railjack' },
     ]

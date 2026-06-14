@@ -18,6 +18,13 @@ export interface ModEntry {
   category: string;
 }
 
+export interface AtragraphEntry {
+  /** Base mod name the foil family is named after (display foil = "Atragraph " + name). */
+  name: string;
+  /** Mod variants the foil art can be applied to. */
+  variants: string[];
+}
+
 export interface SubsumeEntry {
   warframe: string;
   ability: string;
@@ -49,6 +56,7 @@ export interface TrackerData {
   incarnon: IncarnonEntry[];
   arcanes: Record<string, string[]>;
   mods: ModEntry[];
+  atragraph: AtragraphEntry[];
   subsume: SubsumeEntry[];
   railjack: { intrinsics: string[]; components: RailjackComponent[] };
   relics: Record<string, string[]>;
@@ -116,6 +124,7 @@ export interface TrackerSettings {
   incarnon: { completionist: boolean };
   arcane: { psycho: boolean };
   mod: { hoarder: boolean };
+  atragraph: { collectAll: boolean };
   railjack: { partHoarder: boolean };
   relic: { hoarder: boolean };
   blueprint: { hoarder: boolean };
@@ -178,6 +187,7 @@ export interface SectionToggles {
   incarnon: boolean;
   arcanes: boolean;
   mods: boolean;
+  atragraph: boolean;
   subsume: boolean;
   railjack: boolean;
   relics: boolean;
@@ -226,6 +236,7 @@ export const DEFAULT_SETTINGS: TrackerSettings = {
   incarnon: { completionist: false },
   arcane: { psycho: false },
   mod: { hoarder: false },
+  atragraph: { collectAll: false },
   railjack: { partHoarder: false },
   relic: { hoarder: false },
   blueprint: { hoarder: false },
@@ -244,7 +255,7 @@ export const DEFAULT_SETTINGS: TrackerSettings = {
 
 export const DEFAULT_SECTION_TOGGLES: SectionToggles = {
   quests: true, gear: true, lichGear: true, incarnon: true, arcanes: true,
-  mods: true, subsume: false, railjack: false, relics: false, blueprints: false,
+  mods: true, atragraph: false, subsume: false, railjack: false, relics: false, blueprints: false,
   items: false, cosmetics: false, collectable: false, decorations: false,
   codex: false, market: false, extra: false, modularGear: false, honoria: true
 };

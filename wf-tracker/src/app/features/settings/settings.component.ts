@@ -126,6 +126,20 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
           </div>
         </div>
 
+        <!-- ATRAGRAPH -->
+        <div class="settings-card">
+          <div class="settings-card-title">Atragraph</div>
+          <div [formGroup]="atragraphGroup">
+            <label class="setting-row">
+              <input type="checkbox" class="wf-checkbox" formControlName="collectAll" />
+              <div class="setting-info">
+                <span class="setting-label">Atragraph Collector</span>
+                <span class="setting-desc">Track the foil on every mod variant, not just one per family</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
         <!-- RAILJACK -->
         <div class="settings-card">
           <div class="settings-card-title">Railjack</div>
@@ -423,6 +437,7 @@ export class SettingsComponent {
   readonly incarnonGroup = this.buildBoolGroup(this.tracker.settings().incarnon);
   readonly arcaneGroup = this.buildBoolGroup(this.tracker.settings().arcane);
   readonly modGroup = this.buildBoolGroup(this.tracker.settings().mod);
+  readonly atragraphGroup = this.buildBoolGroup(this.tracker.settings().atragraph);
   readonly railjackGroup = this.buildBoolGroup(this.tracker.settings().railjack);
   readonly relicGroup = this.buildBoolGroup(this.tracker.settings().relic);
   readonly blueprintGroup = this.buildBoolGroup(this.tracker.settings().blueprint);
@@ -440,6 +455,7 @@ export class SettingsComponent {
     incarnon: this.incarnonGroup,
     arcane: this.arcaneGroup,
     mod: this.modGroup,
+    atragraph: this.atragraphGroup,
     railjack: this.railjackGroup,
     relic: this.relicGroup,
     blueprint: this.blueprintGroup,
@@ -459,6 +475,7 @@ export class SettingsComponent {
     { key: 'incarnon' as const, label: 'Incarnon' },
     { key: 'arcanes' as const, label: 'Arcanes' },
     { key: 'mods' as const, label: 'Mods' },
+    { key: 'atragraph' as const, label: 'Atragraph' },
     { key: 'subsume' as const, label: 'Subsume' },
     { key: 'railjack' as const, label: 'Railjack' },
     { key: 'relics' as const, label: 'Relics' },

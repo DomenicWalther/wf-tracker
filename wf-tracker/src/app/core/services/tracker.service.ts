@@ -48,6 +48,7 @@ export class TrackerService {
       ['incarnon',    this.incarnonTotal(d, settings),    'incarnon:'],
       ['arcanes',     this.arcaneTotal(d, settings),      'arcane:'],
       ['mods',        this.modTotal(d, settings),         'mod:'],
+      ['atragraph',   this.atragraphTotal(d, settings),   'atragraph:'],
       ['subsume',     d.subsume?.length ?? 0,             'subsume:'],
       ['railjack',    this.rjTotal(d, settings),          'rj:'],
       ['relics',      this.relicTotal(d, settings),       'relic:'],
@@ -265,6 +266,14 @@ export class TrackerService {
     return d.mods.length;
   }
 
+  private atragraphTotal(d: TrackerData, settings: TrackerSettings): number {
+    if (!d.atragraph) return 0;
+    if (settings.atragraph.collectAll) {
+      return d.atragraph.reduce((a, e) => a + e.variants.length, 0);
+    }
+    return d.atragraph.length;
+  }
+
   private rjTotal(d: TrackerData, settings: TrackerSettings): number {
     const intrinsics = d.railjack?.intrinsics?.length ?? 0;
     const components = d.railjack?.components ?? [];
@@ -398,6 +407,7 @@ export class TrackerService {
         incarnon: { ...ds.incarnon, ...(ps.incarnon ?? {}) },
         arcane: { ...ds.arcane, ...(ps.arcane ?? {}) },
         mod: { ...ds.mod, ...(ps.mod ?? {}) },
+        atragraph: { ...ds.atragraph, ...(ps.atragraph ?? {}) },
         railjack: { ...ds.railjack, ...(ps.railjack ?? {}) },
         relic: { ...ds.relic, ...(ps.relic ?? {}) },
         blueprint: { ...ds.blueprint, ...(ps.blueprint ?? {}) },

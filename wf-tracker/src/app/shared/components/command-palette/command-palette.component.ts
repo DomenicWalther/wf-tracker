@@ -37,6 +37,7 @@ const NAV_ENTRIES: IndexEntry[] = [
   { type: 'nav', label: 'Incarnon', sublabel: 'Go to section', route: '/incarnon' },
   { type: 'nav', label: 'Arcanes', sublabel: 'Go to section', route: '/arcanes' },
   { type: 'nav', label: 'Mods', sublabel: 'Go to section', route: '/mods' },
+  { type: 'nav', label: 'Atragraph', sublabel: 'Go to section', route: '/atragraph' },
   { type: 'nav', label: 'Subsume', sublabel: 'Go to section', route: '/subsume' },
   { type: 'nav', label: 'Railjack', sublabel: 'Go to section', route: '/railjack' },
   { type: 'nav', label: 'Relics', sublabel: 'Go to section', route: '/relics' },

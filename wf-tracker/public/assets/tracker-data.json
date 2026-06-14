@@ -1,4 +1,16 @@
 {
+  "atragraph": [
+    { "name": "Vitality", "variants": ["Vitality", "Archon Vitality", "Flawed Vitality", "Parasitic Vitality", "Umbral Vitality"] },
+    { "name": "Fury", "variants": ["Fury", "Flawed Fury", "Berserker Fury", "Flawed Berserker Fury", "Primed Fury"] },
+    { "name": "Organ Shatter", "variants": ["Organ Shatter", "Amalgam Organ Shatter", "Flawed Organ Shatter"] },
+    { "name": "Target Cracker", "variants": ["Target Cracker", "Flawed Target Cracker", "Primed Target Cracker"] },
+    { "name": "Serration", "variants": ["Serration", "Amalgam Serration", "Flawed Serration", "Higasa Serration", "Spectral Serration"] },
+    { "name": "Hell's Chamber", "variants": ["Hell's Chamber", "Flawed Hell's Chamber", "Galvanized Hell"] },
+    { "name": "Hellfire", "variants": ["Hellfire", "Flawed Hellfire"] },
+    { "name": "Barrel Diffusion", "variants": ["Barrel Diffusion", "Amalgam Barrel Diffusion", "Flawed Barrel Diffusion", "Galvanized Diffusion"] },
+    { "name": "Animal Instinct", "variants": ["Animal Instinct", "Primed Animal Instinct"] },
+    { "name": "Streamline", "variants": ["Streamline", "Flawed Streamline"] }
+  ],
   "quests": [
     "Awakening",
     "Vor's Prize",
@@ -28441,6 +28453,12 @@
       "date": "2026-06-08",
       "description": "Relics Tracker Table, Lich Ephemera & Wiki Links",
       "details": "Further tracker improvements and data additions:\n- Relics page migrated to tracker-table with dedicated Owned and Radiant columns\n- Lich Gear: Adversary Ephemera sections added for Kuva and Tenet liches, synced with the Collectables page\n- World State: migrated to the tenno.tools API after warframestat.us became unavailable\n- Tracker tables now show wiki links for each item (can be toggled off in settings)"
+    },
+    {
+      "version": "v1.7",
+      "date": "2026-06-14",
+      "description": "Atragraph Foil Mods Tracking",
+      "details": "New section for the Atragraph cosmetic foil system:\n- Atragraph page tracking all foil mod families, integrated into the dashboard, sidebar, command palette and overall progress\n- Standard mode tracks one foil per mod family; optional Collector mode (in settings) tracks the foil on every compatible mod variant\n- Section can be toggled on or off from settings like every other category"
     }
   ],
   "modularGear": {

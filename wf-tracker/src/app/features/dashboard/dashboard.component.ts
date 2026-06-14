@@ -15,7 +15,7 @@ type LucideIconData = (typeof icons)[keyof typeof icons];
 const {
   ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
   Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
-  ShoppingBag, Boxes, Component: ComponentIcon, Award,
+  ShoppingBag, Boxes, Component: ComponentIcon, Award, Sticker,
 } = icons;
 
 const PREFIX_MAP: Record<string, { label: string; route: string }> = {
@@ -23,6 +23,7 @@ const PREFIX_MAP: Record<string, { label: string; route: string }> = {
   arcane:   { label: 'Arcanes',     route: '/arcanes' },
   quest:    { label: 'Quests',      route: '/quests' },
   mod:      { label: 'Mods',        route: '/mods' },
+  atragraph:{ label: 'Atragraph',   route: '/atragraph' },
   lich:     { label: 'Lich Gear',   route: '/lich-gear' },
   relic:    { label: 'Relics',      route: '/relics' },
   incarnon: { label: 'Incarnon',    route: '/incarnon' },
@@ -365,6 +366,7 @@ export class DashboardComponent {
       { key: 'incarnon',   label: 'Incarnon',      route: '/incarnon',     icon: Zap,           enabled: toggles.incarnon,    ...this.calcProgress('incarnon', this.incarnonTotal(d)) },
       { key: 'arcanes',    label: 'Arcanes',       route: '/arcanes',      icon: Sparkles,      enabled: toggles.arcanes,     ...this.calcProgress('arcane',   this.arcaneTotal(d)) },
       { key: 'mods',       label: 'Mods',          route: '/mods',         icon: Layers,        enabled: toggles.mods,        ...this.calcProgress('mod',      this.modTotal(d)) },
+      { key: 'atragraph',  label: 'Atragraph',     route: '/atragraph',    icon: Sticker,       enabled: toggles.atragraph,   ...this.calcProgress('atragraph', this.atragraphTotal(d)) },
       { key: 'subsume',    label: 'Subsume',       route: '/subsume',      icon: FlaskConical,  enabled: toggles.subsume,     ...this.calcProgress('subsume',  d.subsume?.length ?? 0) },
       { key: 'railjack',   label: 'Railjack',      route: '/railjack',     icon: Rocket,        enabled: toggles.railjack,    ...this.calcProgress('rj',       this.rjTotal(d)) },
       { key: 'relics',     label: 'Relics',        route: '/relics',       icon: Gem,           enabled: toggles.relics,      ...this.calcProgress('relic',    this.relicTotal(d)) },
@@ -482,6 +484,14 @@ export class DashboardComponent {
       return d.mods.reduce((a, m) => a + m.maxRank + 1, 0);
     }
     return d.mods.length;
+  }
+
+  private atragraphTotal(d: TrackerData): number {
+    if (!d.atragraph) return 0;
+    if (this.tracker.settings().atragraph.collectAll) {
+      return d.atragraph.reduce((a, e) => a + e.variants.length, 0);
+    }
+    return d.atragraph.length;
   }
 
   private incarnonTotal(d: TrackerData): number {

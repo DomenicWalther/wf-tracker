@@ -9,6 +9,7 @@ export const routes: Routes = [
   { path: 'incarnon', loadComponent: () => import('./features/incarnon/incarnon.component').then(m => m.IncarnonComponent) },
   { path: 'arcanes', loadComponent: () => import('./features/arcanes/arcanes.component').then(m => m.ArcanesComponent) },
   { path: 'mods', loadComponent: () => import('./features/mods/mods.component').then(m => m.ModsComponent) },
+  { path: 'atragraph', loadComponent: () => import('./features/atragraph/atragraph.component').then(m => m.AtragraphComponent) },
   { path: 'subsume', loadComponent: () => import('./features/subsume/subsume.component').then(m => m.SubsumeComponent) },
   { path: 'railjack', loadComponent: () => import('./features/railjack/railjack.component').then(m => m.RailjackComponent) },
   { path: 'relics', loadComponent: () => import('./features/relics/relics.component').then(m => m.RelicsComponent) },
