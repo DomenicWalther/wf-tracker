@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WF Tracker — JSON Editor</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f13;
+      --surface: #1a1a23;
+      --surface2: #22222e;
+      --surface3: #2a2a38;
+      --border: #333344;
+      --accent: #7c6af7;
+      --accent-hover: #9182ff;
+      --danger: #e05555;
+      --success: #4caf82;
+      --text: #e8e8f0;
+      --text-muted: #888899;
+      --radius: 6px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Top bar ── */
+    #topbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    #topbar h1 { font-size: 15px; font-weight: 600; color: var(--accent); margin-right: 8px; }
+    #topbar label.btn, #topbar button { cursor: pointer; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      font-size: 13px;
+      cursor: pointer;
+      transition: background .15s, border-color .15s;
+      white-space: nowrap;
+    }
+    .btn:hover { background: var(--surface3); border-color: var(--accent); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.primary:hover { background: var(--accent-hover); }
+    .btn.danger { border-color: var(--danger); color: var(--danger); }
+    .btn.danger:hover { background: #2a1a1a; }
+    .btn:disabled { opacity: .4; cursor: not-allowed; }
+    #fileInput { display: none; }
+    #filename { color: var(--text-muted); font-size: 12px; }
+    #saveBtn { margin-left: auto; }
+    #undoBtn, #redoBtn { padding: 6px 8px; font-size: 16px; }
+    #statusMsg { font-size: 12px; color: var(--success); transition: opacity .4s; }
+
+    /* ── Main layout ── */
+    #main {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── Sidebar ── */
+    #sidebar {
+      width: 220px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    #sidebar h2 { padding: 10px 14px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+    #catList { overflow-y: auto; flex: 1; }
+    .cat-item {
+      padding: 8px 14px;
+      cursor: pointer;
+      border-left: 3px solid transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      transition: background .1s;
+    }
+    .cat-item:hover { background: var(--surface2); }
+    .cat-item.active { background: var(--surface2); border-left-color: var(--accent); color: var(--accent); }
+    .cat-item .cat-name { flex: 1; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .cat-item .cat-count { font-size: 11px; color: var(--text-muted); }
+    .cat-group { padding: 6px 14px 2px; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-top: 4px; }
+
+    /* ── Content area ── */
+    #content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 14px 16px;
+      gap: 10px;
+    }
+
+    /* ── Toolbar row ── */
+    #toolbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    #toolbar h3 { font-size: 15px; font-weight: 600; margin-right: 4px; }
+    #searchInput {
+      flex: 1;
+      max-width: 280px;
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      font-size: 13px;
+      outline: none;
+    }
+    #searchInput:focus { border-color: var(--accent); }
+    #itemCount { color: var(--text-muted); font-size: 12px; margin-left: auto; }
+
+    /* ── Table ── */
+    #tableWrap { overflow-y: auto; flex: 1; border-radius: var(--radius); border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; }
+    thead { position: sticky; top: 0; z-index: 1; background: var(--surface2); }
+    th { padding: 8px 10px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); border-bottom: 1px solid var(--border); white-space: nowrap; cursor: pointer; user-select: none; }
+    th:hover { color: var(--text); }
+    th.sorted { color: var(--accent); }
+    td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--surface2); }
+    tr.selected td { background: #25233a; }
+
+    .cell-name { font-weight: 500; }
+    .cell-bool { display: inline-flex; align-items: center; gap: 4px; }
+    .bool-badge {
+      padding: 2px 7px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .bool-true { background: #1e3a2a; color: #4caf82; }
+    .bool-false { background: #1e1e2e; color: #555566; }
+
+    .row-actions { display: flex; gap: 4px; opacity: 0; transition: opacity .15s; }
+    tr:hover .row-actions, tr.selected .row-actions { opacity: 1; }
+    .row-actions button {
+      padding: 2px 7px;
+      font-size: 11px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--surface3);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .row-actions button:hover { border-color: var(--accent); color: var(--accent); }
+    .row-actions button.del:hover { border-color: var(--danger); color: var(--danger); }
+
+    /* ── Empty state ── */
+    #emptyState {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--text-muted);
+    }
+    #emptyState svg { opacity: .3; }
+
+    /* ── Modal ── */
+    .modal-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      width: 480px;
+      max-width: 95vw;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .modal h2 { font-size: 16px; }
+    .form-row { display: flex; flex-direction: column; gap: 5px; }
+    .form-row label { font-size: 12px; color: var(--text-muted); }
+    .form-row input, .form-row select, .form-row textarea {
+      padding: 7px 10px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+    }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--accent); }
+    .form-row select option { background: var(--surface2); }
+    .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
+
+    /* extra props editor */
+    #extraProps { display: flex; flex-direction: column; gap: 6px; }
+    .prop-row { display: flex; gap: 6px; align-items: center; }
+    .prop-row input { flex: 1; }
+    .prop-row button { padding: 4px 8px; }
+
+    /* move batch bar */
+    #batchBar {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: #1e1e35;
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    #batchBar.visible { display: flex; }
+    #batchBar span { font-size: 13px; }
+    #batchBar select {
+      padding: 5px 8px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      font-size: 13px;
+      outline: none;
+    }
+
+    /* checkbox col */
+    .cb { width: 28px; }
+    input[type=checkbox] { accent-color: var(--accent); width: 14px; height: 14px; cursor: pointer; }
+
+    #noFileMsg {
+      padding: 40px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    /* scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #555566; }
+  </style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div id="topbar">
+  <h1>WF JSON Editor</h1>
+  <label class="btn" for="fileInput">📂 Open JSON</label>
+  <input type="file" id="fileInput" accept=".json">
+  <span id="filename">No file loaded</span>
+  <span id="statusMsg"></span>
+  <button class="btn" id="undoBtn" title="Undo (Ctrl+Z)" disabled>↩</button>
+  <button class="btn" id="redoBtn" title="Redo (Ctrl+Y)" disabled>↪</button>
+  <button class="btn primary" id="saveBtn" disabled>💾 Download JSON</button>
+</div>
+
+<!-- Main -->
+<div id="main">
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <h2>Categories</h2>
+    <div id="catList">
+      <div id="noFileMsg" style="padding:20px;font-size:13px;">Open a JSON file to begin.</div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div id="content">
+    <div id="emptyState">
+      <svg width="48" height="48" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414A1 1 0 0 1 19 9.414V19a2 2 0 0 1-2 2Z"/></svg>
+      <span>Select a category from the sidebar</span>
+    </div>
+
+    <div id="activeView" style="display:none;flex-direction:column;gap:10px;flex:1;overflow:hidden;">
+      <div id="toolbar">
+        <h3 id="catTitle"></h3>
+        <input type="text" id="searchInput" placeholder="Filter items…" aria-label="Filter items">
+        <button class="btn primary" id="addItemBtn">+ Add item</button>
+        <span id="itemCount"></span>
+      </div>
+
+      <div id="batchBar">
+        <span id="batchCount">0 selected</span>
+        <span>→ Move to</span>
+        <select id="batchMoveSelect"></select>
+        <button class="btn primary" id="batchMoveBtn">Move</button>
+        <button class="btn danger" id="batchDeleteBtn">Delete</button>
+        <button class="btn" id="batchCancelBtn">Cancel</button>
+      </div>
+
+      <div id="tableWrap">
+        <table id="itemTable">
+          <thead id="tableHead"></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit/Add Modal -->
+<div class="modal-backdrop" id="editModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <h2 id="modalTitle">Edit Item</h2>
+    <div id="modalFields"></div>
+    <div id="extraPropsSection">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+        <label style="font-size:12px;color:var(--text-muted);">Extra properties</label>
+        <button class="btn" id="addPropBtn" style="padding:3px 9px;font-size:12px;">+ Add</button>
+      </div>
+      <div id="extraProps"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn" id="modalCancel">Cancel</button>
+      <button class="btn primary" id="modalSave">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Move single modal -->
+<div class="modal-backdrop" id="moveModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="moveTitleEl">
+  <div class="modal" style="width:340px;">
+    <h2 id="moveTitleEl">Move Item</h2>
+    <div class="form-row">
+      <label>Move "<span id="moveItemName"></span>" to category</label>
+      <select id="moveCatSelect"></select>
+    </div>
+    <div class="modal-actions">
+      <button class="btn" id="moveCancelBtn">Cancel</button>
+      <button class="btn primary" id="moveConfirmBtn">Move</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────
+//  State
+// ─────────────────────────────────────────────────
+let data = null;          // the parsed JSON object
+let fileName = '';
+let currentPath = null;   // array path to current collection, e.g. ['gear','warframes'] or ['quests']
+let sortCol = null;
+let sortAsc = true;
+let selected = new Set(); // indices in filtered list
+let filteredItems = [];
+let undoStack = [];
+let redoStack = [];
+let editingIndex = null;  // null = new item
+let movingIndex = null;
+
+// ─────────────────────────────────────────────────
+//  Helpers
+// ─────────────────────────────────────────────────
+function deepClone(v) { return JSON.parse(JSON.stringify(v)); }
+
+function getCollection(d, path) {
+  return path.reduce((o, k) => o[k], d);
+}
+
+function setCollection(d, path, val) {
+  const p = [...path];
+  const last = p.pop();
+  p.reduce((o, k) => o[k], d)[last] = val;
+}
+
+function snapshot() {
+  undoStack.push(deepClone(data));
+  redoStack = [];
+  updateUndoRedo();
+}
+
+function updateUndoRedo() {
+  document.getElementById('undoBtn').disabled = undoStack.length === 0;
+  document.getElementById('redoBtn').disabled = redoStack.length === 0;
+}
+
+function undo() {
+  if (!undoStack.length) return;
+  redoStack.push(deepClone(data));
+  data = undoStack.pop();
+  updateUndoRedo();
+  renderSidebar();
+  if (currentPath) renderTable();
+}
+
+function redo() {
+  if (!redoStack.length) return;
+  undoStack.push(deepClone(data));
+  data = redoStack.pop();
+  updateUndoRedo();
+  renderSidebar();
+  if (currentPath) renderTable();
+}
+
+function showStatus(msg, ok = true) {
+  const el = document.getElementById('statusMsg');
+  el.style.color = ok ? 'var(--success)' : 'var(--danger)';
+  el.textContent = msg;
+  el.style.opacity = '1';
+  setTimeout(() => { el.style.opacity = '0'; }, 2000);
+}
+
+// Collect all collection paths from data
+function getAllPaths(d) {
+  const paths = [];
+  function walk(obj, path) {
+    if (Array.isArray(obj)) {
+      paths.push({ path, count: obj.length });
+    } else if (obj && typeof obj === 'object') {
+      for (const k of Object.keys(obj)) {
+        walk(obj[k], [...path, k]);
+      }
+    }
+  }
+  for (const k of Object.keys(d)) {
+    walk(d[k], [k]);
+  }
+  return paths;
+}
+
+// ─────────────────────────────────────────────────
+//  File I/O
+// ─────────────────────────────────────────────────
+document.getElementById('fileInput').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  fileName = file.name;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      data = JSON.parse(ev.target.result);
+      undoStack = []; redoStack = [];
+      currentPath = null;
+      selected.clear();
+      updateUndoRedo();
+      document.getElementById('filename').textContent = fileName;
+      document.getElementById('saveBtn').disabled = false;
+      renderSidebar();
+      showEmptyState();
+      showStatus('File loaded');
+    } catch {
+      showStatus('Invalid JSON!', false);
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = '';
+});
+
+document.getElementById('saveBtn').addEventListener('click', () => {
+  if (!data) return;
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = fileName || 'tracker-data.json';
+  a.click();
+  showStatus('Downloaded!');
+});
+
+// ─────────────────────────────────────────────────
+//  Sidebar
+// ─────────────────────────────────────────────────
+function renderSidebar() {
+  const list = document.getElementById('catList');
+  if (!data) return;
+  const paths = getAllPaths(data);
+  list.innerHTML = '';
+
+  // Group by first key
+  const groups = {};
+  for (const p of paths) {
+    const g = p.path[0];
+    if (!groups[g]) groups[g] = [];
+    groups[g].push(p);
+  }
+
+  for (const [group, items] of Object.entries(groups)) {
+    if (items.length === 1 && items[0].path.length === 1) {
+      // Top-level array
+      const div = document.createElement('div');
+      div.className = 'cat-item' + (currentPath && currentPath.join('.') === items[0].path.join('.') ? ' active' : '');
+      div.innerHTML = `<span class="cat-name">${group}</span><span class="cat-count">${items[0].count}</span>`;
+      div.addEventListener('click', () => selectCategory(items[0].path));
+      list.appendChild(div);
+    } else {
+      // Nested group
+      const groupEl = document.createElement('div');
+      groupEl.className = 'cat-group';
+      groupEl.textContent = group;
+      list.appendChild(groupEl);
+      for (const item of items) {
+        const label = item.path.slice(1).join(' › ');
+        const div = document.createElement('div');
+        div.className = 'cat-item' + (currentPath && currentPath.join('.') === item.path.join('.') ? ' active' : '');
+        div.innerHTML = `<span class="cat-name">${label}</span><span class="cat-count">${item.count}</span>`;
+        div.addEventListener('click', () => selectCategory(item.path));
+        list.appendChild(div);
+      }
+    }
+  }
+}
+
+function selectCategory(path) {
+  currentPath = path;
+  selected.clear();
+  sortCol = null;
+  document.getElementById('searchInput').value = '';
+  renderSidebar();
+  renderTable();
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('activeView').style.display = 'flex';
+}
+
+function showEmptyState() {
+  document.getElementById('emptyState').style.display = 'flex';
+  document.getElementById('activeView').style.display = 'none';
+}
+
+// ─────────────────────────────────────────────────
+//  Table
+// ─────────────────────────────────────────────────
+function getColumns(items) {
+  const keys = new Set();
+  for (const item of items) {
+    if (typeof item === 'object' && item !== null) {
+      for (const k of Object.keys(item)) keys.add(k);
+    }
+  }
+  // name first
+  const arr = [...keys];
+  arr.sort((a, b) => a === 'name' ? -1 : b === 'name' ? 1 : 0);
+  return arr;
+}
+
+function renderTable() {
+  const collection = getCollection(data, currentPath);
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const isStringArray = collection.length === 0 || typeof collection[0] === 'string';
+
+  document.getElementById('catTitle').textContent = currentPath.join(' › ');
+
+  // Filter
+  filteredItems = collection.filter((item, i) => {
+    if (!query) return true;
+    const str = isStringArray ? item : JSON.stringify(item);
+    return str.toLowerCase().includes(query);
+  });
+
+  // Sort
+  if (sortCol && !isStringArray) {
+    filteredItems = [...filteredItems].sort((a, b) => {
+      const av = a[sortCol], bv = b[sortCol];
+      if (av == null) return 1;
+      if (bv == null) return -1;
+      const cmp = typeof av === 'string' ? av.localeCompare(bv) : av < bv ? -1 : av > bv ? 1 : 0;
+      return sortAsc ? cmp : -cmp;
+    });
+  }
+
+  document.getElementById('itemCount').textContent = `${filteredItems.length} / ${collection.length} items`;
+
+  // Head
+  const head = document.getElementById('tableHead');
+  const body = document.getElementById('tableBody');
+  head.innerHTML = '';
+  body.innerHTML = '';
+
+  const cols = isStringArray ? ['value'] : getColumns(collection);
+
+  const hr = document.createElement('tr');
+  // checkbox
+  const cbTh = document.createElement('th');
+  cbTh.className = 'cb';
+  const cbAll = document.createElement('input');
+  cbAll.type = 'checkbox';
+  cbAll.title = 'Select all';
+  cbAll.addEventListener('change', () => {
+    if (cbAll.checked) filteredItems.forEach((_, i) => selected.add(i));
+    else selected.clear();
+    updateBatchBar();
+    [...body.querySelectorAll('input[type=checkbox]')].forEach((cb, i) => cb.checked = cbAll.checked);
+    [...body.querySelectorAll('tr')].forEach((tr, i) => tr.classList.toggle('selected', cbAll.checked));
+  });
+  cbTh.appendChild(cbAll);
+  hr.appendChild(cbTh);
+
+  for (const col of cols) {
+    const th = document.createElement('th');
+    th.textContent = col;
+    if (col !== 'value') {
+      th.className = sortCol === col ? 'sorted' : '';
+      th.addEventListener('click', () => {
+        if (sortCol === col) sortAsc = !sortAsc;
+        else { sortCol = col; sortAsc = true; }
+        renderTable();
+      });
+    }
+    hr.appendChild(th);
+  }
+  const actTh = document.createElement('th');
+  actTh.textContent = 'Actions';
+  hr.appendChild(actTh);
+  head.appendChild(hr);
+
+  // Body
+  filteredItems.forEach((item, fi) => {
+    const realIndex = collection.indexOf(item);
+    const tr = document.createElement('tr');
+    if (selected.has(fi)) tr.classList.add('selected');
+
+    // checkbox
+    const cbTd = document.createElement('td');
+    cbTd.className = 'cb';
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.checked = selected.has(fi);
+    cb.addEventListener('change', () => {
+      if (cb.checked) selected.add(fi); else selected.delete(fi);
+      tr.classList.toggle('selected', cb.checked);
+      updateBatchBar();
+    });
+    cbTd.appendChild(cb);
+    tr.appendChild(cbTd);
+
+    if (isStringArray) {
+      const td = document.createElement('td');
+      td.className = 'cell-name';
+      td.textContent = item;
+      tr.appendChild(td);
+    } else {
+      for (const col of cols) {
+        const td = document.createElement('td');
+        const val = item[col];
+        if (typeof val === 'boolean') {
+          td.innerHTML = `<span class="bool-badge ${val ? 'bool-true' : 'bool-false'}">${val}</span>`;
+        } else if (col === 'name') {
+          td.className = 'cell-name';
+          td.textContent = val ?? '';
+        } else {
+          td.textContent = val != null ? String(val) : '';
+        }
+        tr.appendChild(td);
+      }
+    }
+
+    // Actions
+    const actTd = document.createElement('td');
+    actTd.innerHTML = `<div class="row-actions">
+      <button data-fi="${fi}" class="edit-btn">Edit</button>
+      <button data-fi="${fi}" class="move-btn">Move</button>
+      <button data-fi="${fi}" class="del-btn del">Delete</button>
+    </div>`;
+    actTd.querySelector('.edit-btn').addEventListener('click', () => openEditModal(fi));
+    actTd.querySelector('.move-btn').addEventListener('click', () => openMoveModal(fi));
+    actTd.querySelector('.del-btn').addEventListener('click', () => deleteItem(fi));
+    tr.appendChild(actTd);
+
+    body.appendChild(tr);
+  });
+
+  updateBatchBar();
+}
+
+// ─────────────────────────────────────────────────
+//  Batch bar
+// ─────────────────────────────────────────────────
+function updateBatchBar() {
+  const bar = document.getElementById('batchBar');
+  const n = selected.size;
+  bar.classList.toggle('visible', n > 0);
+  document.getElementById('batchCount').textContent = `${n} selected`;
+
+  // populate move select
+  const sel = document.getElementById('batchMoveSelect');
+  sel.innerHTML = '';
+  const paths = getAllPaths(data);
+  for (const p of paths) {
+    if (p.path.join('.') === currentPath.join('.')) continue;
+    const opt = document.createElement('option');
+    opt.value = p.path.join('\t');
+    opt.textContent = p.path.join(' › ');
+    sel.appendChild(opt);
+  }
+}
+
+document.getElementById('batchMoveBtn').addEventListener('click', () => {
+  if (!selected.size) return;
+  const targetPath = document.getElementById('batchMoveSelect').value.split('\t');
+  batchMove(targetPath);
+});
+
+document.getElementById('batchDeleteBtn').addEventListener('click', () => {
+  if (!confirm(`Delete ${selected.size} item(s)?`)) return;
+  snapshot();
+  const coll = getCollection(data, currentPath);
+  const toDelete = [...selected].map(fi => coll.indexOf(filteredItems[fi]));
+  toDelete.sort((a, b) => b - a);
+  for (const i of toDelete) coll.splice(i, 1);
+  selected.clear();
+  renderSidebar();
+  renderTable();
+  showStatus(`Deleted ${toDelete.length} item(s)`);
+});
+
+document.getElementById('batchCancelBtn').addEventListener('click', () => {
+  selected.clear();
+  updateBatchBar();
+  renderTable();
+});
+
+function batchMove(targetPath) {
+  snapshot();
+  const src = getCollection(data, currentPath);
+  const dst = getCollection(data, targetPath);
+  const toMove = [...selected].map(fi => filteredItems[fi]);
+  for (const item of toMove) {
+    const i = src.indexOf(item);
+    if (i !== -1) src.splice(i, 1);
+    dst.push(deepClone(item));
+  }
+  selected.clear();
+  renderSidebar();
+  renderTable();
+  showStatus(`Moved ${toMove.length} item(s) to ${targetPath.join(' › ')}`);
+}
+
+// ─────────────────────────────────────────────────
+//  Single delete
+// ─────────────────────────────────────────────────
+function deleteItem(fi) {
+  const item = filteredItems[fi];
+  const label = typeof item === 'string' ? item : (item.name ?? JSON.stringify(item).slice(0, 40));
+  if (!confirm(`Delete "${label}"?`)) return;
+  snapshot();
+  const coll = getCollection(data, currentPath);
+  const i = coll.indexOf(item);
+  coll.splice(i, 1);
+  renderSidebar();
+  renderTable();
+  showStatus('Deleted');
+}
+
+// ─────────────────────────────────────────────────
+//  Add item
+// ─────────────────────────────────────────────────
+document.getElementById('addItemBtn').addEventListener('click', () => {
+  editingIndex = null;
+  openEditModal(null);
+});
+
+// ─────────────────────────────────────────────────
+//  Edit/Add modal
+// ─────────────────────────────────────────────────
+function openEditModal(fi) {
+  editingIndex = fi;
+  const coll = getCollection(data, currentPath);
+  const isStringArray = coll.length === 0 || typeof coll[0] === 'string';
+
+  const item = fi != null ? deepClone(filteredItems[fi]) : null;
+  const isNew = item == null;
+
+  document.getElementById('modalTitle').textContent = isNew ? 'Add Item' : 'Edit Item';
+
+  const fields = document.getElementById('modalFields');
+  fields.innerHTML = '';
+  const extraPropsDiv = document.getElementById('extraProps');
+  extraPropsDiv.innerHTML = '';
+  document.getElementById('extraPropsSection').style.display = isStringArray ? 'none' : '';
+
+  if (isStringArray) {
+    const row = document.createElement('div');
+    row.className = 'form-row';
+    row.innerHTML = `<label>Value</label><input id="strValue" value="${isNew ? '' : (item ?? '').replace(/"/g, '&quot;')}">`;
+    fields.appendChild(row);
+  } else {
+    // Known cols from entire collection
+    const allItems = getCollection(data, currentPath);
+    const cols = getColumns(allItems);
+    const knownKeys = new Set(cols);
+
+    for (const col of cols) {
+      const val = item ? item[col] : undefined;
+      const row = document.createElement('div');
+      row.className = 'form-row';
+      if (typeof val === 'boolean' || (val == null && col.startsWith('is'))) {
+        row.innerHTML = `<label>${col}</label>
+          <select id="field_${col}">
+            <option value="true" ${val === true ? 'selected' : ''}>true</option>
+            <option value="false" ${val !== true ? 'selected' : ''}>false</option>
+          </select>`;
+      } else {
+        const safeVal = (val != null ? String(val) : '').replace(/"/g, '&quot;');
+        row.innerHTML = `<label>${col}</label><input id="field_${col}" value="${safeVal}">`;
+      }
+      fields.appendChild(row);
+    }
+
+    // Extra props (fields on this item not in schema)
+    if (item) {
+      for (const k of Object.keys(item)) {
+        if (!knownKeys.has(k)) {
+          addExtraPropRow(k, String(item[k]));
+        }
+      }
+    }
+  }
+
+  document.getElementById('editModal').style.display = 'flex';
+  // focus first input
+  setTimeout(() => {
+    const first = document.getElementById('editModal').querySelector('input, select');
+    if (first) first.focus();
+  }, 50);
+}
+
+function addExtraPropRow(key = '', value = '') {
+  const div = document.getElementById('extraProps');
+  const row = document.createElement('div');
+  row.className = 'prop-row';
+  row.innerHTML = `<input placeholder="key" value="${key.replace(/"/g, '&quot;')}" class="prop-key">
+    <input placeholder="value" value="${value.replace(/"/g, '&quot;')}" class="prop-val">
+    <button class="btn danger" title="Remove">×</button>`;
+  row.querySelector('button').addEventListener('click', () => row.remove());
+  div.appendChild(row);
+}
+
+document.getElementById('addPropBtn').addEventListener('click', () => addExtraPropRow());
+
+document.getElementById('modalCancel').addEventListener('click', () => {
+  document.getElementById('editModal').style.display = 'none';
+});
+
+document.getElementById('modalSave').addEventListener('click', () => {
+  const coll = getCollection(data, currentPath);
+  const isStringArray = coll.length === 0 || typeof coll[0] === 'string';
+  snapshot();
+
+  if (isStringArray) {
+    const val = document.getElementById('strValue').value.trim();
+    if (!val) { showStatus('Value cannot be empty', false); undoStack.pop(); return; }
+    if (editingIndex == null) {
+      coll.push(val);
+    } else {
+      const realIdx = coll.indexOf(filteredItems[editingIndex]);
+      coll[realIdx] = val;
+    }
+  } else {
+    const allItems = getCollection(data, currentPath);
+    const cols = getColumns(allItems);
+    const obj = {};
+
+    for (const col of cols) {
+      const el = document.getElementById(`field_${col}`);
+      if (!el) continue;
+      const raw = el.tagName === 'SELECT' ? el.value : el.value.trim();
+      if (raw === '') continue;
+      if (el.tagName === 'SELECT') {
+        obj[col] = raw === 'true';
+      } else if (!isNaN(raw) && raw !== '') {
+        obj[col] = Number(raw);
+      } else {
+        obj[col] = raw;
+      }
+    }
+
+    // Extra props
+    for (const row of document.querySelectorAll('#extraProps .prop-row')) {
+      const k = row.querySelector('.prop-key').value.trim();
+      const v = row.querySelector('.prop-val').value.trim();
+      if (k) obj[k] = v;
+    }
+
+    if (editingIndex == null) {
+      coll.push(obj);
+    } else {
+      const realIdx = coll.indexOf(filteredItems[editingIndex]);
+      coll[realIdx] = obj;
+    }
+  }
+
+  document.getElementById('editModal').style.display = 'none';
+  renderSidebar();
+  renderTable();
+  showStatus(editingIndex == null ? 'Item added' : 'Item updated');
+});
+
+// ─────────────────────────────────────────────────
+//  Move single item modal
+// ─────────────────────────────────────────────────
+function openMoveModal(fi) {
+  movingIndex = fi;
+  const item = filteredItems[fi];
+  const label = typeof item === 'string' ? item : (item.name ?? 'item');
+  document.getElementById('moveItemName').textContent = label;
+
+  const sel = document.getElementById('moveCatSelect');
+  sel.innerHTML = '';
+  for (const p of getAllPaths(data)) {
+    if (p.path.join('.') === currentPath.join('.')) continue;
+    const opt = document.createElement('option');
+    opt.value = p.path.join('\t');
+    opt.textContent = p.path.join(' › ');
+    sel.appendChild(opt);
+  }
+
+  document.getElementById('moveModal').style.display = 'flex';
+}
+
+document.getElementById('moveCancelBtn').addEventListener('click', () => {
+  document.getElementById('moveModal').style.display = 'none';
+});
+
+document.getElementById('moveConfirmBtn').addEventListener('click', () => {
+  const targetPath = document.getElementById('moveCatSelect').value.split('\t');
+  snapshot();
+  const src = getCollection(data, currentPath);
+  const dst = getCollection(data, targetPath);
+  const item = filteredItems[movingIndex];
+  const i = src.indexOf(item);
+  src.splice(i, 1);
+  dst.push(deepClone(item));
+  document.getElementById('moveModal').style.display = 'none';
+  renderSidebar();
+  renderTable();
+  showStatus(`Moved to ${targetPath.join(' › ')}`);
+});
+
+// ─────────────────────────────────────────────────
+//  Search
+// ─────────────────────────────────────────────────
+document.getElementById('searchInput').addEventListener('input', () => {
+  selected.clear();
+  renderTable();
+});
+
+// ─────────────────────────────────────────────────
+//  Keyboard shortcuts
+// ─────────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.getElementById('editModal').style.display = 'none';
+    document.getElementById('moveModal').style.display = 'none';
+  }
+  if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) { e.preventDefault(); undo(); }
+  if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.key === 'z' && e.shiftKey))) { e.preventDefault(); redo(); }
+  if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); document.getElementById('saveBtn').click(); }
+});
+
+document.getElementById('undoBtn').addEventListener('click', undo);
+document.getElementById('redoBtn').addEventListener('click', redo);
+</script>
+</body>
+</html>
