@@ -114,6 +114,7 @@ const TRACKABLE_ITEMS: NavItem[] = [
             <a [routerLink]="item.route"
                routerLinkActive="active"
                class="nav-item"
+               [class.section-disabled]="group.group === 'Disabled'"
                [title]="collapsed() ? item.label : ''"
                (click)="mobileClose.emit()">
               <lucide-icon class="nav-icon" [img]="item.icon" [size]="15" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
@@ -289,6 +290,9 @@ const TRACKABLE_ITEMS: NavItem[] = [
       border-left-color: var(--color-accent);
       background: var(--color-surface2);
       color: var(--color-accent-light);
+    }
+    .section-disabled {
+      opacity: 0.45;
     }
     .nav-icon {
       width: 15px;
