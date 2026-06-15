@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
@@ -12,6 +12,9 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
   template: `
     <div class="page">
       <app-section-header title="SETTINGS" description="Customise your tracking experience. Settings affect what counts towards your completion percentage everywhere." />
+      @if (savedFlash()) {
+        <div class="saved-flash" role="status" aria-live="polite">✓ Saved</div>
+      }
 
       <div class="settings-grid">
 
@@ -271,7 +274,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
                   type="checkbox"
                   class="wf-checkbox"
                   [checked]="isPinnedWidgetEnabled(widget.id)"
-                  (change)="togglePinnedWidget(widget.id)"
+                  (change)="togglePinnedWidget(widget.id); flashSaved()"
                 />
                 <div class="setting-info">
                   <span class="setting-label">{{ widget.label }}</span>
@@ -291,7 +294,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
                     type="checkbox"
                     class="wf-checkbox"
                     [checked]="!isCycleHidden(cycle)"
-                    (change)="toggleHiddenCycle(cycle)"
+                    (change)="toggleHiddenCycle(cycle); flashSaved()"
                   />
                   <span class="setting-label">{{ cycle }}</span>
                 </label>
@@ -414,14 +417,32 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
     }
     .confirm-box p { font-size: 13px; color: var(--color-text); margin: 0 0 10px; }
     .confirm-actions { display: flex; gap: 8px; }
+    .saved-flash {
+      font-size: 12px;
+      color: var(--color-accent-light);
+      margin-bottom: 12px;
+    }
   `]
 })
-export class SettingsComponent {
+export class SettingsComponent implements OnDestroy {
   private readonly tracker = inject(TrackerService);
 
   showResetConfirm = signal(false);
   importError = signal('');
   importSuccess = signal(false);
+  savedFlash = signal(false);
+
+  private _saveTimer: ReturnType<typeof setTimeout> | null = null;
+
+  flashSaved(): void {
+    if (this._saveTimer) clearTimeout(this._saveTimer);
+    this.savedFlash.set(true);
+    this._saveTimer = setTimeout(() => this.savedFlash.set(false), 1800);
+  }
+
+  ngOnDestroy(): void {
+    if (this._saveTimer) clearTimeout(this._saveTimer);
+  }
 
   // ─── Build FormGroups from current service state ──────────────────────────
 
@@ -545,9 +566,11 @@ export class SettingsComponent {
     this.settingsForm.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => {
       const pinnedBar = this.tracker.settings().pinnedBar;
       this.tracker.updateSettings({ ...this.settingsForm.getRawValue() as TrackerSettings, pinnedBar });
+      this.flashSaved();
     });
     this.togglesForm.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => {
       this.tracker.updateSectionToggles(this.togglesForm.getRawValue() as SectionToggles);
+      this.flashSaved();
     });
   }
 

@@ -62,6 +62,9 @@ interface ArcaneGroup {
             aria-label="Search"
             [formControl]="searchControl"
           />
+          @if (searchQuery() && searchResultCount() !== totalArcaneCount()) {
+            <span class="arc-search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalArcaneCount() }} results</span>
+          }
         </div>
 
         @for (group of filteredGroups(); track group.name) {
@@ -135,6 +138,7 @@ interface ArcaneGroup {
     .arc-section-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--color-text); }
     .arc-progress { font-size: 11px; color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
     .arc-empty { text-align: center; padding: 48px; color: var(--color-text-muted); font-size: 13px; }
+    .arc-search-count { display: block; margin-top: 4px; font-size: 11px; color: var(--color-text-muted); }
   `]
 })
 export class ArcanesComponent {
@@ -174,6 +178,9 @@ export class ArcanesComponent {
       ? groups.map(g => ({ ...g, rows: g.rows.filter(r => r.name.toLowerCase().includes(q)) })).filter(g => g.rows.length > 0)
       : groups;
   });
+
+  readonly totalArcaneCount = computed(() => this.arcaneGroups().reduce((sum, g) => sum + g.rows.length, 0));
+  readonly searchResultCount = computed(() => this.filteredGroups().reduce((sum, g) => sum + g.rows.length, 0));
 
   constructor() {
     effect(() => {

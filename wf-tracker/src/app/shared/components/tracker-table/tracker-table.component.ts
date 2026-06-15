@@ -1,4 +1,4 @@
-import { Component, input, output, signal, computed, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, signal, computed, inject, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { TrackerService } from '../../../core/services/tracker.service';
 
 export interface TrackerColumn {
@@ -28,6 +28,11 @@ export interface TrackerRow {
    * `(row.name, colKey, sub.key)`.
    */
   multiCells?: Record<string, TrackerCellSub[]>;
+}
+
+interface DisplayGroup {
+  name: string;
+  rows: TrackerRow[];
 }
 
 @Component({
@@ -62,123 +67,148 @@ export interface TrackerRow {
                 [class.tt-col-alt]="ci % 2 === 1"
                 [class.tt-col-icon]="!!col.icon"
               >
-                <button
-                  type="button"
-                  class="tt-col-toggle"
-                  [class.tt-col-full]="isColumnFull(col.key)"
-                  [attr.aria-pressed]="isColumnFull(col.key)"
-                  [attr.aria-label]="'Toggle all ' + col.label"
-                  [title]="col.label"
-                  (click)="toggleColumn(col.key)"
-                >
-                  @if (col.icon) {
-                    <span aria-hidden="true">{{ col.icon }}</span>
-                  } @else {
-                    {{ col.label }}
-                  }
-                </button>
+                @if (pendingColConfirm() === col.key) {
+                  <button
+                    type="button"
+                    class="tt-col-toggle tt-col-pending"
+                    [attr.aria-label]="'Confirm toggle all ' + col.label"
+                    [title]="col.label"
+                    (click)="onColHeaderClick(col.key)"
+                  >
+                    Confirm? ({{ pendingColCount() }})
+                  </button>
+                } @else {
+                  <button
+                    type="button"
+                    class="tt-col-toggle"
+                    [class.tt-col-full]="isColumnFull(col.key)"
+                    [attr.aria-pressed]="isColumnFull(col.key)"
+                    [attr.aria-label]="'Toggle all ' + col.label"
+                    [title]="col.label"
+                    (click)="onColHeaderClick(col.key)"
+                  >
+                    @if (col.icon) {
+                      <span aria-hidden="true">{{ col.icon }}</span>
+                    } @else {
+                      {{ col.label }}
+                    }
+                  </button>
+                }
               </th>
             }
           </tr>
         </thead>
         <tbody>
-          @for (row of displayRows(); track row.name; let i = $index) {
-            @if (row.group && (i === 0 || displayRows()[i - 1].group !== row.group)) {
-              <tr class="tt-group-row" aria-hidden="true">
-                <td [attr.colspan]="columns().length + 1" class="tt-group-cell">{{ row.group }}</td>
-              </tr>
-            }
-            <tr
-              [class]="row.rowCssClass || ''"
-              [class.tt-row-has-note]="hasNote(row.name)"
-              [class.tt-row-complete]="isRowFull(row.name)"
-            >
-              <td class="tt-col-name">
-                <span class="tt-name-cell">
-                  <span class="tt-name-text">
-                    <button
-                      type="button"
-                      class="tt-primary-name tt-name-btn"
-                      [class.tt-name-full]="isRowFull(row.name)"
-                      [attr.aria-pressed]="isRowFull(row.name)"
-                      [attr.aria-label]="'Toggle all checkboxes for ' + row.name"
-                      (click)="toggleRow(row.name)"
-                    >
-                      {{ row.name }}
-                      @for (tag of row.tags || []; track tag.label) {
-                        <span class="tt-tag" [class]="tag.cssClass">{{ tag.label }}</span>
-                      }
-                    </button>
-                    @if (row.subtitle) {
-                      <span class="tt-subtitle">{{ row.subtitle }}</span>
-                    }
-                  </span>
-                  @if (notesFn()) {
-                    <button
-                      type="button"
-                      class="tt-note-btn"
-                      [class.tt-note-btn-active]="isNoteOpen(row.name)"
-                      [attr.aria-expanded]="isNoteOpen(row.name)"
-                      [attr.aria-label]="(isNoteOpen(row.name) ? 'Hide' : 'Show') + ' note for ' + row.name"
-                      (click)="toggleNote(row.name)"
-                    >✎</button>
-                  }
-                  @if (showWikiLinks()) {
-                    <a
-                      class="tt-wiki-btn"
-                      [href]="wikiUrl(row.name)"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      [attr.aria-label]="'Open wiki page for ' + row.name"
-                      title="Open wiki page"
-                    >W</a>
-                  }
-                </span>
+          @for (group of displayGroups(); track group.name) {
+            <tr class="tt-group-row">
+              <td [attr.colspan]="columns().length + 1" class="tt-group-cell">
+                <button
+                  type="button"
+                  class="tt-group-toggle"
+                  [attr.aria-expanded]="!isGroupCollapsed(group.name)"
+                  (click)="toggleGroup(group.name)"
+                >
+                  <span class="tt-group-chevron" aria-hidden="true">{{ isGroupCollapsed(group.name) ? '▶' : '▼' }}</span>
+                  <span>{{ group.name }}</span>
+                  <span class="tt-group-count">{{ visibleGroupCount(group) }}/{{ group.rows.length }}</span>
+                </button>
               </td>
-              @for (col of columns(); track col.key; let ci = $index) {
-                <td class="tt-col-check" [class.tt-col-alt]="ci % 2 === 1">
-                  @if (subCellsFor(row, col.key); as subs) {
-                    <span class="tt-multi">
-                      @for (sub of subs; track sub.key) {
-                        <label class="tt-multi-item" [class.tt-multi-founder]="sub.founder">
-                          <input
-                            type="checkbox"
-                            class="wf-checkbox"
-                            [checked]="isChecked(row.name, col.key, sub.key)"
-                            (change)="toggle.emit({ rowName: row.name, colKey: col.key, subKey: sub.key })"
-                            [attr.aria-label]="row.name + ' ' + sub.label + ' - ' + col.label"
-                          />
-                          <span class="tt-multi-label">{{ sub.label }}</span>
-                        </label>
+            </tr>
+            @if (!isGroupCollapsed(group.name)) {
+              @for (row of group.rows; track row.name) {
+                <tr
+                  [class]="row.rowCssClass || ''"
+                  [class.tt-row-has-note]="hasNote(row.name)"
+                  [class.tt-row-complete]="isRowFull(row.name)"
+                >
+                  <td class="tt-col-name">
+                    <span class="tt-name-cell">
+                      <span class="tt-name-text">
+                        <button
+                          type="button"
+                          class="tt-primary-name tt-name-btn"
+                          [class.tt-name-full]="isRowFull(row.name)"
+                          [attr.aria-pressed]="isRowFull(row.name)"
+                          [attr.aria-label]="'Toggle all checkboxes for ' + row.name"
+                          (click)="toggleRow(row.name)"
+                        >
+                          {{ row.name }}
+                          @for (tag of row.tags || []; track tag.label) {
+                            <span class="tt-tag" [class]="tag.cssClass">{{ tag.label }}</span>
+                          }
+                        </button>
+                        @if (row.subtitle) {
+                          <span class="tt-subtitle">{{ row.subtitle }}</span>
+                        }
+                      </span>
+                      @if (notesFn()) {
+                        <button
+                          type="button"
+                          class="tt-note-btn"
+                          [class.tt-note-btn-active]="isNoteOpen(row.name)"
+                          [attr.aria-expanded]="isNoteOpen(row.name)"
+                          [attr.aria-label]="(isNoteOpen(row.name) ? 'Hide' : 'Show') + ' note for ' + row.name"
+                          (click)="toggleNote(row.name)"
+                        >✎</button>
+                      }
+                      @if (showWikiLinks()) {
+                        <a
+                          class="tt-wiki-btn"
+                          [href]="wikiUrl(row.name)"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          [attr.aria-label]="'Open wiki page for ' + row.name"
+                          title="Open wiki page"
+                        >W</a>
                       }
                     </span>
-                  } @else if (isCellDisabled(row.name, col.key)) {
-                    <span class="tt-cell-disabled" aria-hidden="true">—</span>
-                  } @else {
-                    <input
-                      type="checkbox"
-                      class="wf-checkbox"
-                      [checked]="isChecked(row.name, col.key)"
-                      (change)="toggle.emit({ rowName: row.name, colKey: col.key })"
-                      [attr.aria-label]="row.name + ' - ' + col.label"
-                    />
+                  </td>
+                  @for (col of columns(); track col.key; let ci = $index) {
+                    <td class="tt-col-check" [class.tt-col-alt]="ci % 2 === 1">
+                      @if (subCellsFor(row, col.key); as subs) {
+                        <span class="tt-multi">
+                          @for (sub of subs; track sub.key) {
+                            <label class="tt-multi-item" [class.tt-multi-founder]="sub.founder">
+                              <input
+                                type="checkbox"
+                                class="wf-checkbox"
+                                [checked]="isChecked(row.name, col.key, sub.key)"
+                                (change)="toggle.emit({ rowName: row.name, colKey: col.key, subKey: sub.key })"
+                                [attr.aria-label]="row.name + ' ' + sub.label + ' - ' + col.label"
+                              />
+                              <span class="tt-multi-label">{{ sub.label }}</span>
+                            </label>
+                          }
+                        </span>
+                      } @else if (isCellDisabled(row.name, col.key)) {
+                        <span class="tt-cell-disabled" aria-hidden="true">—</span>
+                      } @else {
+                        <input
+                          type="checkbox"
+                          class="wf-checkbox"
+                          [checked]="isChecked(row.name, col.key)"
+                          (change)="toggle.emit({ rowName: row.name, colKey: col.key })"
+                          [attr.aria-label]="row.name + ' - ' + col.label"
+                        />
+                      }
+                    </td>
                   }
-                </td>
+                </tr>
+                @if (notesFn() && isNoteOpen(row.name)) {
+                  <tr class="tt-note-row">
+                    <td [attr.colspan]="columns().length + 1" class="tt-note-cell">
+                      <textarea
+                        class="tt-note-textarea"
+                        rows="3"
+                        [attr.aria-label]="'Notes for ' + row.name"
+                        [value]="getNote(row.name)"
+                        (input)="onNoteInput(row.name, $event)"
+                        placeholder="Add a note…"
+                      ></textarea>
+                    </td>
+                  </tr>
+                }
               }
-            </tr>
-            @if (notesFn() && isNoteOpen(row.name)) {
-              <tr class="tt-note-row">
-                <td [attr.colspan]="columns().length + 1" class="tt-note-cell">
-                  <textarea
-                    class="tt-note-textarea"
-                    rows="3"
-                    [attr.aria-label]="'Notes for ' + row.name"
-                    [value]="getNote(row.name)"
-                    (input)="onNoteInput(row.name, $event)"
-                    placeholder="Add a note…"
-                  ></textarea>
-                </td>
-              </tr>
             }
           }
         </tbody>
@@ -254,6 +284,13 @@ export interface TrackerRow {
       outline-offset: 1px;
     }
     .tt-col-toggle.tt-col-full { color: var(--color-gold); }
+    .tt-col-pending {
+      border: 1px solid #b45309 !important;
+      background: rgba(180, 83, 9, 0.12) !important;
+      color: #fbbf24 !important;
+      font-size: 9px;
+      white-space: nowrap;
+    }
     .tt-table td {
       padding: 5px 10px;
       border-bottom: 1px solid var(--color-border);
@@ -269,15 +306,31 @@ export interface TrackerRow {
     }
     .tt-table tr:hover td { background: var(--color-surface2) !important; }
     .tt-group-cell {
-      padding: 5px 10px 3px;
+      padding: 0;
+      background: var(--color-surface2) !important;
+      border-bottom: none;
+    }
+    .tt-group-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+      background: none;
+      border: none;
+      font: inherit;
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--color-gold);
-      background: var(--color-surface2) !important;
-      border-bottom: none;
+      padding: 5px 10px 3px;
+      cursor: pointer;
+      text-align: left;
     }
+    .tt-group-toggle:hover { opacity: 0.8; }
+    .tt-group-toggle:focus-visible { outline: 2px solid var(--color-gold); outline-offset: -1px; }
+    .tt-group-chevron { font-size: 8px; }
+    .tt-group-count { color: var(--color-text-muted); font-weight: 400; letter-spacing: 0; text-transform: none; }
     .tt-group-row + tr td { border-top: none; }
     .tt-cell-disabled { color: var(--color-border); font-size: 11px; }
     .tt-multi {
@@ -397,11 +450,11 @@ export interface TrackerRow {
     }
     .tt-note-textarea:focus { outline: none; border-color: var(--color-gold); }
     .tt-row-complete td { opacity: 0.45; }
-    .tt-row-complete .tt-primary-name { text-decoration: line-through; color: var(--color-text-muted); }
+    .tt-row-complete .tt-primary-name { color: var(--color-text-muted); }
     .tt-row-complete:hover td { opacity: 0.6; }
   `]
 })
-export class TrackerTableComponent {
+export class TrackerTableComponent implements OnDestroy {
   private readonly tracker = inject(TrackerService);
 
   readonly showWikiLinks = computed(() => this.tracker.settings().showWikiLinks);
@@ -421,6 +474,12 @@ export class TrackerTableComponent {
   readonly hideComplete = signal(false);
   readonly sortIncompleteFirst = signal(false);
 
+  readonly collapsedGroups = signal<Set<string>>(new Set());
+
+  readonly pendingColConfirm = signal<string | null>(null);
+  readonly pendingColCount = signal(0);
+  private pendingTimer: ReturnType<typeof setTimeout> | null = null;
+
   readonly displayRows = computed(() => {
     let rows = this.rows();
     if (this.sortIncompleteFirst()) {
@@ -436,6 +495,83 @@ export class TrackerTableComponent {
     }
     return rows;
   });
+
+  readonly displayGroups = computed<DisplayGroup[]>(() => {
+    const rows = this.displayRows();
+    const groups: DisplayGroup[] = [];
+    const groupMap = new Map<string, DisplayGroup>();
+
+    for (const row of rows) {
+      const name = row.group ?? '';
+      if (!groupMap.has(name)) {
+        const g: DisplayGroup = { name, rows: [] };
+        groupMap.set(name, g);
+        groups.push(g);
+      }
+      groupMap.get(name)!.rows.push(row);
+    }
+    return groups;
+  });
+
+  isGroupCollapsed(groupName: string): boolean {
+    return this.collapsedGroups().has(groupName);
+  }
+
+  toggleGroup(groupName: string): void {
+    this.collapsedGroups.update(s => {
+      const next = new Set(s);
+      if (next.has(groupName)) next.delete(groupName); else next.add(groupName);
+      return next;
+    });
+  }
+
+  visibleGroupCount(group: DisplayGroup): number {
+    return group.rows.filter(r => !this.isRowFull(r.name)).length;
+  }
+
+  onColHeaderClick(colKey: string): void {
+    const pending = this.pendingColConfirm();
+
+    if (pending === colKey) {
+      this.clearPending();
+      this.toggleColumn(colKey);
+      return;
+    }
+
+    if (pending !== null) {
+      this.clearPending();
+    }
+
+    const units = this.columnUnits(colKey);
+    const clearing = this.isColumnFull(colKey);
+
+    if (!clearing && units.length >= 30) {
+      const unchecked = units.filter(u => !this.isChecked(u.rowName, colKey, u.subKey)).length;
+      this.pendingColCount.set(unchecked);
+      this.pendingColConfirm.set(colKey);
+      this.pendingTimer = setTimeout(() => {
+        this.pendingColConfirm.set(null);
+        this.pendingColCount.set(0);
+        this.pendingTimer = null;
+      }, 3000);
+      return;
+    }
+
+    this.toggleColumn(colKey);
+  }
+
+  private clearPending(): void {
+    if (this.pendingTimer !== null) {
+      clearTimeout(this.pendingTimer);
+      this.pendingTimer = null;
+    }
+    this.pendingColConfirm.set(null);
+    this.pendingColCount.set(0);
+  }
+
+  ngOnDestroy(): void {
+    this.clearPending();
+  }
 
   private readonly openNotes = signal<Set<string>>(new Set());
 

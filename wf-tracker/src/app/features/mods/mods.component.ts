@@ -47,6 +47,9 @@ interface ModGroup {
             aria-label="Search mods"
             [formControl]="searchControl"
           />
+          @if (searchQuery() && searchResultCount() !== totalModCount()) {
+            <span class="mod-search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalModCount() }} results</span>
+          }
         </div>
 
         @for (group of filteredGroups(); track group.name) {
@@ -122,6 +125,7 @@ interface ModGroup {
     .mod-section-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--color-text); }
     .mod-progress { font-size: 11px; color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
     .mod-empty { text-align: center; padding: 48px; color: var(--color-text-muted); font-size: 13px; }
+    .mod-search-count { display: block; margin-top: 4px; font-size: 11px; color: var(--color-text-muted); }
   `]
 })
 export class ModsComponent {
@@ -192,6 +196,9 @@ export class ModsComponent {
           .filter(g => g.rows.length > 0)
       : groups;
   });
+
+  readonly totalModCount = computed(() => this.modGroups().reduce((sum, g) => sum + g.rows.length, 0));
+  readonly searchResultCount = computed(() => this.filteredGroups().reduce((sum, g) => sum + g.rows.length, 0));
 
   constructor() {
     // Open first group on first load only

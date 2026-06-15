@@ -68,15 +68,15 @@ const TRACKABLE_ITEMS: NavItem[] = [
     <aside class="sidebar" [class.collapsed]="collapsed()" [class.mobile-open]="mobileOpen()">
       <div class="sidebar-header">
         @if (!collapsed()) {
-          <div class="logo">
+          <a [routerLink]="'/dashboard'" class="logo logo-link">
             <span class="logo-wf">WF</span>
             <span class="logo-text">TRACKER</span>
-          </div>
+          </a>
         }
         @if (collapsed()) {
-          <div class="logo">
+          <a [routerLink]="'/dashboard'" class="logo logo-link">
             <span class="logo-wf">WF</span>
-          </div>
+          </a>
         }
         <button
           class="collapse-btn"
@@ -100,11 +100,12 @@ const TRACKABLE_ITEMS: NavItem[] = [
             {{ overallProgress().toFixed(1) }}%
             <span class="progress-counts">{{ tracker.totalTrackable().completed }}/{{ tracker.totalTrackable().total }}</span>
           </div>
+          <div class="rank-name">{{ rankName() }}</div>
         </div>
       }
 
       <nav class="nav-content">
-        @for (group of groups(); track group.group) {
+        @for (group of enabledGroups(); track group.group) {
           @if (!collapsed()) {
             <div class="nav-group">
               <div class="nav-group-label">{{ group.group }}</div>
@@ -114,7 +115,6 @@ const TRACKABLE_ITEMS: NavItem[] = [
             <a [routerLink]="item.route"
                routerLinkActive="active"
                class="nav-item"
-               [class.section-disabled]="group.group === 'Disabled'"
                [title]="collapsed() ? item.label : ''"
                (click)="mobileClose.emit()">
               <lucide-icon class="nav-icon" [img]="item.icon" [size]="15" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
@@ -122,6 +122,31 @@ const TRACKABLE_ITEMS: NavItem[] = [
                 <span class="nav-label">{{ item.label }}</span>
               }
             </a>
+          }
+        }
+
+        @if (!collapsed() && disabledItems().length > 0) {
+          <div class="nav-group">
+            <button
+              type="button"
+              class="disabled-toggle"
+              (click)="disabledExpanded.update(v => !v)"
+              [attr.aria-expanded]="disabledExpanded()"
+            >
+              {{ disabledExpanded() ? '▼' : '▶' }} {{ disabledItems().length }} sections hidden
+            </button>
+          </div>
+          @if (disabledExpanded()) {
+            @for (item of disabledItems(); track item.route) {
+              <a [routerLink]="item.route"
+                 routerLinkActive="active"
+                 class="nav-item section-disabled"
+                 [title]="item.label"
+                 (click)="mobileClose.emit()">
+                <lucide-icon class="nav-icon" [img]="item.icon" [size]="15" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
+                <span class="nav-label">{{ item.label }}</span>
+              </a>
+            }
           }
         }
       </nav>
@@ -150,7 +175,7 @@ const TRACKABLE_ITEMS: NavItem[] = [
         >
           <lucide-icon [img]="sunMoonIcon" [size]="14" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
           @if (!collapsed()) {
-            <span>{{ theme.isNeutralDark() ? 'Blue Tint' : 'Neutral Dark' }}</span>
+            <span>{{ theme.isNeutralDark() ? 'Switch to Blue Tint' : 'Switch to Neutral Dark' }}</span>
           }
         </button>
       </div>
@@ -194,12 +219,24 @@ const TRACKABLE_ITEMS: NavItem[] = [
       gap: 8px;
       overflow: hidden;
     }
+    .logo-link {
+      text-decoration: none;
+    }
+    .logo-link:focus-visible {
+      outline: 2px solid var(--color-accent-light);
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
     .logo-wf {
       font-size: 15px;
       font-weight: 800;
       color: var(--color-accent-light);
       letter-spacing: 0.12em;
       flex-shrink: 0;
+      transition: color var(--transition-fast);
+    }
+    .logo-link:hover .logo-wf {
+      color: color-mix(in srgb, var(--color-accent-light) 70%, white);
     }
     .logo-text {
       font-size: 10px;
@@ -257,6 +294,11 @@ const TRACKABLE_ITEMS: NavItem[] = [
       color: var(--color-text-muted);
       font-weight: 400;
     }
+    .rank-name {
+      font-size: 10px;
+      color: var(--color-text-muted);
+      margin-top: 3px;
+    }
     .nav-group {
       padding: 14px 14px 3px;
     }
@@ -266,6 +308,26 @@ const TRACKABLE_ITEMS: NavItem[] = [
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--color-text-muted);
+    }
+    .disabled-toggle {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      transition: color var(--transition-fast);
+    }
+    .disabled-toggle:hover {
+      color: var(--color-text);
+    }
+    .disabled-toggle:focus-visible {
+      outline: 2px solid var(--color-accent-light);
+      outline-offset: 2px;
+      border-radius: 2px;
     }
     .nav-item {
       display: flex;
@@ -314,8 +376,11 @@ const TRACKABLE_ITEMS: NavItem[] = [
       justify-content: center;
     }
     .collapsed .nav-item.active {
-      border-left-color: transparent;
+      border-left-color: var(--color-accent);
       background: var(--color-surface2);
+    }
+    .collapsed .nav-item.active .nav-icon {
+      opacity: 1;
     }
     .collapsed .nav-icon {
       width: auto;
@@ -433,6 +498,7 @@ export class SidebarComponent {
   readonly mobileClose = output<void>();
 
   readonly collapsed = signal(false);
+  readonly disabledExpanded = signal(false);
   readonly sunMoonIcon = SunMoon;
   readonly searchIcon = Search;
 
@@ -441,21 +507,31 @@ export class SidebarComponent {
     return total > 0 ? (completed / total) * 100 : 0;
   });
 
-  readonly groups = computed(() => {
+  readonly rankName = computed(() => {
+    const p = this.overallProgress();
+    if (p === 100) return 'True Completionist';
+    if (p >= 95)   return 'Legendary Tenno';
+    if (p >= 85)   return 'Grand Master';
+    if (p >= 70)   return 'Master Tenno';
+    if (p >= 55)   return 'Elite Tenno';
+    if (p >= 40)   return 'Veteran Tenno';
+    if (p >= 25)   return 'Tenno Initiate';
+    if (p >= 10)   return 'Rookie Tenno';
+    if (p > 0)     return 'Rookie Tenno';
+    return 'Baby Tenno';
+  });
+
+  readonly disabledItems = computed(() => {
     const toggles = this.tracker.sectionToggles();
-    const enabled: NavItem[] = [];
-    const disabled: NavItem[] = [];
-    for (const item of TRACKABLE_ITEMS) {
-      if (!item.section || toggles[item.section]) {
-        enabled.push(item);
-      } else {
-        disabled.push(item);
-      }
-    }
+    return TRACKABLE_ITEMS.filter(item => item.section && !toggles[item.section]);
+  });
+
+  readonly enabledGroups = computed(() => {
+    const toggles = this.tracker.sectionToggles();
+    const enabled = TRACKABLE_ITEMS.filter(item => !item.section || toggles[item.section]);
     return [
       { group: 'Overview', items: OVERVIEW_ITEMS },
       { group: 'Enabled', items: enabled },
-      ...(disabled.length > 0 ? [{ group: 'Disabled', items: disabled }] : []),
       { group: 'Info', items: INFO_ITEMS },
     ];
   });

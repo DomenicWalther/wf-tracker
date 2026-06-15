@@ -47,6 +47,9 @@ function familyKey(familyName: string, stage: string): string {
           aria-label="Search incarnon families"
           [formControl]="searchControl"
         />
+        @if (searchQuery() && searchResultCount() !== totalRowCount()) {
+          <span class="search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalRowCount() }} results</span>
+        }
       </div>
 
       @if (weeks().length === 0) {
@@ -168,7 +171,7 @@ export class IncarnonComponent {
   private readonly data = toSignal(this.dataService.getData());
 
   readonly searchControl = new FormControl('', { nonNullable: true });
-  private readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
+  readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
 
   readonly currentWeekLabel = `Week ${currentIncarnonWeek()}`;
   private readonly openWeeks = createToggleSet([`Week ${currentIncarnonWeek()}`]);
@@ -178,7 +181,7 @@ export class IncarnonComponent {
   readonly checkedFn = (rowName: string, colKey: string) =>
     this.tracker.isChecked(familyKey(rowName, colKey));
 
-  private readonly allWeeks = computed<IncWeek[]>(() => {
+  readonly allWeeks = computed<IncWeek[]>(() => {
     const d = this.data();
     if (!d) return [];
     const completionist = this.tracker.settings().incarnon.completionist;
@@ -228,6 +231,9 @@ export class IncarnonComponent {
       }))
       .filter(w => w.rows.length > 0);
   });
+
+  readonly searchResultCount = computed(() => this.weeks().reduce((sum, w) => sum + w.rows.length, 0));
+  readonly totalRowCount = computed(() => this.allWeeks().reduce((sum, w) => sum + w.rows.length, 0));
 
   readonly progress = computed(() => this.tracker.sectionProgress('incarnon'));
 

@@ -26,6 +26,9 @@ import { buildGearFamilies, countGearSection, gearFamilyId, gearVariantLabel } f
 
       <div class="gear-search">
         <input class="cl-search" type="text" placeholder="Search gear..." aria-label="Search" [formControl]="searchControl" />
+        @if (searchQuery() && searchResultCount() !== totalGearCount()) {
+          <span class="gear-search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalGearCount() }} results</span>
+        }
       </div>
 
       @for (section of gearSections(); track section.key) {
@@ -97,6 +100,7 @@ import { buildGearFamilies, countGearSection, gearFamilyId, gearVariantLabel } f
     .gear-section-header:hover { background: var(--color-surface3); }
     .gear-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
     .gear-section-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--color-text); }
+    .gear-search-count { display: block; margin-top: 4px; font-size: 11px; color: var(--color-text-muted); }
   `]
 })
 export class GearComponent {
@@ -105,7 +109,7 @@ export class GearComponent {
   private readonly data = toSignal(this.dataService.getData());
 
   readonly searchControl = new FormControl('', { nonNullable: true });
-  private readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
+  protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
 
   private readonly openSections = createToggleSet(['warframes']);
 
@@ -231,6 +235,14 @@ export class GearComponent {
     const q = this.searchQuery().toLowerCase();
     return q ? base.filter(i => i.name.toLowerCase().includes(q)) : base;
   }
+
+  readonly totalGearCount = computed(() =>
+    this.gearSections().reduce((sum, s) => sum + this.founderItems(s.items).length, 0)
+  );
+
+  readonly searchResultCount = computed(() =>
+    this.gearSections().reduce((sum, s) => sum + this.filteredItems(s.items).length, 0)
+  );
 
   sectionProgress(section: { key: string; items: GearItem[] }): { completed: number; total: number } {
     return this.sectionProgressFor(section, this.activeColumns(), this.primeOnlyGear());

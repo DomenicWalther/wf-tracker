@@ -73,14 +73,14 @@ interface SectionCard {
       </div>
 
       <div class="overall-bar">
-        <div class="progress-bar-bg" style="height: 10px">
+        <div class="progress-bar-bg" style="height: 14px">
           <div class="progress-bar-fill" [style.width.%]="overallPct()"></div>
         </div>
       </div>
 
-      @if (whatNext().length > 0) {
-        <section class="whats-next" aria-label="What's next">
-          <h2 class="whats-next-heading">WHAT'S NEXT</h2>
+      <section class="whats-next" aria-label="What's next">
+        <h2 class="whats-next-heading">WHAT'S NEXT</h2>
+        @if (whatNext().length > 0) {
           <div class="whats-next-list">
             @for (item of whatNext(); track item.label + item.section) {
               <a [routerLink]="item.route" class="wn-chip">
@@ -93,14 +93,16 @@ interface SectionCard {
               </a>
             }
           </div>
-        </section>
-      }
+        } @else {
+          <p class="whats-next-empty">Check off items to see near-complete sections here.</p>
+        }
+      </section>
 
       <app-world-state-panel />
 
       <div class="cards-grid">
         @for (card of cards(); track card.route) {
-          <a [routerLink]="card.route" class="section-card" [class.disabled]="!card.enabled">
+          <a [routerLink]="card.enabled ? card.route : '/settings'" class="section-card" [class.disabled]="!card.enabled">
             <div class="card-icon">
               <lucide-icon [img]="card.icon" [size]="18" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
             </div>
@@ -113,6 +115,9 @@ interface SectionCard {
                 <span class="card-pct">{{ pct(card).toFixed(1) }}%</span>
               </div>
               <div class="card-counts">{{ card.completed }}/{{ card.total }}</div>
+              @if (!card.enabled) {
+                <div class="card-enable-hint">Enable in Settings →</div>
+              }
             </div>
             @if (!card.enabled) {
               <div class="card-disabled-badge">Disabled</div>
@@ -191,8 +196,21 @@ interface SectionCard {
     .overall-bar {
       margin-bottom: 28px;
     }
+    .overall-bar .progress-bar-bg,
+    .overall-bar .progress-bar-fill {
+      border-radius: 8px;
+    }
+    .overall-bar .progress-bar-fill {
+      background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    }
     .whats-next {
       margin-bottom: 20px;
+    }
+    .whats-next-empty {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      font-style: italic;
+      margin: 0;
     }
     .whats-next-heading {
       font-size: 10px;
@@ -288,7 +306,9 @@ interface SectionCard {
     }
     .section-card.disabled {
       opacity: 0.38;
-      pointer-events: none;
+    }
+    .section-card.disabled:hover {
+      border-color: var(--color-border);
     }
     .card-icon {
       width: 32px;
@@ -331,6 +351,12 @@ interface SectionCard {
     .card-counts {
       font-size: 11px;
       color: var(--color-text-muted);
+    }
+    .card-enable-hint {
+      font-size: 10px;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+      letter-spacing: 0.03em;
     }
     .card-disabled-badge {
       position: absolute;

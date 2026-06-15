@@ -28539,6 +28539,12 @@
                            "date":  "2026-06-14",
                            "description":  "Atragraph Foil Mods Tracking",
                            "details":  "New section for the Atragraph cosmetic foil system:\n- Atragraph page tracking all foil mod families, integrated into the dashboard, sidebar, command palette and overall progress\n- Standard mode tracks one foil per mod family; optional Collector mode (in settings) tracks the foil on every compatible mod variant\n- Section can be toggled on or off from settings like every other category"
+                       },
+                       {
+                           "version":  "v1.8",
+                           "date":  "2026-06-15",
+                           "description":  "UX Overhaul — Navigation, Tables & Feedback",
+                           "details":  "Broad quality-of-life pass across the whole app:\n- Tracker tables: group sections are now collapsible — click any category header to expand or collapse it\n- Tracker tables: bulk column toggle now requires a two-step confirmation to prevent accidental mass-check\n- Tracker tables: completed rows no longer show strikethrough text (dim opacity is sufficient)\n- Search result count shown on Mods, Arcanes, Gear, Incarnon and Lich Gear pages when a filter is active\n- Sidebar: disabled sections collapsed into a single “N sections hidden” toggle instead of a full dimmed list\n- Sidebar: WF TRACKER logo now navigates to the dashboard\n- Sidebar: active page indicator visible when sidebar is collapsed\n- Sidebar: rank title (Baby Tenno → True Completionist) displayed below the progress bar\n- Sidebar: theme toggle label reworded to clearly describe the action rather than the current state\n- Dashboard: “What’s Next” section shows a placeholder for users who haven’t started tracking yet\n- Dashboard: disabled section cards now link to Settings with an “Enable in Settings” hint\n- Dashboard: overall progress bar increased to 14 px with a gold gradient fill\n- Settings: a “✓ Saved” confirmation flashes after any setting is changed"
                        }
                    ],
     "modularGear":  {
