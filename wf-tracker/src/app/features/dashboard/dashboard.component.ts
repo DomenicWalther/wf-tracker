@@ -15,7 +15,7 @@ type LucideIconData = (typeof icons)[keyof typeof icons];
 const {
   ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
   Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
-  ShoppingBag, Boxes, Component: ComponentIcon, Award, Sticker,
+  ShoppingBag, Boxes, Component: ComponentIcon, Award, Sticker, Trophy,
 } = icons;
 
 const PREFIX_MAP: Record<string, { label: string; route: string }> = {
@@ -360,6 +360,7 @@ export class DashboardComponent {
 
     return [
       { key: 'honoria',    label: 'Honoria',       route: '/honoria',      icon: Award,         enabled: toggles.honoria,    completed: this.honoria.completed(), total: this.honoria.total },
+      { key: 'collectable',label: 'Accolade',     route: '/accolade',     icon: Trophy,        enabled: true,               ...this.calcAccoladeProgress(d) },
       { key: 'quests',     label: 'Quests',       route: '/quests',       icon: ScrollText,    enabled: toggles.quests,      ...this.calcProgress('quest',    d.quests?.length ?? 0) },
       { key: 'gear',       label: 'Gear',          route: '/gear',         icon: Sword,         enabled: toggles.gear,        ...this.calcGearProgress(d) },
       { key: 'lichGear',   label: 'Lich Gear',     route: '/lich-gear',    icon: Skull,         enabled: toggles.lichGear,    ...this.calcProgress('lich',     this.lichTotal(d)) },
@@ -588,5 +589,19 @@ export class DashboardComponent {
   private modGearTotal(d: TrackerData): number {
     if (!d.modularGear) return 0;
     return Object.values(d.modularGear).reduce((a, v) => a + v.length, 0);
+  }
+
+  private calcAccoladeProgress(d: TrackerData): { completed: number; total: number } {
+    if (!d.accolade) return { completed: 0, total: 0 };
+    const checkboxes = this.tracker.checkboxes();
+    let completed = 0;
+    let total = 0;
+    for (const items of Object.values(d.accolade)) {
+      for (const item of items) {
+        total++;
+        if (checkboxes[`col:${item}`]) completed++;
+      }
+    }
+    return { completed, total };
   }
 }
