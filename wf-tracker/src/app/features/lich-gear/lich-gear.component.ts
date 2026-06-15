@@ -163,15 +163,7 @@ export class LichGearComponent {
     })).filter(g => g.items.length > 0);
   });
 
-  readonly progress = computed(() => {
-    let completed = 0, total = 0;
-    for (const g of this.groups()) {
-      const p = this.groupProgress(g);
-      completed += p.completed;
-      total += p.total;
-    }
-    return { completed, total };
-  });
+  readonly progress = computed(() => this.trackerService.sectionProgress('lichGear'));
 
   toRows(items: string[]): TrackerRow[] {
     return items.map(name => ({ name }));

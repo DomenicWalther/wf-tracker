@@ -229,14 +229,7 @@ export class IncarnonComponent {
       .filter(w => w.rows.length > 0);
   });
 
-  readonly progress = computed(() => {
-    let total = 0, completed = 0;
-    for (const w of this.allWeeks()) {
-      total += w.total;
-      completed += w.completed;
-    }
-    return { completed, total };
-  });
+  readonly progress = computed(() => this.tracker.sectionProgress('incarnon'));
 
   isWeekOpen(label: string): boolean {
     return this.openWeeks.has(label);

@@ -6,6 +6,7 @@ import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
 import { titleCase } from '../../core/utils/checklist.utils';
+import { arcaneKey } from '../../core/utils/section-progress';
 
 /** Groups whose arcanes max at rank 3 (need 4 copies), not rank 5. */
 export const LIMITED_ARCANE_GROUPS = new Set(['operator', 'amp', 'kitgun', 'zaw']);
@@ -30,12 +31,6 @@ const LIMITED_PSYCHO_COLUMNS: TrackerColumn[] = [
   { key: 'r2', label: 'Rank 2' },
   { key: 'maxed', label: 'Maxed' },
 ];
-
-export function arcaneKey(groupKey: string, name: string, colKey: string): string {
-  if (colKey === 'owned') return `arcane:${groupKey}:${name}`;
-  if (colKey === 'maxed') return `arcane:${groupKey}:${name}:maxed`;
-  return `arcane:${groupKey}:${name}:${colKey}`; // r1, r2, r3, r4
-}
 
 interface ArcaneGroup {
   name: string;
@@ -196,16 +191,7 @@ export class ArcanesComponent {
     });
   }
 
-  readonly progress = computed(() => {
-    const groups = this.arcaneGroups();
-    const allKeys = groups.flatMap(g =>
-      g.rows.flatMap(r => g.columns.map(c => arcaneKey(g.groupKey, r.name, c.key)))
-    );
-    return {
-      completed: allKeys.filter(k => this.tracker.isChecked(k)).length,
-      total: allKeys.length,
-    };
-  });
+  readonly progress = computed(() => this.tracker.sectionProgress('arcanes'));
 
   groupProgress(group: ArcaneGroup): string {
     const total = group.rows.length * group.columns.length;

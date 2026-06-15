@@ -214,20 +214,7 @@ export class ModsComponent {
   readonly checkedFn = (rowName: string, colKey: string): boolean =>
     this.tracker.isChecked(`mod:${rowName}:${colKey}`);
 
-  readonly progress = computed(() => {
-    const groups = this.modGroups();
-    let completed = 0, total = 0;
-    for (const group of groups) {
-      for (const row of group.rows) {
-        for (const col of group.columns) {
-          if (group.disabledCellFn?.(row.name, col.key)) continue;
-          total++;
-          if (this.tracker.isChecked(`mod:${row.name}:${col.key}`)) completed++;
-        }
-      }
-    }
-    return { completed, total };
-  });
+  readonly progress = computed(() => this.tracker.sectionProgress('mods'));
 
   groupProgress(group: ModGroup): string {
     let done = 0, total = 0;

@@ -111,18 +111,7 @@ export class RelicsComponent {
     }));
   });
 
-  readonly progress = computed(() => {
-    let completed = 0, total = 0;
-    for (const group of this.groups()) {
-      for (const row of group.rows) {
-        for (const col of group.columns) {
-          total++;
-          if (this.checkedFn(row.name, col.key)) completed++;
-        }
-      }
-    }
-    return { completed, total };
-  });
+  readonly progress = computed(() => this.tracker.sectionProgress('relics'));
 
   constructor() {
     effect(() => {

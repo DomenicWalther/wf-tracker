@@ -120,23 +120,7 @@ export class AtragraphComponent {
   readonly foilRows = computed<TrackerRow[]>(() =>
     this.groups().map((g): TrackerRow => ({ name: g.name })));
 
-  readonly progress = computed(() => {
-    let completed = 0, total = 0;
-    if (this.collectAll()) {
-      for (const group of this.groups()) {
-        for (const row of group.rows) {
-          total++;
-          if (this.tracker.isChecked(this.variantKey(group.name, row.name))) completed++;
-        }
-      }
-    } else {
-      for (const row of this.foilRows()) {
-        total++;
-        if (this.tracker.isChecked(this.foilKey(row.name))) completed++;
-      }
-    }
-    return { completed, total };
-  });
+  readonly progress = computed(() => this.tracker.sectionProgress('atragraph'));
 
   constructor() {
     // Open all groups on first load (collector mode), like the other tracker sections.
