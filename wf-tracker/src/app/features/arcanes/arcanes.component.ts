@@ -31,16 +31,18 @@ const LIMITED_PSYCHO_COLUMNS: TrackerColumn[] = [
   { key: 'maxed', label: 'Maxed' },
 ];
 
-export function arcaneKey(name: string, colKey: string): string {
-  if (colKey === 'owned') return `arcane:${name}`;
-  if (colKey === 'maxed') return `arcane:${name}:maxed`;
-  return `arcane:${name}:${colKey}`; // r1, r2, r3, r4
+export function arcaneKey(groupKey: string, name: string, colKey: string): string {
+  if (colKey === 'owned') return `arcane:${groupKey}:${name}`;
+  if (colKey === 'maxed') return `arcane:${groupKey}:${name}:maxed`;
+  return `arcane:${groupKey}:${name}:${colKey}`; // r1, r2, r3, r4
 }
 
 interface ArcaneGroup {
   name: string;
+  groupKey: string;
   columns: TrackerColumn[];
   rows: TrackerRow[];
+  checkedFn: (rowName: string, colKey: string) => boolean;
 }
 
 @Component({
@@ -83,8 +85,8 @@ interface ArcaneGroup {
               <app-tracker-table
                 [columns]="group.columns"
                 [rows]="group.rows"
-                [checkedFn]="checkedFn"
-                (toggle)="onTableToggle($event.rowName, $event.colKey)"
+                [checkedFn]="group.checkedFn"
+                (toggle)="onTableToggle(group.groupKey, $event.rowName, $event.colKey)"
               />
             }
           </div>
@@ -154,15 +156,18 @@ export class ArcanesComponent {
     const raw = this.data()?.arcanes;
     if (!raw) return [];
     const psycho = this.tracker.settings().arcane.psycho;
-    return Object.entries(raw).map(([group, items]) => {
-      const limited = LIMITED_ARCANE_GROUPS.has(group);
+    return Object.entries(raw).map(([groupKey, items]) => {
+      const limited = LIMITED_ARCANE_GROUPS.has(groupKey);
       const columns = psycho
         ? (limited ? LIMITED_PSYCHO_COLUMNS : STANDARD_PSYCHO_COLUMNS)
         : STANDARD_COLUMNS;
       return {
-        name: titleCase(group),
+        name: titleCase(groupKey),
+        groupKey,
         columns,
         rows: items.map((name): TrackerRow => ({ name })),
+        checkedFn: (rowName: string, colKey: string) =>
+          this.tracker.isChecked(arcaneKey(groupKey, rowName, colKey)),
       };
     });
   });
@@ -191,13 +196,10 @@ export class ArcanesComponent {
     });
   }
 
-  readonly checkedFn = (rowName: string, colKey: string): boolean =>
-    this.tracker.isChecked(arcaneKey(rowName, colKey));
-
   readonly progress = computed(() => {
     const groups = this.arcaneGroups();
     const allKeys = groups.flatMap(g =>
-      g.rows.flatMap(r => g.columns.map(c => arcaneKey(r.name, c.key)))
+      g.rows.flatMap(r => g.columns.map(c => arcaneKey(g.groupKey, r.name, c.key)))
     );
     return {
       completed: allKeys.filter(k => this.tracker.isChecked(k)).length,
@@ -208,7 +210,7 @@ export class ArcanesComponent {
   groupProgress(group: ArcaneGroup): string {
     const total = group.rows.length * group.columns.length;
     const done = group.rows
-      .flatMap(r => group.columns.map(c => arcaneKey(r.name, c.key)))
+      .flatMap(r => group.columns.map(c => arcaneKey(group.groupKey, r.name, c.key)))
       .filter(k => this.tracker.isChecked(k)).length;
     return `${done}/${total}`;
   }
@@ -225,7 +227,7 @@ export class ArcanesComponent {
     });
   }
 
-  onTableToggle(rowName: string, colKey: string): void {
-    this.tracker.toggle(arcaneKey(rowName, colKey));
+  onTableToggle(groupKey: string, rowName: string, colKey: string): void {
+    this.tracker.toggle(arcaneKey(groupKey, rowName, colKey));
   }
 }
