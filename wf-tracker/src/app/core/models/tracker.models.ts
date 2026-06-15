@@ -64,6 +64,7 @@ export interface TrackerData {
   items: Record<string, string[]>;
   cosmetics: Record<string, Record<string, string[]>>;
   collectable: Record<string, string[]>;
+  accolade: Record<string, string[]>;
   decorations: Record<string, string[]>;
   codex: Record<string, string[]>;
   market: Record<string, string[]>;

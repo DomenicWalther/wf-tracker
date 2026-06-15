@@ -17,6 +17,7 @@ export const routes: Routes = [
   { path: 'items', loadComponent: () => import('./features/items/items.component').then(m => m.ItemsComponent) },
   { path: 'cosmetics', loadComponent: () => import('./features/cosmetics/cosmetics.component').then(m => m.CosmeticsComponent) },
   { path: 'collectable', loadComponent: () => import('./features/collectable/collectable.component').then(m => m.CollectableComponent) },
+  { path: 'accolade', loadComponent: () => import('./features/accolade/accolade.component').then(m => m.AccoladeComponent) },
   { path: 'decorations', loadComponent: () => import('./features/decorations/decorations.component').then(m => m.DecorationsComponent) },
   { path: 'codex', loadComponent: () => import('./features/codex/codex.component').then(m => m.CodexComponent) },
   { path: 'market', loadComponent: () => import('./features/market/market.component').then(m => m.MarketComponent) },
