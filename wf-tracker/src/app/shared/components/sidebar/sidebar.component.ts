@@ -34,7 +34,7 @@ const INFO_ITEMS: NavItem[] = [
 ];
 
 const TRACKABLE_ITEMS: NavItem[] = [
-  { label: 'Accolade',     route: '/accolade',      icon: Trophy },
+  { label: 'Accolade',     route: '/accolade',      icon: Trophy,        section: 'accolade' },
   { label: 'Arcanes',      route: '/arcanes',       icon: Sparkles,      section: 'arcanes' },
   { label: 'Atragraph',    route: '/atragraph',     icon: Sticker,       section: 'atragraph' },
   { label: 'Blueprints',   route: '/blueprints',    icon: ClipboardList, section: 'blueprints' },
@@ -44,7 +44,7 @@ const TRACKABLE_ITEMS: NavItem[] = [
   { label: 'Decorations',  route: '/decorations',   icon: Flower2,       section: 'decorations' },
   { label: 'Extra',        route: '/extra',         icon: Boxes,         section: 'extra' },
   { label: 'Gear',         route: '/gear',          icon: Sword,         section: 'gear' },
-  { label: 'Honoria',      route: '/honoria',       icon: Award },
+  { label: 'Honoria',      route: '/honoria',       icon: Award,         section: 'honoria' },
   { label: 'Incarnon',     route: '/incarnon',      icon: Zap,           section: 'incarnon' },
   { label: 'Items',        route: '/items',         icon: Package,       section: 'items' },
   { label: 'Lich Gear',    route: '/lich-gear',     icon: Skull,         section: 'lichGear' },

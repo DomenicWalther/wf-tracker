@@ -197,6 +197,7 @@ export interface SectionToggles {
   items: boolean;
   cosmetics: boolean;
   collectable: boolean;
+  accolade: boolean;
   decorations: boolean;
   codex: boolean;
   market: boolean;
@@ -257,6 +258,6 @@ export const DEFAULT_SETTINGS: TrackerSettings = {
 export const DEFAULT_SECTION_TOGGLES: SectionToggles = {
   quests: true, gear: true, lichGear: true, incarnon: true, arcanes: true,
   mods: true, atragraph: false, subsume: false, railjack: false, relics: false, blueprints: false,
-  items: false, cosmetics: false, collectable: false, decorations: false,
+  items: false, cosmetics: false, collectable: false, accolade: true, decorations: false,
   codex: false, market: false, extra: false, modularGear: false, honoria: true
 };

@@ -469,6 +469,7 @@ export class SettingsComponent {
   readonly togglesForm = this.buildBoolGroup(this.tracker.sectionToggles());
 
   readonly sectionToggleList = [
+    { key: 'honoria' as const, label: 'Honoria' },
     { key: 'quests' as const, label: 'Quests' },
     { key: 'gear' as const, label: 'Gear' },
     { key: 'lichGear' as const, label: 'Lich Gear' },
@@ -483,6 +484,7 @@ export class SettingsComponent {
     { key: 'items' as const, label: 'Items' },
     { key: 'cosmetics' as const, label: 'Cosmetics' },
     { key: 'collectable' as const, label: 'Collectable' },
+    { key: 'accolade' as const, label: 'Accolade' },
     { key: 'decorations' as const, label: 'Decorations' },
     { key: 'codex' as const, label: 'Codex' },
     { key: 'market' as const, label: 'Market' },

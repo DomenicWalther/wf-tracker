@@ -359,7 +359,7 @@ export class DashboardComponent {
 
     return [
       { key: 'honoria',    label: 'Honoria',       route: '/honoria',      icon: Award,         enabled: toggles.honoria,     ...p('honoria') },
-      { key: 'collectable',label: 'Accolade',      route: '/accolade',     icon: Trophy,        enabled: true,                ...this.calcAccoladeProgress(d) },
+      { key: 'accolade',   label: 'Accolade',      route: '/accolade',     icon: Trophy,        enabled: toggles.accolade,    ...this.calcAccoladeProgress(d) },
       { key: 'quests',     label: 'Quests',        route: '/quests',       icon: ScrollText,    enabled: toggles.quests,      ...p('quests') },
       { key: 'gear',       label: 'Gear',          route: '/gear',         icon: Sword,         enabled: toggles.gear,        ...p('gear') },
       { key: 'lichGear',   label: 'Lich Gear',     route: '/lich-gear',    icon: Skull,         enabled: toggles.lichGear,    ...p('lichGear') },
