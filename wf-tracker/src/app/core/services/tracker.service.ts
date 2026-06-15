@@ -1,5 +1,6 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { take } from 'rxjs';
 import {
   TrackerState, TrackerSettings, SectionToggles, PersonalGoal, TodoItem,
   DEFAULT_SETTINGS, DEFAULT_SECTION_TOGGLES, PinnedBarSettings,
@@ -33,6 +34,17 @@ export class TrackerService {
   readonly todoItems = computed(() => this.state().todoItems);
   readonly bigGoals = computed(() => this.state().bigGoals);
   readonly bigGoalsSeeded = computed(() => this.state().bigGoalsSeeded);
+
+  constructor() {
+    // One-time recovery: arcane checkboxes used to be stored groupless as
+    // `arcane:<name>`; they're now `arcane:<group>:<name>`. Remap any surviving
+    // old keys once the data (which maps arcane → group) is available, so
+    // previously-tracked arcanes aren't silently lost. Runs once per load and
+    // is a no-op when there's nothing legacy to migrate.
+    this.dataService.getData().pipe(take(1)).subscribe(d => {
+      if (d?.arcanes) this.migrateArcaneKeys(d.arcanes);
+    });
+  }
 
   readonly totalTrackable = computed(() => {
     const d = this.data();
@@ -194,6 +206,54 @@ export class TrackerService {
 
   markBigGoalsSeeded(): void {
     this.updateState(s => ({ ...s, bigGoalsSeeded: true }));
+  }
+
+  // ─── Legacy data migration ────────────────────────────────────────────────────
+
+  /**
+   * Remaps legacy groupless arcane keys (`arcane:<name>[:suffix]`) onto the
+   * current group-scoped scheme (`arcane:<group>:<name>[:suffix]`).
+   *
+   * A key is legacy when its 2nd `:`-segment is NOT a known arcane group, e.g.
+   * `arcane:Energize` / `arcane:Energize:maxed`. Names that live in more than
+   * one group (Deadhead, Dexterity, Merciless) are copied to every group so the
+   * prior shared-checkbox state is preserved. Idempotent and a no-op once there
+   * are no legacy keys left.
+   */
+  private migrateArcaneKeys(arcanes: Record<string, string[]>): void {
+    const groupKeys = new Set(Object.keys(arcanes));
+    const nameToGroups = new Map<string, string[]>();
+    for (const [group, names] of Object.entries(arcanes)) {
+      for (const name of names) {
+        const list = nameToGroups.get(name) ?? [];
+        list.push(group);
+        nameToGroups.set(name, list);
+      }
+    }
+
+    const checkboxes = this.state().checkboxes;
+    const legacyKeys = Object.keys(checkboxes).filter(k => {
+      if (!k.startsWith('arcane:')) return false;
+      const parts = k.split(':');
+      return parts.length >= 2 && !groupKeys.has(parts[1]);
+    });
+    if (legacyKeys.length === 0) return;
+
+    this.updateState(s => {
+      const next = { ...s.checkboxes };
+      for (const key of legacyKeys) {
+        const value = next[key];
+        const parts = key.split(':');           // ['arcane', name, ...suffix]
+        const name = parts[1];
+        const suffix = parts.slice(2).join(':'); // '', 'maxed', 'r1'…
+        for (const group of nameToGroups.get(name) ?? []) {
+          const newKey = suffix ? `arcane:${group}:${name}:${suffix}` : `arcane:${group}:${name}`;
+          next[newKey] = next[newKey] || value; // never downgrade an already-checked key
+        }
+        delete next[key];
+      }
+      return { ...s, checkboxes: next };
+    });
   }
 
   // ─── Internal state helpers ───────────────────────────────────────────────────
