@@ -18,56 +18,43 @@ const {
   LayoutDashboard, ListChecks, Settings, Target,
   ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
   Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
-  ShoppingBag, Boxes, Component: ComponentIcon, History, ScanLine, SunMoon, Search, Award, Sticker,
+  ShoppingBag, Boxes, Component: ComponentIcon, History, ScanLine, SunMoon, Search, Award, Sticker, Trophy,
 } = icons;
 
-const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
-  {
-    group: 'Overview',
-    items: [
-      { label: 'Dashboard',      route: '/dashboard',      icon: LayoutDashboard },
-      { label: 'Scan Screenshot', route: '/scan',           icon: ScanLine },
-      { label: 'Task Checklist', route: '/task-checklist', icon: ListChecks },
-      { label: 'Settings',       route: '/settings',       icon: Settings },
-      { label: 'Goals', route: '/goals', icon: Target },
-    ]
-  },
-  {
-    group: 'Content',
-    items: [
-      { label: 'Honoria',   route: '/honoria',   icon: Award },
-      { label: 'Quests',    route: '/quests',    icon: ScrollText,   section: 'quests' },
-      { label: 'Gear',      route: '/gear',      icon: Sword,        section: 'gear' },
-      { label: 'Lich Gear', route: '/lich-gear', icon: Skull,        section: 'lichGear' },
-      { label: 'Incarnon',  route: '/incarnon',  icon: Zap,          section: 'incarnon' },
-      { label: 'Arcanes',   route: '/arcanes',   icon: Sparkles,     section: 'arcanes' },
-      { label: 'Mods',      route: '/mods',      icon: Layers,       section: 'mods' },
-      { label: 'Atragraph', route: '/atragraph', icon: Sticker,      section: 'atragraph' },
-      { label: 'Subsume',   route: '/subsume',   icon: FlaskConical, section: 'subsume' },
-      { label: 'Railjack',  route: '/railjack',  icon: Rocket,       section: 'railjack' },
-    ]
-  },
-  {
-    group: 'Collection',
-    items: [
-      { label: 'Relics',       route: '/relics',        icon: Gem,         section: 'relics' },
-      { label: 'Blueprints',   route: '/blueprints',    icon: ClipboardList, section: 'blueprints' },
-      { label: 'Items',        route: '/items',         icon: Package,     section: 'items' },
-      { label: 'Cosmetics',    route: '/cosmetics',     icon: Palette,     section: 'cosmetics' },
-      { label: 'Collectable',  route: '/collectable',   icon: Archive,     section: 'collectable' },
-      { label: 'Decorations',  route: '/decorations',   icon: Flower2,     section: 'decorations' },
-      { label: 'Codex',        route: '/codex',         icon: BookOpen,    section: 'codex' },
-      { label: 'Market',       route: '/market',        icon: ShoppingBag, section: 'market' },
-      { label: 'Extra',        route: '/extra',         icon: Boxes,       section: 'extra' },
-      { label: 'Modular Gear', route: '/modular-gear',  icon: ComponentIcon, section: 'modularGear' },
-    ]
-  },
-  {
-    group: 'Info',
-    items: [
-      { label: 'Version Log', route: '/version-log', icon: History },
-    ]
-  }
+const OVERVIEW_ITEMS: NavItem[] = [
+  { label: 'Dashboard',       route: '/dashboard',      icon: LayoutDashboard },
+  { label: 'Scan Screenshot', route: '/scan',           icon: ScanLine },
+  { label: 'Task Checklist',  route: '/task-checklist', icon: ListChecks },
+  { label: 'Settings',        route: '/settings',       icon: Settings },
+  { label: 'Goals',           route: '/goals',          icon: Target },
+];
+
+const INFO_ITEMS: NavItem[] = [
+  { label: 'Version Log', route: '/version-log', icon: History },
+];
+
+const TRACKABLE_ITEMS: NavItem[] = [
+  { label: 'Accolade',     route: '/accolade',      icon: Trophy },
+  { label: 'Arcanes',      route: '/arcanes',       icon: Sparkles,      section: 'arcanes' },
+  { label: 'Atragraph',    route: '/atragraph',     icon: Sticker,       section: 'atragraph' },
+  { label: 'Blueprints',   route: '/blueprints',    icon: ClipboardList, section: 'blueprints' },
+  { label: 'Codex',        route: '/codex',         icon: BookOpen,      section: 'codex' },
+  { label: 'Collectable',  route: '/collectable',   icon: Archive,       section: 'collectable' },
+  { label: 'Cosmetics',    route: '/cosmetics',     icon: Palette,       section: 'cosmetics' },
+  { label: 'Decorations',  route: '/decorations',   icon: Flower2,       section: 'decorations' },
+  { label: 'Extra',        route: '/extra',         icon: Boxes,         section: 'extra' },
+  { label: 'Gear',         route: '/gear',          icon: Sword,         section: 'gear' },
+  { label: 'Honoria',      route: '/honoria',       icon: Award },
+  { label: 'Incarnon',     route: '/incarnon',      icon: Zap,           section: 'incarnon' },
+  { label: 'Items',        route: '/items',         icon: Package,       section: 'items' },
+  { label: 'Lich Gear',    route: '/lich-gear',     icon: Skull,         section: 'lichGear' },
+  { label: 'Market',       route: '/market',        icon: ShoppingBag,   section: 'market' },
+  { label: 'Mods',         route: '/mods',          icon: Layers,        section: 'mods' },
+  { label: 'Modular Gear', route: '/modular-gear',  icon: ComponentIcon, section: 'modularGear' },
+  { label: 'Quests',       route: '/quests',        icon: ScrollText,    section: 'quests' },
+  { label: 'Railjack',     route: '/railjack',      icon: Rocket,        section: 'railjack' },
+  { label: 'Relics',       route: '/relics',        icon: Gem,           section: 'relics' },
+  { label: 'Subsume',      route: '/subsume',       icon: FlaskConical,  section: 'subsume' },
 ];
 
 @Component({
@@ -117,7 +104,7 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
       }
 
       <nav class="nav-content">
-        @for (group of groups; track group.group) {
+        @for (group of groups(); track group.group) {
           @if (!collapsed()) {
             <div class="nav-group">
               <div class="nav-group-label">{{ group.group }}</div>
@@ -127,15 +114,11 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
             <a [routerLink]="item.route"
                routerLinkActive="active"
                class="nav-item"
-               [class.section-disabled]="isSectionDisabled(item.section)"
-               [title]="collapsed() ? item.label : (isSectionDisabled(item.section) ? item.label + ' (excluded from %)' : '')"
+               [title]="collapsed() ? item.label : ''"
                (click)="mobileClose.emit()">
               <lucide-icon class="nav-icon" [img]="item.icon" [size]="15" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
               @if (!collapsed()) {
                 <span class="nav-label">{{ item.label }}</span>
-                @if (isSectionDisabled(item.section)) {
-                  <span class="section-off-badge" aria-label="excluded from overall percentage">off</span>
-                }
               }
             </a>
           }
@@ -333,22 +316,6 @@ const NAV_GROUPS: { group: string; items: NavItem[] }[] = [
     .collapsed .nav-icon {
       width: auto;
     }
-    .section-disabled {
-      opacity: 0.45;
-    }
-    .section-off-badge {
-      margin-left: auto;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      background: var(--color-surface2);
-      border: 1px solid var(--color-border);
-      border-radius: 3px;
-      padding: 1px 4px;
-      flex-shrink: 0;
-    }
     .sidebar-footer {
       padding: 8px 8px 12px;
       border-top: 1px solid var(--color-border);
@@ -461,7 +428,6 @@ export class SidebarComponent {
   readonly mobileOpen = input<boolean>(false);
   readonly mobileClose = output<void>();
 
-  readonly groups = NAV_GROUPS;
   readonly collapsed = signal(false);
   readonly sunMoonIcon = SunMoon;
   readonly searchIcon = Search;
@@ -471,10 +437,24 @@ export class SidebarComponent {
     return total > 0 ? (completed / total) * 100 : 0;
   });
 
-  isSectionDisabled(section: keyof import('../../../core/models/tracker.models').SectionToggles | undefined): boolean {
-    if (!section) return false;
-    return !this.tracker.sectionToggles()[section];
-  }
+  readonly groups = computed(() => {
+    const toggles = this.tracker.sectionToggles();
+    const enabled: NavItem[] = [];
+    const disabled: NavItem[] = [];
+    for (const item of TRACKABLE_ITEMS) {
+      if (!item.section || toggles[item.section]) {
+        enabled.push(item);
+      } else {
+        disabled.push(item);
+      }
+    }
+    return [
+      { group: 'Overview', items: OVERVIEW_ITEMS },
+      { group: 'Enabled', items: enabled },
+      ...(disabled.length > 0 ? [{ group: 'Disabled', items: disabled }] : []),
+      { group: 'Info', items: INFO_ITEMS },
+    ];
+  });
 
   toggleCollapsed(): void {
     this.collapsed.update(v => !v);
