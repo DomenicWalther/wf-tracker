@@ -76,6 +76,20 @@ export const SECTIONS: HonoriaSection[] = [
     ],
   },
   {
+    id: 'pontis-tower',
+    title: 'Purchased from Pontis Tower',
+    items: [
+      { id: '', name: 'As One',           location: 'Visit Ryoku in Pontis Tower' },
+      { id: '', name: 'Feelin\' Lucky',   location: '10 Mutalist Alad V Nav Coordinate' },
+      { id: '', name: 'Force Of Nature',  location: '150,000 Circuits' },
+      { id: '', name: 'Keeper Of Secrets', location: '50 Bellow Voca' },
+      { id: '', name: 'Plague-Bearer',    location: '500 Neurodes' },
+      { id: '', name: "Scoria's Saint",   location: '50,000 Titanium' },
+      { id: '', name: 'Strikes Twice',    location: '500 Morphics' },
+      { id: '', name: 'The Awoken Sword', location: '500,000 Alloy Plate' },
+    ],
+  },
+  {
     id: 'syndicates-factions',
     title: 'Syndicates — Factions',
     items: [
@@ -260,6 +274,7 @@ export const SECTIONS: HonoriaSection[] = [
     items: [
       { id: '', name: 'Of Golden Valor',    location: '80 Marks of Valiance (Operation: Blood of Perita)' },
       { id: '', name: 'Shadow Conservator', location: '200 Nightmare Tatters (Operation: Atramentum)' },
+      { id: '', name: 'Make Your Own Fate', location: 'Gift of the Lotus Alert' },
       { id: '', name: 'Volatile Mote',      location: '100 Volatile Motes (Operation: Belly of the Beast)' },
     ],
   },
