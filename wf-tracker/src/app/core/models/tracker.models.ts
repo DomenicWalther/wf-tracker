@@ -3,6 +3,10 @@
 export interface GearItem {
   name: string;
   isFounderOnly?: boolean;
+  /** If set, this row represents two frames sharing some columns. */
+  dualNames?: [string, string];
+  /** Column keys that are shared (single checkbox) between both frames. */
+  sharedColumns?: string[];
 }
 
 export interface IncarnonEntry {

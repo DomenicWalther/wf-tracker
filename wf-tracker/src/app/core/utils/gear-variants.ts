@@ -83,6 +83,33 @@ export function buildGearFamilies(itemNames: string[]): GearFamily[] {
 }
 
 /**
+ * Counts completion for a dual-frame item where some columns are shared (one
+ * checkbox keyed by `name`) and the rest are per-frame (one checkbox per member).
+ */
+export function countDualFrameItem(
+  name: string,
+  dualNames: [string, string],
+  sharedColumns: string[],
+  colKeys: string[],
+  isChecked: (name: string, col: string) => boolean,
+): { completed: number; total: number } {
+  const sharedSet = new Set(sharedColumns);
+  let total = 0, completed = 0;
+  for (const col of colKeys) {
+    if (sharedSet.has(col)) {
+      total++;
+      if (isChecked(name, col)) completed++;
+    } else {
+      for (const memberName of dualNames) {
+        total++;
+        if (isChecked(memberName, col)) completed++;
+      }
+    }
+  }
+  return { total, completed };
+}
+
+/**
  * Counts completion for a gear section under the grouped model: one Mastery cell
  * per variant, plus one shared cell per upgrade column per family.
  */

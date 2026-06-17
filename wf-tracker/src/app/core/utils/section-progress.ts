@@ -19,7 +19,7 @@
  */
 import { TrackerData, TrackerSettings, SectionToggles } from '../models/tracker.models';
 import { ALL_GEAR_COLUMNS, GEAR_SECTION_COLUMNS } from '../config/gear-columns';
-import { countGearSection } from './gear-variants';
+import { countGearSection, countDualFrameItem } from './gear-variants';
 
 export interface SectionProgress {
   completed: number;
@@ -249,19 +249,31 @@ function gearProgress(d: TrackerData, settings: TrackerSettings, isChecked: IsCh
     const sectionCols = activeCols.filter(c => allowed.includes(c.key));
     const filtered = isFounder ? items : items.filter(i => !i.isFounderOnly);
 
+    const sectionColKeys = sectionCols.map(c => c.key);
+    const dualItems = filtered.filter(i => i.dualNames);
+    const regularItems = filtered.filter(i => !i.dualNames);
+
     if (!primeOnly) {
-      for (const item of filtered) {
+      for (const item of regularItems) {
         for (const col of sectionCols) {
           total++;
           if (checked(item.name, col.key)) completed++;
         }
       }
+      for (const item of dualItems) {
+        const r = countDualFrameItem(item.name, item.dualNames!, item.sharedColumns ?? [], sectionColKeys, checked);
+        total += r.total; completed += r.completed;
+      }
       continue;
     }
     const upgradeCols = sectionCols.filter(c => c.key !== 'mastery').map(c => c.key);
-    const r = countGearSection(filtered.map(i => i.name), upgradeCols, checked);
+    const r = countGearSection(regularItems.map(i => i.name), upgradeCols, checked);
     total += r.total;
     completed += r.completed;
+    for (const item of dualItems) {
+      const dr = countDualFrameItem(item.name, item.dualNames!, item.sharedColumns ?? [], sectionColKeys, checked);
+      total += dr.total; completed += dr.completed;
+    }
   }
   return { completed, total };
 }

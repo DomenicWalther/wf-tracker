@@ -9,7 +9,8 @@ import { ProgressBarComponent } from '../../shared/components/progress-bar/progr
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
 import { ALL_GEAR_COLUMNS, GEAR_SECTION_COLUMNS, GearColumnDef } from '../../core/config/gear-columns';
 import { createToggleSet } from '../../core/utils/toggle-set';
-import { buildGearFamilies, countGearSection, gearFamilyId, gearVariantLabel } from '../../core/utils/gear-variants';
+import { buildGearFamilies, countDualFrameItem, countGearSection, gearFamilyId, gearVariantLabel } from '../../core/utils/gear-variants';
+import { TrackerCellSub } from '../../shared/components/tracker-table/tracker-table.component';
 
 @Component({
   selector: 'app-gear',
@@ -174,6 +175,24 @@ export class GearComponent {
     };
   }
 
+  private toDualFrameRow(item: GearItem): TrackerRow {
+    const sharedSet = new Set(item.sharedColumns ?? []);
+    const subs: TrackerCellSub[] = item.dualNames!.map(n => ({ key: n, label: n }));
+    const multiCells: Record<string, TrackerCellSub[]> = {};
+    for (const col of this.ALL_COLUMNS) {
+      if (!sharedSet.has(col.key)) multiCells[col.key] = subs;
+    }
+    return {
+      name: item.name,
+      multiCells,
+      tags: item.isFounderOnly ? [{ label: 'Founder', cssClass: 'tt-tag-founder' }] : [],
+    };
+  }
+
+  private toRow(item: GearItem): TrackerRow {
+    return item.dualNames ? this.toDualFrameRow(item) : this.toNormalRow(item);
+  }
+
   /**
    * Builds table rows. With "Prime Only" on, variant families collapse into one
    * row: a per-variant Mastery checkbox group plus shared upgrade columns. With
@@ -181,7 +200,7 @@ export class GearComponent {
    */
   toRows(items: GearItem[]): TrackerRow[] {
     const visible = this.filteredItems(items);
-    if (!this.primeOnlyGear()) return visible.map(item => this.toNormalRow(item));
+    if (!this.primeOnlyGear()) return visible.map(item => this.toRow(item));
 
     // Family ids/sizes come from the full (founder-included) section so grouping
     // stays stable regardless of the founder/search filters.
@@ -199,7 +218,7 @@ export class GearComponent {
 
     return order.map(id => {
       const members = groups.get(id)!;
-      if ((familySize.get(id) ?? 1) <= 1) return this.toNormalRow(members[0]);
+      if ((familySize.get(id) ?? 1) <= 1) return this.toRow(members[0]);
       const sorted = [...members].sort((a, b) => (a.name === id ? -1 : 0) - (b.name === id ? -1 : 0));
       return {
         name: id,
@@ -257,18 +276,31 @@ export class GearComponent {
     const activeCols = cols.filter(c => sectionCols.includes(c.key));
     const items = this.founderItems(section.items);
 
+    const sectionColKeys = activeCols.map(c => c.key);
+    const dualItems = items.filter(i => i.dualNames);
+    const regularItems = items.filter(i => !i.dualNames);
+
     if (!primeOnly) {
       let total = 0, completed = 0;
-      for (const item of items) {
+      for (const item of regularItems) {
         for (const col of activeCols) {
           total++;
           if (this.isChecked(item.name, col.key)) completed++;
         }
       }
+      for (const item of dualItems) {
+        const r = countDualFrameItem(item.name, item.dualNames!, item.sharedColumns ?? [], sectionColKeys, (n, col) => this.isChecked(n, col));
+        total += r.total; completed += r.completed;
+      }
       return { completed, total };
     }
 
     const upgradeCols = activeCols.filter(c => c.key !== 'mastery').map(c => c.key);
-    return countGearSection(items.map(i => i.name), upgradeCols, (n, col) => this.isChecked(n, col));
+    const result = countGearSection(regularItems.map(i => i.name), upgradeCols, (n, col) => this.isChecked(n, col));
+    for (const item of dualItems) {
+      const r = countDualFrameItem(item.name, item.dualNames!, item.sharedColumns ?? [], sectionColKeys, (n, col) => this.isChecked(n, col));
+      result.completed += r.completed; result.total += r.total;
+    }
+    return result;
   }
 }
