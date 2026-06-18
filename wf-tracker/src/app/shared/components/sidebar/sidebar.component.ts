@@ -18,15 +18,14 @@ const {
   LayoutDashboard, ListChecks, Settings, Target,
   ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
   Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
-  ShoppingBag, Boxes, Component: ComponentIcon, History, ScanLine, SunMoon, Search, Award, Sticker, Trophy,
+  ShoppingBag, Boxes, Component: ComponentIcon, History, SunMoon, Search, Award, Sticker, Trophy,
 } = icons;
 
 const OVERVIEW_ITEMS: NavItem[] = [
-  { label: 'Dashboard',       route: '/dashboard',      icon: LayoutDashboard },
-  { label: 'Scan Screenshot', route: '/scan',           icon: ScanLine },
-  { label: 'Task Checklist',  route: '/task-checklist', icon: ListChecks },
-  { label: 'Settings',        route: '/settings',       icon: Settings },
-  { label: 'Goals',           route: '/goals',          icon: Target },
+  { label: 'Dashboard',      route: '/dashboard',      icon: LayoutDashboard },
+  { label: 'Task Checklist', route: '/task-checklist', icon: ListChecks },
+  { label: 'Settings',       route: '/settings',       icon: Settings },
+  { label: 'Goals',          route: '/goals',          icon: Target },
 ];
 
 const INFO_ITEMS: NavItem[] = [

@@ -1,4 +1,4 @@
-﻿{
+{
   "atragraph": [
     {
       "name": "Vitality",
@@ -21647,7 +21647,9 @@
         "Invictus Apex",
         "Erato",
         "Valkyr Heirloom",
-        "Fumulo"
+        "Fumulo",
+        "Kyzen",
+        "Karotic"
       ],
       "Helmets": [
         "Ash Locust",
@@ -28638,6 +28640,12 @@
       "date": "2026-06-15",
       "description": "UX Overhaul — Navigation, Tables & Feedback",
       "details": "Broad quality-of-life pass across the whole app:\n- Tracker tables: group sections are now collapsible — click any category header to expand or collapse it\n- Tracker tables: bulk column toggle now requires a two-step confirmation to prevent accidental mass-check\n- Tracker tables: completed rows no longer show strikethrough text (dim opacity is sufficient)\n- Search result count shown on Mods, Arcanes, Gear, Incarnon and Lich Gear pages when a filter is active\n- Sidebar: disabled sections collapsed into a single “N sections hidden” toggle instead of a full dimmed list\n- Sidebar: WF TRACKER logo now navigates to the dashboard\n- Sidebar: active page indicator visible when sidebar is collapsed\n- Sidebar: rank title (Baby Tenno → True Completionist) displayed below the progress bar\n- Sidebar: theme toggle label reworded to clearly describe the action rather than the current state\n- Dashboard: “What’s Next” section shows a placeholder for users who haven’t started tracking yet\n- Dashboard: disabled section cards now link to Settings with an “Enable in Settings” hint\n- Dashboard: overall progress bar increased to 14 px with a gold gradient fill\n- Settings: a “✓ Saved” confirmation flashes after any setting is changed"
+    },
+    {
+      "version": "v1.9",
+      "date": "2026-06-19",
+      "description": "Jade Shadows & Update 43 Content",
+      "details": "New content additions:\n- Warframes: Styanax Prime; Sirius & Orion as a dual-frame entry with shared shard/tau columns and separate build tracking\n- Incarnon: Week 9 rotation added (Stug, Vectis, Obex, Destreza, Ballistica)\n- Arcanes: Sculptor, Compression, Assimilation, Cryogenic\n- Mods: Kumihimo Loading, Rhythm Guard, Reroot Rampage, Noctua Swarm (Warframe Augments)\n- Gear: War Prime added\n- Honoria: Pontis Tower section (8 titles); Make Your Own Fate event title (Gift of the Lotus Alert)\n- Cosmetics: Syndir and Viserakta ephemera; Jade's Victory syandana; Bladeswarm weapon skins (Braton, Karyst, Kunai, Vectis); Bloodfrenzy weapon skins (Ballistica, Nagantaka, Venka)\n- Signas: Kyzen and Karotic added\n- Removed: Scan Screenshot page"
     }
   ],
   "modularGear": {

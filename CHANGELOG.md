@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.9.0] — 2026-06-19
+
+### Content
+
+- **Warframes** — Styanax Prime; Sirius & Orion as a dual-frame entry with shared shard/tau columns and separate build tracking
+- **Incarnon** — Week 9 rotation (Stug, Vectis, Obex, Destreza, Ballistica)
+- **Arcanes** — Sculptor, Compression, Assimilation, Cryogenic
+- **Mods** — Kumihimo Loading, Rhythm Guard, Reroot Rampage, Noctua Swarm (Warframe Augments)
+- **Gear** — War Prime
+- **Honoria** — Pontis Tower section (8 titles); Make Your Own Fate event title (Gift of the Lotus Alert)
+- **Cosmetics** — Syndir and Viserakta ephemera; Jade's Victory syandana; Bladeswarm weapon skins (Braton, Karyst, Kunai, Vectis); Bloodfrenzy weapon skins (Ballistica, Nagantaka, Venka)
+- **Signas** — Kyzen, Karotic
+
+### Removed
+
+- **Scan Screenshot** — page and route removed
+
+---
+
 ## [1.3.0] — 2026-06-02
 
 ### Features
