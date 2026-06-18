@@ -83,6 +83,36 @@
         "Streamline",
         "Flawed Streamline"
       ]
+    },
+    {
+      "name": "Parasitic Vitality",
+      "variants": [
+        "Parasitic Vitality"
+      ]
+    },
+    {
+      "name": "Dread Ward",
+      "variants": [
+        "Dread Ward"
+      ]
+    },
+    {
+      "name": "Blood Forge",
+      "variants": [
+        "Blood Forge"
+      ]
+    },
+    {
+      "name": "Smoke Shadow",
+      "variants": [
+        "Smoke Shadow"
+      ]
+    },
+    {
+      "name": "Seeking Shuriken",
+      "variants": [
+        "Seeking Shuriken"
+      ]
     }
   ],
   "quests": [
