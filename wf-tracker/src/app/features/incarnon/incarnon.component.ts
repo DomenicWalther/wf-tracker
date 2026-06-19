@@ -5,6 +5,7 @@ import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { currentIncarnonWeek } from '../../core/services/world-state.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
+import { CollapsibleSectionComponent } from '../../shared/components/collapsible-section/collapsible-section.component';
 import { ProgressBarComponent } from '../../shared/components/progress-bar/progress-bar.component';
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
 import { createToggleSet } from '../../core/utils/toggle-set';
@@ -28,10 +29,10 @@ function familyKey(familyName: string, stage: string): string {
 
 @Component({
   selector: 'app-incarnon',
-  imports: [ReactiveFormsModule, SectionHeaderComponent, ProgressBarComponent, TrackerTableComponent],
+  imports: [ReactiveFormsModule, SectionHeaderComponent, CollapsibleSectionComponent, ProgressBarComponent, TrackerTableComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="page">
+    <div class="page page--narrow">
       <app-section-header
         title="INCARNON"
         description="Track Incarnon adapter acquisition and evolution across all weapon families."
@@ -39,92 +40,53 @@ function familyKey(familyName: string, stage: string): string {
         [total]="progress().total"
       />
 
-      <div class="controls">
+      <div class="cl-search-wrap">
         <input
-          class="search"
+          class="cl-search"
           type="text"
           placeholder="Search families or weapons..."
           aria-label="Search incarnon families"
           [formControl]="searchControl"
         />
         @if (searchQuery() && searchResultCount() !== totalRowCount()) {
-          <span class="search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalRowCount() }} results</span>
+          <span class="cl-search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalRowCount() }} results</span>
         }
       </div>
 
       @if (weeks().length === 0) {
-        <div class="empty">Loading...</div>
+        <div class="loading">Loading...</div>
       } @else {
-        <div class="weeks">
-          @for (week of weeks(); track week.label) {
-            <section class="week-section" [class.week-current]="week.label === currentWeekLabel" [attr.aria-label]="week.label">
-              <button
-                type="button"
-                class="week-header"
-                (click)="toggleWeek(week.label)"
-                [attr.aria-expanded]="isWeekOpen(week.label)"
-              >
-                <span class="week-arrow" aria-hidden="true">{{ isWeekOpen(week.label) ? '▾' : '▸' }}</span>
-                <span class="week-label">
-                  {{ week.label }}
-                  @if (week.label === currentWeekLabel) {
-                    <span class="week-now" aria-label="current week">NOW</span>
-                  }
-                </span>
-                <app-progress-bar
-                  label=""
-                  [completed]="week.completed"
-                  [total]="week.total"
-                  style="flex: 0 0 200px"
-                />
-              </button>
-
-              @if (isWeekOpen(week.label)) {
-                <div class="week-body">
-                  <app-tracker-table
-                    [columns]="columns"
-                    [rows]="week.rows"
-                    [checkedFn]="checkedFn"
-                    (toggle)="toggleItem($event.rowName, $event.colKey)"
-                  />
-                </div>
-              }
-            </section>
-          }
-        </div>
+        @for (week of weeks(); track week.label) {
+          <app-collapsible-section
+            [name]="week.label"
+            [highlighted]="week.label === currentWeekLabel"
+            [open]="isWeekOpen(week.label)"
+            (toggle)="toggleWeek(week.label)"
+          >
+            @if (week.label === currentWeekLabel) {
+              <span csBadge class="week-now" aria-label="current week">NOW</span>
+            }
+            <app-progress-bar
+              csTrailing
+              label=""
+              [completed]="week.completed"
+              [total]="week.total"
+              style="flex: 0 0 200px"
+            />
+            @if (isWeekOpen(week.label)) {
+              <app-tracker-table
+                [columns]="columns"
+                [rows]="week.rows"
+                [checkedFn]="checkedFn"
+                (toggle)="toggleItem($event.rowName, $event.colKey)"
+              />
+            }
+          </app-collapsible-section>
+        }
       }
     </div>
   `,
   styles: [`
-    .page { max-width: 900px; }
-
-    .controls { margin-bottom: 16px; }
-    .search {
-      width: 100%;
-      max-width: 400px;
-      background: var(--color-surface2);
-      border: 1px solid var(--color-border);
-      color: var(--color-text);
-      padding: 6px 10px;
-      border-radius: 4px;
-      font-size: 13px;
-      outline: none;
-    }
-    .search:focus { border-color: var(--color-gold); }
-
-    .weeks { display: flex; flex-direction: column; gap: 8px; }
-
-    .week-section {
-      border: 1px solid var(--color-border);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    .week-current {
-      border-color: var(--color-gold);
-    }
-    .week-current .week-header {
-      background: rgba(200, 155, 60, 0.08);
-    }
     .week-now {
       display: inline-block;
       margin-left: 8px;
@@ -133,36 +95,10 @@ function familyKey(familyName: string, stage: string): string {
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.08em;
-      background: var(--color-gold);
+      background: var(--color-accent);
       color: #000;
       vertical-align: middle;
     }
-
-    .week-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      background: var(--color-surface2);
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      border: none;
-      font: inherit;
-      color: inherit;
-    }
-    .week-header:hover { background: var(--color-surface3); }
-    .week-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
-    .week-label {
-      flex: 1;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--color-text);
-    }
-
-    .week-body { padding: 0; }
-
-    .empty { padding: 40px; text-align: center; color: var(--color-text-muted); font-size: 13px; }
   `]
 })
 export class IncarnonComponent {

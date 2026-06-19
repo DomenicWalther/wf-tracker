@@ -9,7 +9,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
   imports: [SlicePipe, SectionHeaderComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="page">
+    <div class="page page--narrow">
       <app-section-header title="VERSION LOG" description="History of changes to the Warframe Completion Tracker web app." />
       <div class="version-list">
         @for (entry of log(); track entry.version) {
@@ -36,7 +36,6 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
     </div>
   `,
   styles: [`
-    .page { max-width: 900px; }
     .version-list { display: flex; flex-direction: column; gap: 6px; }
     .version-entry {
       border: 1px solid var(--color-border);

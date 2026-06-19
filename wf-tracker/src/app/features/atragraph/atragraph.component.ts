@@ -1,8 +1,10 @@
-import { Component, inject, computed, signal, effect, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, effect, ChangeDetectionStrategy } from '@angular/core';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
+import { CollapsibleSectionComponent } from '../../shared/components/collapsible-section/collapsible-section.component';
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
+import { createToggleSet } from '../../core/utils/toggle-set';
 
 const OWNED_COLUMN: TrackerColumn[] = [{ key: 'owned', label: 'Owned' }];
 
@@ -14,7 +16,7 @@ interface FoilGroup {
 
 @Component({
   selector: 'app-atragraph',
-  imports: [SectionHeaderComponent, TrackerTableComponent],
+  imports: [SectionHeaderComponent, CollapsibleSectionComponent, TrackerTableComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -28,18 +30,13 @@ interface FoilGroup {
       @if (groups().length > 0) {
         @if (collectAll()) {
           @for (group of groups(); track group.name) {
-            <div class="atra-section">
-              <button
-                type="button"
-                class="atra-section-header"
-                (click)="toggleGroup(group.name)"
-                [attr.aria-expanded]="isGroupOpen(group.name)"
-              >
-                <span class="atra-arrow" aria-hidden="true">{{ isGroupOpen(group.name) ? '▾' : '▸' }}</span>
-                <span class="atra-section-name">{{ group.name }}</span>
-                <span class="atra-progress">{{ groupProgress(group) }}</span>
-              </button>
-              @if (isGroupOpen(group.name)) {
+            <app-collapsible-section
+              [name]="group.name"
+              [progress]="groupProgress(group)"
+              [open]="openGroups.has(group.name)"
+              (toggle)="openGroups.toggle(group.name)"
+            >
+              @if (openGroups.has(group.name)) {
                 <app-tracker-table
                   [columns]="ownedColumn"
                   [rows]="group.rows"
@@ -47,10 +44,10 @@ interface FoilGroup {
                   (toggle)="onToggle($event)"
                 />
               }
-            </div>
+            </app-collapsible-section>
           }
         } @else {
-          <div class="atra-section atra-section--flat">
+          <div class="flat-card">
             <app-tracker-table
               [columns]="ownedColumn"
               [rows]="foilRows()"
@@ -65,43 +62,20 @@ interface FoilGroup {
     </div>
   `,
   styles: [`
-    .page { max-width: 1200px; }
-    .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }
-    .atra-section {
+    .flat-card {
       border: 1px solid var(--color-border);
       border-radius: 6px;
-      margin-bottom: 8px;
+      padding: 4px;
     }
-    .atra-section--flat { padding: 4px; }
-    .atra-section-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      background: var(--color-surface2);
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      border: none;
-      font: inherit;
-      color: inherit;
-      border-radius: 6px;
-    }
-    .atra-section-header:hover { background: var(--color-surface3); }
-    .atra-section-header:focus-visible { outline: 2px solid var(--color-gold); outline-offset: -2px; }
-    .atra-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
-    .atra-section-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--color-text); }
-    .atra-progress { font-size: 11px; color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
   `]
 })
 export class AtragraphComponent {
   private readonly tracker = inject(TrackerService);
-  private readonly dataService = inject(DataService);
-  private readonly data = this.dataService.data;
+  private readonly data = inject(DataService).data;
 
   readonly ownedColumn = OWNED_COLUMN;
 
-  private readonly openGroups = signal<Set<string>>(new Set());
+  readonly openGroups = createToggleSet();
   private groupsInitialized = false;
 
   readonly collectAll = computed(() => this.tracker.settings().atragraph.collectAll);
@@ -127,7 +101,7 @@ export class AtragraphComponent {
       const groups = this.groups();
       if (groups.length > 0 && !this.groupsInitialized) {
         this.groupsInitialized = true;
-        this.openGroups.set(new Set(groups.map(g => g.name)));
+        this.openGroups.set(groups.map(g => g.name));
       }
     });
   }
@@ -144,16 +118,6 @@ export class AtragraphComponent {
       if (this.tracker.isChecked(this.variantKey(group.name, row.name))) done++;
     }
     return `${done}/${group.rows.length}`;
-  }
-
-  isGroupOpen(name: string): boolean { return this.openGroups().has(name); }
-
-  toggleGroup(name: string): void {
-    this.openGroups.update(set => {
-      const next = new Set(set);
-      if (next.has(name)) next.delete(name); else next.add(name);
-      return next;
-    });
   }
 
   onToggle(event: { rowName: string; colKey: string }): void {

@@ -1,10 +1,13 @@
-import { Component, inject, computed, signal, effect, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, effect, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
+import { CollapsibleSectionComponent } from '../../shared/components/collapsible-section/collapsible-section.component';
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
+import { createToggleSet } from '../../core/utils/toggle-set';
+import { gridProgress } from '../../core/utils/grid-progress';
 
 const CATEGORY_ORDER = [
   'Warframe', 'Warframe Augment', 'Aura',
@@ -27,7 +30,7 @@ interface ModGroup {
 
 @Component({
   selector: 'app-mods',
-  imports: [SectionHeaderComponent, TrackerTableComponent, ReactiveFormsModule],
+  imports: [SectionHeaderComponent, CollapsibleSectionComponent, TrackerTableComponent, ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -39,32 +42,27 @@ interface ModGroup {
       />
 
       @if (modGroups().length > 0) {
-        <div class="mod-search">
+        <div class="cl-search-wrap">
           <input
-            class="mod-search-input"
+            class="cl-search"
             type="text"
             placeholder="Search mods..."
             aria-label="Search mods"
             [formControl]="searchControl"
           />
           @if (searchQuery() && searchResultCount() !== totalModCount()) {
-            <span class="mod-search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalModCount() }} results</span>
+            <span class="cl-search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalModCount() }} results</span>
           }
         </div>
 
         @for (group of filteredGroups(); track group.name) {
-          <div class="mod-section">
-            <button
-              type="button"
-              class="mod-section-header"
-              (click)="toggleGroup(group.name)"
-              [attr.aria-expanded]="isGroupOpen(group.name)"
-            >
-              <span class="mod-arrow" aria-hidden="true">{{ isGroupOpen(group.name) ? '▾' : '▸' }}</span>
-              <span class="mod-section-name">{{ group.name }}</span>
-              <span class="mod-progress">{{ groupProgress(group) }}</span>
-            </button>
-            @if (isGroupOpen(group.name)) {
+          <app-collapsible-section
+            [name]="group.name"
+            [progress]="groupProgress(group)"
+            [open]="openGroups.has(group.name)"
+            (toggle)="openGroups.toggle(group.name)"
+          >
+            @if (openGroups.has(group.name)) {
               <app-tracker-table
                 [columns]="group.columns"
                 [rows]="group.rows"
@@ -73,69 +71,25 @@ interface ModGroup {
                 (toggle)="onToggle($event)"
               />
             }
-          </div>
+          </app-collapsible-section>
         }
 
         @if (filteredGroups().length === 0) {
-          <div class="mod-empty">No mods match "{{ searchQuery() }}"</div>
+          <div class="cl-empty">No mods match "{{ searchQuery() }}"</div>
         }
       } @else {
         <div class="loading">Loading...</div>
       }
     </div>
   `,
-  styles: [`
-    .page { max-width: 1200px; }
-    .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }
-    .mod-search { margin-bottom: 16px; }
-    .mod-search-input {
-      width: 100%;
-      max-width: 400px;
-      background: var(--color-surface2);
-      border: 1px solid var(--color-border);
-      color: var(--color-text);
-      padding: 6px 10px;
-      border-radius: 4px;
-      font-size: 13px;
-      outline: none;
-    }
-    .mod-search-input:focus { border-color: var(--color-gold); }
-    .mod-section {
-      border: 1px solid var(--color-border);
-      border-radius: 6px;
-      margin-bottom: 8px;
-    }
-    .mod-section-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      background: var(--color-surface2);
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      border: none;
-      font: inherit;
-      color: inherit;
-      border-radius: 6px;
-    }
-    .mod-section-header:hover { background: var(--color-surface3); }
-    .mod-section-header:focus-visible { outline: 2px solid var(--color-gold); outline-offset: -2px; }
-    .mod-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
-    .mod-section-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--color-text); }
-    .mod-progress { font-size: 11px; color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
-    .mod-empty { text-align: center; padding: 48px; color: var(--color-text-muted); font-size: 13px; }
-    .mod-search-count { display: block; margin-top: 4px; font-size: 11px; color: var(--color-text-muted); }
-  `]
 })
 export class ModsComponent {
   private readonly tracker = inject(TrackerService);
-  private readonly dataService = inject(DataService);
-  private readonly data = this.dataService.data;
+  private readonly data = inject(DataService).data;
 
   readonly searchControl = new FormControl('', { nonNullable: true });
   protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
-  private readonly openGroups = signal<Set<string>>(new Set());
+  readonly openGroups = createToggleSet();
   private groupsInitialized = false;
 
   readonly modGroups = computed<ModGroup[]>(() => {
@@ -206,14 +160,14 @@ export class ModsComponent {
       const groups = this.modGroups();
       if (groups.length > 0 && !this.groupsInitialized) {
         this.groupsInitialized = true;
-        this.openGroups.set(new Set([groups[0].name]));
+        this.openGroups.toggle(groups[0].name);
       }
     });
     // Open all matching groups while searching
     effect(() => {
       const q = this.searchQuery();
       if (q) {
-        this.openGroups.set(new Set(this.filteredGroups().map(g => g.name)));
+        this.openGroups.set(this.filteredGroups().map(g => g.name));
       }
     });
   }
@@ -224,25 +178,14 @@ export class ModsComponent {
   readonly progress = computed(() => this.tracker.sectionProgress('mods'));
 
   groupProgress(group: ModGroup): string {
-    let done = 0, total = 0;
-    for (const row of group.rows) {
-      for (const col of group.columns) {
-        if (group.disabledCellFn?.(row.name, col.key)) continue;
-        total++;
-        if (this.tracker.isChecked(`mod:${row.name}:${col.key}`)) done++;
-      }
-    }
-    return `${done}/${total}`;
-  }
-
-  isGroupOpen(name: string): boolean { return this.openGroups().has(name); }
-
-  toggleGroup(name: string): void {
-    this.openGroups.update(set => {
-      const next = new Set(set);
-      if (next.has(name)) next.delete(name); else next.add(name);
-      return next;
-    });
+    const p = gridProgress(
+      group.rows,
+      group.columns,
+      (rowName, colKey) => `mod:${rowName}:${colKey}`,
+      k => this.tracker.isChecked(k),
+      group.disabledCellFn ?? undefined,
+    );
+    return `${p.completed}/${p.total}`;
   }
 
   onToggle(event: { rowName: string; colKey: string }): void {

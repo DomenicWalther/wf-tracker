@@ -1,33 +1,21 @@
 import { Component, computed, ChangeDetectionStrategy } from '@angular/core';
 import { TrackerData, ChecklistGroup } from '../../core/models/tracker.models';
-import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
-import { ChecklistComponent } from '../../shared/components/checklist/checklist.component';
+import { ChecklistPageComponent } from '../../shared/components/checklist-page/checklist-page.component';
 import { ChecklistPageBase } from '../../core/base/checklist-page.base';
 
 @Component({
   selector: 'app-cosmetics',
-  imports: [SectionHeaderComponent, ChecklistComponent],
+  imports: [ChecklistPageComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="page">
-      <app-section-header
-        title="COSMETICS"
-        description="Track cosmetic items across Tennogen, Prime Access, Nightwave, and more."
-        [completed]="progress().completed"
-        [total]="progress().total"
-      />
-      @if (groups().length > 0) {
-        <app-checklist
-          [groups]="groups()"
-          (toggle)="onToggle($event)"
-          (bulkChange)="onBulkChange($event)"
-        />
-      } @else {
-        <div class="loading">Loading...</div>
-      }
-    </div>
+    <app-checklist-page
+      title="COSMETICS"
+      description="Track cosmetic items across Tennogen, Prime Access, Nightwave, and more."
+      [groups]="groups()"
+      (toggle)="onToggle($event)"
+      (bulkChange)="onBulkChange($event)"
+    />
   `,
-  styles: [`.page { max-width: 1200px; } .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }`]
 })
 export class CosmeticsComponent extends ChecklistPageBase {
   readonly groups = computed(() => {

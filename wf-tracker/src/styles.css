@@ -120,6 +120,48 @@ body {
   transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ─── Shared feature-page primitives ───────────────────────────────────────
+   Used by nearly every feature component. Kept global (not per-component) so
+   the markup stays DRY — components just apply these class names. */
+
+.page { max-width: 1200px; }
+.page--narrow { max-width: 900px; }
+
+.loading {
+  padding: 40px;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* Standard "no results" / empty state. */
+.cl-empty {
+  text-align: center;
+  padding: 48px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+/* Standard search box used by mods, gear, lich-gear, arcanes, incarnon. */
+.cl-search-wrap { margin-bottom: 16px; }
+.cl-search {
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-surface2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  outline: none;
+}
+.cl-search:focus { border-color: var(--color-accent); }
+.cl-search-count {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
 .section-tag {
   font-size: 10px;
   font-weight: 600;

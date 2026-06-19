@@ -1,33 +1,21 @@
 import { Component, computed, ChangeDetectionStrategy } from '@angular/core';
 import { TrackerData, ChecklistGroup } from '../../core/models/tracker.models';
-import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
-import { ChecklistComponent } from '../../shared/components/checklist/checklist.component';
+import { ChecklistPageComponent } from '../../shared/components/checklist-page/checklist-page.component';
 import { ChecklistPageBase } from '../../core/base/checklist-page.base';
 
 @Component({
   selector: 'app-railjack',
-  imports: [SectionHeaderComponent, ChecklistComponent],
+  imports: [ChecklistPageComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="page">
-      <app-section-header
-        title="RAILJACK"
-        description="Track Railjack intrinsics (level 10) and component collection."
-        [completed]="progress().completed"
-        [total]="progress().total"
-      />
-      @if (groups().length > 0) {
-        <app-checklist
-          [groups]="groups()"
-          (toggle)="onToggle($event)"
-          (bulkChange)="onBulkChange($event)"
-        />
-      } @else {
-        <div class="loading">Loading...</div>
-      }
-    </div>
+    <app-checklist-page
+      title="RAILJACK"
+      description="Track Railjack intrinsics (level 10) and component collection."
+      [groups]="groups()"
+      (toggle)="onToggle($event)"
+      (bulkChange)="onBulkChange($event)"
+    />
   `,
-  styles: [`.page { max-width: 1200px; } .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }`]
 })
 export class RailjackComponent extends ChecklistPageBase {
   readonly groups = computed(() => {

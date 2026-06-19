@@ -1,8 +1,11 @@
-import { Component, inject, computed, signal, effect, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, effect, ChangeDetectionStrategy } from '@angular/core';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
+import { CollapsibleSectionComponent } from '../../shared/components/collapsible-section/collapsible-section.component';
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
+import { createToggleSet } from '../../core/utils/toggle-set';
+import { gridProgress } from '../../core/utils/grid-progress';
 
 const BASE_COLUMNS: TrackerColumn[] = [
   { key: 'owned',   label: 'Owned'   },
@@ -22,9 +25,14 @@ interface RelicGroup {
   rows: TrackerRow[];
 }
 
+/** Storage key for one relic cell. */
+function relicKey(name: string, colKey: string): string {
+  return colKey === 'owned' ? `relic:${name}` : `relic:${name}:${colKey}`;
+}
+
 @Component({
   selector: 'app-relics',
-  imports: [SectionHeaderComponent, TrackerTableComponent],
+  imports: [SectionHeaderComponent, CollapsibleSectionComponent, TrackerTableComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -36,18 +44,13 @@ interface RelicGroup {
       />
       @if (groups().length > 0) {
         @for (group of groups(); track group.name) {
-          <div class="relic-section">
-            <button
-              type="button"
-              class="relic-section-header"
-              (click)="toggleGroup(group.name)"
-              [attr.aria-expanded]="isGroupOpen(group.name)"
-            >
-              <span class="relic-arrow" aria-hidden="true">{{ isGroupOpen(group.name) ? '▾' : '▸' }}</span>
-              <span class="relic-section-name">{{ group.name }}</span>
-              <span class="relic-progress">{{ groupProgress(group) }}</span>
-            </button>
-            @if (isGroupOpen(group.name)) {
+          <app-collapsible-section
+            [name]="group.name"
+            [progress]="groupProgress(group)"
+            [open]="openGroups.has(group.name)"
+            (toggle)="openGroups.toggle(group.name)"
+          >
+            @if (openGroups.has(group.name)) {
               <app-tracker-table
                 [columns]="group.columns"
                 [rows]="group.rows"
@@ -55,48 +58,19 @@ interface RelicGroup {
                 (toggle)="onToggle($event)"
               />
             }
-          </div>
+          </app-collapsible-section>
         }
       } @else {
         <div class="loading">Loading...</div>
       }
     </div>
   `,
-  styles: [`
-    .page { max-width: 1200px; }
-    .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }
-    .relic-section {
-      border: 1px solid var(--color-border);
-      border-radius: 6px;
-      margin-bottom: 8px;
-    }
-    .relic-section-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      background: var(--color-surface2);
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      border: none;
-      font: inherit;
-      color: inherit;
-      border-radius: 6px;
-    }
-    .relic-section-header:hover { background: var(--color-surface3); }
-    .relic-section-header:focus-visible { outline: 2px solid var(--color-gold); outline-offset: -2px; }
-    .relic-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
-    .relic-section-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--color-text); }
-    .relic-progress { font-size: 11px; color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
-  `]
 })
 export class RelicsComponent {
   private readonly tracker = inject(TrackerService);
-  private readonly dataService = inject(DataService);
-  private readonly data = this.dataService.data;
+  private readonly data = inject(DataService).data;
 
-  private readonly openGroups = signal<Set<string>>(new Set());
+  readonly openGroups = createToggleSet();
   private groupsInitialized = false;
 
   readonly groups = computed<RelicGroup[]>(() => {
@@ -117,41 +91,20 @@ export class RelicsComponent {
       const groups = this.groups();
       if (groups.length > 0 && !this.groupsInitialized) {
         this.groupsInitialized = true;
-        this.openGroups.set(new Set([groups[0].name]));
+        this.openGroups.toggle(groups[0].name);
       }
     });
   }
 
-  readonly checkedFn = (rowName: string, colKey: string): boolean => {
-    const key = colKey === 'owned' ? `relic:${rowName}` : `relic:${rowName}:${colKey}`;
-    return this.tracker.isChecked(key);
-  };
+  readonly checkedFn = (rowName: string, colKey: string): boolean =>
+    this.tracker.isChecked(relicKey(rowName, colKey));
 
   groupProgress(group: RelicGroup): string {
-    let done = 0, total = 0;
-    for (const row of group.rows) {
-      for (const col of group.columns) {
-        total++;
-        if (this.checkedFn(row.name, col.key)) done++;
-      }
-    }
-    return `${done}/${total}`;
-  }
-
-  isGroupOpen(name: string): boolean { return this.openGroups().has(name); }
-
-  toggleGroup(name: string): void {
-    this.openGroups.update(set => {
-      const next = new Set(set);
-      if (next.has(name)) next.delete(name); else next.add(name);
-      return next;
-    });
+    const p = gridProgress(group.rows, group.columns, relicKey, k => this.tracker.isChecked(k));
+    return `${p.completed}/${p.total}`;
   }
 
   onToggle(event: { rowName: string; colKey: string }): void {
-    const key = event.colKey === 'owned'
-      ? `relic:${event.rowName}`
-      : `relic:${event.rowName}:${event.colKey}`;
-    this.tracker.toggle(key);
+    this.tracker.toggle(relicKey(event.rowName, event.colKey));
   }
 }

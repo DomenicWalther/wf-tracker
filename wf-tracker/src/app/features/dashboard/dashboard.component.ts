@@ -127,7 +127,6 @@ interface SectionCard {
     </div>
   `,
   styles: [`
-    .page { max-width: 1200px; }
     .dashboard-header {
       display: flex;
       justify-content: space-between;

@@ -1,12 +1,15 @@
-import { Component, inject, computed, signal, effect, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, effect, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
+import { CollapsibleSectionComponent } from '../../shared/components/collapsible-section/collapsible-section.component';
 import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
 import { titleCase } from '../../core/utils/checklist.utils';
 import { arcaneKey } from '../../core/utils/section-progress';
+import { gridProgress } from '../../core/utils/grid-progress';
+import { createToggleSet } from '../../core/utils/toggle-set';
 
 /** Groups whose arcanes max at rank 3 (need 4 copies), not rank 5. */
 export const LIMITED_ARCANE_GROUPS = new Set(['operator', 'amp', 'kitgun', 'zaw']);
@@ -42,7 +45,7 @@ interface ArcaneGroup {
 
 @Component({
   selector: 'app-arcanes',
-  imports: [SectionHeaderComponent, TrackerTableComponent, ReactiveFormsModule],
+  imports: [SectionHeaderComponent, CollapsibleSectionComponent, TrackerTableComponent, ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -54,7 +57,7 @@ interface ArcaneGroup {
       />
 
       @if (arcaneGroups().length > 0) {
-        <div class="arc-search">
+        <div class="cl-search-wrap">
           <input
             class="cl-search"
             type="text"
@@ -63,23 +66,18 @@ interface ArcaneGroup {
             [formControl]="searchControl"
           />
           @if (searchQuery() && searchResultCount() !== totalArcaneCount()) {
-            <span class="arc-search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalArcaneCount() }} results</span>
+            <span class="cl-search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalArcaneCount() }} results</span>
           }
         </div>
 
         @for (group of filteredGroups(); track group.name) {
-          <div class="arc-section">
-            <button
-              type="button"
-              class="arc-section-header"
-              (click)="toggleGroup(group.name)"
-              [attr.aria-expanded]="isGroupOpen(group.name)"
-            >
-              <span class="arc-arrow" aria-hidden="true">{{ isGroupOpen(group.name) ? '▾' : '▸' }}</span>
-              <span class="arc-section-name">{{ group.name }}</span>
-              <span class="arc-progress">{{ groupProgress(group) }}</span>
-            </button>
-            @if (isGroupOpen(group.name)) {
+          <app-collapsible-section
+            [name]="group.name"
+            [progress]="groupProgress(group)"
+            [open]="openGroups.has(group.name)"
+            (toggle)="openGroups.toggle(group.name)"
+          >
+            @if (openGroups.has(group.name)) {
               <app-tracker-table
                 [columns]="group.columns"
                 [rows]="group.rows"
@@ -87,68 +85,25 @@ interface ArcaneGroup {
                 (toggle)="onTableToggle(group.groupKey, $event.rowName, $event.colKey)"
               />
             }
-          </div>
+          </app-collapsible-section>
         }
 
         @if (filteredGroups().length === 0) {
-          <div class="arc-empty">No arcanes match "{{ searchQuery() }}"</div>
+          <div class="cl-empty">No arcanes match "{{ searchQuery() }}"</div>
         }
       } @else {
         <div class="loading">Loading...</div>
       }
     </div>
   `,
-  styles: [`
-    .page { max-width: 1200px; }
-    .loading { padding: 40px; text-align: center; color: var(--color-text-muted); }
-    .arc-search { margin-bottom: 16px; }
-    .cl-search {
-      width: 100%;
-      max-width: 400px;
-      background: var(--color-surface2);
-      border: 1px solid var(--color-border);
-      color: var(--color-text);
-      padding: 6px 10px;
-      border-radius: 4px;
-      font-size: 13px;
-      outline: none;
-    }
-    .cl-search:focus { border-color: var(--color-gold); }
-    .arc-section {
-      border: 1px solid var(--color-border);
-      border-radius: 6px;
-      margin-bottom: 8px;
-    }
-    .arc-section-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      background: var(--color-surface2);
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      border: none;
-      font: inherit;
-      color: inherit;
-    }
-    .arc-section-header:hover { background: var(--color-surface3); }
-    .arc-section-header:focus-visible { outline: 2px solid var(--color-gold); outline-offset: -2px; }
-    .arc-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
-    .arc-section-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--color-text); }
-    .arc-progress { font-size: 11px; color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
-    .arc-empty { text-align: center; padding: 48px; color: var(--color-text-muted); font-size: 13px; }
-    .arc-search-count { display: block; margin-top: 4px; font-size: 11px; color: var(--color-text-muted); }
-  `]
 })
 export class ArcanesComponent {
   private readonly tracker = inject(TrackerService);
-  private readonly dataService = inject(DataService);
-  private readonly data = this.dataService.data;
+  private readonly data = inject(DataService).data;
 
   readonly searchControl = new FormControl('', { nonNullable: true });
   protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
-  private readonly openGroups = signal<Set<string>>(new Set());
+  readonly openGroups = createToggleSet();
   private groupsInitialized = false;
 
   readonly arcaneGroups = computed<ArcaneGroup[]>(() => {
@@ -187,13 +142,13 @@ export class ArcanesComponent {
       const groups = this.arcaneGroups();
       if (groups.length > 0 && !this.groupsInitialized) {
         this.groupsInitialized = true;
-        this.openGroups.set(new Set([groups[0].name]));
+        this.openGroups.toggle(groups[0].name);
       }
     });
     effect(() => {
       const q = this.searchQuery();
       if (q) {
-        this.openGroups.set(new Set(this.filteredGroups().map(g => g.name)));
+        this.openGroups.set(this.filteredGroups().map(g => g.name));
       }
     });
   }
@@ -201,23 +156,13 @@ export class ArcanesComponent {
   readonly progress = computed(() => this.tracker.sectionProgress('arcanes'));
 
   groupProgress(group: ArcaneGroup): string {
-    const total = group.rows.length * group.columns.length;
-    const done = group.rows
-      .flatMap(r => group.columns.map(c => arcaneKey(group.groupKey, r.name, c.key)))
-      .filter(k => this.tracker.isChecked(k)).length;
-    return `${done}/${total}`;
-  }
-
-  isGroupOpen(name: string): boolean {
-    return this.openGroups().has(name);
-  }
-
-  toggleGroup(name: string): void {
-    this.openGroups.update(set => {
-      const next = new Set(set);
-      if (next.has(name)) next.delete(name); else next.add(name);
-      return next;
-    });
+    const p = gridProgress(
+      group.rows,
+      group.columns,
+      (rowName, colKey) => arcaneKey(group.groupKey, rowName, colKey),
+      k => this.tracker.isChecked(k),
+    );
+    return `${p.completed}/${p.total}`;
   }
 
   onTableToggle(groupKey: string, rowName: string, colKey: string): void {

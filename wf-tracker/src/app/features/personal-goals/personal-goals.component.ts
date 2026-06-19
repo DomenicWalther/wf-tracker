@@ -9,7 +9,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
   imports: [ReactiveFormsModule, SectionHeaderComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="page">
+    <div class="page page--narrow">
       <app-section-header
         title="GOALS"
         description="Set your own custom goals. Number goals track progress toward a target amount. Completion goals are simple checkboxes."
@@ -90,7 +90,6 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
     </div>
   `,
   styles: [`
-    .page { max-width: 900px; }
     .goals-section { margin-bottom: 24px; }
     .goals-section-title {
       font-size: 11px;

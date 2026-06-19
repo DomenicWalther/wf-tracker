@@ -5,8 +5,9 @@ import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { GearItem } from '../../core/models/tracker.models';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
+import { CollapsibleSectionComponent } from '../../shared/components/collapsible-section/collapsible-section.component';
 import { ProgressBarComponent } from '../../shared/components/progress-bar/progress-bar.component';
-import { TrackerTableComponent, TrackerColumn, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
+import { TrackerTableComponent, TrackerRow } from '../../shared/components/tracker-table/tracker-table.component';
 import { ALL_GEAR_COLUMNS, GEAR_SECTION_COLUMNS, GearColumnDef } from '../../core/config/gear-columns';
 import { createToggleSet } from '../../core/utils/toggle-set';
 import { buildGearFamilies, countDualFrameItem, countGearSection, gearFamilyId, gearVariantLabel } from '../../core/utils/gear-variants';
@@ -14,7 +15,7 @@ import { TrackerCellSub } from '../../shared/components/tracker-table/tracker-ta
 
 @Component({
   selector: 'app-gear',
-  imports: [ReactiveFormsModule, SectionHeaderComponent, ProgressBarComponent, TrackerTableComponent],
+  imports: [ReactiveFormsModule, SectionHeaderComponent, CollapsibleSectionComponent, ProgressBarComponent, TrackerTableComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="page">
@@ -25,31 +26,27 @@ import { TrackerCellSub } from '../../shared/components/tracker-table/tracker-ta
         [total]="progress().total"
       />
 
-      <div class="gear-search">
+      <div class="cl-search-wrap">
         <input class="cl-search" type="text" placeholder="Search gear..." aria-label="Search" [formControl]="searchControl" />
         @if (searchQuery() && searchResultCount() !== totalGearCount()) {
-          <span class="gear-search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalGearCount() }} results</span>
+          <span class="cl-search-count" aria-live="polite">{{ searchResultCount() }} of {{ totalGearCount() }} results</span>
         }
       </div>
 
       @for (section of gearSections(); track section.key) {
         @if (filteredItems(section.items).length > 0) {
-          <div class="gear-section">
-            <button
-              type="button"
-              class="gear-section-header"
-              (click)="toggleSection(section.key)"
-              [attr.aria-expanded]="isSectionOpen(section.key)"
-            >
-              <span class="gear-arrow" aria-hidden="true">{{ isSectionOpen(section.key) ? '▾' : '▸' }}</span>
-              <span class="gear-section-name">{{ section.label }}</span>
-              <app-progress-bar
-                [label]="''"
-                [completed]="sectionProgress(section).completed"
-                [total]="sectionProgress(section).total"
-                style="flex: 0 0 200px"
-              />
-            </button>
+          <app-collapsible-section
+            [name]="section.label"
+            [open]="isSectionOpen(section.key)"
+            (toggle)="toggleSection(section.key)"
+          >
+            <app-progress-bar
+              csTrailing
+              [label]="''"
+              [completed]="sectionProgress(section).completed"
+              [total]="sectionProgress(section).total"
+              style="flex: 0 0 200px"
+            />
             @if (isSectionOpen(section.key)) {
               <app-tracker-table
                 [columns]="sectionActiveColumns(section.key)"
@@ -60,49 +57,11 @@ import { TrackerCellSub } from '../../shared/components/tracker-table/tracker-ta
                 (toggle)="toggleItem($event.rowName, $event.colKey, $event.subKey)"
               />
             }
-          </div>
+          </app-collapsible-section>
         }
       }
     </div>
   `,
-  styles: [`
-    .page { max-width: 1200px; }
-    .gear-search { margin-bottom: 16px; }
-    .cl-search {
-      width: 100%;
-      max-width: 400px;
-      background: var(--color-surface2);
-      border: 1px solid var(--color-border);
-      color: var(--color-text);
-      padding: 6px 10px;
-      border-radius: 4px;
-      font-size: 13px;
-      outline: none;
-    }
-    .cl-search:focus { border-color: var(--color-gold); }
-    .gear-section {
-      border: 1px solid var(--color-border);
-      border-radius: 6px;
-      margin-bottom: 8px;
-    }
-    .gear-section-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      background: var(--color-surface2);
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      border: none;
-      font: inherit;
-      color: inherit;
-    }
-    .gear-section-header:hover { background: var(--color-surface3); }
-    .gear-arrow { color: var(--color-gold); width: 12px; font-size: 12px; }
-    .gear-section-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--color-text); }
-    .gear-search-count { display: block; margin-top: 4px; font-size: 11px; color: var(--color-text-muted); }
-  `]
 })
 export class GearComponent {
   private readonly tracker = inject(TrackerService);
