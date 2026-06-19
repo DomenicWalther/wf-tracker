@@ -1,6 +1,4 @@
-import { Injectable, signal, computed, inject } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { take } from 'rxjs';
+import { Injectable, signal, computed, effect, untracked, inject } from '@angular/core';
 import {
   TrackerState, TrackerSettings, SectionToggles, PersonalGoal, TodoItem,
   DEFAULT_SETTINGS, DEFAULT_SECTION_TOGGLES, PinnedBarSettings,
@@ -21,7 +19,7 @@ const TRACKABLE_SECTIONS: (keyof SectionToggles)[] = [
 @Injectable({ providedIn: 'root' })
 export class TrackerService {
   private readonly dataService = inject(DataService);
-  private readonly data = toSignal(this.dataService.getData());
+  private readonly data = this.dataService.data;
   readonly honoria = inject(HonoriaService);
   private readonly state = signal<TrackerState>(this.loadState());
 
@@ -41,8 +39,9 @@ export class TrackerService {
     // old keys once the data (which maps arcane → group) is available, so
     // previously-tracked arcanes aren't silently lost. Runs once per load and
     // is a no-op when there's nothing legacy to migrate.
-    this.dataService.getData().pipe(take(1)).subscribe(d => {
-      if (d?.arcanes) this.migrateArcaneKeys(d.arcanes);
+    effect(() => {
+      const d = this.data();
+      if (d?.arcanes) untracked(() => this.migrateArcaneKeys(d.arcanes));
     });
   }
 

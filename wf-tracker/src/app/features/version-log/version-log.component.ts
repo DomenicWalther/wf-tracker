@@ -1,5 +1,4 @@
 import { Component, inject, signal, computed, effect, ChangeDetectionStrategy } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { SlicePipe } from '@angular/common';
 import { DataService } from '../../core/services/data.service';
 import { VersionLogEntry } from '../../core/models/tracker.models';
@@ -88,7 +87,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 })
 export class VersionLogComponent {
   private readonly dataService = inject(DataService);
-  private readonly rawData = toSignal(this.dataService.getData());
+  private readonly rawData = this.dataService.data;
   private openEntries = signal<Set<string>>(new Set());
 
   readonly log = computed<VersionLogEntry[]>(() => {

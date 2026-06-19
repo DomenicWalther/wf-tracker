@@ -446,7 +446,7 @@ export class CommandPaletteComponent {
     return this.uncheckedOnly() ? r.slice(r.indexOf('!') + 1).trim() : r.trim();
   });
 
-  private readonly data = toSignal(this.dataService.getData());
+  private readonly data = this.dataService.data;
   private readonly itemIndex = computed(() => buildItemIndex(this.data(), this.tracker.settings()));
   protected readonly itemCount = computed(() => this.itemIndex().length);
 

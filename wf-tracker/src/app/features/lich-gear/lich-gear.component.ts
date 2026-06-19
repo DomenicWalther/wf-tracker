@@ -129,7 +129,7 @@ function ephemeraKey(item: string): string {
 export class LichGearComponent {
   private readonly trackerService = inject(TrackerService);
   private readonly dataService = inject(DataService);
-  private readonly rawData = toSignal(this.dataService.getData());
+  private readonly rawData = this.dataService.data;
   private readonly openGroups = createToggleSet();
 
   readonly searchControl = new FormControl('', { nonNullable: true });

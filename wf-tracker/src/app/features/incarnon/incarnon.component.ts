@@ -168,7 +168,7 @@ function familyKey(familyName: string, stage: string): string {
 export class IncarnonComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
-  private readonly data = toSignal(this.dataService.getData());
+  private readonly data = this.dataService.data;
 
   readonly searchControl = new FormControl('', { nonNullable: true });
   readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });

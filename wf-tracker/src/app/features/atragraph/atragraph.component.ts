@@ -1,5 +1,4 @@
 import { Component, inject, computed, signal, effect, ChangeDetectionStrategy } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
@@ -98,7 +97,7 @@ interface FoilGroup {
 export class AtragraphComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
-  private readonly data = toSignal(this.dataService.getData());
+  private readonly data = this.dataService.data;
 
   readonly ownedColumn = OWNED_COLUMN;
 

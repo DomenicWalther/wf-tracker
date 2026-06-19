@@ -1,5 +1,4 @@
 import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, icons } from 'lucide-angular';
 import { TrackerService } from '../../core/services/tracker.service';
@@ -375,7 +374,7 @@ export class DashboardComponent {
   private readonly dataService = inject(DataService);
   private readonly honoria = inject(HonoriaService);
 
-  private readonly data = toSignal(this.dataService.getData());
+  private readonly data = this.dataService.data;
 
   readonly cards = computed<SectionCard[]>(() => {
     const d = this.data();

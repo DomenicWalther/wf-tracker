@@ -1,5 +1,4 @@
 import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { TrackerService } from '../../core/services/tracker.service';
 import { DataService } from '../../core/services/data.service';
 import { TrackerData, ChecklistGroup } from '../../core/models/tracker.models';
@@ -35,7 +34,7 @@ import { applyBulkChange } from '../../core/utils/checklist.utils';
 export class CosmeticsComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
-  private readonly data = toSignal(this.dataService.getData());
+  private readonly data = this.dataService.data;
 
   readonly groups = computed(() => {
     const d = this.data();

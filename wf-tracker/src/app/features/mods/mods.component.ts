@@ -131,7 +131,7 @@ interface ModGroup {
 export class ModsComponent {
   private readonly tracker = inject(TrackerService);
   private readonly dataService = inject(DataService);
-  private readonly data = toSignal(this.dataService.getData());
+  private readonly data = this.dataService.data;
 
   readonly searchControl = new FormControl('', { nonNullable: true });
   protected readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
