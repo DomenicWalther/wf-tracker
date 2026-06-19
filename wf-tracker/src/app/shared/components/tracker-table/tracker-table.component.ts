@@ -1,4 +1,4 @@
-import { Component, input, output, signal, computed, inject, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import { Component, input, output, signal, computed, inject, ChangeDetectionStrategy, OnDestroy, WritableSignal } from '@angular/core';
 import { TrackerService } from '../../../core/services/tracker.service';
 
 export interface TrackerColumn {
@@ -571,24 +571,27 @@ export class TrackerTableComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.clearPending();
+    this.noteOpenMap.clear();
   }
 
-  private readonly openNotes = signal<Set<string>>(new Set());
+  private readonly noteOpenMap = new Map<string, WritableSignal<boolean>>();
+
+  private noteSignal(rowName: string): WritableSignal<boolean> {
+    let s = this.noteOpenMap.get(rowName);
+    if (!s) { s = signal(false); this.noteOpenMap.set(rowName, s); }
+    return s;
+  }
 
   hasNote(rowName: string): boolean {
     return !!this.notesFn()?.(rowName);
   }
 
   isNoteOpen(rowName: string): boolean {
-    return this.openNotes().has(rowName);
+    return this.noteSignal(rowName)();
   }
 
   toggleNote(rowName: string): void {
-    this.openNotes.update(s => {
-      const next = new Set(s);
-      if (next.has(rowName)) next.delete(rowName); else next.add(rowName);
-      return next;
-    });
+    this.noteSignal(rowName).update(v => !v);
   }
 
   getNote(rowName: string): string {
