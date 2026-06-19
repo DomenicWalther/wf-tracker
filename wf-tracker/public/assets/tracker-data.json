@@ -654,6 +654,10 @@
         "isFounderOnly": false
       },
       {
+        "name": "Afentis Prime",
+        "isFounderOnly": false
+      },
+      {
         "name": "Alternox",
         "isFounderOnly": false
       },
@@ -1510,6 +1514,10 @@
       },
       {
         "name": "Athodai",
+        "isFounderOnly": false
+      },
+      {
+        "name": "Athodai Prime",
         "isFounderOnly": false
       },
       {
@@ -17992,6 +18000,10 @@
           "isOld": false
         },
         {
+          "name": "Afentis Prime",
+          "isOld": false
+        },
+        {
           "name": "Afuris prime",
           "isOld": false
         },
@@ -18057,6 +18069,10 @@
         },
         {
           "name": "Astilla Prime",
+          "isOld": false
+        },
+        {
+          "name": "Athodai Prime",
           "isOld": false
         },
         {
