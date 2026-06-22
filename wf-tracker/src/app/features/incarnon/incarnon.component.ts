@@ -1,4 +1,4 @@
-import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, computed, effect, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TrackerService } from '../../core/services/tracker.service';
@@ -59,11 +59,11 @@ function familyKey(familyName: string, stage: string): string {
         @for (week of weeks(); track week.label) {
           <app-collapsible-section
             [name]="week.label"
-            [highlighted]="week.label === currentWeekLabel"
+            [highlighted]="week.label === currentWeekLabel()"
             [open]="isWeekOpen(week.label)"
             (toggle)="toggleWeek(week.label)"
           >
-            @if (week.label === currentWeekLabel) {
+            @if (week.label === currentWeekLabel()) {
               <span csBadge class="week-now" aria-label="current week">NOW</span>
             }
             <app-progress-bar
@@ -109,10 +109,35 @@ export class IncarnonComponent {
   readonly searchControl = new FormControl('', { nonNullable: true });
   readonly searchQuery = toSignal(this.searchControl.valueChanges, { initialValue: '' });
 
-  readonly currentWeekLabel = `Week ${currentIncarnonWeek()}`;
-  private readonly openWeeks = createToggleSet([`Week ${currentIncarnonWeek()}`]);
+  /** Number of numbered rotation weeks in the data (excludes Duviri) = cycle length. */
+  private readonly weekCount = computed(() => {
+    const d = this.data();
+    if (!d) return 0;
+    const weeks = new Set<number>();
+    for (const e of d.incarnon) if (e.week != null) weeks.add(e.week);
+    return weeks.size;
+  });
+
+  readonly currentWeekLabel = computed(() =>
+    this.weekCount() > 0 ? `Week ${currentIncarnonWeek(this.weekCount())}` : ''
+  );
+
+  private readonly openWeeks = createToggleSet();
 
   readonly columns = INCARNON_COLUMNS;
+
+  constructor() {
+    // Open the current week by default, once the data (and thus its label) loads.
+    // Guarded so a later data refresh never clobbers the user's expand/collapse state.
+    let seeded = false;
+    effect(() => {
+      const label = this.currentWeekLabel();
+      if (!seeded && label) {
+        this.openWeeks.set([label]);
+        seeded = true;
+      }
+    });
+  }
 
   readonly checkedFn = (rowName: string, colKey: string) =>
     this.tracker.isChecked(familyKey(rowName, colKey));

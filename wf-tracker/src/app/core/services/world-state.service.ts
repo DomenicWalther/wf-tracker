@@ -31,14 +31,30 @@ interface DayNightResponse {
 
 const BASE = 'https://api.tenno.tools/worldstate';
 
-/** Epoch: first Monday of the known Week 1 incarnon cycle (verified 2026-05-31 = Week 5). */
-const INCARNON_EPOCH_MS = new Date('2022-10-17T00:00:00.000Z').getTime();
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
-const INCARNON_CYCLE = 8;
 
-export function currentIncarnonWeek(): number {
-  const weeksElapsed = Math.floor((Date.now() - INCARNON_EPOCH_MS) / WEEK_MS);
-  return (weeksElapsed % INCARNON_CYCLE) + 1;
+/**
+ * Incarnon Genesis rotation (Steel Path Circuit). The available weapons rotate
+ * weekly, resetting Monday 00:00 UTC, cycling through `cycleLength` weeks.
+ *
+ * The pool grows as DE adds weapons, so the caller passes the current length
+ * (number of numbered weeks in the data) instead of a hardcoded constant —
+ * adding a week to the data is then enough, no code change required.
+ *
+ * Anchored to a verified reference: the week beginning Monday 2026-06-22 UTC is
+ * Week 9 (cross-check: 2026-05-31 fell in Week 5). New weeks are appended to the
+ * end of the rotation, so this past anchor stays valid as the cycle grows.
+ */
+const INCARNON_REF_WEEK_START_MS = new Date('2026-06-22T00:00:00.000Z').getTime();
+const INCARNON_REF_WEEK = 9;
+
+export function currentIncarnonWeek(cycleLength: number): number {
+  if (cycleLength <= 0) return 1;
+  const weeksSinceRef = Math.floor((Date.now() - INCARNON_REF_WEEK_START_MS) / WEEK_MS);
+  const raw = INCARNON_REF_WEEK - 1 + weeksSinceRef;
+  // Positive modulo so dates before the reference week still map correctly.
+  const idx = ((raw % cycleLength) + cycleLength) % cycleLength;
+  return idx + 1;
 }
 
 function computeCycleState(raw: RawCycle, serverTime: number): CycleState {
