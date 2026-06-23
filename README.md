@@ -17,7 +17,6 @@ A Warframe completion tracker built with Angular. Track mastery, upgrades, incar
 - **World State** — live Warframe world state with cycle timers
 - **Task Checklist** — pinnable in-game task list
 - **Pinned Bar** — floating widget bar with configurable world-state and checklist panels
-- **Theme** — blue-tinted dark (default) or neutral dark, toggled from the sidebar
 
 ## Tech Stack
 

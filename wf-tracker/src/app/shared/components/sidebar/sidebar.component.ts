@@ -2,7 +2,6 @@ import { Component, inject, signal, computed, ChangeDetectionStrategy, input, ou
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LucideAngularModule, icons } from 'lucide-angular';
 import { TrackerService } from '../../../core/services/tracker.service';
-import { ThemeService } from '../../../core/services/theme.service';
 import { PaletteService } from '../../../core/services/palette.service';
 
 type LucideIconData = (typeof icons)[keyof typeof icons];
@@ -18,7 +17,7 @@ const {
   LayoutDashboard, ListChecks, Settings, Target,
   ScrollText, Sword, Skull, Zap, Sparkles, Layers, FlaskConical, Rocket,
   Gem, ClipboardList, Package, Palette, Archive, Flower2, BookOpen,
-  ShoppingBag, Boxes, Component: ComponentIcon, History, SunMoon, Search, Award, Sticker, Trophy,
+  ShoppingBag, Boxes, Component: ComponentIcon, History, Search, Award, Sticker, Trophy,
 } = icons;
 
 const OVERVIEW_ITEMS: NavItem[] = [
@@ -162,19 +161,6 @@ const TRACKABLE_ITEMS: NavItem[] = [
           @if (!collapsed()) {
             <span class="search-hint-text">Search…</span>
             <kbd class="search-hint-kbd">Ctrl K</kbd>
-          }
-        </button>
-        <button
-          type="button"
-          class="theme-btn"
-          (click)="theme.toggle()"
-          [title]="theme.isNeutralDark() ? 'Switch to blue-tinted theme' : 'Switch to neutral dark theme'"
-          [attr.aria-label]="theme.isNeutralDark() ? 'Switch to blue-tinted theme' : 'Switch to neutral dark theme'"
-          [attr.aria-pressed]="theme.isNeutralDark()"
-        >
-          <lucide-icon [img]="sunMoonIcon" [size]="14" [strokeWidth]="1.75" aria-hidden="true"></lucide-icon>
-          @if (!collapsed()) {
-            <span>{{ theme.isNeutralDark() ? 'Switch to Blue Tint' : 'Switch to Neutral Dark' }}</span>
           }
         </button>
       </div>
@@ -435,35 +421,6 @@ const TRACKABLE_ITEMS: NavItem[] = [
       justify-content: center;
       padding: 6px;
     }
-    .theme-btn {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      width: 100%;
-      padding: 6px 8px;
-      background: none;
-      border: 1px solid var(--color-border);
-      border-radius: 5px;
-      color: var(--color-text-muted);
-      font-size: 12px;
-      cursor: pointer;
-      transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    .theme-btn:hover {
-      border-color: var(--color-accent);
-      color: var(--color-accent-light);
-      background: var(--color-surface2);
-    }
-    .theme-btn:focus-visible {
-      outline: 2px solid var(--color-accent-light);
-      outline-offset: 2px;
-    }
-    .collapsed .theme-btn {
-      justify-content: center;
-      padding: 6px;
-    }
     .sidebar-overlay {
       display: none;
     }
@@ -490,7 +447,6 @@ const TRACKABLE_ITEMS: NavItem[] = [
 })
 export class SidebarComponent {
   readonly tracker = inject(TrackerService);
-  readonly theme = inject(ThemeService);
   readonly palette = inject(PaletteService);
 
   readonly mobileOpen = input<boolean>(false);
@@ -498,7 +454,6 @@ export class SidebarComponent {
 
   readonly collapsed = signal(false);
   readonly disabledExpanded = signal(false);
-  readonly sunMoonIcon = SunMoon;
   readonly searchIcon = Search;
 
   readonly overallProgress = computed(() => {
