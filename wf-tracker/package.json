@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "data:build": "node scripts/build-data.mjs",
+    "data:check": "node scripts/build-data.mjs --check",
+    "prestart": "npm run data:build",
+    "prebuild": "npm run data:build"
   },
   "prettier": {
     "printWidth": 100,

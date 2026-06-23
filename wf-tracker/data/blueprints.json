@@ -1,0 +1,6104 @@
+{
+  "Cetus": {
+    "Hok": [
+      {
+        "name": "Balla",
+        "isOld": false
+      },
+      {
+        "name": "Cyath",
+        "isOld": false
+      },
+      {
+        "name": "Dehtat",
+        "isOld": false
+      },
+      {
+        "name": "Dokrahm",
+        "isOld": false
+      },
+      {
+        "name": "Ekwana II Jai",
+        "isOld": false
+      },
+      {
+        "name": "Ekwana II Ruhang",
+        "isOld": false
+      },
+      {
+        "name": "Ekwana Jai",
+        "isOld": false
+      },
+      {
+        "name": "Ekwana Jai II",
+        "isOld": false
+      },
+      {
+        "name": "Ekwana Ruhang",
+        "isOld": false
+      },
+      {
+        "name": "Ekwana Ruhang II",
+        "isOld": false
+      },
+      {
+        "name": "Jai",
+        "isOld": false
+      },
+      {
+        "name": "Jai II",
+        "isOld": false
+      },
+      {
+        "name": "Jayap",
+        "isOld": false
+      },
+      {
+        "name": "Korb",
+        "isOld": false
+      },
+      {
+        "name": "Kronsh",
+        "isOld": false
+      },
+      {
+        "name": "Kroostra",
+        "isOld": false
+      },
+      {
+        "name": "Kwath",
+        "isOld": false
+      },
+      {
+        "name": "Laka",
+        "isOld": false
+      },
+      {
+        "name": "Mewan",
+        "isOld": false
+      },
+      {
+        "name": "Ooltha",
+        "isOld": false
+      },
+      {
+        "name": "Peye",
+        "isOld": false
+      },
+      {
+        "name": "Rabvee",
+        "isOld": false
+      },
+      {
+        "name": "Ruhang",
+        "isOld": false
+      },
+      {
+        "name": "Ruhang II",
+        "isOld": false
+      },
+      {
+        "name": "Seekalla",
+        "isOld": false
+      },
+      {
+        "name": "Sepfahn",
+        "isOld": false
+      },
+      {
+        "name": "Shtung",
+        "isOld": false
+      },
+      {
+        "name": "Vargeet II Jai",
+        "isOld": false
+      },
+      {
+        "name": "Vargeet II Ruhang",
+        "isOld": false
+      },
+      {
+        "name": "Vargeet Jai",
+        "isOld": false
+      },
+      {
+        "name": "Vargeet Jai II",
+        "isOld": false
+      },
+      {
+        "name": "Vargeet Ruhang",
+        "isOld": false
+      },
+      {
+        "name": "Vargeet Ruhang II",
+        "isOld": false
+      }
+    ],
+    "Old Man Suumbaat": [
+      {
+        "name": "Auroxium Alloy",
+        "isOld": false
+      },
+      {
+        "name": "Coprite Alloy",
+        "isOld": false
+      },
+      {
+        "name": "Esher Devar",
+        "isOld": false
+      },
+      {
+        "name": "Fersteel Alloy",
+        "isOld": false
+      },
+      {
+        "name": "Heart Nyth",
+        "isOld": false
+      },
+      {
+        "name": "Marquise Veridos",
+        "isOld": false
+      },
+      {
+        "name": "Pyrotic Alloy",
+        "isOld": false
+      },
+      {
+        "name": "Radian Sentirum",
+        "isOld": false
+      },
+      {
+        "name": "Star Crimzian",
+        "isOld": false
+      },
+      {
+        "name": "Tear Azurite",
+        "isOld": false
+      }
+    ],
+    "Fisher Hai-Luk": [
+      {
+        "name": "Boot Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Charc Eel Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Cuthol Bait",
+        "isOld": false
+      },
+      {
+        "name": "Cuthol Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Glappid Bait",
+        "isOld": false
+      },
+      {
+        "name": "Glappid Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Goopolla Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Karkina Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Khut-Khut Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Luminous Dye",
+        "isOld": false
+      },
+      {
+        "name": "Mawfish Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Mortus Lungfish Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Murkray Bait",
+        "isOld": false
+      },
+      {
+        "name": "Murkray Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Norg Bait",
+        "isOld": false
+      },
+      {
+        "name": "Norg Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Peppered Bait",
+        "isOld": false
+      },
+      {
+        "name": "Pharoma",
+        "isOld": false
+      },
+      {
+        "name": "Sharrac Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Tralok Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Twilight Bait",
+        "isOld": false
+      },
+      {
+        "name": "Yogwun Trophy",
+        "isOld": false
+      }
+    ],
+    "Nakak": [
+      {
+        "name": "Fosfer Blau",
+        "isOld": false
+      },
+      {
+        "name": "Fosfer Rahd",
+        "isOld": false
+      }
+    ],
+    "The Quills": [
+      {
+        "name": "Anspatha Brace",
+        "isOld": false
+      },
+      {
+        "name": "Ceno Apparel",
+        "isOld": false
+      },
+      {
+        "name": "Ceno Cuirass",
+        "isOld": false
+      },
+      {
+        "name": "Ceno Greaves",
+        "isOld": false
+      },
+      {
+        "name": "Ceno Helmet",
+        "isOld": false
+      },
+      {
+        "name": "Ceno Pauldrons",
+        "isOld": false
+      },
+      {
+        "name": "Clapkra Brace",
+        "isOld": false
+      },
+      {
+        "name": "Exceptional Sentient Core Conversion",
+        "isOld": false
+      },
+      {
+        "name": "Granmu Prism",
+        "isOld": false
+      },
+      {
+        "name": "Juttni Brace",
+        "isOld": false
+      },
+      {
+        "name": "Klebrik Scaffold",
+        "isOld": false
+      },
+      {
+        "name": "Lohrin Brace",
+        "isOld": false
+      },
+      {
+        "name": "Mote Amp",
+        "isOld": false
+      },
+      {
+        "name": "Pencha Scaffold",
+        "isOld": false
+      },
+      {
+        "name": "Phahd Scaffold",
+        "isOld": false
+      },
+      {
+        "name": "Rahn Prism",
+        "isOld": false
+      },
+      {
+        "name": "Raplak Prism",
+        "isOld": false
+      },
+      {
+        "name": "Shraksun Scaffold",
+        "isOld": false
+      },
+      {
+        "name": "Shwaak Prism",
+        "isOld": false
+      },
+      {
+        "name": "Vahd Apparel",
+        "isOld": false
+      },
+      {
+        "name": "Vahd Cuirass",
+        "isOld": false
+      },
+      {
+        "name": "Vahd Greaves",
+        "isOld": false
+      },
+      {
+        "name": "Vahd Mask",
+        "isOld": false
+      },
+      {
+        "name": "Vahd Pauldrons",
+        "isOld": false
+      }
+    ]
+  },
+  "Fortuna": {
+    "Legs": [
+      {
+        "name": "Aegron Gyro",
+        "isOld": false
+      },
+      {
+        "name": "Alcrom Core",
+        "isOld": false
+      },
+      {
+        "name": "Atheca Gyro",
+        "isOld": false
+      },
+      {
+        "name": "Cryotra",
+        "isOld": false
+      },
+      {
+        "name": "Drex Core",
+        "isOld": false
+      },
+      {
+        "name": "Drimper Bracket",
+        "isOld": false
+      },
+      {
+        "name": "Gauth Bracket",
+        "isOld": false
+      },
+      {
+        "name": "Harpen Gyro",
+        "isOld": false
+      },
+      {
+        "name": "Helstrum",
+        "isOld": false
+      },
+      {
+        "name": "Hextra Gyro",
+        "isOld": false
+      },
+      {
+        "name": "Hona Bracket",
+        "isOld": false
+      },
+      {
+        "name": "Jonsin Bracket",
+        "isOld": false
+      },
+      {
+        "name": "Krisys Core",
+        "isOld": false
+      },
+      {
+        "name": "Lambeo Moa",
+        "isOld": false
+      },
+      {
+        "name": "Lehan Core",
+        "isOld": false
+      },
+      {
+        "name": "Munit Gyro",
+        "isOld": false
+      },
+      {
+        "name": "Nychus Moa",
+        "isOld": false
+      },
+      {
+        "name": "Oloro Moa",
+        "isOld": false
+      },
+      {
+        "name": "Para Moa",
+        "isOld": false
+      },
+      {
+        "name": "Phazor Gyro",
+        "isOld": false
+      },
+      {
+        "name": "Tazicor",
+        "isOld": false
+      },
+      {
+        "name": "Tian Bracket",
+        "isOld": false
+      },
+      {
+        "name": "Trux Gyro",
+        "isOld": false
+      },
+      {
+        "name": "Tyli Gyro",
+        "isOld": false
+      },
+      {
+        "name": "Vulcax",
+        "isOld": false
+      }
+    ],
+    "Rude Zuud": [
+      {
+        "name": "Bashrack",
+        "isOld": false
+      },
+      {
+        "name": "Bellows",
+        "isOld": false
+      },
+      {
+        "name": "Brash",
+        "isOld": false
+      },
+      {
+        "name": "Catchmoon",
+        "isOld": false
+      },
+      {
+        "name": "Deepbreath",
+        "isOld": false
+      },
+      {
+        "name": "Flutterfire",
+        "isOld": false
+      },
+      {
+        "name": "Gaze",
+        "isOld": false
+      },
+      {
+        "name": "Gibber",
+        "isOld": false
+      },
+      {
+        "name": "Haymaker",
+        "isOld": false
+      },
+      {
+        "name": "Killstream",
+        "isOld": false
+      },
+      {
+        "name": "Lovetap",
+        "isOld": false
+      },
+      {
+        "name": "Ramble",
+        "isOld": false
+      },
+      {
+        "name": "Ramflare",
+        "isOld": false
+      },
+      {
+        "name": "Rattleguts",
+        "isOld": false
+      },
+      {
+        "name": "Shrewd",
+        "isOld": false
+      },
+      {
+        "name": "Slap",
+        "isOld": false
+      },
+      {
+        "name": "Slapneedle",
+        "isOld": false
+      },
+      {
+        "name": "Sparkfire",
+        "isOld": false
+      },
+      {
+        "name": "Splat",
+        "isOld": false
+      },
+      {
+        "name": "Steadyslam",
+        "isOld": false
+      },
+      {
+        "name": "Stitch",
+        "isOld": false
+      },
+      {
+        "name": "Swiftfire",
+        "isOld": false
+      },
+      {
+        "name": "Thunderdrum",
+        "isOld": false
+      },
+      {
+        "name": "Tombfinger",
+        "isOld": false
+      },
+      {
+        "name": "Tremor",
+        "isOld": false
+      },
+      {
+        "name": "Zip",
+        "isOld": false
+      },
+      {
+        "name": "Zipfire",
+        "isOld": false
+      },
+      {
+        "name": "Zipneedle",
+        "isOld": false
+      }
+    ],
+    "Smokefinger": [
+      {
+        "name": "Axidrol Alloy",
+        "isOld": false
+      },
+      {
+        "name": "Goblite Tears",
+        "isOld": false
+      },
+      {
+        "name": "Heart Noctrul",
+        "isOld": false
+      },
+      {
+        "name": "Hespazym Alloy",
+        "isOld": false
+      },
+      {
+        "name": "Marquise Thyst",
+        "isOld": false
+      },
+      {
+        "name": "Radiant Zodian",
+        "isOld": false
+      },
+      {
+        "name": "Smooth Phasmin",
+        "isOld": false
+      },
+      {
+        "name": "Star Amarast",
+        "isOld": false
+      },
+      {
+        "name": "Travocyte Alloy",
+        "isOld": false
+      },
+      {
+        "name": "Venerdo Alloy",
+        "isOld": false
+      }
+    ],
+    "The Business": [
+      {
+        "name": "Boot Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Brickie Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Charamote Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Echowinder Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Eye-Eye Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Kriller Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Longwinder Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Mirewinder Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Oxylus",
+        "isOld": false
+      },
+      {
+        "name": "Recaster Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Sapcaddy Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Scrubber Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Synathid Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Tink Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Tromyzon Trophy",
+        "isOld": false
+      }
+    ],
+    "Little Duck": [
+      {
+        "name": "Baruuk",
+        "isOld": false
+      },
+      {
+        "name": "Baruuk Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Baruuk Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Baruuk Systems",
+        "isOld": false
+      },
+      {
+        "name": "Cantic Prism",
+        "isOld": false
+      },
+      {
+        "name": "Certus Brace",
+        "isOld": false
+      },
+      {
+        "name": "Dissic Scaffold",
+        "isOld": false
+      },
+      {
+        "name": "Exard Scaffold",
+        "isOld": false
+      },
+      {
+        "name": "Haztech Apparel",
+        "isOld": false
+      },
+      {
+        "name": "Haztech Cuirass",
+        "isOld": false
+      },
+      {
+        "name": "Haztech Greaves",
+        "isOld": false
+      },
+      {
+        "name": "Haztech Mask",
+        "isOld": false
+      },
+      {
+        "name": "Haztech Pauldrons",
+        "isOld": false
+      },
+      {
+        "name": "Hildryn",
+        "isOld": false
+      },
+      {
+        "name": "Klamora Prism",
+        "isOld": false
+      },
+      {
+        "name": "Lega Prism",
+        "isOld": false
+      },
+      {
+        "name": "Outrider Cuirass",
+        "isOld": false
+      },
+      {
+        "name": "Outrider Greaves",
+        "isOld": false
+      },
+      {
+        "name": "Outrider Mask",
+        "isOld": false
+      },
+      {
+        "name": "Outrider Pauldrons",
+        "isOld": false
+      },
+      {
+        "name": "Plaga Brace",
+        "isOld": false
+      },
+      {
+        "name": "Propa Scaffold",
+        "isOld": false
+      },
+      {
+        "name": "Smelter Apparel",
+        "isOld": false
+      },
+      {
+        "name": "Smelter Cuirass",
+        "isOld": false
+      },
+      {
+        "name": "Smelter Greaves",
+        "isOld": false
+      },
+      {
+        "name": "Smelter Mask",
+        "isOld": false
+      },
+      {
+        "name": "Smelter Pauldrons",
+        "isOld": false
+      },
+      {
+        "name": "Suo Brace",
+        "isOld": false
+      },
+      {
+        "name": "Vent Rat Cuirass",
+        "isOld": false
+      },
+      {
+        "name": "Vent Rat Greaves",
+        "isOld": false
+      },
+      {
+        "name": "Vent Rat Mask",
+        "isOld": false
+      },
+      {
+        "name": "Vent Rat Pauldrons",
+        "isOld": false
+      }
+    ],
+    "Roky": [
+      {
+        "name": "Arc Twelve",
+        "isOld": false
+      },
+      {
+        "name": "Bad Baby",
+        "isOld": false
+      },
+      {
+        "name": "Beaky",
+        "isOld": false
+      },
+      {
+        "name": "Coldfusor",
+        "isOld": false
+      },
+      {
+        "name": "Dink-A-Donk",
+        "isOld": false
+      },
+      {
+        "name": "Fatboys",
+        "isOld": false
+      },
+      {
+        "name": "Flatbelly",
+        "isOld": false
+      },
+      {
+        "name": "Hothead",
+        "isOld": false
+      },
+      {
+        "name": "Kubrodon Ventikid Apparel",
+        "isOld": false
+      },
+      {
+        "name": "Kubrodon Ventikid Cuirass",
+        "isOld": false
+      },
+      {
+        "name": "Kubrodon Ventikid Greaves",
+        "isOld": false
+      },
+      {
+        "name": "Kubrodon Ventikid Mask",
+        "isOld": false
+      },
+      {
+        "name": "Kubrodon Ventikid Pauldrons",
+        "isOld": false
+      },
+      {
+        "name": "Needlenose",
+        "isOld": false
+      },
+      {
+        "name": "Step Tens",
+        "isOld": false
+      },
+      {
+        "name": "Twin Kavats",
+        "isOld": false
+      },
+      {
+        "name": "Vent Pobber Ventikid Apparel",
+        "isOld": false
+      },
+      {
+        "name": "Vent Pobber Ventikid Cuirass",
+        "isOld": false
+      },
+      {
+        "name": "Vent Pobber Ventikid Greaves",
+        "isOld": false
+      },
+      {
+        "name": "Vent Pobber Ventikid Mask",
+        "isOld": false
+      },
+      {
+        "name": "Vent Pobber Ventikid Pauldrons",
+        "isOld": false
+      },
+      {
+        "name": "Wingnut",
+        "isOld": false
+      }
+    ],
+    "Nightcap": [
+      {
+        "name": "Arbucep",
+        "isOld": false
+      },
+      {
+        "name": "Arbucep Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Arbucep Receiver",
+        "isOld": false
+      },
+      {
+        "name": "Arbucep Stock",
+        "isOld": false
+      },
+      {
+        "name": "Nokko",
+        "isOld": false
+      },
+      {
+        "name": "Nokko Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Nokko Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Nokko Systems",
+        "isOld": false
+      }
+    ]
+  },
+  "Deimos": {
+    "The Father": [
+      {
+        "name": "Arcroid",
+        "isOld": false
+      },
+      {
+        "name": "Cedo",
+        "isOld": false
+      },
+      {
+        "name": "Keratinos",
+        "isOld": false
+      },
+      {
+        "name": "Keratinos Blade",
+        "isOld": false
+      },
+      {
+        "name": "Keratinos Gauntlet",
+        "isOld": false
+      },
+      {
+        "name": "Lavos",
+        "isOld": false
+      },
+      {
+        "name": "Lavos Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Lavos Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Lavos Systems",
+        "isOld": false
+      },
+      {
+        "name": "Macro Arcroid",
+        "isOld": false
+      },
+      {
+        "name": "Macro Thymoid",
+        "isOld": false
+      },
+      {
+        "name": "Palmaris",
+        "isOld": false
+      },
+      {
+        "name": "Sepulcrum",
+        "isOld": false
+      },
+      {
+        "name": "Sepulcrum Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Sepulcrum Receiver",
+        "isOld": false
+      },
+      {
+        "name": "Sporelacer",
+        "isOld": false
+      },
+      {
+        "name": "Thymoid",
+        "isOld": false
+      },
+      {
+        "name": "Trumna",
+        "isOld": false
+      },
+      {
+        "name": "Trumna Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Trumna Receiver",
+        "isOld": false
+      },
+      {
+        "name": "Trumna Stock",
+        "isOld": false
+      },
+      {
+        "name": "Ulnaris",
+        "isOld": false
+      },
+      {
+        "name": "Vermisplicer",
+        "isOld": false
+      },
+      {
+        "name": "Zymos",
+        "isOld": false
+      },
+      {
+        "name": "Zymos Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Zymos Receiver",
+        "isOld": false
+      }
+    ],
+    "The Daughter": [
+      {
+        "name": "Amniophysi Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Aquapulmo Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Barbisteo Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Chondricord Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Cryptosuctus Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Duroid Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Flagellocanth Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Glutinox Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Kymaeros Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Lobotriscid Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Myxostomata Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Ostimyr Trophy",
+        "isOld": false
+      },
+      {
+        "name": "Vitreospina Trophy",
+        "isOld": false
+      }
+    ],
+    "The Son": [
+      {
+        "name": "Adra Mutagen",
+        "isOld": false
+      },
+      {
+        "name": "Arioli Mutagen",
+        "isOld": false
+      },
+      {
+        "name": "Chiten Mutagen",
+        "isOld": false
+      },
+      {
+        "name": "Desus Antigen",
+        "isOld": false
+      },
+      {
+        "name": "Elasmun Antigen",
+        "isOld": false
+      },
+      {
+        "name": "Elsa Mutagen",
+        "isOld": false
+      },
+      {
+        "name": "Ibexan Antigen",
+        "isOld": false
+      },
+      {
+        "name": "Iranon Antigen",
+        "isOld": false
+      },
+      {
+        "name": "Leptosam Mutagen",
+        "isOld": false
+      },
+      {
+        "name": "Monachod Mutagen",
+        "isOld": false
+      },
+      {
+        "name": "Phijar Mutagen",
+        "isOld": false
+      },
+      {
+        "name": "Plagen Antigen",
+        "isOld": false
+      },
+      {
+        "name": "Poxi Antigen",
+        "isOld": false
+      },
+      {
+        "name": "Tethron Antigen",
+        "isOld": false
+      },
+      {
+        "name": "Virox Antigen",
+        "isOld": false
+      },
+      {
+        "name": "Zarim Mutagen",
+        "isOld": false
+      }
+    ],
+    "Otak": [
+      {
+        "name": "Adramal Alloy",
+        "isOld": false
+      },
+      {
+        "name": "Cabochon Embolos",
+        "isOld": false
+      },
+      {
+        "name": "Devolved Namalon",
+        "isOld": false
+      },
+      {
+        "name": "Faceted Tiametrite",
+        "isOld": false
+      },
+      {
+        "name": "Purged Dagonic",
+        "isOld": false
+      },
+      {
+        "name": "Purified Heciphron",
+        "isOld": false
+      },
+      {
+        "name": "Stellated Necrathene",
+        "isOld": false
+      },
+      {
+        "name": "Tempered Bapholite",
+        "isOld": false
+      },
+      {
+        "name": "Thaumic Distillate",
+        "isOld": false
+      },
+      {
+        "name": "Trapezium Xenorhast",
+        "isOld": false
+      }
+    ],
+    "Loid (Deimos)": [
+      {
+        "name": "Bonewidow",
+        "isOld": false
+      },
+      {
+        "name": "Bonewidow Capsule",
+        "isOld": false
+      },
+      {
+        "name": "Bonewidow Casing",
+        "isOld": false
+      },
+      {
+        "name": "Bonewidow Engine",
+        "isOld": false
+      },
+      {
+        "name": "Bonewidow Weapon Pod",
+        "isOld": false
+      },
+      {
+        "name": "Cortege",
+        "isOld": false
+      },
+      {
+        "name": "Cortege Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Cortege Receiver",
+        "isOld": false
+      },
+      {
+        "name": "Cortege Stock",
+        "isOld": false
+      },
+      {
+        "name": "Morgha",
+        "isOld": false
+      },
+      {
+        "name": "Morgha Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Morgha Receiver",
+        "isOld": false
+      },
+      {
+        "name": "Morgha Stock",
+        "isOld": false
+      },
+      {
+        "name": "Voidrig Capsule",
+        "isOld": false
+      },
+      {
+        "name": "Voidrig Casing",
+        "isOld": false
+      },
+      {
+        "name": "Voidrig Engine",
+        "isOld": false
+      },
+      {
+        "name": "Voidrig Necramech",
+        "isOld": false
+      },
+      {
+        "name": "Voidrig Weapon Pod",
+        "isOld": false
+      }
+    ],
+    "Bird 3": [
+      {
+        "name": "Grimoire",
+        "isOld": false
+      },
+      {
+        "name": "Qorvex",
+        "isOld": false
+      },
+      {
+        "name": "Qorvex Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Qorvex Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Qorvex Systems",
+        "isOld": false
+      },
+      {
+        "name": "Ekhein",
+        "isOld": false
+      }
+    ],
+    "Loid (Sanctum)": [
+      {
+        "name": "Dante",
+        "isOld": false
+      },
+      {
+        "name": "Dante Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Dante Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Dante Systems",
+        "isOld": false
+      },
+      {
+        "name": "Onos",
+        "isOld": false
+      },
+      {
+        "name": "Ruvox",
+        "isOld": false
+      },
+      {
+        "name": "Ruvox Blade",
+        "isOld": false
+      },
+      {
+        "name": "Ruvox Glove",
+        "isOld": false
+      }
+    ],
+    "Roathe": [
+      {
+        "name": "Uriel",
+        "isOld": false
+      },
+      {
+        "name": "Uriel Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Uriel Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Uriel Systems",
+        "isOld": false
+      },
+      {
+        "name": "Vinquibus",
+        "isOld": false
+      },
+      {
+        "name": "Vinquibus Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Vinquibus Blade",
+        "isOld": false
+      },
+      {
+        "name": "Vinquibus Reciever",
+        "isOld": false
+      },
+      {
+        "name": "Vinquibus Stock",
+        "isOld": false
+      },
+      {
+        "name": "Galariak Prime",
+        "isOld": false
+      },
+      {
+        "name": "Galariak Prime Blade",
+        "isOld": false
+      },
+      {
+        "name": "Galariak Prime Handle",
+        "isOld": false
+      },
+      {
+        "name": "Sagek Prime",
+        "isOld": false
+      },
+      {
+        "name": "Sagek Prime Reciever",
+        "isOld": false
+      },
+      {
+        "name": "Sagek Prime Barrel",
+        "isOld": false
+      }
+    ]
+  },
+  "Zariman": {
+    "Cavalero": [
+      {
+        "name": "Laetum",
+        "isOld": false
+      },
+      {
+        "name": "Innodem",
+        "isOld": false
+      },
+      {
+        "name": "Phenmor",
+        "isOld": false
+      },
+      {
+        "name": "Felarx",
+        "isOld": false
+      },
+      {
+        "name": "Praedos",
+        "isOld": false
+      }
+    ],
+    "Archimedean Yonta": [
+      {
+        "name": "Voruna",
+        "isOld": false
+      },
+      {
+        "name": "Voruna Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Voruna Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Voruna Systems",
+        "isOld": false
+      },
+      {
+        "name": "Sarofang",
+        "isOld": false
+      },
+      {
+        "name": "Perigale",
+        "isOld": false
+      }
+    ],
+    "Acrithis": [
+      {
+        "name": "Oraxia",
+        "isOld": false
+      },
+      {
+        "name": "Oraxia Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Oraxia Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Oraxia Systems",
+        "isOld": false
+      },
+      {
+        "name": "Scyotid",
+        "isOld": false
+      },
+      {
+        "name": "Scyotid Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Scyotid Gauntlet",
+        "isOld": false
+      },
+      {
+        "name": "Thalys",
+        "isOld": false
+      },
+      {
+        "name": "Spinnerex",
+        "isOld": false
+      },
+      {
+        "name": "Spinnerex Blade",
+        "isOld": false
+      },
+      {
+        "name": "Spinnerex Handle",
+        "isOld": false
+      },
+      {
+        "name": "Spinnerex String",
+        "isOld": false
+      }
+    ]
+  },
+  "1999.0": {
+    "Amir": [
+      {
+        "name": "Cyte-09",
+        "isOld": false
+      },
+      {
+        "name": "Cyte-09 Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Cyte-09 Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Cyte-09 Systems",
+        "isOld": false
+      },
+      {
+        "name": "AX-52",
+        "isOld": false
+      },
+      {
+        "name": "Vesper 77",
+        "isOld": false
+      },
+      {
+        "name": "Vesper 77 Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Vesper 77 Reciever",
+        "isOld": false
+      },
+      {
+        "name": "Vesper 77 Handle",
+        "isOld": false
+      },
+      {
+        "name": "Reconifex",
+        "isOld": false
+      },
+      {
+        "name": "Reconifex Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Reconifex Reciever",
+        "isOld": false
+      },
+      {
+        "name": "Reconifex Stock",
+        "isOld": false
+      }
+    ],
+    "Minerva": [
+      {
+        "name": "EFV - 8 Mars",
+        "isOld": false
+      },
+      {
+        "name": "EFV - 8 Mars Stock",
+        "isOld": false
+      },
+      {
+        "name": "EFV - 8 Mars Receiver",
+        "isOld": false
+      },
+      {
+        "name": "EFV - 8 Mars Barrel",
+        "isOld": false
+      },
+      {
+        "name": "EFV - 5 Jupiter",
+        "isOld": false
+      },
+      {
+        "name": "EFV - 5 Jupiter Barrel",
+        "isOld": false
+      },
+      {
+        "name": "EFV - 5 Jupiter Receiver",
+        "isOld": false
+      },
+      {
+        "name": "EFV - 5 Jupiter Stock",
+        "isOld": false
+      },
+      {
+        "name": "Purgator 1",
+        "isOld": false
+      },
+      {
+        "name": "Purgator 1 Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Purgator 1 Receiver",
+        "isOld": false
+      },
+      {
+        "name": "Purgator 1 Stock",
+        "isOld": false
+      },
+      {
+        "name": "Dual Viciss",
+        "isOld": false
+      },
+      {
+        "name": "Dual Viciss Blade",
+        "isOld": false
+      },
+      {
+        "name": "Dual Viciss Hilt",
+        "isOld": false
+      }
+    ],
+    "Flare": [
+      {
+        "name": "Temple",
+        "isOld": false
+      },
+      {
+        "name": "Temple Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Temple Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Temple Systems",
+        "isOld": false
+      },
+      {
+        "name": "Riot - 848",
+        "isOld": false
+      },
+      {
+        "name": "Riot - 848 Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Riot - 848 Receiver",
+        "isOld": false
+      },
+      {
+        "name": "Riot - 848 Stock",
+        "isOld": false
+      }
+    ]
+  },
+  "Dojo": {
+    "Bio Lab": [
+      {
+        "name": "Acrid",
+        "isOld": false
+      },
+      {
+        "name": "Bubonico",
+        "isOld": false
+      },
+      {
+        "name": "Catabolyst",
+        "isOld": false
+      },
+      {
+        "name": "Caustacyst",
+        "isOld": false
+      },
+      {
+        "name": "Cerata",
+        "isOld": false
+      },
+      {
+        "name": "Djinn",
+        "isOld": false
+      },
+      {
+        "name": "Dual Ichor",
+        "isOld": false
+      },
+      {
+        "name": "Dual Toxocyst",
+        "isOld": false
+      },
+      {
+        "name": "Embolist",
+        "isOld": false
+      },
+      {
+        "name": "Health Restore (Medium)",
+        "isOld": false
+      },
+      {
+        "name": "Health Restore x10 (Medium)",
+        "isOld": false
+      },
+      {
+        "name": "Health Restore x100 (Large)",
+        "isOld": false
+      },
+      {
+        "name": "Hema",
+        "isOld": false
+      },
+      {
+        "name": "Infested Catalyst",
+        "isOld": false
+      },
+      {
+        "name": "Mios",
+        "isOld": false
+      },
+      {
+        "name": "Mutagen Mass",
+        "isOld": false
+      },
+      {
+        "name": "Mutalist Quanta",
+        "isOld": false
+      },
+      {
+        "name": "Paracyst",
+        "isOld": false
+      },
+      {
+        "name": "Phage",
+        "isOld": false
+      },
+      {
+        "name": "Pox",
+        "isOld": false
+      },
+      {
+        "name": "Pupacyst",
+        "isOld": false
+      },
+      {
+        "name": "Scoliac",
+        "isOld": false
+      },
+      {
+        "name": "Synapse",
+        "isOld": false
+      },
+      {
+        "name": "Torid",
+        "isOld": false
+      }
+    ],
+    "Chem Lab": [
+      {
+        "name": "Ack & Brunt",
+        "isOld": false
+      },
+      {
+        "name": "Ammo Restore (Medium)",
+        "isOld": false
+      },
+      {
+        "name": "Ammo Restore x10 (Medium)",
+        "isOld": false
+      },
+      {
+        "name": "Ammo Restore x100 (Large)",
+        "isOld": false
+      },
+      {
+        "name": "Argonak",
+        "isOld": false
+      },
+      {
+        "name": "Buzlok",
+        "isOld": false
+      },
+      {
+        "name": "Detonite Injector",
+        "isOld": false
+      },
+      {
+        "name": "Grattler",
+        "isOld": false
+      },
+      {
+        "name": "Grinlok",
+        "isOld": false
+      },
+      {
+        "name": "Ignis",
+        "isOld": false
+      },
+      {
+        "name": "Ignis Wraith",
+        "isOld": false
+      },
+      {
+        "name": "Jat Kittag",
+        "isOld": false
+      },
+      {
+        "name": "Jat Kusar",
+        "isOld": false
+      },
+      {
+        "name": "Javlok",
+        "isOld": false
+      },
+      {
+        "name": "Kesheg",
+        "isOld": false
+      },
+      {
+        "name": "Knux",
+        "isOld": false
+      },
+      {
+        "name": "Kohmak",
+        "isOld": false
+      },
+      {
+        "name": "Marelok",
+        "isOld": false
+      },
+      {
+        "name": "Nukor",
+        "isOld": false
+      },
+      {
+        "name": "Ogris",
+        "isOld": false
+      },
+      {
+        "name": "Sydon",
+        "isOld": false
+      },
+      {
+        "name": "Twin Krohkur",
+        "isOld": false
+      }
+    ],
+    "Energy Lab": [
+      {
+        "name": "Amprex",
+        "isOld": false
+      },
+      {
+        "name": "Antiserum Injecter",
+        "isOld": false
+      },
+      {
+        "name": "Arca Plasmor",
+        "isOld": false
+      },
+      {
+        "name": "Arcs Scisco",
+        "isOld": false
+      },
+      {
+        "name": "Battacor",
+        "isOld": false
+      },
+      {
+        "name": "Convectrix",
+        "isOld": false
+      },
+      {
+        "name": "Cyanex",
+        "isOld": false
+      },
+      {
+        "name": "Cycron",
+        "isOld": false
+      },
+      {
+        "name": "Dera",
+        "isOld": false
+      },
+      {
+        "name": "Dual Cestra",
+        "isOld": false
+      },
+      {
+        "name": "Energy Restore (Medium)",
+        "isOld": false
+      },
+      {
+        "name": "Energy Restore x10 (Medium)",
+        "isOld": false
+      },
+      {
+        "name": "Energy Restore x100 (Medium)",
+        "isOld": false
+      },
+      {
+        "name": "Falcor",
+        "isOld": false
+      },
+      {
+        "name": "Ferrox",
+        "isOld": false
+      },
+      {
+        "name": "Fieldron",
+        "isOld": false
+      },
+      {
+        "name": "Flux Rifle",
+        "isOld": false
+      },
+      {
+        "name": "Glaxion",
+        "isOld": false
+      },
+      {
+        "name": "Helios",
+        "isOld": false
+      },
+      {
+        "name": "Komorex",
+        "isOld": false
+      },
+      {
+        "name": "Kreska",
+        "isOld": false
+      },
+      {
+        "name": "Lanka",
+        "isOld": false
+      },
+      {
+        "name": "Lenz",
+        "isOld": false
+      },
+      {
+        "name": "Ocucor",
+        "isOld": false
+      },
+      {
+        "name": "Opticor",
+        "isOld": false
+      },
+      {
+        "name": "Prova",
+        "isOld": false
+      },
+      {
+        "name": "Quanta",
+        "isOld": false
+      },
+      {
+        "name": "Serro",
+        "isOld": false
+      },
+      {
+        "name": "Shield Restore (Medium)",
+        "isOld": false
+      },
+      {
+        "name": "Shield Restore x10 (Medium)",
+        "isOld": false
+      },
+      {
+        "name": "Shield Restore x100 (Medium)",
+        "isOld": false
+      },
+      {
+        "name": "Spectra",
+        "isOld": false
+      },
+      {
+        "name": "Staticor",
+        "isOld": false
+      },
+      {
+        "name": "Supra",
+        "isOld": false
+      }
+    ],
+    "Tenno Lab": [
+      {
+        "name": "Adrenal Stim",
+        "isOld": false
+      },
+      {
+        "name": "Akstilleto",
+        "isOld": false
+      },
+      {
+        "name": "Amesha",
+        "isOld": false
+      },
+      {
+        "name": "Amesha Harness",
+        "isOld": false
+      },
+      {
+        "name": "Amesha Systems",
+        "isOld": false
+      },
+      {
+        "name": "Amesha Wings",
+        "isOld": false
+      },
+      {
+        "name": "Anku",
+        "isOld": false
+      },
+      {
+        "name": "Attica",
+        "isOld": false
+      },
+      {
+        "name": "Banshee",
+        "isOld": false
+      },
+      {
+        "name": "Banshee Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Banshee Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Banshee Systems",
+        "isOld": false
+      },
+      {
+        "name": "Baza",
+        "isOld": false
+      },
+      {
+        "name": "Calcifin Stim",
+        "isOld": false
+      },
+      {
+        "name": "Cassowar",
+        "isOld": false
+      },
+      {
+        "name": "Castanas",
+        "isOld": false
+      },
+      {
+        "name": "Cipher x100",
+        "isOld": false
+      },
+      {
+        "name": "Clotra Stim",
+        "isOld": false
+      },
+      {
+        "name": "Daikyu",
+        "isOld": false
+      },
+      {
+        "name": "Dark Split-Sword",
+        "isOld": false
+      },
+      {
+        "name": "Dual Raza",
+        "isOld": false
+      },
+      {
+        "name": "Elytron",
+        "isOld": false
+      },
+      {
+        "name": "Elytron Harness",
+        "isOld": false
+      },
+      {
+        "name": "Elytron Systems",
+        "isOld": false
+      },
+      {
+        "name": "Elytron Wings",
+        "isOld": false
+      },
+      {
+        "name": "Endura",
+        "isOld": false
+      },
+      {
+        "name": "Fluctus",
+        "isOld": false
+      },
+      {
+        "name": "Gazal Machete",
+        "isOld": false
+      },
+      {
+        "name": "Gravimag",
+        "isOld": false
+      },
+      {
+        "name": "Guandao",
+        "isOld": false
+      },
+      {
+        "name": "Gunsen",
+        "isOld": false
+      },
+      {
+        "name": "Itzal",
+        "isOld": false
+      },
+      {
+        "name": "Itzal Harness",
+        "isOld": false
+      },
+      {
+        "name": "Itzal Systems",
+        "isOld": false
+      },
+      {
+        "name": "Itzal Wings",
+        "isOld": false
+      },
+      {
+        "name": "Lacera",
+        "isOld": false
+      },
+      {
+        "name": "Larkspur",
+        "isOld": false
+      },
+      {
+        "name": "Loc-Pin",
+        "isOld": false
+      },
+      {
+        "name": "Masseter",
+        "isOld": false
+      },
+      {
+        "name": "Nami Skyla",
+        "isOld": false
+      },
+      {
+        "name": "Nezha",
+        "isOld": false
+      },
+      {
+        "name": "Nezha Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Nezha Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Nezha Systems",
+        "isOld": false
+      },
+      {
+        "name": "Nikana",
+        "isOld": false
+      },
+      {
+        "name": "Okina",
+        "isOld": false
+      },
+      {
+        "name": "Pyrana",
+        "isOld": false
+      },
+      {
+        "name": "Refract Stim",
+        "isOld": false
+      },
+      {
+        "name": "Scourge",
+        "isOld": false
+      },
+      {
+        "name": "Shaku",
+        "isOld": false
+      },
+      {
+        "name": "Silva & Aegis",
+        "isOld": false
+      },
+      {
+        "name": "Sybaris",
+        "isOld": false
+      },
+      {
+        "name": "Synthula",
+        "isOld": false
+      },
+      {
+        "name": "Talons",
+        "isOld": false
+      },
+      {
+        "name": "Tenora",
+        "isOld": false
+      },
+      {
+        "name": "Tonbo",
+        "isOld": false
+      },
+      {
+        "name": "Veldt",
+        "isOld": false
+      },
+      {
+        "name": "Velocitus",
+        "isOld": false
+      },
+      {
+        "name": "Venato",
+        "isOld": false
+      },
+      {
+        "name": "Venka",
+        "isOld": false
+      },
+      {
+        "name": "Volt",
+        "isOld": false
+      },
+      {
+        "name": "Volt Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Volt Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Volt Systems",
+        "isOld": false
+      },
+      {
+        "name": "Wlytron Systems",
+        "isOld": false
+      },
+      {
+        "name": "Wukong",
+        "isOld": false
+      },
+      {
+        "name": "Wukong Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Wukong Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Wukong Systems",
+        "isOld": false
+      },
+      {
+        "name": "Zakti",
+        "isOld": false
+      },
+      {
+        "name": "Zephyr Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Zephyr Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Zephyr Systems",
+        "isOld": false
+      }
+    ],
+    "Orokin Lab": [
+      {
+        "name": "Bleeding Dragon Key",
+        "isOld": false
+      },
+      {
+        "name": "Decaying Dragon Key",
+        "isOld": false
+      },
+      {
+        "name": "Extinguished Dragon Key",
+        "isOld": false
+      },
+      {
+        "name": "Hobbled Dragon Key",
+        "isOld": false
+      }
+    ],
+    "Ventkids Bash Lab": [
+      {
+        "name": "Ghoulsaw",
+        "isOld": false
+      },
+      {
+        "name": "Ghoulsaw Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Ghoulsaw Engine",
+        "isOld": false
+      },
+      {
+        "name": "Ghoulsaw Grip",
+        "isOld": false
+      },
+      {
+        "name": "Ghoulsaw Blade",
+        "isOld": false
+      },
+      {
+        "name": "Yareli Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Yareli Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Yareli Systems",
+        "isOld": false
+      }
+    ],
+    "Dagath's Hollow": [
+      {
+        "name": "Dagath",
+        "isOld": false
+      },
+      {
+        "name": "Dagath Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Dagath Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Dagath Systems",
+        "isOld": false
+      },
+      {
+        "name": "Dorrclave",
+        "isOld": false
+      },
+      {
+        "name": "Dorrclave Blade",
+        "isOld": false
+      },
+      {
+        "name": "Dorrclave Hilt",
+        "isOld": false
+      },
+      {
+        "name": "Dorrclave hook",
+        "isOld": false
+      },
+      {
+        "name": "Dorrclave String",
+        "isOld": false
+      }
+    ]
+  },
+  "Market": {
+    "Market": [
+      {
+        "name": "Ash",
+        "isOld": false
+      },
+      {
+        "name": "Caliban",
+        "isOld": false
+      },
+      {
+        "name": "Ember",
+        "isOld": false
+      },
+      {
+        "name": "Equinox",
+        "isOld": false
+      },
+      {
+        "name": "Excalibur",
+        "isOld": false
+      },
+      {
+        "name": "Frost",
+        "isOld": false
+      },
+      {
+        "name": "Gauss",
+        "isOld": false
+      },
+      {
+        "name": "Grendel",
+        "isOld": false
+      },
+      {
+        "name": "Hydroid",
+        "isOld": false
+      },
+      {
+        "name": "Limbo",
+        "isOld": false
+      },
+      {
+        "name": "Loki",
+        "isOld": false
+      },
+      {
+        "name": "Mag",
+        "isOld": false
+      },
+      {
+        "name": "Mesa",
+        "isOld": false
+      },
+      {
+        "name": "Mirage",
+        "isOld": false
+      },
+      {
+        "name": "Nekros",
+        "isOld": false
+      },
+      {
+        "name": "Nova",
+        "isOld": false
+      },
+      {
+        "name": "Nyx",
+        "isOld": false
+      },
+      {
+        "name": "Oberon",
+        "isOld": false
+      },
+      {
+        "name": "Rhino",
+        "isOld": false
+      },
+      {
+        "name": "Saryn",
+        "isOld": false
+      },
+      {
+        "name": "Trinity",
+        "isOld": false
+      },
+      {
+        "name": "Valkyr",
+        "isOld": false
+      },
+      {
+        "name": "Vauban",
+        "isOld": false
+      },
+      {
+        "name": "Astilla",
+        "isOld": false
+      },
+      {
+        "name": "Boltor",
+        "isOld": false
+      },
+      {
+        "name": "Burston",
+        "isOld": false
+      },
+      {
+        "name": "Cernos",
+        "isOld": false
+      },
+      {
+        "name": "Drakgoon",
+        "isOld": false
+      },
+      {
+        "name": "Grakata",
+        "isOld": false
+      },
+      {
+        "name": "Harpak",
+        "isOld": false
+      },
+      {
+        "name": "Hek",
+        "isOld": false
+      },
+      {
+        "name": "Hind",
+        "isOld": false
+      },
+      {
+        "name": "Karak",
+        "isOld": false
+      },
+      {
+        "name": "Kohm",
+        "isOld": false
+      },
+      {
+        "name": "Latron",
+        "isOld": false
+      },
+      {
+        "name": "Mutalist Cernos",
+        "isOld": false
+      },
+      {
+        "name": "Panthera",
+        "isOld": false
+      },
+      {
+        "name": "Paris",
+        "isOld": false
+      },
+      {
+        "name": "Penta",
+        "isOld": false
+      },
+      {
+        "name": "Phantasma",
+        "isOld": false
+      },
+      {
+        "name": "Rubico",
+        "isOld": false
+      },
+      {
+        "name": "Sobek",
+        "isOld": false
+      },
+      {
+        "name": "Soma",
+        "isOld": false
+      },
+      {
+        "name": "Stradavar",
+        "isOld": false
+      },
+      {
+        "name": "Tetra",
+        "isOld": false
+      },
+      {
+        "name": "Tiberon",
+        "isOld": false
+      },
+      {
+        "name": "Tigris",
+        "isOld": false
+      },
+      {
+        "name": "Tonkor",
+        "isOld": false
+      },
+      {
+        "name": "Vectis",
+        "isOld": false
+      },
+      {
+        "name": "Vulkar",
+        "isOld": false
+      },
+      {
+        "name": "Zarr",
+        "isOld": false
+      },
+      {
+        "name": "Zhuge",
+        "isOld": false
+      },
+      {
+        "name": "Corvas",
+        "isOld": false
+      },
+      {
+        "name": "Cyngas",
+        "isOld": false
+      },
+      {
+        "name": "Dual Decurion",
+        "isOld": false
+      },
+      {
+        "name": "Phaedra",
+        "isOld": false
+      },
+      {
+        "name": "Afuris",
+        "isOld": false
+      },
+      {
+        "name": "Akbolto",
+        "isOld": false
+      },
+      {
+        "name": "Akbronco",
+        "isOld": false
+      },
+      {
+        "name": "Akjagara",
+        "isOld": false
+      },
+      {
+        "name": "Aklex",
+        "isOld": false
+      },
+      {
+        "name": "Akmagnus",
+        "isOld": false
+      },
+      {
+        "name": "Aksomati",
+        "isOld": false
+      },
+      {
+        "name": "Akvasto",
+        "isOld": false
+      },
+      {
+        "name": "Akzani",
+        "isOld": false
+      },
+      {
+        "name": "Angstrum",
+        "isOld": false
+      },
+      {
+        "name": "Atomos",
+        "isOld": false
+      },
+      {
+        "name": "Ballistica",
+        "isOld": false
+      },
+      {
+        "name": "Bolto",
+        "isOld": false
+      },
+      {
+        "name": "Bronco",
+        "isOld": false
+      },
+      {
+        "name": "Cestra",
+        "isOld": false
+      },
+      {
+        "name": "Furis",
+        "isOld": false
+      },
+      {
+        "name": "Fusilai",
+        "isOld": false
+      },
+      {
+        "name": "Gammacor",
+        "isOld": false
+      },
+      {
+        "name": "Hikou",
+        "isOld": false
+      },
+      {
+        "name": "Hystrix",
+        "isOld": false
+      },
+      {
+        "name": "Knell",
+        "isOld": false
+      },
+      {
+        "name": "Kraken",
+        "isOld": false
+      },
+      {
+        "name": "Kulstar",
+        "isOld": false
+      },
+      {
+        "name": "Kunai",
+        "isOld": false
+      },
+      {
+        "name": "Magnus",
+        "isOld": false
+      },
+      {
+        "name": "Pandero",
+        "isOld": false
+      },
+      {
+        "name": "Plinx",
+        "isOld": false
+      },
+      {
+        "name": "Quatz",
+        "isOld": false
+      },
+      {
+        "name": "Sonicor",
+        "isOld": false
+      },
+      {
+        "name": "Spira",
+        "isOld": false
+      },
+      {
+        "name": "Stug",
+        "isOld": false
+      },
+      {
+        "name": "Twin Grakatas",
+        "isOld": false
+      },
+      {
+        "name": "Twin Rogga",
+        "isOld": false
+      },
+      {
+        "name": "Twin Vipers",
+        "isOld": false
+      },
+      {
+        "name": "Tysis",
+        "isOld": false
+      },
+      {
+        "name": "Vasto",
+        "isOld": false
+      },
+      {
+        "name": "Velox",
+        "isOld": false
+      },
+      {
+        "name": "Viper",
+        "isOld": false
+      },
+      {
+        "name": "Amphis",
+        "isOld": false
+      },
+      {
+        "name": "Ankyros",
+        "isOld": false
+      },
+      {
+        "name": "Arca Titron",
+        "isOld": false
+      },
+      {
+        "name": "Atterax",
+        "isOld": false
+      },
+      {
+        "name": "Bo",
+        "isOld": false
+      },
+      {
+        "name": "Boltace",
+        "isOld": false
+      },
+      {
+        "name": "Cobra & Crane",
+        "isOld": false
+      },
+      {
+        "name": "Destreza",
+        "isOld": false
+      },
+      {
+        "name": "Dragon Nikana",
+        "isOld": false
+      },
+      {
+        "name": "Dual Cleavers",
+        "isOld": false
+      },
+      {
+        "name": "Dual Ether",
+        "isOld": false
+      },
+      {
+        "name": "Dual Heat Swords",
+        "isOld": false
+      },
+      {
+        "name": "Dual Kamas",
+        "isOld": false
+      },
+      {
+        "name": "Dual Keres",
+        "isOld": false
+      },
+      {
+        "name": "Dual Skana",
+        "isOld": false
+      },
+      {
+        "name": "Dual Zoren",
+        "isOld": false
+      },
+      {
+        "name": "Ether Reaper",
+        "isOld": false
+      },
+      {
+        "name": "Ether Sword",
+        "isOld": false
+      },
+      {
+        "name": "Fang",
+        "isOld": false
+      },
+      {
+        "name": "Fragor",
+        "isOld": false
+      },
+      {
+        "name": "Furax",
+        "isOld": false
+      },
+      {
+        "name": "Galatine",
+        "isOld": false
+      },
+      {
+        "name": "Galvacord",
+        "isOld": false
+      },
+      {
+        "name": "Gram",
+        "isOld": false
+      },
+      {
+        "name": "Halikar",
+        "isOld": false
+      },
+      {
+        "name": "Hirudo",
+        "isOld": false
+      },
+      {
+        "name": "Kama",
+        "isOld": false
+      },
+      {
+        "name": "Karyst",
+        "isOld": false
+      },
+      {
+        "name": "Kestrel",
+        "isOld": false
+      },
+      {
+        "name": "Kogake",
+        "isOld": false
+      },
+      {
+        "name": "Krohkur",
+        "isOld": false
+      },
+      {
+        "name": "Kronen",
+        "isOld": false
+      },
+      {
+        "name": "Lecta",
+        "isOld": false
+      },
+      {
+        "name": "Lesion",
+        "isOld": false
+      },
+      {
+        "name": "Magistar",
+        "isOld": false
+      },
+      {
+        "name": "Mire",
+        "isOld": false
+      },
+      {
+        "name": "Nami Solo",
+        "isOld": false
+      },
+      {
+        "name": "Ninkondi",
+        "isOld": false
+      },
+      {
+        "name": "Obex",
+        "isOld": false
+      },
+      {
+        "name": "Ohma",
+        "isOld": false
+      },
+      {
+        "name": "Orthos",
+        "isOld": false
+      },
+      {
+        "name": "Pulmonars",
+        "isOld": false
+      },
+      {
+        "name": "Redeemer",
+        "isOld": false
+      },
+      {
+        "name": "Ripkas",
+        "isOld": false
+      },
+      {
+        "name": "Sarpa",
+        "isOld": false
+      },
+      {
+        "name": "Scindo",
+        "isOld": false
+      },
+      {
+        "name": "Sibear",
+        "isOld": false
+      },
+      {
+        "name": "Skana",
+        "isOld": false
+      },
+      {
+        "name": "Tatsu",
+        "isOld": false
+      },
+      {
+        "name": "Tekko",
+        "isOld": false
+      },
+      {
+        "name": "Tipedo",
+        "isOld": false
+      },
+      {
+        "name": "Twin Basolk",
+        "isOld": false
+      },
+      {
+        "name": "Volnus",
+        "isOld": false
+      },
+      {
+        "name": "Agkuza",
+        "isOld": false
+      },
+      {
+        "name": "Centaur",
+        "isOld": false
+      },
+      {
+        "name": "Kaszas",
+        "isOld": false
+      },
+      {
+        "name": "Onorix",
+        "isOld": false
+      },
+      {
+        "name": "Rathbone",
+        "isOld": false
+      },
+      {
+        "name": "Neural Sensors",
+        "isOld": false
+      },
+      {
+        "name": "Neurodes",
+        "isOld": false
+      },
+      {
+        "name": "Orokin Cell",
+        "isOld": false
+      },
+      {
+        "name": "Titan Extractor",
+        "isOld": false
+      },
+      {
+        "name": "Distilling Extractor",
+        "isOld": false
+      },
+      {
+        "name": "Amethyst Antitoxin",
+        "isOld": false
+      },
+      {
+        "name": "Beryl Antitoxin",
+        "isOld": false
+      },
+      {
+        "name": "Cipher",
+        "isOld": false
+      },
+      {
+        "name": "Cipher x 10",
+        "isOld": false
+      },
+      {
+        "name": "Citrine Antitoxin",
+        "isOld": false
+      },
+      {
+        "name": "Fomorian Disruptor",
+        "isOld": false
+      },
+      {
+        "name": "Health Restore",
+        "isOld": false
+      },
+      {
+        "name": "Lapis Antitoxin",
+        "isOld": false
+      },
+      {
+        "name": "Squad Ammo Restore (Small)",
+        "isOld": false
+      },
+      {
+        "name": "Squad Ammo Restore (Small) x 10",
+        "isOld": false
+      },
+      {
+        "name": "Squad Energy Restore (Small)",
+        "isOld": false
+      },
+      {
+        "name": "Squad Energy Restore (Small) x 10",
+        "isOld": false
+      },
+      {
+        "name": "Squad Health Restore (Small)",
+        "isOld": false
+      },
+      {
+        "name": "Squad Health Restore (Small) x 10",
+        "isOld": false
+      },
+      {
+        "name": "Squad Shield Restore (Small)",
+        "isOld": false
+      },
+      {
+        "name": "Squad Shield Restore (Small) x 10",
+        "isOld": false
+      },
+      {
+        "name": "Topaz Antitoxin",
+        "isOld": false
+      },
+      {
+        "name": "Vermillion Antitoxin",
+        "isOld": false
+      },
+      {
+        "name": "Carrier",
+        "isOld": false
+      },
+      {
+        "name": "Dethcube",
+        "isOld": false
+      },
+      {
+        "name": "Diriga",
+        "isOld": false
+      },
+      {
+        "name": "Shade",
+        "isOld": false
+      },
+      {
+        "name": "Taxon",
+        "isOld": false
+      },
+      {
+        "name": "Wyrm",
+        "isOld": false
+      },
+      {
+        "name": "Genetic Code Template",
+        "isOld": false
+      },
+      {
+        "name": "Incubator Power Core",
+        "isOld": false
+      }
+    ]
+  },
+  "Frame parts": {
+    "Frames": [
+      {
+        "name": "Ash Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Ash Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Ash Systems",
+        "isOld": false
+      },
+      {
+        "name": "Atlas Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Atlas Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Atlas Systems",
+        "isOld": false
+      },
+      {
+        "name": "Caliban Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Caliban Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Caliban Systems",
+        "isOld": false
+      },
+      {
+        "name": "Citrine",
+        "isOld": false
+      },
+      {
+        "name": "Citrine Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Citrine Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Citrine Systems",
+        "isOld": false
+      },
+      {
+        "name": "Ember Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Ember Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Ember Systems",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Day Aspect",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Night Aspect",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Chassis (day)",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Chassis (night)",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Neuroptics (day)",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Neuroptics (night)",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Systems (day)",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Systems (night)",
+        "isOld": false
+      },
+      {
+        "name": "Excalibur Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Excalibur Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Excalibur Systems",
+        "isOld": false
+      },
+      {
+        "name": "Frost Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Frost Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Frost Systems",
+        "isOld": false
+      },
+      {
+        "name": "Garuda Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Garuda Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Garuda Systems",
+        "isOld": false
+      },
+      {
+        "name": "Gauss Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Gauss Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Gauss Systems",
+        "isOld": false
+      },
+      {
+        "name": "Grendel Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Grendel Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Grendel Systems",
+        "isOld": false
+      },
+      {
+        "name": "Gyre",
+        "isOld": false
+      },
+      {
+        "name": "Gyre Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Gyre Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Gyre Systems",
+        "isOld": false
+      },
+      {
+        "name": "Harrow Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Harrow Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Harrow Systems",
+        "isOld": false
+      },
+      {
+        "name": "Hildryn Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Hildryn Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Hildryn Systems",
+        "isOld": false
+      },
+      {
+        "name": "Hydroid Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Hydroid Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Hydroid Systems",
+        "isOld": false
+      },
+      {
+        "name": "Ivara",
+        "isOld": false
+      },
+      {
+        "name": "Ivara Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Ivara Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Ivara Systems",
+        "isOld": false
+      },
+      {
+        "name": "Jade",
+        "isOld": false
+      },
+      {
+        "name": "Jade Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Jade Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Jade Systems",
+        "isOld": false
+      },
+      {
+        "name": "Khora",
+        "isOld": false
+      },
+      {
+        "name": "Khora Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Khora Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Khora Systems",
+        "isOld": false
+      },
+      {
+        "name": "Koumei Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Koumei Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Koumei Systems",
+        "isOld": false
+      },
+      {
+        "name": "Kullervo",
+        "isOld": false
+      },
+      {
+        "name": "Kullervo Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Kullervo Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Kullervo Systems",
+        "isOld": false
+      },
+      {
+        "name": "Loki Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Loki Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Loki Systems",
+        "isOld": false
+      },
+      {
+        "name": "Mag Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Mag Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Mag Systems",
+        "isOld": false
+      },
+      {
+        "name": "Mesa Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Mesa Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Mesa Systems",
+        "isOld": false
+      },
+      {
+        "name": "Nekros Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Nekros Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Nekros Systems",
+        "isOld": false
+      },
+      {
+        "name": "Nidus Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Nidus Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Nidus Systems",
+        "isOld": false
+      },
+      {
+        "name": "Nova Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Nova Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Nova Systems",
+        "isOld": false
+      },
+      {
+        "name": "Nyx Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Nyx Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Nyx Systems",
+        "isOld": false
+      },
+      {
+        "name": "Oberon Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Oberon Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Oberon Systems",
+        "isOld": false
+      },
+      {
+        "name": "Octavia Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Octavia Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Octavia Systems",
+        "isOld": false
+      },
+      {
+        "name": "Protea",
+        "isOld": false
+      },
+      {
+        "name": "Protea Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Protea Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Protea Systems",
+        "isOld": false
+      },
+      {
+        "name": "Revenant Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Revenant Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Revenant Systems",
+        "isOld": false
+      },
+      {
+        "name": "Rhino Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Rhino Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Rhino Systems",
+        "isOld": false
+      },
+      {
+        "name": "Saryn Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Saryn Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Saryn Systems",
+        "isOld": false
+      },
+      {
+        "name": "Sevagoth",
+        "isOld": false
+      },
+      {
+        "name": "Sevagoth Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Sevagoth Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Sevagoth Systems",
+        "isOld": false
+      },
+      {
+        "name": "Styanax",
+        "isOld": false
+      },
+      {
+        "name": "Styanax Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Styanax Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Styanax Systems",
+        "isOld": false
+      },
+      {
+        "name": "Trinity Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Trinity Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Trinity Systems",
+        "isOld": false
+      },
+      {
+        "name": "Valkyr Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Valkyr Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Valkyr Systems",
+        "isOld": false
+      },
+      {
+        "name": "Vauban Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Vauban Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Vauban Systems",
+        "isOld": false
+      },
+      {
+        "name": "Wisp",
+        "isOld": false
+      },
+      {
+        "name": "Wisp Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Wisp Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Wisp Systems",
+        "isOld": false
+      },
+      {
+        "name": "Xaku Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Xaku Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Xaku Systems",
+        "isOld": false
+      },
+      {
+        "name": "Yareli",
+        "isOld": false
+      },
+      {
+        "name": "Zephyr",
+        "isOld": false
+      }
+    ]
+  },
+  "Weapons": {
+    "Weapons": [
+      {
+        "name": "Acceltra",
+        "isOld": false
+      },
+      {
+        "name": "Aeolak",
+        "isOld": false
+      },
+      {
+        "name": "Aeolak Stock",
+        "isOld": false
+      },
+      {
+        "name": "Aeolak Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Aeolak Receiver",
+        "isOld": false
+      },
+      {
+        "name": "Afentis",
+        "isOld": false
+      },
+      {
+        "name": "Akarius",
+        "isOld": false
+      },
+      {
+        "name": "Alternox",
+        "isOld": false
+      },
+      {
+        "name": "Amanata",
+        "isOld": false
+      },
+      {
+        "name": "Amanata Blade",
+        "isOld": false
+      },
+      {
+        "name": "Amanata Handle",
+        "isOld": false
+      },
+      {
+        "name": "Ambassador",
+        "isOld": false
+      },
+      {
+        "name": "Ambassador Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Ambassador Stock",
+        "isOld": false
+      },
+      {
+        "name": "Ambassador Receiver",
+        "isOld": false
+      },
+      {
+        "name": "Basmu",
+        "isOld": false
+      },
+      {
+        "name": "Boar",
+        "isOld": false
+      },
+      {
+        "name": "Brakk",
+        "isOld": false
+      },
+      {
+        "name": "Braton Vandal",
+        "isOld": false
+      },
+      {
+        "name": "Broken War",
+        "isOld": false
+      },
+      {
+        "name": "Cantare",
+        "isOld": false
+      },
+      {
+        "name": "Carmine Penta",
+        "isOld": false
+      },
+      {
+        "name": "Ceramic Dagger",
+        "isOld": false
+      },
+      {
+        "name": "Ceti Lacera",
+        "isOld": false
+      },
+      {
+        "name": "Cinta",
+        "isOld": false
+      },
+      {
+        "name": "Cinta Grip",
+        "isOld": false
+      },
+      {
+        "name": "Cinta Lower Limb",
+        "isOld": false
+      },
+      {
+        "name": "Cinta String",
+        "isOld": false
+      },
+      {
+        "name": "Cinta Upper Limb",
+        "isOld": false
+      },
+      {
+        "name": "Cronus",
+        "isOld": false
+      },
+      {
+        "name": "Dark Dagger",
+        "isOld": false
+      },
+      {
+        "name": "Dark Sword",
+        "isOld": false
+      },
+      {
+        "name": "Dera Vandal",
+        "isOld": false
+      },
+      {
+        "name": "Despair",
+        "isOld": false
+      },
+      {
+        "name": "Detron",
+        "isOld": false
+      },
+      {
+        "name": "Dread",
+        "isOld": false
+      },
+      {
+        "name": "Ether Daggers",
+        "isOld": false
+      },
+      {
+        "name": "Evensong",
+        "isOld": false
+      },
+      {
+        "name": "Galariak Prime",
+        "isOld": false
+      },
+      {
+        "name": "Galariak Prime Blade",
+        "isOld": false
+      },
+      {
+        "name": "Galariak Prime Handle",
+        "isOld": false
+      },
+      {
+        "name": "Ghoulsaw",
+        "isOld": false
+      },
+      {
+        "name": "Ghoulsaw Blade",
+        "isOld": false
+      },
+      {
+        "name": "Ghoulsaw Engine",
+        "isOld": false
+      },
+      {
+        "name": "Ghoulsaw Grip",
+        "isOld": false
+      },
+      {
+        "name": "Ghoulsaw Akwin",
+        "isOld": false
+      },
+      {
+        "name": "Glaive",
+        "isOld": false
+      },
+      {
+        "name": "Gorgon",
+        "isOld": false
+      },
+      {
+        "name": "Gorgon Wraith",
+        "isOld": false
+      },
+      {
+        "name": "Harmony",
+        "isOld": false
+      },
+      {
+        "name": "Heat Dagger",
+        "isOld": false
+      },
+      {
+        "name": "Heat Sword",
+        "isOld": false
+      },
+      {
+        "name": "Imperator Vandal",
+        "isOld": false
+      },
+      {
+        "name": "Jaw Sword",
+        "isOld": false
+      },
+      {
+        "name": "Karak Wraith",
+        "isOld": false
+      },
+      {
+        "name": "Lato Vandal",
+        "isOld": false
+      },
+      {
+        "name": "Latron Wraith",
+        "isOld": false
+      },
+      {
+        "name": "Miter",
+        "isOld": false
+      },
+      {
+        "name": "Pangolin Sword",
+        "isOld": false
+      },
+      {
+        "name": "Plasma Sword",
+        "isOld": false
+      },
+      {
+        "name": "Plague Akwin",
+        "isOld": false
+      },
+      {
+        "name": "Plague Keewar",
+        "isOld": false
+      },
+      {
+        "name": "Plague Bokwin",
+        "isOld": false
+      },
+      {
+        "name": "Plague Kripath",
+        "isOld": false
+      },
+      {
+        "name": "Quartakk",
+        "isOld": false
+      },
+      {
+        "name": "Quellor",
+        "isOld": false
+      },
+      {
+        "name": "Rauta",
+        "isOld": false
+      },
+      {
+        "name": "Sagek Prime",
+        "isOld": false
+      },
+      {
+        "name": "Sagek Prime Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Sagek Prime Reciever",
+        "isOld": false
+      },
+      {
+        "name": "Seer",
+        "isOld": false
+      },
+      {
+        "name": "Snipetron",
+        "isOld": false
+      },
+      {
+        "name": "Snipetron Vandal",
+        "isOld": false
+      },
+      {
+        "name": "Spectra Vandal",
+        "isOld": false
+      },
+      {
+        "name": "Steflos",
+        "isOld": false
+      },
+      {
+        "name": "Strun Wraith",
+        "isOld": false
+      },
+      {
+        "name": "Stubba",
+        "isOld": false
+      },
+      {
+        "name": "Tak & Lug",
+        "isOld": false
+      },
+      {
+        "name": "Thalys",
+        "isOld": false
+      },
+      {
+        "name": "Tonkatt",
+        "isOld": false
+      },
+      {
+        "name": "Twin Gremlins",
+        "isOld": false
+      },
+      {
+        "name": "Twin Kohmak",
+        "isOld": false
+      },
+      {
+        "name": "Twin Vipers Wraith",
+        "isOld": false
+      },
+      {
+        "name": "Vinquibus",
+        "isOld": false
+      },
+      {
+        "name": "Vinquibus Barrel",
+        "isOld": false
+      },
+      {
+        "name": "Vinquibus Stock",
+        "isOld": false
+      },
+      {
+        "name": "Vinquibus Reciever",
+        "isOld": false
+      },
+      {
+        "name": "Vinquibus Blade",
+        "isOld": false
+      }
+    ]
+  },
+  "Relay": {
+    "Arbi store": [
+      {
+        "name": "Ayatan Amber Star",
+        "isOld": false
+      }
+    ],
+    "Cephalon Simaris": [
+      {
+        "name": "Atlas",
+        "isOld": false
+      },
+      {
+        "name": "Azima",
+        "isOld": false
+      },
+      {
+        "name": "Azothane",
+        "isOld": false
+      },
+      {
+        "name": "Broken Scepter",
+        "isOld": false
+      },
+      {
+        "name": "Chroma",
+        "isOld": false
+      },
+      {
+        "name": "Chroma Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Chroma Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Chroma Systems",
+        "isOld": false
+      },
+      {
+        "name": "Edun",
+        "isOld": false
+      },
+      {
+        "name": "Ether Daggers",
+        "isOld": false
+      },
+      {
+        "name": "Exilus Warframe Adapter",
+        "isOld": false
+      },
+      {
+        "name": "Gara",
+        "isOld": false
+      },
+      {
+        "name": "Gara Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Gara Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Gara Systems",
+        "isOld": false
+      },
+      {
+        "name": "Garuda",
+        "isOld": false
+      },
+      {
+        "name": "Harrow",
+        "isOld": false
+      },
+      {
+        "name": "Heliocor",
+        "isOld": false
+      },
+      {
+        "name": "Imperator",
+        "isOld": false
+      },
+      {
+        "name": "Inaros",
+        "isOld": false
+      },
+      {
+        "name": "Inaros Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Inaros Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Inaros Systems",
+        "isOld": false
+      },
+      {
+        "name": "Limbo Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Limbo Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Limbo Systems",
+        "isOld": false
+      },
+      {
+        "name": "Machete",
+        "isOld": false
+      },
+      {
+        "name": "Mandachord",
+        "isOld": false
+      },
+      {
+        "name": "Mirage Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Mirage Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Mirage Systems",
+        "isOld": false
+      },
+      {
+        "name": "Nidus",
+        "isOld": false
+      },
+      {
+        "name": "Octavia",
+        "isOld": false
+      },
+      {
+        "name": "Odonata",
+        "isOld": false
+      },
+      {
+        "name": "Odonata Harness",
+        "isOld": false
+      },
+      {
+        "name": "Odonata Systems",
+        "isOld": false
+      },
+      {
+        "name": "Odonata Wings",
+        "isOld": false
+      },
+      {
+        "name": "Orvius",
+        "isOld": false
+      },
+      {
+        "name": "Protea",
+        "isOld": false
+      },
+      {
+        "name": "Revenant",
+        "isOld": false
+      },
+      {
+        "name": "Sampotes",
+        "isOld": false
+      },
+      {
+        "name": "Sevagoth",
+        "isOld": false
+      },
+      {
+        "name": "Shedu",
+        "isOld": false
+      },
+      {
+        "name": "Sigma & Octanis",
+        "isOld": false
+      },
+      {
+        "name": "Simulor",
+        "isOld": false
+      },
+      {
+        "name": "Sun & Moon",
+        "isOld": false
+      },
+      {
+        "name": "Syam",
+        "isOld": false
+      },
+      {
+        "name": "Titania",
+        "isOld": false
+      },
+      {
+        "name": "Titania Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Titania Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Titania Systems",
+        "isOld": false
+      },
+      {
+        "name": "Veritux",
+        "isOld": false
+      },
+      {
+        "name": "Vitrica",
+        "isOld": false
+      },
+      {
+        "name": "War Blade",
+        "isOld": false
+      },
+      {
+        "name": "War Hilt",
+        "isOld": false
+      },
+      {
+        "name": "Xaku",
+        "isOld": false
+      },
+      {
+        "name": "Xoris",
+        "isOld": false
+      },
+      {
+        "name": "Zenistar",
+        "isOld": false
+      },
+      {
+        "name": "Zenith",
+        "isOld": false
+      }
+    ],
+    "Teshin": [
+      {
+        "name": "Bishamo Pauldrons Set",
+        "isOld": false
+      },
+      {
+        "name": "Bishamo Cuirass Set",
+        "isOld": false
+      },
+      {
+        "name": "Bishamo Helmet Set",
+        "isOld": false
+      },
+      {
+        "name": "Bishamo Greaves Set",
+        "isOld": false
+      }
+    ]
+  },
+  "Syndicates": {
+    "Arbiters of Hexis": [
+      {
+        "name": "5x Corrupted Lancer Specter",
+        "isOld": false
+      },
+      {
+        "name": "Energy Restore (Large)",
+        "isOld": false
+      }
+    ],
+    "Cephalon Suda": [
+      {
+        "name": "5x Shield Osprey Specter",
+        "isOld": false
+      },
+      {
+        "name": "Shield Restore (Large)",
+        "isOld": false
+      }
+    ],
+    "New Loka": [
+      {
+        "name": "5x Ancient Healer Specter",
+        "isOld": false
+      },
+      {
+        "name": "Health Restore (Large)",
+        "isOld": false
+      }
+    ],
+    "Red Veil": [
+      {
+        "name": "5x Charger Specter",
+        "isOld": false
+      },
+      {
+        "name": "Ammo Restore (Large)",
+        "isOld": false
+      }
+    ],
+    "Steel Meridian": [
+      {
+        "name": "5x Roller Specter",
+        "isOld": false
+      },
+      {
+        "name": "Health Restore (Large)",
+        "isOld": false
+      }
+    ],
+    "The Perrin Sequence": [
+      {
+        "name": "5x Moa Specter",
+        "isOld": false
+      },
+      {
+        "name": "Energy Restore (Large)",
+        "isOld": false
+      }
+    ],
+    "All": [
+      {
+        "name": "Exilus Weapon Adapter",
+        "isOld": false
+      }
+    ]
+  },
+  "Helmets": {
+    "Nightwave": [
+      {
+        "name": "Ash Locust",
+        "isOld": false
+      },
+      {
+        "name": "Ash Scorpion",
+        "isOld": false
+      },
+      {
+        "name": "Atlas Shikoro",
+        "isOld": false
+      },
+      {
+        "name": "Atlas Tartarus",
+        "isOld": false
+      },
+      {
+        "name": "Banshee Chorus",
+        "isOld": false
+      },
+      {
+        "name": "Banshee Reverb",
+        "isOld": false
+      },
+      {
+        "name": "Baruuk Meroe",
+        "isOld": false
+      },
+      {
+        "name": "Caliban Cranion",
+        "isOld": false
+      },
+      {
+        "name": "Chroma Amaru",
+        "isOld": false
+      },
+      {
+        "name": "Chroma Drac",
+        "isOld": false
+      },
+      {
+        "name": "Citrine Kalite",
+        "isOld": false
+      },
+      {
+        "name": "Cyte-09 Espricor",
+        "isOld": false
+      },
+      {
+        "name": "Dagath Ganceann",
+        "isOld": false
+      },
+      {
+        "name": "Dante Cantist",
+        "isOld": false
+      },
+      {
+        "name": "Ember Backdraft",
+        "isOld": false
+      },
+      {
+        "name": "Ember Phoenix",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Clisthert",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Solstice",
+        "isOld": false
+      },
+      {
+        "name": "Excalibur Avalon",
+        "isOld": false
+      },
+      {
+        "name": "Excalibur Mordred",
+        "isOld": false
+      },
+      {
+        "name": "Excalibur Pendragon",
+        "isOld": false
+      },
+      {
+        "name": "Frost Aurora",
+        "isOld": false
+      },
+      {
+        "name": "Frost Squall",
+        "isOld": false
+      },
+      {
+        "name": "Gara Virago",
+        "isOld": false
+      },
+      {
+        "name": "Garuda Bathory",
+        "isOld": false
+      },
+      {
+        "name": "Gauss Mag",
+        "isOld": false
+      },
+      {
+        "name": "Grendel Glutt",
+        "isOld": false
+      },
+      {
+        "name": "Gyre Automaton",
+        "isOld": false
+      },
+      {
+        "name": "Harrow Crucis",
+        "isOld": false
+      },
+      {
+        "name": "Harrow Suffragan",
+        "isOld": false
+      },
+      {
+        "name": "Hildryn Asuron",
+        "isOld": false
+      },
+      {
+        "name": "Hydroid Ketos",
+        "isOld": false
+      },
+      {
+        "name": "Hydroid Triton",
+        "isOld": false
+      },
+      {
+        "name": "Inaros Anubis",
+        "isOld": false
+      },
+      {
+        "name": "Inaros Canopic",
+        "isOld": false
+      },
+      {
+        "name": "Ivara Loxley",
+        "isOld": false
+      },
+      {
+        "name": "Ivara Zirastra",
+        "isOld": false
+      },
+      {
+        "name": "Khora Delphi",
+        "isOld": false
+      },
+      {
+        "name": "Koumei Orihime",
+        "isOld": false
+      },
+      {
+        "name": "Kullervo Usvah",
+        "isOld": false
+      },
+      {
+        "name": "Limbo Aristeas",
+        "isOld": false
+      },
+      {
+        "name": "Limbo Magrite",
+        "isOld": false
+      },
+      {
+        "name": "Loki Enigma",
+        "isOld": false
+      },
+      {
+        "name": "Loki Essence",
+        "isOld": false
+      },
+      {
+        "name": "Loki Swindle",
+        "isOld": false
+      },
+      {
+        "name": "Mag Coil",
+        "isOld": false
+      },
+      {
+        "name": "Mag Gauss",
+        "isOld": false
+      },
+      {
+        "name": "Mesa Longhorn",
+        "isOld": false
+      },
+      {
+        "name": "Mesa Ovis",
+        "isOld": false
+      },
+      {
+        "name": "Mirage Harlequin",
+        "isOld": false
+      },
+      {
+        "name": "Mirage Trivelin",
+        "isOld": false
+      },
+      {
+        "name": "Nekros Raknis",
+        "isOld": false
+      },
+      {
+        "name": "Nekros Shroud",
+        "isOld": false
+      },
+      {
+        "name": "Nezha Circa",
+        "isOld": false
+      },
+      {
+        "name": "Nezha Jinza",
+        "isOld": false
+      },
+      {
+        "name": "Nidus Myxini",
+        "isOld": false
+      },
+      {
+        "name": "Nidus Prion",
+        "isOld": false
+      },
+      {
+        "name": "Nova Flux",
+        "isOld": false
+      },
+      {
+        "name": "Nova Quantum",
+        "isOld": false
+      },
+      {
+        "name": "Nova Slipstream",
+        "isOld": false
+      },
+      {
+        "name": "Nyx Menticide",
+        "isOld": false
+      },
+      {
+        "name": "Nyx Vespa",
+        "isOld": false
+      },
+      {
+        "name": "Oberon Markhor",
+        "isOld": false
+      },
+      {
+        "name": "Oberon Oryx",
+        "isOld": false
+      },
+      {
+        "name": "Octavia Cadenza",
+        "isOld": false
+      },
+      {
+        "name": "Protea Mavv",
+        "isOld": false
+      },
+      {
+        "name": "Protea Telema",
+        "isOld": false
+      },
+      {
+        "name": "Qorvex Raxpart",
+        "isOld": false
+      },
+      {
+        "name": "Revenant Vania",
+        "isOld": false
+      },
+      {
+        "name": "Rhino Thrak",
+        "isOld": false
+      },
+      {
+        "name": "Rhino Vanguard",
+        "isOld": false
+      },
+      {
+        "name": "Saryn Chlora",
+        "isOld": false
+      },
+      {
+        "name": "Saryn Hemlock",
+        "isOld": false
+      },
+      {
+        "name": "Sevagoth Lucifuge",
+        "isOld": false
+      },
+      {
+        "name": "Styanax Agogean",
+        "isOld": false
+      },
+      {
+        "name": "Styanax Synmora",
+        "isOld": false
+      },
+      {
+        "name": "Styanax Gerousic",
+        "isOld": false
+      },
+      {
+        "name": "Titania Aurai",
+        "isOld": false
+      },
+      {
+        "name": "Titania Mab",
+        "isOld": false
+      },
+      {
+        "name": "Trinity Aura",
+        "isOld": false
+      },
+      {
+        "name": "Trinity Meridian",
+        "isOld": false
+      },
+      {
+        "name": "Valkyr Bastet",
+        "isOld": false
+      },
+      {
+        "name": "Valkyr Kara",
+        "isOld": false
+      },
+      {
+        "name": "Vauban Armistice",
+        "isOld": false
+      },
+      {
+        "name": "Vauban Esprit",
+        "isOld": false
+      },
+      {
+        "name": "Vauban Gambit",
+        "isOld": false
+      },
+      {
+        "name": "Volt Pulse",
+        "isOld": false
+      },
+      {
+        "name": "Volt Storm",
+        "isOld": false
+      },
+      {
+        "name": "Voruna Anukas",
+        "isOld": false
+      },
+      {
+        "name": "Wisp Gaoth",
+        "isOld": false
+      },
+      {
+        "name": "Wukong Dasheng",
+        "isOld": false
+      },
+      {
+        "name": "Wukong Macak",
+        "isOld": false
+      },
+      {
+        "name": "Xaku Kintsu",
+        "isOld": false
+      },
+      {
+        "name": "Yareli Physalia",
+        "isOld": false
+      },
+      {
+        "name": "Zephyr Cierzo",
+        "isOld": false
+      },
+      {
+        "name": "Zephyr Tengu",
+        "isOld": false
+      }
+    ]
+  },
+  "Prime Parts": {
+    "Primes": [
+      {
+        "name": "Acceltra Prime",
+        "isOld": false
+      },
+      {
+        "name": "Afentis Prime",
+        "isOld": false
+      },
+      {
+        "name": "Afuris prime",
+        "isOld": false
+      },
+      {
+        "name": "Akarius Prime",
+        "isOld": false
+      },
+      {
+        "name": "Akbolto Prime",
+        "isOld": false
+      },
+      {
+        "name": "Akbronco prime",
+        "isOld": false
+      },
+      {
+        "name": "Akjagara Prime",
+        "isOld": false
+      },
+      {
+        "name": "Aklex Prime",
+        "isOld": false
+      },
+      {
+        "name": "Akmagnus prime",
+        "isOld": false
+      },
+      {
+        "name": "Aksomati Prime",
+        "isOld": false
+      },
+      {
+        "name": "Akstiletto prime",
+        "isOld": false
+      },
+      {
+        "name": "Akvasto prime",
+        "isOld": false
+      },
+      {
+        "name": "Alternox Prime",
+        "isOld": false
+      },
+      {
+        "name": "Ankyros prime",
+        "isOld": false
+      },
+      {
+        "name": "Ash Prime",
+        "isOld": false
+      },
+      {
+        "name": "Ash prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Ash prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Ash prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Astilla Prime",
+        "isOld": false
+      },
+      {
+        "name": "Athodai Prime",
+        "isOld": false
+      },
+      {
+        "name": "Atlas prime",
+        "isOld": false
+      },
+      {
+        "name": "Atlas Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Atlas prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Atlas prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Ballistica prime",
+        "isOld": false
+      },
+      {
+        "name": "Banshee prime",
+        "isOld": false
+      },
+      {
+        "name": "Banshee prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Banshee Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Banshee Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Baruuk Prime",
+        "isOld": false
+      },
+      {
+        "name": "Baruuk Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Baruuk Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Baruukk prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Baza Prime",
+        "isOld": false
+      },
+      {
+        "name": "Bo Prime",
+        "isOld": false
+      },
+      {
+        "name": "Boar prime",
+        "isOld": false
+      },
+      {
+        "name": "Boltor Prime",
+        "isOld": false
+      },
+      {
+        "name": "Braton Prime",
+        "isOld": false
+      },
+      {
+        "name": "Bronco Prime",
+        "isOld": false
+      },
+      {
+        "name": "Burston Prime",
+        "isOld": false
+      },
+      {
+        "name": "Caliban Prime",
+        "isOld": false
+      },
+      {
+        "name": "Caliban Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Caliban Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Caliban Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Carrier Prime",
+        "isOld": false
+      },
+      {
+        "name": "Cedo Prime",
+        "isOld": false
+      },
+      {
+        "name": "Cernos Prime",
+        "isOld": false
+      },
+      {
+        "name": "Chroma prime",
+        "isOld": false
+      },
+      {
+        "name": "Chroma Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Chroma Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Chroma Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Cobra & crane prime",
+        "isOld": false
+      },
+      {
+        "name": "Corinth Prime",
+        "isOld": false
+      },
+      {
+        "name": "Corvas prime",
+        "isOld": false
+      },
+      {
+        "name": "Daikyu Prime",
+        "isOld": false
+      },
+      {
+        "name": "Dakra Prime",
+        "isOld": false
+      },
+      {
+        "name": "Destreza prime",
+        "isOld": false
+      },
+      {
+        "name": "Dethcube Prime",
+        "isOld": false
+      },
+      {
+        "name": "Dual kamas prime",
+        "isOld": false
+      },
+      {
+        "name": "Dual keres prime",
+        "isOld": false
+      },
+      {
+        "name": "Dual Zoren Prime",
+        "isOld": false
+      },
+      {
+        "name": "Ember Prime",
+        "isOld": false
+      },
+      {
+        "name": "Ember Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Ember prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Ember prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Epitaph Prime",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Prime",
+        "isOld": false
+      },
+      {
+        "name": "Equinox prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Equinox prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Equinox Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Euphona prime",
+        "isOld": false
+      },
+      {
+        "name": "Fang prime",
+        "isOld": false
+      },
+      {
+        "name": "Fragor Prime",
+        "isOld": false
+      },
+      {
+        "name": "Frost Prime",
+        "isOld": false
+      },
+      {
+        "name": "Frost prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Frost Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Frost Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Fulmin Prime",
+        "isOld": false
+      },
+      {
+        "name": "Galatine Prime",
+        "isOld": false
+      },
+      {
+        "name": "Gara Prime",
+        "isOld": false
+      },
+      {
+        "name": "Gara Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Gara Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Garuda Prime",
+        "isOld": false
+      },
+      {
+        "name": "Garuda prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Garuda prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Garuda prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Gauss Prime",
+        "isOld": false
+      },
+      {
+        "name": "Gauss prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Gauss prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Gauss prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Glaive Prime",
+        "isOld": false
+      },
+      {
+        "name": "Gram Prime",
+        "isOld": false
+      },
+      {
+        "name": "Grendel Prime",
+        "isOld": false
+      },
+      {
+        "name": "Grendel Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Grendel Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Grendel prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Gyre Prime",
+        "isOld": false
+      },
+      {
+        "name": "Gyre Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Gyre Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Gyre Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Harrow Prime",
+        "isOld": false
+      },
+      {
+        "name": "Harrow Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Harrow Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Harrow prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Helios prime",
+        "isOld": false
+      },
+      {
+        "name": "Hikou Prime",
+        "isOld": false
+      },
+      {
+        "name": "Hildryn prime",
+        "isOld": false
+      },
+      {
+        "name": "Hildryn Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Hildryn Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Hildryn Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Hydroid Prime",
+        "isOld": false
+      },
+      {
+        "name": "Hydroid Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Hydroid Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Hydroid Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Hystrix Prime",
+        "isOld": false
+      },
+      {
+        "name": "Inaros prime",
+        "isOld": false
+      },
+      {
+        "name": "Inaros Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Inaros Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Inaros prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Ivara Prime",
+        "isOld": false
+      },
+      {
+        "name": "Ivara Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Ivara Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Ivara prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Karyst Prime",
+        "isOld": false
+      },
+      {
+        "name": "Kavasa prime collar",
+        "isOld": false
+      },
+      {
+        "name": "Kestrel Prime",
+        "isOld": false
+      },
+      {
+        "name": "Khora Prime",
+        "isOld": false
+      },
+      {
+        "name": "Khora prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Khora Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Khora prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Knell Prime",
+        "isOld": false
+      },
+      {
+        "name": "Kogake prime",
+        "isOld": false
+      },
+      {
+        "name": "Kompressa Prime",
+        "isOld": false
+      },
+      {
+        "name": "Kronen Prime",
+        "isOld": false
+      },
+      {
+        "name": "Larkspur Prime",
+        "isOld": false
+      },
+      {
+        "name": "Latron prime",
+        "isOld": false
+      },
+      {
+        "name": "Lavos Prime",
+        "isOld": false
+      },
+      {
+        "name": "Lavos Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Lavos Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Lavos Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Lex Prime",
+        "isOld": false
+      },
+      {
+        "name": "Limbo Prime",
+        "isOld": false
+      },
+      {
+        "name": "Limbo Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Limbo prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Limbo Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Loki prime",
+        "isOld": false
+      },
+      {
+        "name": "Loki prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Loki prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Loki prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Mag Prime",
+        "isOld": false
+      },
+      {
+        "name": "Mag prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Mag prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Mag Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Magnus prime",
+        "isOld": false
+      },
+      {
+        "name": "Masseter Prime",
+        "isOld": false
+      },
+      {
+        "name": "Mesa prime",
+        "isOld": false
+      },
+      {
+        "name": "Mesa prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Mesa prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Mesa prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Mirage prime",
+        "isOld": false
+      },
+      {
+        "name": "Mirage Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Mirage prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Mirage Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Nagantaka prime",
+        "isOld": false
+      },
+      {
+        "name": "Nami Skyla Prime",
+        "isOld": false
+      },
+      {
+        "name": "Nautilus Prime",
+        "isOld": false
+      },
+      {
+        "name": "Nekros Prime",
+        "isOld": false
+      },
+      {
+        "name": "Nekros Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Nekros Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Nekros prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Nezha Prime",
+        "isOld": false
+      },
+      {
+        "name": "Nezha prime",
+        "isOld": false
+      },
+      {
+        "name": "Nezha prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Nezha prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Nezha prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Nidus Prime",
+        "isOld": false
+      },
+      {
+        "name": "Nidus prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Nidus Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Nidus prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Nikana Prime",
+        "isOld": false
+      },
+      {
+        "name": "Ninkondi prime",
+        "isOld": false
+      },
+      {
+        "name": "Nova Prime",
+        "isOld": false
+      },
+      {
+        "name": "Nova Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Nova prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Nova Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Nyx Prime",
+        "isOld": false
+      },
+      {
+        "name": "Nyx prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Nyx Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Nyx prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Oberon Prime",
+        "isOld": false
+      },
+      {
+        "name": "Oberon Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Oberon Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Oberon Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Octavia Prime",
+        "isOld": false
+      },
+      {
+        "name": "Octavia Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Octavia Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Octavia Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Odonata prime",
+        "isOld": false
+      },
+      {
+        "name": "Odonata Prime Harness",
+        "isOld": false
+      },
+      {
+        "name": "Odonata prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Odonata Prime Wings",
+        "isOld": false
+      },
+      {
+        "name": "Okina Prime",
+        "isOld": false
+      },
+      {
+        "name": "Orthos Prime",
+        "isOld": false
+      },
+      {
+        "name": "Pandero Prime",
+        "isOld": false
+      },
+      {
+        "name": "Pangolin prime",
+        "isOld": false
+      },
+      {
+        "name": "Panthera Prime",
+        "isOld": false
+      },
+      {
+        "name": "Paris Prime",
+        "isOld": false
+      },
+      {
+        "name": "Phantasma Prime",
+        "isOld": false
+      },
+      {
+        "name": "Protea Prime",
+        "isOld": false
+      },
+      {
+        "name": "Protea prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Protea Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Protea Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Pyrana Prime",
+        "isOld": false
+      },
+      {
+        "name": "Quassas Prime",
+        "isOld": false
+      },
+      {
+        "name": "Qyrm prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Reaper Prime",
+        "isOld": false
+      },
+      {
+        "name": "Redeemer Prime",
+        "isOld": false
+      },
+      {
+        "name": "Revenant prime",
+        "isOld": false
+      },
+      {
+        "name": "Revenant prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Revenant Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Revenant prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Rhino prime",
+        "isOld": false
+      },
+      {
+        "name": "Rhino prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Rhino prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Rhino Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Rubico Prime",
+        "isOld": false
+      },
+      {
+        "name": "Saryn Prime",
+        "isOld": false
+      },
+      {
+        "name": "Saryn Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Saryn Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Saryn Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Scindo prime",
+        "isOld": false
+      },
+      {
+        "name": "Scourge Prime",
+        "isOld": false
+      },
+      {
+        "name": "Sevagoth Prime",
+        "isOld": false
+      },
+      {
+        "name": "Sevagoth Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Sevagoth Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Sevagoth Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Shade Prime",
+        "isOld": false
+      },
+      {
+        "name": "Sicarus prime",
+        "isOld": false
+      },
+      {
+        "name": "Silva & aegis prime",
+        "isOld": false
+      },
+      {
+        "name": "Soma prime",
+        "isOld": false
+      },
+      {
+        "name": "Stradavar Prime",
+        "isOld": false
+      },
+      {
+        "name": "Strun Prime",
+        "isOld": false
+      },
+      {
+        "name": "Sybaris Prime",
+        "isOld": false
+      },
+      {
+        "name": "Tatsu prime",
+        "isOld": false
+      },
+      {
+        "name": "Tekko Prime",
+        "isOld": false
+      },
+      {
+        "name": "Tenora Prime",
+        "isOld": false
+      },
+      {
+        "name": "Tiberon Prime",
+        "isOld": false
+      },
+      {
+        "name": "Tigris Prime",
+        "isOld": false
+      },
+      {
+        "name": "Tipedo Prime",
+        "isOld": false
+      },
+      {
+        "name": "Titania Prime",
+        "isOld": false
+      },
+      {
+        "name": "Titania Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Titania prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Titania Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Trinity Prime",
+        "isOld": false
+      },
+      {
+        "name": "Trinity prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Trinity Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Trinity prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Trumna Prime",
+        "isOld": false
+      },
+      {
+        "name": "Valkyr Prime",
+        "isOld": false
+      },
+      {
+        "name": "Valkyr Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Valkyr Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Valkyr prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Vasto prime",
+        "isOld": false
+      },
+      {
+        "name": "Vauban Prime",
+        "isOld": false
+      },
+      {
+        "name": "Vauban Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Vauban Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Vauban prime systems",
+        "isOld": false
+      },
+      {
+        "name": "Vectis Prime",
+        "isOld": false
+      },
+      {
+        "name": "Velox prime",
+        "isOld": false
+      },
+      {
+        "name": "Venka Prime",
+        "isOld": false
+      },
+      {
+        "name": "Volnus Prime",
+        "isOld": false
+      },
+      {
+        "name": "Volt prime",
+        "isOld": false
+      },
+      {
+        "name": "Volt Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Volt Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Volt Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Wisp Prime",
+        "isOld": false
+      },
+      {
+        "name": "Wisp Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Wisp prime neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Wisp Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Wukong Prime",
+        "isOld": false
+      },
+      {
+        "name": "Wukong Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Wukong Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Wukong Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Wyrm prime",
+        "isOld": false
+      },
+      {
+        "name": "Wyrm prime carapace",
+        "isOld": false
+      },
+      {
+        "name": "Wyrm prime cerebrum",
+        "isOld": false
+      },
+      {
+        "name": "Xaku Prime",
+        "isOld": false
+      },
+      {
+        "name": "Xaku Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Xaku Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Xaku Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Yareli Prime",
+        "isOld": false
+      },
+      {
+        "name": "Yareli Prime Chassis",
+        "isOld": false
+      },
+      {
+        "name": "Yareli Prime NEuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Yareli Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Zakti prime",
+        "isOld": false
+      },
+      {
+        "name": "Zephyr Prime",
+        "isOld": false
+      },
+      {
+        "name": "Zephyr prime chassis",
+        "isOld": false
+      },
+      {
+        "name": "Zephyr Prime Neuroptics",
+        "isOld": false
+      },
+      {
+        "name": "Zephyr Prime Systems",
+        "isOld": false
+      },
+      {
+        "name": "Zhuge prime",
+        "isOld": false
+      },
+      {
+        "name": "Zylok prime",
+        "isOld": false
+      }
+    ]
+  },
+  "Extra": {
+    "Other": [
+      {
+        "name": "Omnia Forma",
+        "isOld": false
+      },
+      {
+        "name": "Clem Clone",
+        "isOld": false
+      },
+      {
+        "name": "Corrupted Bombard",
+        "isOld": false
+      },
+      {
+        "name": "Corrupted Heavy Gunner",
+        "isOld": false
+      },
+      {
+        "name": "Cosmic Specter",
+        "isOld": false
+      },
+      {
+        "name": "Eidolon Lens",
+        "isOld": false
+      },
+      {
+        "name": "Eidolon Phylaxis",
+        "isOld": false
+      },
+      {
+        "name": "Fomorian Disrupter",
+        "isOld": false
+      },
+      {
+        "name": "Force Specter",
+        "isOld": false
+      },
+      {
+        "name": "Forma",
+        "isOld": false
+      },
+      {
+        "name": "Greater Lens",
+        "isOld": false
+      },
+      {
+        "name": "Lua Lens",
+        "isOld": false
+      },
+      {
+        "name": "Mutalist Alad V Assassinate",
+        "isOld": false
+      },
+      {
+        "name": "Orokin Catalyst",
+        "isOld": false
+      },
+      {
+        "name": "Orokin Reactor",
+        "isOld": false
+      },
+      {
+        "name": "Phase Specter",
+        "isOld": false
+      },
+      {
+        "name": "Pherliac Pods",
+        "isOld": false
+      },
+      {
+        "name": "Razorback Cipher",
+        "isOld": false
+      },
+      {
+        "name": "Stalker Specter",
+        "isOld": false
+      },
+      {
+        "name": "Stance Forma",
+        "isOld": false
+      },
+      {
+        "name": "Umbral Forma",
+        "isOld": false
+      },
+      {
+        "name": "Vapor Specter",
+        "isOld": false
+      },
+      {
+        "name": "Fragor Brokk Skin",
+        "isOld": false
+      },
+      {
+        "name": "Dual Zoren Dagger-Axe Skin",
+        "isOld": false
+      },
+      {
+        "name": "Scindo Dagger-Axe Skin",
+        "isOld": false
+      },
+      {
+        "name": "Scindo Manticore Skin",
+        "isOld": false
+      },
+      {
+        "name": "Hek Desert-Camo Skin",
+        "isOld": false
+      },
+      {
+        "name": "Fosfor Blau",
+        "isOld": false
+      },
+      {
+        "name": "Fosfor Rahd",
+        "isOld": false
+      },
+      {
+        "name": "Deep Roots Cave Art",
+        "isOld": false
+      },
+      {
+        "name": "Adventure Talk Cave Art",
+        "isOld": false
+      },
+      {
+        "name": "Root Maze Cave Art",
+        "isOld": false
+      },
+      {
+        "name": "Lookout Cave Art",
+        "isOld": false
+      },
+      {
+        "name": "The Prince Cave Art",
+        "isOld": false
+      },
+      {
+        "name": "Fairy Ring Cave Art",
+        "isOld": false
+      },
+      {
+        "name": "Undermind Whispers Cave Art",
+        "isOld": false
+      }
+    ]
+  }
+}

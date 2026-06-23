@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Vitality",
+    "variants": [
+      "Vitality",
+      "Archon Vitality",
+      "Flawed Vitality",
+      "Parasitic Vitality",
+      "Umbral Vitality"
+    ]
+  },
+  {
+    "name": "Fury",
+    "variants": [
+      "Fury",
+      "Flawed Fury",
+      "Berserker Fury",
+      "Flawed Berserker Fury",
+      "Primed Fury"
+    ]
+  },
+  {
+    "name": "Organ Shatter",
+    "variants": [
+      "Organ Shatter",
+      "Amalgam Organ Shatter",
+      "Flawed Organ Shatter"
+    ]
+  },
+  {
+    "name": "Target Cracker",
+    "variants": [
+      "Target Cracker",
+      "Flawed Target Cracker",
+      "Primed Target Cracker"
+    ]
+  },
+  {
+    "name": "Serration",
+    "variants": [
+      "Serration",
+      "Amalgam Serration",
+      "Flawed Serration",
+      "Higasa Serration",
+      "Spectral Serration"
+    ]
+  },
+  {
+    "name": "Hell's Chamber",
+    "variants": [
+      "Hell's Chamber",
+      "Flawed Hell's Chamber",
+      "Galvanized Hell"
+    ]
+  },
+  {
+    "name": "Hellfire",
+    "variants": [
+      "Hellfire",
+      "Flawed Hellfire"
+    ]
+  },
+  {
+    "name": "Barrel Diffusion",
+    "variants": [
+      "Barrel Diffusion",
+      "Amalgam Barrel Diffusion",
+      "Flawed Barrel Diffusion",
+      "Galvanized Diffusion"
+    ]
+  },
+  {
+    "name": "Animal Instinct",
+    "variants": [
+      "Animal Instinct",
+      "Primed Animal Instinct"
+    ]
+  },
+  {
+    "name": "Streamline",
+    "variants": [
+      "Streamline",
+      "Flawed Streamline"
+    ]
+  },
+  {
+    "name": "Parasitic Vitality",
+    "variants": [
+      "Parasitic Vitality"
+    ]
+  },
+  {
+    "name": "Dread Ward",
+    "variants": [
+      "Dread Ward"
+    ]
+  },
+  {
+    "name": "Blood Forge",
+    "variants": [
+      "Blood Forge"
+    ]
+  },
+  {
+    "name": "Smoke Shadow",
+    "variants": [
+      "Smoke Shadow"
+    ]
+  },
+  {
+    "name": "Seeking Shuriken",
+    "variants": [
+      "Seeking Shuriken"
+    ]
+  }
+]

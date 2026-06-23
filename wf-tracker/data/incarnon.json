@@ -1,0 +1,374 @@
+[
+  {
+    "name": "Braton",
+    "weapons": [
+      "Braton",
+      "Braton Prime",
+      "Braton Vandal",
+      "MK1-Braton"
+    ],
+    "week": 1
+  },
+  {
+    "name": "Kunai",
+    "weapons": [
+      "Kunai",
+      "MK1-Kunai"
+    ],
+    "week": 1
+  },
+  {
+    "name": "Lato",
+    "weapons": [
+      "Lato",
+      "Lato Prime",
+      "Lato Vandal"
+    ],
+    "week": 1
+  },
+  {
+    "name": "Paris",
+    "weapons": [
+      "MK1-Paris",
+      "Paris",
+      "Paris Prime"
+    ],
+    "week": 1
+  },
+  {
+    "name": "Skana",
+    "weapons": [
+      "Prisma Skana",
+      "Skana",
+      "Skana Prime"
+    ],
+    "week": 1
+  },
+  {
+    "name": "Angstrum",
+    "weapons": [
+      "Angstrum",
+      "Prisma Angstrum"
+    ],
+    "week": 2
+  },
+  {
+    "name": "Anku",
+    "weapons": [
+      "Anku"
+    ],
+    "week": 2
+  },
+  {
+    "name": "Boar",
+    "weapons": [
+      "Boar",
+      "Boar Prime"
+    ],
+    "week": 2
+  },
+  {
+    "name": "Gammacor",
+    "weapons": [
+      "Gammacor",
+      "Synoid Gammacor"
+    ],
+    "week": 2
+  },
+  {
+    "name": "Gorgon",
+    "weapons": [
+      "Gorgon",
+      "Gorgon Wraith",
+      "Prisma Gorgon"
+    ],
+    "week": 2
+  },
+  {
+    "name": "Bo",
+    "weapons": [
+      "Bo",
+      "Bo Prime",
+      "MK1-Bo"
+    ],
+    "week": 3
+  },
+  {
+    "name": "Furax",
+    "weapons": [
+      "Furax",
+      "Furax Wraith",
+      "MK1-Furax"
+    ],
+    "week": 3
+  },
+  {
+    "name": "Furis",
+    "weapons": [
+      "Furis",
+      "MK1-Furis"
+    ],
+    "week": 3
+  },
+  {
+    "name": "Latron",
+    "weapons": [
+      "Latron",
+      "Latron Prime",
+      "Latron Wraith"
+    ],
+    "week": 3
+  },
+  {
+    "name": "Strun",
+    "weapons": [
+      "MK1-Strun",
+      "Strun",
+      "Strun Prime",
+      "Strun Wraith"
+    ],
+    "week": 3
+  },
+  {
+    "name": "Boltor",
+    "weapons": [
+      "Boltor",
+      "Boltor Prime",
+      "Telos Boltor"
+    ],
+    "week": 4
+  },
+  {
+    "name": "Bronco",
+    "weapons": [
+      "Bronco",
+      "Bronco Prime"
+    ],
+    "week": 4
+  },
+  {
+    "name": "Ceramic Dagger",
+    "weapons": [
+      "Ceramic Dagger"
+    ],
+    "week": 4
+  },
+  {
+    "name": "Lex",
+    "weapons": [
+      "Lex",
+      "Lex Prime"
+    ],
+    "week": 4
+  },
+  {
+    "name": "Magistar",
+    "weapons": [
+      "Magistar",
+      "Sancti Magistar"
+    ],
+    "week": 4
+  },
+  {
+    "name": "Atomos",
+    "weapons": [
+      "Atomos"
+    ],
+    "week": 5
+  },
+  {
+    "name": "Dual Ichor",
+    "weapons": [
+      "Dual Ichor"
+    ],
+    "week": 5
+  },
+  {
+    "name": "Dual Toxocyst",
+    "weapons": [
+      "Dual Toxocyst"
+    ],
+    "week": 5
+  },
+  {
+    "name": "Miter",
+    "weapons": [
+      "Miter"
+    ],
+    "week": 5
+  },
+  {
+    "name": "Torid",
+    "weapons": [
+      "Torid"
+    ],
+    "week": 5
+  },
+  {
+    "name": "Ack & Brunt",
+    "weapons": [
+      "Ack & Brunt"
+    ],
+    "week": 6
+  },
+  {
+    "name": "Burston",
+    "weapons": [
+      "Burston",
+      "Burston Prime"
+    ],
+    "week": 6
+  },
+  {
+    "name": "Nami Solo",
+    "weapons": [
+      "Nami Solo"
+    ],
+    "week": 6
+  },
+  {
+    "name": "Soma",
+    "weapons": [
+      "Soma",
+      "Soma Prime"
+    ],
+    "week": 6
+  },
+  {
+    "name": "Vasto",
+    "weapons": [
+      "Vasto",
+      "Vasto Prime"
+    ],
+    "week": 6
+  },
+  {
+    "name": "Despair",
+    "weapons": [
+      "Despair"
+    ],
+    "week": 7
+  },
+  {
+    "name": "Dread",
+    "weapons": [
+      "Dread"
+    ],
+    "week": 7
+  },
+  {
+    "name": "Hate",
+    "weapons": [
+      "Hate"
+    ],
+    "week": 7
+  },
+  {
+    "name": "Sibear",
+    "weapons": [
+      "Sibear"
+    ],
+    "week": 7
+  },
+  {
+    "name": "Zylok",
+    "weapons": [
+      "Zylok",
+      "Zylok Prime"
+    ],
+    "week": 7
+  },
+  {
+    "name": "Dera",
+    "weapons": [
+      "Dera",
+      "Dera Vandal"
+    ],
+    "week": 8
+  },
+  {
+    "name": "Sybaris",
+    "weapons": [
+      "Sybaris",
+      "Dex Sybaris",
+      "Sybaris Prime"
+    ],
+    "week": 8
+  },
+  {
+    "name": "Cestra",
+    "weapons": [
+      "Cestra"
+    ],
+    "week": 8
+  },
+  {
+    "name": "Sicarus",
+    "weapons": [
+      "Sicarus",
+      "Sicarus Prime"
+    ],
+    "week": 8
+  },
+  {
+    "name": "Okina",
+    "weapons": [
+      "Okina",
+      "Okina Prime"
+    ],
+    "week": 8
+  },
+  {
+    "name": "Stug",
+    "weapons": [
+      "Stug"
+    ],
+    "week": 9
+  },
+  {
+    "name": "Vectis",
+    "weapons": [
+      "Vectis",
+      "Vectis Prime"
+    ],
+    "week": 9
+  },
+  {
+    "name": "Obex",
+    "weapons": [
+      "Obex",
+      "Prisma Obex"
+    ],
+    "week": 9
+  },
+  {
+    "name": "Destreza",
+    "weapons": [
+      "Destreza",
+      "Destreza Prime"
+    ],
+    "week": 9
+  },
+  {
+    "name": "Ballistica",
+    "weapons": [
+      "Ballistica",
+      "Ballistica Prime",
+      "Rakta Ballistica"
+    ],
+    "week": 9
+  },
+  {
+    "name": "1 FAMILY",
+    "weapons": [
+      "Felarx",
+      "Innodem",
+      "Laetum",
+      "Onos",
+      "Phenmor",
+      "Praedos",
+      "Ruvox",
+      "Thalys"
+    ]
+  }
+]

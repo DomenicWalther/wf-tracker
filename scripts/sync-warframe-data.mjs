@@ -1,6 +1,9 @@
 /**
  * Sync script: fetches latest Warframe item data from WFCD/warframe-items
- * and adds any new entries to tracker-data.json.
+ * and adds any new gear entries.
+ *
+ * Writes to the split source file `wf-tracker/data/gear.json`, then regenerates
+ * the merged `tracker-data.json` asset, so the change survives the next build.
  *
  * Usage:
  *   node scripts/sync-warframe-data.mjs            # apply changes
@@ -12,9 +15,10 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { buildMerged, OUT_FILE } from '../wf-tracker/scripts/build-data.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DATA_FILE = path.join(__dirname, '../wf-tracker/public/assets/tracker-data.json');
+const GEAR_FILE = path.join(__dirname, '../wf-tracker/data/gear.json');
 const DRY_RUN = process.argv.includes('--dry-run');
 const WFCD_BASE = 'https://raw.githubusercontent.com/WFCD/warframe-items/master/data/json';
 
@@ -54,11 +58,11 @@ function isKitgunComponent(name) {
   return KITGUN_COMPONENT_PATTERNS.some(re => re.test(name));
 }
 
-async function syncWarframes(trackerData) {
+async function syncWarframes(gear) {
   console.log('Fetching Warframes from WFCD...');
   const items = await fetchJson(`${WFCD_BASE}/Warframes.json`);
 
-  const existing = new Set(trackerData.gear.warframes.map(w => w.name));
+  const existing = new Set(gear.warframes.map(w => w.name));
   const added = [];
 
   for (const item of items) {
@@ -70,25 +74,25 @@ async function syncWarframes(trackerData) {
 
     added.push(item.name);
     if (!DRY_RUN) {
-      trackerData.gear.warframes.push({ name: item.name, isFounderOnly: false });
+      gear.warframes.push({ name: item.name, isFounderOnly: false });
       existing.add(item.name);
     }
   }
 
   if (added.length > 0) {
-    if (!DRY_RUN) trackerData.gear.warframes.sort((a, b) => a.name.localeCompare(b.name));
+    if (!DRY_RUN) gear.warframes.sort((a, b) => a.name.localeCompare(b.name));
     console.log(`  ${DRY_RUN ? '[DRY RUN] Would add' : 'Added'} ${added.length} new Warframe(s): ${added.join(', ')}`);
   } else {
     console.log('  No new Warframes found.');
   }
 }
 
-async function syncWeapons(trackerData, category, jsonFile, trackerKey, componentFilter) {
+async function syncWeapons(gear, category, jsonFile, trackerKey, componentFilter) {
   console.log(`Fetching ${category} weapons from WFCD...`);
   const items = await fetchJson(`${WFCD_BASE}/${jsonFile}`);
 
   const getItemName = w => (typeof w === 'string' ? w : w.name);
-  const existing = new Set(trackerData.gear[trackerKey].map(getItemName));
+  const existing = new Set(gear[trackerKey].map(getItemName));
   const added = [];
 
   for (const item of items) {
@@ -100,15 +104,15 @@ async function syncWeapons(trackerData, category, jsonFile, trackerKey, componen
 
     added.push(item.name);
     if (!DRY_RUN) {
-      const isSring = typeof trackerData.gear[trackerKey][0] === 'string';
-      trackerData.gear[trackerKey].push(isSring ? item.name : { name: item.name });
+      const isString = typeof gear[trackerKey][0] === 'string';
+      gear[trackerKey].push(isString ? item.name : { name: item.name });
       existing.add(item.name);
     }
   }
 
   if (added.length > 0) {
     if (!DRY_RUN) {
-      trackerData.gear[trackerKey].sort((a, b) => getItemName(a).localeCompare(getItemName(b)));
+      gear[trackerKey].sort((a, b) => getItemName(a).localeCompare(getItemName(b)));
     }
     console.log(`  ${DRY_RUN ? '[DRY RUN] Would add' : 'Added'} ${added.length} new ${category}(s): ${added.join(', ')}`);
   } else {
@@ -119,22 +123,23 @@ async function syncWeapons(trackerData, category, jsonFile, trackerKey, componen
 async function main() {
   if (DRY_RUN) console.log('--- DRY RUN MODE: no changes will be written ---\n');
 
-  console.log('Loading tracker-data.json...');
-  const trackerData = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
+  console.log('Loading data/gear.json...');
+  const gear = JSON.parse(fs.readFileSync(GEAR_FILE, 'utf-8'));
 
   try {
-    await syncWarframes(trackerData);
-    await syncWeapons(trackerData, 'Primary', 'Primary.json', 'primaries', null);
-    await syncWeapons(trackerData, 'Secondary', 'Secondary.json', 'secondaries', isKitgunComponent);
-    await syncWeapons(trackerData, 'Melee', 'Melee.json', 'melees', isZawComponent);
+    await syncWarframes(gear);
+    await syncWeapons(gear, 'Primary', 'Primary.json', 'primaries', null);
+    await syncWeapons(gear, 'Secondary', 'Secondary.json', 'secondaries', isKitgunComponent);
+    await syncWeapons(gear, 'Melee', 'Melee.json', 'melees', isZawComponent);
   } catch (err) {
     console.error('\nError fetching from WFCD:', err.message);
     process.exit(1);
   }
 
   if (!DRY_RUN) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(trackerData, null, 2), 'utf-8');
-    console.log('\nDone. tracker-data.json updated.');
+    fs.writeFileSync(GEAR_FILE, JSON.stringify(gear, null, 2) + '\n', 'utf-8');
+    fs.writeFileSync(OUT_FILE, buildMerged(), 'utf-8');
+    console.log('\nDone. Updated data/gear.json and regenerated tracker-data.json.');
     console.log('Review the diff before committing.');
   } else {
     console.log('\nDry run complete. Run without --dry-run to apply.');

@@ -1,0 +1,3589 @@
+{
+  "warframes": [
+    {
+      "name": "Ash",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ash Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Atlas",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Atlas Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Banshee",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Banshee Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Baruuk",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Baruuk Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Caliban",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Caliban Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Chroma",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Chroma Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Citrine",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cyte-09",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dagath",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dante",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ember",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ember Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Equinox",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Equinox Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Excalibur",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Excalibur Prime",
+      "isFounderOnly": true
+    },
+    {
+      "name": "Excalibur Umbra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Follie",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Frost",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Frost Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gara",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gara Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Garuda",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Garuda Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gauss",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gauss Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Grendel",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Grendel Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gyre",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gyre Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Harrow",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Harrow Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hildryn",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hildryn Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hydroid",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hydroid Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Inaros",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Inaros Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ivara",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ivara Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Jade",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Khora",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Khora Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Koumei",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kullervo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lavos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lavos Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Limbo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Limbo Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Loki",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Loki Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mag",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mag Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mesa",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mesa Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mirage",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mirage Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nekros",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nekros Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nezha",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nezha Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nidus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nidus Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nokko",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nova",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nova Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nyx",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nyx Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Oberon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Oberon Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Octavia",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Octavia Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Oraxia",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Protea",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Protea Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Qorvex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Revenant",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Revenant Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rhino",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rhino Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Saryn",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Saryn Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sevagoth",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sevagoth Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sirius & Orion",
+      "dualNames": [
+        "Sirius",
+        "Orion"
+      ],
+      "sharedColumns": [
+        "shards",
+        "tau"
+      ]
+    },
+    {
+      "name": "Styanax",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Styanax Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Temple",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Titania",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Titania Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Trinity",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Trinity Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Uriel",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Valkyr",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Valkyr Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vauban",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vauban Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Volt",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Volt Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Voruna",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Voruna Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Wisp",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Wisp Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Wukong",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Wukong Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Xaku",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Xaku Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Yareli",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Yareli Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zephyr",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zephyr Prime",
+      "isFounderOnly": false
+    }
+  ],
+  "primaries": [
+    {
+      "name": "Acceltra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Acceltra Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Aeolak",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Afentis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Afentis Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Alternox",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Alternox Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ambassador",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Amprex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Arca Plasmor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Argonak",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Astilla",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Astilla Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Attica",
+      "isFounderOnly": false
+    },
+    {
+      "name": "AX-52",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Basmu",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Battacor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Baza",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Baza Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Boar",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Boar Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Boltor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Boltor Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Braton",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Braton Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Braton Vandal",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Bubonico",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Burston",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Burston Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Buzlok",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Carmine Penta",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cedo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cedo Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cernos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cernos Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cinta",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Bassocyst",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Bubonico"
+    },
+    {
+      "name": "Coda Hema",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Sporothrix",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Synapse",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Convectrix",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Corinth",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Corinth Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Daikyu",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Daikyu Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dera",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dera Vandal"
+    },
+    {
+      "name": "Dex Sybaris",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Drakgoon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dread",
+      "isFounderOnly": false
+    },
+    {
+      "name": "EEV-5 Jupiter",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Enkaus"
+    },
+    {
+      "name": "Evensong",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Exergis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Felarx",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ferrox",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Flux Rifle",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Fulmin",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Fulmin Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Glaxion",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Glaxion Vandal",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gorgon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gorgon Wraith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gotva Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Grakata",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Grinlok",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Harpak",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hek",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hema",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Higasa",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hind",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ignis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ignis Wraith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Javlok",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Karak",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Karak Wraith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kohm",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Komorex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Bramma",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Chakkhurr",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Drakgoon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Hek",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Hind",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Karak",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Kohm",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Ogris",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Quartakk",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Sobek",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Tonkor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Zarr",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lanka",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Latron",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Latron Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Latron Wraith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lenz",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Miter",
+      "isFounderOnly": false
+    },
+    {
+      "name": "MK1-Braton",
+      "isFounderOnly": false
+    },
+    {
+      "name": "MK1-Paris",
+      "isFounderOnly": false
+    },
+    {
+      "name": "MK1-Strun",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mutalist Cernos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mutalist Quanta",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nagantaka",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nagantaka Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nataruk",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ogris",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Opticor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Opticor Vandal",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Panthera",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Panthera Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Paracyst",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Paris",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Paris Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Penta",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Perigale",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Perigale Prime"
+    },
+    {
+      "name": "Phage",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Phantasma",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Phantasma Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Phenmor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Gorgon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Grakata",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Grinlok",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Lenz",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Tetra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Proboscis Cernos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Quanta",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Quanta Vandal",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Quartakk",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Quellor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rakta Cernos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rauta",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Reconifex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rubico",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rubico Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sancti Tigris",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Scourge",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Scourge Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Secura Penta",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shedu",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Simulor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Snipetron",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Snipetron Vandal",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sobek",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Soma",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Soma Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sporothrix",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Stahlta",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Steflos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Stradavar",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Stradavar Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Strun",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Strun Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Strun Wraith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Supra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Supra Vandal",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sybaris",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sybaris Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Synapse",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Synoid Simulor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Telos Boltor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Arca Plasmor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Envoy",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Ferrox",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Flux Rifle",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Glaxion",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Quanta"
+    },
+    {
+      "name": "Tenet Tetra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenora",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenora Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tetra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Thornbak",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tiberon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tiberon Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tigris",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tigris Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tonkor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Torid",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Trumna",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Trumna Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vadarya Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vaykor Hek",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vectis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vectis Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Veldt",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vinquibus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vulkar",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vulkar Wraith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zarr",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zenith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zhuge",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zhuge Prime",
+      "isFounderOnly": false
+    }
+  ],
+  "secondaries": [
+    {
+      "name": "Acrid",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Aegrit",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Afuris",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Afuris Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akarius",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akarius Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akbolto",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akbolto Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akbronco",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akbronco Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akjagara",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akjagara Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Aklato",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Aklex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Aklex Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akmagnus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akmagnus Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Aksomati",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Aksomati Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akstiletto"
+    },
+    {
+      "name": "Akstiletto Prime"
+    },
+    {
+      "name": "Akstilleto",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akstilleto Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akvasto",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akvasto Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akzani",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Angstrum",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Arca Scisco",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Athodai",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Athodai Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Atomos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Azima",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ballistica",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ballistica Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Bolto",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Brakk",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Bronco",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Bronco Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cantare",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Castanas",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Catabolyst",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cestra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Catabolyst",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Dual Toxirca",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Pox",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Tysis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cyanex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cycron",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Despair",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Detron",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dex Furis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Cestra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Toxocyst",
+      "isFounderOnly": false
+    },
+    {
+      "name": "EFV-8 Mars",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Embolist",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Epitaph",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Epitaph Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Euphona Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Furis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Fusilai",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gammacor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Grimoire",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hikou",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hikou Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hystrix",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hystrix Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Knell",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Knell Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kohmak",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kompressa",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kompressa Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kraken",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kulstar",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kunai",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Brakk",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Kraken",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Nukor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Seer",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Twin Stubbas",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Laetum",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lato",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lato Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lato Vandal",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lex Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Magnus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Magnus Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mara Detron",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Marelok",
+      "isFounderOnly": false
+    },
+    {
+      "name": "MK1-Furis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "MK1-Kunai",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nukor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ocucor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Onos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pandero",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pandero Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Plinx",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pox",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Angstrum",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Twin Gremlins",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pyrana",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pyrana Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Quatz",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rakta Ballistica",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Riot-848",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sagek Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sancti Castanas",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Scyotid",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Secura Dual Cestra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Seer",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sepulcrum",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sicarus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sicarus Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sonicor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Spectra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Spectra Vandal",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Spira",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Spira Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Staticor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Stubba",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Stug",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Synoid Gammacor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Talons",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Telos Akbolto",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Cycron",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Detron",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Diplos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Plinx",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Spirex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Twin Grakatas",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Twin Gremlins",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Twin Kohmak",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Twin Rogga",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Twin Vipers",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Twin Vipers Wraith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tysis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vasto",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vasto Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vaykor Marelok",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Velox",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Velox Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vesper 77",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Viper",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Viper Wraith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zakti",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zakti Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zylok",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zylok Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zymos",
+      "isFounderOnly": false
+    }
+  ],
+  "melees": [
+    {
+      "name": "Ack & Brunt",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Amanata",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Amphis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Anku",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ankyros",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ankyros Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Arbucep",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Arca Titron",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Argo & Vel",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Arum Spinosa",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Atterax",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Azothane",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Balla",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Bo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Bo Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Boltace",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Broken Scepter"
+    },
+    {
+      "name": "Broken Sceptor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Broken War",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cadus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cassowar",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Caustacyst",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ceramic Dagger",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cerata",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ceti Lacera",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cobra & Crane",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cobra & Crane Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Caustacyst",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Hirudo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Mire",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Motovore",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Coda Pathocyst",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Corufell",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cronus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cyath",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dakra Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dark Dagger",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dark Split-Sword",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dark Sword",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dehtat",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Destreza",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Destreza Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dex Dakra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dex Nikana",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dokrahm",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dorrclave",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dragon Nikana",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Cleavers",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Ether",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Heat Swords",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Ichor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Kamas",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Kamas Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Keres",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Keres Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Raza",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Skana",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Viciss"
+    },
+    {
+      "name": "Dual Zoren",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Zoren Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Edun",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ekhein",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ekwana Ii Jai"
+    },
+    {
+      "name": "Ekwana Ii Ruhang"
+    },
+    {
+      "name": "Ekwana Jai"
+    },
+    {
+      "name": "Ekwana Jai Ii"
+    },
+    {
+      "name": "Ekwana Ruhang"
+    },
+    {
+      "name": "Ekwana Ruhang Ii"
+    },
+    {
+      "name": "Endura",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ether  Reaper",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ether Daggers",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ether Reaper"
+    },
+    {
+      "name": "Ether Sword",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Falcor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Fang",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Fang Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Fragor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Fragor Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Furax",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Furax Wraith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Galariak Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Galatine",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Galatine Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Galvacord",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gazal Machete",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ghoulsaw",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Glaive",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Glaive Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gram",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gram Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Guandao",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Guandao Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gunsen",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gunsen Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Halikar",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Halikar Wraith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Harmony",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hate",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Heat Dagger",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Heat Sword",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Heliocor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hespar",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hirudo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Innodem",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Jai"
+    },
+    {
+      "name": "Jai Ii"
+    },
+    {
+      "name": "Jat Kittag",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Jat Kusar",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Jaw Sword",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Jayap"
+    },
+    {
+      "name": "Kama",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Karyst",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Karyst Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Keratinos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kesheg",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kestrel",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kestrel Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kogake",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kogake Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Korb"
+    },
+    {
+      "name": "Korrudo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Korumm",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kreska",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Krohkur",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kronen",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kronen Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kronsh",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kroostra"
+    },
+    {
+      "name": "Kuva Ghoulsaw"
+    },
+    {
+      "name": "Kuva Shildeg",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kwath"
+    },
+    {
+      "name": "Lacera",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Laka"
+    },
+    {
+      "name": "Lecta",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lesion",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Machete",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Machete Wraith",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Magistar",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Masseter",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Masseter Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mewan",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mios",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mire",
+      "isFounderOnly": false
+    },
+    {
+      "name": "MK1-Bo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "MK1-Furax",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nami Skyla",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nami Skyla Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nami Solo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nepheri",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nikana",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nikana Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ninkondi",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ninkondi Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Obex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ohma",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Okina",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Okina Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ooltha",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Orthos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Orthos Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Orvius",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pangolin Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pangolin Sword",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Paracesis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pathocyst",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pennant",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Peye"
+    },
+    {
+      "name": "Plague Akwin"
+    },
+    {
+      "name": "Plague Bokwin"
+    },
+    {
+      "name": "Plague Keewar",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Plague Kripath",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Plasma Sword",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Praedos",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Dual Cleavers",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Machete",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Obex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Ohma",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Skana",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prova",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prova Vandal",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pulmonars",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pupacyst",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Quassus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Quassus Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rabvee",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rakta Dark Dagger",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Reaper Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Redeemer",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Redeemer Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ripkas",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ruhang"
+    },
+    {
+      "name": "Ruhang Ii"
+    },
+    {
+      "name": "Rumblejack",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ruvox",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sampotes",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sancti Magistar",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sarofang",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sarofang Prime"
+    },
+    {
+      "name": "Sarpa",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Scindo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Scindo Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Scoliac",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Secura Lecta",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Seekalla"
+    },
+    {
+      "name": "Sepfahn",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Serro",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shaku",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sheev",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shtung"
+    },
+    {
+      "name": "Sibear",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sigma & Octanis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sigma & Octantis"
+    },
+    {
+      "name": "Silva & Aegis",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Silva & Aegis Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Skana",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Skana Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Skiajati",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Slaytra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Spinnerex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Stropha",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sun & Moon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Syam",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sydon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Synoid Heliocor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tak & Lug",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tatsu",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tatsu Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tazicor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tekko",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tekko Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Telos Boltace",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Agendus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Exec",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Grigori",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tenet Livia",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Thalys",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tipedo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tipedo Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tonbo",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tonkatt",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tonkkatt"
+    },
+    {
+      "name": "Twin Basolk",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Twin Krohkur",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vargeet Ii Jai"
+    },
+    {
+      "name": "Vargeet Ii Ruhang"
+    },
+    {
+      "name": "Vargeet Jai"
+    },
+    {
+      "name": "Vargeet Jai Ii"
+    },
+    {
+      "name": "Vargeet Ruhang"
+    },
+    {
+      "name": "Vargeet Ruhang Ii"
+    },
+    {
+      "name": "Vastilok",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vaykor Sydon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Venato",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Venato Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Venka",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Venka Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Verdilac",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Verglas",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Verglas Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vericres",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vinquibus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vitrica",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Volnus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Volnus Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vulcax",
+      "isFounderOnly": false
+    },
+    {
+      "name": "War",
+      "isFounderOnly": false
+    },
+    {
+      "name": "War Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Wolf Sledge",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Xoris",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Zenistar",
+      "isFounderOnly": false
+    }
+  ],
+  "companions": [
+    {
+      "name": "Adarza Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Adarza Kavat",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Artax",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Akaten",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Batoten",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Bhaira Hound",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Burst Laser",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Burst Laser Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Carrier",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Carrier Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Chesa Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Chesa Kubrow",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Crescent Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Crescent Vulpaphyla",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cryotra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Deconstructor",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Deconstructor Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Deth Machine Rifle",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Deth Machine Rifle Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dethcube",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dethcube Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Diriga",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Djinn",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dorma Hound",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Hec Hound",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Helios",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Helios Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Helminth Charger",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Helminth Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Helstrum",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Huras Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Huras Kubrow",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lacerten",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lambeo Moa",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Laser Rifle",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Medjay Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Medjay Predasite",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Multron",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nautilus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nautilus Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Nychus Moa",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Oloro Moa",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Oxylus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Panzar Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Panzar Vulpaphyla",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Para Moa",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pharaoh Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Pharaoh Predasite",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prime Laser Rifle",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Burst Laser",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Shade",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Raksa Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Raksa Kubrow",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sahasa Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sahasa Kubrow",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shade",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shade Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sly Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sly Vulpaphyla",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Smeeta Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Smeeta Kavat",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Stinger",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sunika Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sunika Kubrow",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sweeper",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sweeper Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Taxon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vasca Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vasca Kavat",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vizier Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vizier Predasite",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vulklok",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Wyrm",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Wyrm Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Venari",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Venari Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Venari Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Venari Prime Claws",
+      "isFounderOnly": false
+    }
+  ],
+  "archwings": [
+    {
+      "name": "Amesha",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Elytron",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Itzal",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Odonata",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Odonata Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Bonewidow",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Voidrig",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Bad Baby",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Feverspine",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Flatbelly",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Needlenose",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Runway",
+      "isFounderOnly": false
+    }
+  ],
+  "extras": [
+    {
+      "name": "Arquebex",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Artemis Bow",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Artemis Bow Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Balefire Charge",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Balefire Charger Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shadow Clones",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shadow Clones Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Catchmoon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Gaze",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rattleguts",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sporelacer",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Tombfinger",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Vermisplicer",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Desert Wind",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Desert Wind Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dex Pixia",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dex Pixia Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Diwata",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Diwata Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Exalted Blade",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Exalted Prime Blade",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Exalted Umbra Blade",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Garuda Talons",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Garuda Prime Talons",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Glory",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Iron Staff",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Iron Staff Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Ironbride",
+      "isFounderOnly": false
+    },
+    {
+      "name": "LandSlide",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Landslide Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lizzie",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Neutralizer",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Noctua",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Regulators",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Regulators Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sevagoth's Shadow",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sevagoth's Shadow Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shadow Claws",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shadow Claws Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shattered Lash",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shattered Lash Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Valkyr Prime Talons",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Valkyr Talons",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Whipclaw",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Whipclaw Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Plexus",
+      "isFounderOnly": false
+    }
+  ],
+  "archGuns": [
+    {
+      "name": "Cortege",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Corvas",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Corvas Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cyngas",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Dual Decurion",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Fluctus",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Grattler",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Imperator",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Imperator Vandal",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Ayanga",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kuva Grattler",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Larkspur",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Larkspur Prime",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mandonel",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mausolon",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Morgha",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Phaedra",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Dual Decurions",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Velocitus",
+      "isFounderOnly": false
+    }
+  ],
+  "archMelee": [
+    {
+      "name": "Agkuza",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Centaur",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Kaszas",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Knux",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Onorix",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Prisma Veritux",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rathbone",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Veritux",
+      "isFounderOnly": false
+    }
+  ],
+  "amps": [
+    {
+      "name": "Amp",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Cantic Prism",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Granmu Prism",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Klamora Prism",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Lega Prism",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Mote Prism",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Rahn Prism",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Raplak Prism",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Shwaak Prism",
+      "isFounderOnly": false
+    },
+    {
+      "name": "Sirocco",
+      "isFounderOnly": false
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "date": "2026-05-30",
+    "version": "v1.0",
+    "description": "Initial Web App Release",
+    "details": "First release of the web-based tracker.\n- Tracking for Quests, Gear, Lich Gear, Incarnons, Arcanes, Mods, Subsumes, Railjack, Modular Gear, Relics, Blueprints, Items, Cosmetics, Collectables, Decorations, Codex, Market and Extra\n- Dashboard with overall and per-category progress\n- Per-section settings to include or exclude categories from your overall percentage"
+  },
+  {
+    "date": "2026-05-31",
+    "version": "v1.1",
+    "description": "Visual Redesign & New Features",
+    "details": "Visual overhaul and several new features:\n- Refined dark theme across the whole app\n- Live World State panel showing current Cetus, Vallis, Cambion and Zariman cycles â€” updates automatically when a cycle ends\n- Command palette (Ctrl+K): search any item across all categories instantly\n- Screenshot scan: upload an in-game screenshot and the tracker will attempt to auto-check matching items via OCR\n- Incarnon page redesigned with week groups, per-family checkboxes, and current week highlighted\n- Task Checklist added\n- Fixed Lich Gear dashboard progress sometimes exceeding 100%"
+  },
+  {
+    "date": "2026-06-02",
+    "version": "v1.2",
+    "description": "Pinned Bar, Gear Families & More",
+    "details": "New features and fixes:\n- Floating Pinned Bar: a configurable bar you can pin to the screen showing World State cycles and your Task Checklist at a glance\n- Gear variants (e.g. Wraith, Vandal, Prisma) now grouped into collapsible families\n- Tracker rows can now be individually toggled open for more granular sub-item tracking\n- Exilus Adapter tracking added to Gear\n- Arcanes now support per-rank tracking for Psycho and Hoarder collection modes\n- Sidebar shows badge counts for pages with unfinished items while collapsed\n- Fixed dashboard section totals not respecting your settings"
+  },
+  {
+    "version": "v1.3",
+    "date": "2026-06-02",
+    "description": "Mobile Layout, New Theme & Command Palette Improvements",
+    "details": "Quality-of-life update focused on accessibility and polish:\n- Mobile-responsive layout: sidebar, tables and panels now adapt to small screens\n- New Neutral-Dark theme variant; theme can be switched directly from the sidebar\n- Command palette now supports multi-word fuzzy search and indexes more item types\n- Data corrections: arcane sections reorganised, Sirocco removed from Primary Weapons, Sporothrix typo fixed, duplicate weapon entries removed\n- Checklist task descriptions restored to their original in-game phrasing"
+  },
+  {
+    "version": "v1.4",
+    "date": "2026-06-04",
+    "description": "Honoria Titles, What's Next & Tracker Table Filters",
+    "details": "New page, dashboard widget and table improvements:\n- Honoria Titles: new page tracking all Honoria title unlocks, integrated into the dashboard and overall progress\n- \"What's Next\" dashboard widget highlighting partially completed categories so you always know where to focus\n- Tracker tables now support filter and sort controls, plus column icon badges\n- Fixed dashboard card order to match sidebar navigation"
+  },
+  {
+    "version": "v1.5",
+    "date": "2026-06-07",
+    "description": "Mods Overhaul — Tracker Table, Categories & Data Audit",
+    "details": "Full rework of the Mods page backed by a complete wiki audit:\n- Mods page migrated to the unified tracker-table layout with Owned, Maxed and Hoarder Rank columns\n- All 1489 mods categorised by equipment slot (Warframe, Primary, Secondary, Melee, Companion, Archwing, etc.)\n- Augments split into a dedicated Augment category with per-Warframe groups, replacing the previous flat list\n- Collapsible per-category tables matching the Arcanes layout; all sections can now be fully collapsed\n- Added Conclave as a distinct mod category\n- 200+ mod category misassignments corrected following a full wiki audit (141 initial pass + 74 follow-up + 7 Conclave corrections)\n- Mods sorted by category then alphabetically within each group"
+  },
+  {
+    "version": "v1.6",
+    "date": "2026-06-08",
+    "description": "Relics Tracker Table, Lich Ephemera & Wiki Links",
+    "details": "Further tracker improvements and data additions:\n- Relics page migrated to tracker-table with dedicated Owned and Radiant columns\n- Lich Gear: Adversary Ephemera sections added for Kuva and Tenet liches, synced with the Collectables page\n- World State: migrated to the tenno.tools API after warframestat.us became unavailable\n- Tracker tables now show wiki links for each item (can be toggled off in settings)"
+  },
+  {
+    "version": "v1.7",
+    "date": "2026-06-14",
+    "description": "Atragraph Foil Mods Tracking",
+    "details": "New section for the Atragraph cosmetic foil system:\n- Atragraph page tracking all foil mod families, integrated into the dashboard, sidebar, command palette and overall progress\n- Standard mode tracks one foil per mod family; optional Collector mode (in settings) tracks the foil on every compatible mod variant\n- Section can be toggled on or off from settings like every other category"
+  },
+  {
+    "version": "v1.8",
+    "date": "2026-06-15",
+    "description": "UX Overhaul — Navigation, Tables & Feedback",
+    "details": "Broad quality-of-life pass across the whole app:\n- Tracker tables: group sections are now collapsible — click any category header to expand or collapse it\n- Tracker tables: bulk column toggle now requires a two-step confirmation to prevent accidental mass-check\n- Tracker tables: completed rows no longer show strikethrough text (dim opacity is sufficient)\n- Search result count shown on Mods, Arcanes, Gear, Incarnon and Lich Gear pages when a filter is active\n- Sidebar: disabled sections collapsed into a single “N sections hidden” toggle instead of a full dimmed list\n- Sidebar: WF TRACKER logo now navigates to the dashboard\n- Sidebar: active page indicator visible when sidebar is collapsed\n- Sidebar: rank title (Baby Tenno → True Completionist) displayed below the progress bar\n- Sidebar: theme toggle label reworded to clearly describe the action rather than the current state\n- Dashboard: “What’s Next” section shows a placeholder for users who haven’t started tracking yet\n- Dashboard: disabled section cards now link to Settings with an “Enable in Settings” hint\n- Dashboard: overall progress bar increased to 14 px with a gold gradient fill\n- Settings: a “✓ Saved” confirmation flashes after any setting is changed"
+  },
+  {
+    "version": "v1.9",
+    "date": "2026-06-19",
+    "description": "Jade Shadows & Update 43 Content",
+    "details": "New content additions:\n- Warframes: Styanax Prime; Sirius & Orion as a dual-frame entry with shared shard/tau columns and separate build tracking\n- Incarnon: Week 9 rotation added (Stug, Vectis, Obex, Destreza, Ballistica)\n- Arcanes: Sculptor, Compression, Assimilation, Cryogenic\n- Mods: Kumihimo Loading, Rhythm Guard, Reroot Rampage, Noctua Swarm (Warframe Augments)\n- Gear: War Prime added\n- Honoria: Pontis Tower section (8 titles); Make Your Own Fate event title (Gift of the Lotus Alert)\n- Cosmetics: Syndir and Viserakta ephemera; Jade's Victory syandana; Bladeswarm weapon skins (Braton, Karyst, Kunai, Vectis); Bloodfrenzy weapon skins (Ballistica, Nagantaka, Venka)\n- Signas: Kyzen and Karotic added\n- Removed: Scan Screenshot page"
+  }
+]

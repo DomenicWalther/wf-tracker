@@ -1,0 +1,391 @@
+{
+  "intrinsics": [
+    "Tactical",
+    "Piloting",
+    "Gunnery",
+    "Engineering",
+    "Command"
+  ],
+  "components": [
+    {
+      "house": "Lavan",
+      "component": "Engines MK III",
+      "bonus": "Gain 20% Top Speed while shields are depleted"
+    },
+    {
+      "house": "Lavan",
+      "component": "Engines MK III",
+      "bonus": "Tenno gain 500 overshields after being launched from the Slingshot"
+    },
+    {
+      "house": "Lavan",
+      "component": "Plating MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Lavan",
+      "component": "Reactor MK III",
+      "bonus": "Equipping Lavan Hull Plating increases max Shields by 25%."
+    },
+    {
+      "house": "Lavan",
+      "component": "Reactor MK III",
+      "bonus": "Tenno gain 50% Damage increase for 5s after being launched from the Slingshot"
+    },
+    {
+      "house": "Lavan",
+      "component": "Shield Array MK III",
+      "bonus": "Gain 1000% of Energy consumed using Battle Mods is converted to Shields"
+    },
+    {
+      "house": "Lavan",
+      "component": "Shield Array MK III",
+      "bonus": "Shields replenish 50x faster while cloaked"
+    },
+    {
+      "house": "Sigma",
+      "component": "Engines MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Plating MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Reactor MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Shield Array MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Vidar",
+      "component": "Engines MK III",
+      "bonus": "Gain 50% boost speed while shield depleted"
+    },
+    {
+      "house": "Vidar",
+      "component": "Engines MK III",
+      "bonus": "Intruders on the Railjack will have their Armor reduced by 10%"
+    },
+    {
+      "house": "Vidar",
+      "component": "Plating MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Vidar",
+      "component": "Reactor MK III",
+      "bonus": "Gain 100% damage immunity duration after a Major Breach is repaired"
+    },
+    {
+      "house": "Vidar",
+      "component": "Reactor MK III",
+      "bonus": "Tenno gain 50% Speed Boost for 5s when deploying their Archwing"
+    },
+    {
+      "house": "Vidar",
+      "component": "Shield Array MK III",
+      "bonus": "30% of Shield Damage is diverted to increase Turret Damage by up to 300 for the next shot fired"
+    },
+    {
+      "house": "Vidar",
+      "component": "Shield Array MK III",
+      "bonus": "Redirect 50 Energy to Shields with every kill"
+    },
+    {
+      "house": "Vidar",
+      "component": "Shield Array MK III",
+      "bonus": "Every 10s, shields apply an Electrical proc to all enemies within 50m"
+    },
+    {
+      "house": "Zekti",
+      "component": "Engines MK III",
+      "bonus": "Shields regenerate 50% faster when Railjack is stationary"
+    },
+    {
+      "house": "Zekti",
+      "component": "Engines MK III",
+      "bonus": "Tenno gain 20% weapon damage onboard Railjack"
+    },
+    {
+      "house": "Zekti",
+      "component": "Plating MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Zekti",
+      "component": "Reactor MK III",
+      "bonus": "50% chance that an Electric Hazard will repair automatically after 5s"
+    },
+    {
+      "house": "Zekti",
+      "component": "Reactor MK III",
+      "bonus": "50% chance that a Fire Hazard will repair automatically after 5s"
+    },
+    {
+      "house": "Zekti",
+      "component": "Reactor MK III",
+      "bonus": "50% chance that an Ice Hazard will repair automatically after 5s"
+    },
+    {
+      "house": "Zekti",
+      "component": "Shield Array MK III",
+      "bonus": "Gain 25% Railjack damage while shield depleted"
+    },
+    {
+      "house": "Zekti",
+      "component": "Shield Array MK III",
+      "bonus": "Tenno gain 10% shields onboard Railjack"
+    },
+    {
+      "house": "House",
+      "component": "Armament",
+      "bonus": "MK III Bonus"
+    },
+    {
+      "house": "Lavan",
+      "component": "Apoc MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Lavan",
+      "component": "Carcinnox MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Lavan",
+      "component": "Cryophon MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Lavan",
+      "component": "Glazio MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Lavan",
+      "component": "Laith MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Lavan",
+      "component": "Photor MK III",
+      "bonus": "60% Heat Damage"
+    },
+    {
+      "house": "Lavan",
+      "component": "Pulsar MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Lavan",
+      "component": "Talyn MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Lavan",
+      "component": "Vort MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Sigma",
+      "component": "Apoc MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Carcinnox MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Cryophon MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Galvarc MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Glazio MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Laith MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Milati MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Photor MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Pulsar MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Talyn MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Tycho Seeker MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Sigma",
+      "component": "Vort MK III",
+      "bonus": "None"
+    },
+    {
+      "house": "Vidar",
+      "component": "Apoc MK III",
+      "bonus": "60% Puncture Damage"
+    },
+    {
+      "house": "Vidar",
+      "component": "Carcinnox MK III",
+      "bonus": "60% Puncture Damage"
+    },
+    {
+      "house": "Vidar",
+      "component": "Cryophon MK III",
+      "bonus": "60% Cold Damage"
+    },
+    {
+      "house": "Vidar",
+      "component": "Glazio MK III",
+      "bonus": "60% Puncture Damage"
+    },
+    {
+      "house": "Vidar",
+      "component": "Laith MK III",
+      "bonus": "60% Slash Damage"
+    },
+    {
+      "house": "Vidar",
+      "component": "Photor MK III",
+      "bonus": "60% Heat Damage"
+    },
+    {
+      "house": "Vidar",
+      "component": "Pulsar MK III",
+      "bonus": "60% Puncture Damage"
+    },
+    {
+      "house": "Vidar",
+      "component": "Talyn MK III",
+      "bonus": "60% Heat Damage"
+    },
+    {
+      "house": "Vidar",
+      "component": "Vort MK III",
+      "bonus": "60% Electricity Damage"
+    },
+    {
+      "house": "Zekti",
+      "component": "Apoc MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Zekti",
+      "component": "Carcinnox MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Zekti",
+      "component": "Cryophon MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Zekti",
+      "component": "Glazio MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Zekti",
+      "component": "Laith MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Zekti",
+      "component": "Photor MK III",
+      "bonus": "60% Heat Damage"
+    },
+    {
+      "house": "Zekti",
+      "component": "Pulsar MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Zekti",
+      "component": "Talyn MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Zekti",
+      "component": "Vort MK III",
+      "bonus": "60% Fire Rate"
+    },
+    {
+      "house": "Competency",
+      "component": "Type",
+      "bonus": "Bonus"
+    },
+    {
+      "house": "Piloting",
+      "component": "Elite",
+      "bonus": "25% speed for Vidar/Lavan/Zetki engines"
+    },
+    {
+      "house": "Gunnery",
+      "component": "Elite",
+      "bonus": "50% damage for Vidar/Lavan/Zetki turrets"
+    },
+    {
+      "house": "Repair",
+      "component": "Elite",
+      "bonus": "Gain 50% Movement Speed for 10 seconds after repairing"
+    },
+    {
+      "house": "Repair",
+      "component": "Elite",
+      "bonus": "Heal all teammates for 1000 Health when this crew member drops below 30% Health"
+    },
+    {
+      "house": "Combat",
+      "component": "Elite",
+      "bonus": "Increase Critical Damage by 300% while Health is below 50%"
+    },
+    {
+      "house": "Combat",
+      "component": "Elite",
+      "bonus": "150% Critical Chance bonus with Rifles/Pistols"
+    },
+    {
+      "house": "Endurance",
+      "component": "Elite",
+      "bonus": "Activates a protective shield when taking near lethal damage"
+    },
+    {
+      "house": "Endurance",
+      "component": "Elite",
+      "bonus": "Killing an enemy heals all nearby allies by 500 over 10 seconds"
+    }
+  ]
+}

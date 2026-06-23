@@ -1,0 +1,258 @@
+[
+  {
+    "warframe": "Ash",
+    "ability": "Shuriken"
+  },
+  {
+    "warframe": "Atlas",
+    "ability": "Petrify"
+  },
+  {
+    "warframe": "Banshee",
+    "ability": "Silence"
+  },
+  {
+    "warframe": "Baruuk",
+    "ability": "Lull"
+  },
+  {
+    "warframe": "Caliban",
+    "ability": "Sentient Wrath"
+  },
+  {
+    "warframe": "Chroma",
+    "ability": "Elemental Ward"
+  },
+  {
+    "warframe": "Citrine",
+    "ability": "Fractured Blast"
+  },
+  {
+    "warframe": "Cyte-09",
+    "ability": "Evade"
+  },
+  {
+    "warframe": "Dagath",
+    "ability": "Wyrd Scythes"
+  },
+  {
+    "warframe": "Dante",
+    "ability": "Dark Verse"
+  },
+  {
+    "warframe": "Ember",
+    "ability": "Fire Blast"
+  },
+  {
+    "warframe": "Equinox",
+    "ability": "Rest & Rage"
+  },
+  {
+    "warframe": "Excalibur",
+    "ability": "Radial Blind"
+  },
+  {
+    "warframe": "Follie",
+    "ability": "Self Portrait"
+  },
+  {
+    "warframe": "Frost",
+    "ability": "Ice Wave"
+  },
+  {
+    "warframe": "Gara",
+    "ability": "Spectrorage"
+  },
+  {
+    "warframe": "Garuda",
+    "ability": "Blood Altar"
+  },
+  {
+    "warframe": "Gauss",
+    "ability": "Thermal Sunder"
+  },
+  {
+    "warframe": "Grendel",
+    "ability": "Nourish"
+  },
+  {
+    "warframe": "Gyre",
+    "ability": "Coil Horizon"
+  },
+  {
+    "warframe": "Harrow",
+    "ability": "Condemn"
+  },
+  {
+    "warframe": "Hildryn",
+    "ability": "Pillage"
+  },
+  {
+    "warframe": "Hydroid",
+    "ability": "Tempest Barrage"
+  },
+  {
+    "warframe": "Inaros",
+    "ability": "Desiccation"
+  },
+  {
+    "warframe": "Ivara",
+    "ability": "Quiver"
+  },
+  {
+    "warframe": "Jade",
+    "ability": "Ophanim Eyes"
+  },
+  {
+    "warframe": "Khora",
+    "ability": "Ensnare"
+  },
+  {
+    "warframe": "Koumei",
+    "ability": "Omamori"
+  },
+  {
+    "warframe": "Kullervo",
+    "ability": "Wrathful Advance"
+  },
+  {
+    "warframe": "Lavos",
+    "ability": "Vial Rush"
+  },
+  {
+    "warframe": "Limbo",
+    "ability": "Banish"
+  },
+  {
+    "warframe": "Loki",
+    "ability": "Decoy"
+  },
+  {
+    "warframe": "Mag",
+    "ability": "Pull"
+  },
+  {
+    "warframe": "Mesa",
+    "ability": "Shooting Gallery"
+  },
+  {
+    "warframe": "Mirage",
+    "ability": "Eclipse"
+  },
+  {
+    "warframe": "Nekros",
+    "ability": "Terrify"
+  },
+  {
+    "warframe": "Nezha",
+    "ability": "Fire Walker"
+  },
+  {
+    "warframe": "Nidus",
+    "ability": "Larva"
+  },
+  {
+    "warframe": "Nokko",
+    "ability": "Bright Bonnet"
+  },
+  {
+    "warframe": "Nova",
+    "ability": "Null Star"
+  },
+  {
+    "warframe": "Nyx",
+    "ability": "Mind Control"
+  },
+  {
+    "warframe": "Oberon",
+    "ability": "Smite"
+  },
+  {
+    "warframe": "Octavia",
+    "ability": "Resonator"
+  },
+  {
+    "warframe": "Oraxia",
+    "ability": "Webbed Embrace"
+  },
+  {
+    "warframe": "Protea",
+    "ability": "Dispensary"
+  },
+  {
+    "warframe": "Qorvex",
+    "ability": "Chyrinka Pillar"
+  },
+  {
+    "warframe": "Revenant",
+    "ability": "Reave"
+  },
+  {
+    "warframe": "Rhino",
+    "ability": "Roar"
+  },
+  {
+    "warframe": "Saryn",
+    "ability": "Molt"
+  },
+  {
+    "warframe": "Sevagoth",
+    "ability": "Gloom"
+  },
+  {
+    "warframe": "Styanax",
+    "ability": "Tharros Strike"
+  },
+  {
+    "warframe": "Temple",
+    "ability": "Pyrotechnics"
+  },
+  {
+    "warframe": "Titania",
+    "ability": "Spellbind"
+  },
+  {
+    "warframe": "Trinity",
+    "ability": "Well of Life"
+  },
+  {
+    "warframe": "Uriel",
+    "ability": "Remedium"
+  },
+  {
+    "warframe": "Valkyr",
+    "ability": "Warcry"
+  },
+  {
+    "warframe": "Vauban",
+    "ability": "Tesla Nervos"
+  },
+  {
+    "warframe": "Volt",
+    "ability": "Shock"
+  },
+  {
+    "warframe": "Voruna",
+    "ability": "Lycath's Hunt"
+  },
+  {
+    "warframe": "Wisp",
+    "ability": "Breach Surge"
+  },
+  {
+    "warframe": "Wukong",
+    "ability": "Defy"
+  },
+  {
+    "warframe": "Xaku",
+    "ability": "Xata's Whisper"
+  },
+  {
+    "warframe": "Yareli",
+    "ability": "Aquablades"
+  },
+  {
+    "warframe": "Zephyr",
+    "ability": "Airburst"
+  }
+]

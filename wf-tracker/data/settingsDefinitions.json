@@ -1,0 +1,70 @@
+{
+  "founder": "Unlock tracking for founder only gear",
+  "conclave": "Include conclave collections",
+  "gear": {
+    "reactor": "Reactor/Catalyst on everything",
+    "exilus": "Exilus mod on all gear",
+    "shards": "5 Shards in each frame",
+    "tauForged": "Tau-Forged shards",
+    "arcaneAdapter": "Arcane adapter on all gear",
+    "maxBuild": "Min-maxed build on all gear",
+    "auraForma": "Aura Forma on all frames",
+    "stanceForma": "Stance Forma on all melee",
+    "ampArcaneAdapter": "Arcane adapter on all amps",
+    "lens": "Max lens on all gear"
+  },
+  "incarnon": {
+    "completionist": "Track incarnon adapters on all weapon variants"
+  },
+  "arcane": {
+    "psycho": "Collect 1 of every arcane rank"
+  },
+  "mod": {
+    "hoarder": "Track mod duplicates at every rank"
+  },
+  "railjack": {
+    "partHoarder": "Track all RJ parts with best stats"
+  },
+  "relic": {
+    "hoarder": "Track upgraded relic variants"
+  },
+  "blueprint": {
+    "hoarder": "Include old/impossible blueprints"
+  },
+  "cosmetics": {
+    "prime": "Prime Access accessories",
+    "consoleExclusive": "Console exclusive cosmetics",
+    "tennogen": "Tennogen cosmetics",
+    "steamItems": "Steam exclusive skins",
+    "nightwave": "Nightwave cosmetics",
+    "old": "Old impossible cosmetics",
+    "extra": "Tennocon & event exclusive cosmetics",
+    "founder": "Founder exclusive cosmetics"
+  },
+  "collectable": {
+    "eventLocked": "Event limited collectables",
+    "old": "Old impossible collectables",
+    "prime": "Primed collectables",
+    "consoleExclusive": "Console exclusive collectables",
+    "extra": "Heavily restricted collectables"
+  },
+  "decorations": {
+    "primeAccess": "Prime Access decorations",
+    "events": "Event decorations",
+    "nightwave": "Nightwave decorations",
+    "old": "Old impossible decorations",
+    "extra": "Tennocon decorations",
+    "founder": "Founder decorations"
+  },
+  "codex": {
+    "old": "Include old impossible codex scans"
+  },
+  "market": {
+    "extra": "Tennocon & event market items"
+  },
+  "extra": {
+    "prime": "Prime items",
+    "plat": "Platinum items",
+    "founder": "Founder items"
+  }
+}

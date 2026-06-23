@@ -1,0 +1,7467 @@
+[
+  {
+    "name": "Accumulating Whipclaw",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Adaptation",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Aerodynamic",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Agility Drift",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Ambush",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Anabolic Pollination",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Antimatter Absorb",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Antitoxin",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Archon Continuity",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Archon Flow",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Archon Intensify",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Archon Stretch",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Archon Vitality",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Armored Agility",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Assimilate",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Augur Accord",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Augur Message",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Augur Reach",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Augur Secrets",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Augur Seeker",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Avenging Truth",
+    "maxRank": 3,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Balefire Surge",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Blackout Pulse",
+    "maxRank": 10,
+    "category": "Railjack"
+  },
+  {
+    "name": "Blast Shield",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Blazing Pillage",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Blind Rage",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Blinding Reave",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Blood For Energy",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Blood For Life",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Brief Respite",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Calculated Redirection",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Capacitance",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Cataclysmic Continuum",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Catalyzing Shields",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Cathode Current",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Celestial Stomp",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Champion's Blessing",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Chaos Sphere",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Chilling Globe",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Chromatic Blade",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Cold Snap",
+    "maxRank": 3,
+    "category": "Archwing Augment"
+  },
+  {
+    "name": "Condition's Perfection",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Constitution",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Continuity",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Continuous Misery",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Creeping Terrify",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Crowd Dispersion",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Cunning Drift",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Cutting Edge",
+    "maxRank": 10,
+    "category": "Archwing"
+  },
+  {
+    "name": "Damage Decoy",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Deadly Maneuvers",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Desiccation's Curse",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Despoil",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Diamond Skin",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Disarming Purity",
+    "maxRank": 3,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Discipline's Merit",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Divine Retribution",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Duality",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Efficient Transferral",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Elemental Sandstorm",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Elusive Retribution",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Empowered Quiver",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Endless Lullaby",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Endoparasitic Vector",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Endurance Drift",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Enemy Sense",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Energy Channel",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Energy Conversion",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Energy Field",
+    "maxRank": 3,
+    "category": "Archwing Augment"
+  },
+  {
+    "name": "Energy Inversion",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Energy Nexus",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Energy Transfer",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Entropy Burst",
+    "maxRank": 3,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Entropy Detonation",
+    "maxRank": 3,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Enveloping Cloud",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Equilibrium",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Eroding Blight",
+    "maxRank": 3,
+    "category": "Secondary Augment"
+  },
+  {
+    "name": "Escape Velocity",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Eternal War",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Everlasting Ward",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Exothermic",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Fass",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Fast Deflection",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Fatal Teleport",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Fear Sense",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Fireball Frenzy",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Firewalker",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flame Repellent",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Antitoxin",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Continuity",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Diamond Skin",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Enemy Sense",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Equilibrium",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Fast Deflection",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Flame Repellent",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Flow",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Heavy Impact",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Insulation",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Intensify",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Intruder",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Provoked",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Quick Thinking",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Redirection",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Reflection",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Rush",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Steel Fiber",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Streamline",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Stretch",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Thief's Wit",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flawed Vitality",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Fleeting Expertise",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Flow",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Focused Defense",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Fortitude",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Fracturing Crush",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Fracturing Wind",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Funnel Clouds",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Furious Javelin",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Gaia's Tragedy",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Gastro",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Gilded Truth",
+    "maxRank": 3,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Gleaming Blight",
+    "maxRank": 3,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Gourmand",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Greedy Pull",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Guardian Armor",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Guided Effigy",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Hall of Malevolence",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Hallowed Eruption",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Hallowed Reckoning",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Handspring",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Harrowing Spire",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Healing Flame",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Health Conversion",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Hearty Nourishment",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Heavy Impact",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Hushed Invisibility",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Hysterical Assault",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Iatric Mycelium",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Icy Avalanche",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Immolated Radiance",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Infiltrate",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Insatiable",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Insulation",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Intensify",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Intrepid Stand",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Irradiating Disarm",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Jade's Judgment",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Jahu",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Khra",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Kumihimo Loading",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Larva Burst",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Lasting Covenant",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Lasting Purity",
+    "maxRank": 3,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Lingering Transmutation",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Lohk",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Loot Detector",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Loyal Merulina",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Mach Crash",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Madurai Transmute Core",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Martyr Symbiosis",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Mentor's Legacy",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Mesmer Shield",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Metal Fiber",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Mind Freak",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Mobilize",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Molecular Conversion",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Molecular Fission",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Motus Impact",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Motus Setup",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Motus Signal",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Naramon Transmute Core",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Narrow Minded",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Natural Talent",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Negation Armor",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Netra",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Neutralizing Justice",
+    "maxRank": 3,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Neutron Star",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Noctua Swarm",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Odomedic",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Omikuji's Fortune",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Ore Gaze",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Oull",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Overextended",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Pacifying Bolts",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Parasitic Vitality",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Path of Statues",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Peaceful Provocation",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Phoenix Renewal",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Piercing Roar",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Pilfering Strangledome",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Pilfering Swarm",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Pistol Scavenger",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Power Donation",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Power Drift",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Precision Intensify",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Preparation",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Primal Rage",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Primed Continuity",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Primed Flow",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Primed Redirection",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Primed Sure Footed",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Primed Vigor",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Prolonged Paralysis",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Provoked",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Pyroclastic Flow",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Quick Thinking",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Rage",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Razorwing Blitz",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Recrystalize",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Redirection",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Reflect",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Reflection",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Reflex Guard",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Regenerative Molt",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Reinforcing Stomp",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Repair Dispensary",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Repelling Bastille",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Reroot Rampage",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Resonating Quake",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Retribution",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Rhythm Guard",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Rifle Scavenger",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Rift Haven",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Rift Torrent",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Ris",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Rising Storm",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Rolling Guard",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Rousing Plunder",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Rubble Heap",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Rush",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Sacrifice",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Safeguard",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Safeguard Switch",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Savage Silence",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Savior Decoy",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Seeking Shuriken",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Seismic Palm",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Shattered Storm",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Shield of Shadows",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Shock Trooper",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Shotgun Scavenger",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Smoke Shadow",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Sniper Scavenger",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Soul Survivor",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Sovereign Outcast",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Spectral Spirit",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Spectrosiphon",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Speed Drift",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Spellbound Harvest",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Spontaneous Singularity",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Sprint Boost",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Staggering Shield",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Stalking Fan",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Stealth Drift",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Steel Fiber",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Stinging Truth",
+    "maxRank": 3,
+    "category": "Secondary Augment"
+  },
+  {
+    "name": "Streamline",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Streamlined Form",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Stretch",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Sundering Weave",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Superior Defenses",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Sure Footed",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Survival Instinct",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Tectonic Fracture",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Tesla Bank",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Tharros Lethality",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "The Relentless Lost",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Thief's Wit",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Thrall Pact",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Tidal Impunity",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Titanic Rumbler",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Total Eclipse",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Toxin Resistance",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Transient Fortitude",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Transistor Shield",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Tribunal",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Ulfrun's Endurance",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Umbral Fiber",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Umbral Intensify",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Umbral Vitality",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Untime Rift",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Vampire Leech",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Vampiric Grasp",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Vazarin Transmute Core",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Vigor",
+    "maxRank": 5,
+    "category": "Warframe"
+  },
+  {
+    "name": "Vigorous Swap",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Vitality",
+    "maxRank": 10,
+    "category": "Warframe"
+  },
+  {
+    "name": "Volatile Parasite",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Vome",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Votive Onslaught",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Warding Thurible",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Warm Coat",
+    "maxRank": 3,
+    "category": "Warframe"
+  },
+  {
+    "name": "Xata",
+    "maxRank": 1,
+    "category": "Warframe"
+  },
+  {
+    "name": "Coaction Drift",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Combat Discipline",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Corrosive Projection",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Dead Eye",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "EMP Aura",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Enemy Radar",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Energy Siphon",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Growing Power",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Infested Impedance",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Physique",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Pistol Amp",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Rejuvenation",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Rifle Amp",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Shield Disruption",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Shotgun Amp",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Stand United",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Steel Charge",
+    "maxRank": 5,
+    "category": "Aura"
+  },
+  {
+    "name": "Abundant Mutation",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Accelerated Blast",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Acid Shells",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Adhesive Blast",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Airburst Rounds",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Amalgam Argonak Metal Auger",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Amalgam Daikyu Target Acquired",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Amalgam Javlok Magazine Warp",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Amalgam Serration",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Amalgam Shotgun Barrage",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Ammo Case",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Ammo Drum",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Ammo Stock",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Argon Scope",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Arrow Mutation",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Ballistic Bullseye",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Bane of Corpus",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Bane of Grineer",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Bane of Infested",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Bane of Orokin",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Bane of The Murmur",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Biotic Rounds",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Bladed Rounds",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Blaze",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Blood Forge",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Blunderbuss",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Bomb The Landin'",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Breach Loader",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Burdened Magazine",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Buzz Kill",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Calculated Shot",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Cat's Eye",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Cautious Shot",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Charged Chamber",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Charged Shell",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Chilling Grasp",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Chilling Reload",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Cleanse Corpus",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Cleanse Grineer",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Cleanse Infested",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Cleanse Orokin",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Cleanse The Murmur",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Combustion Beam",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Combustion Rounds",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Comet Blast",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Concentrated Arrow",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Contagious Spread",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Contamination Casing",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Counterbalance",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Critical Delay",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Critical Focus",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Critical Surge",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Cryo Coating",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Cryo Rounds",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Deadly Efficiency",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Deadly Sequence",
+    "maxRank": 3,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Depleted Reload",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Detect Vulnerability",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Disruptor",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Dizzying Rounds",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Dreaded Killshot",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Dual Rounds",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Efficient Beams",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Entropy Flight",
+    "maxRank": 3,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Fanged Fusillade",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Fast Hands",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Fatal Acceleration",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Fever Strike",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Firestorm",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Ammo Drum",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Ammo Stock",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Bane of Corpus",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Bane of Grineer",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Bane of Infested",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Blunderbuss",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Charged Shell",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Chilling Grasp",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Cleanse Corpus",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Cleanse Grineer",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Cleanse Infested",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Concussion Rounds",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Contagious Spread",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Cryo Rounds",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Deep Freeze",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Disruptor",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Expel Corpus",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Expel Grineer",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Expel Infested",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Fast Hands",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Fever Strike",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Flechette",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Hell's Chamber",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Hellfire",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Incendiary Coat",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Infected Clip",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Lightning Rod",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Magazine Warp",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Metal Auger",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed No Return",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed North Wind",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Pathogen Rounds",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Point Blank",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Point Strike",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Rifle Aptitude",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Seeker",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Seeking Force",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Serration",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Shell Compression",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Shotgun Barrage",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Shotgun Savvy",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Shredder",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Slip Magazine",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Smite Corpus",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Smite Grineer",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Smite Infested",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Speed Trigger",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Split Chamber",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Stormbringer",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Tactical Pump",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flawed Vital Sense",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Flechette",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Fomorian Accelerant",
+    "maxRank": 3,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Four Riders",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Frail Momentum",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Freeze Force",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Frigid Blast",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Galvanized Acceleration",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Galvanized Aptitude",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Galvanized Chamber",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Galvanized Hell",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Galvanized Savvy",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Galvanized Scope",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Hammer Shot",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Harkonar Scope",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Heavy Caliber",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Hell's Chamber",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Hellfire",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "High Voltage",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Hunter Munitions",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Hush",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Hypothermic Shell",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Incendiary Coat",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Infected Clip",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Internal Bleeding",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Loose Hatch",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Magazine Warp",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Magma Chamber",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Magnetic Capacity",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Magnetic Rush",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Magnetized Core",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Magnetized Discharge",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Malignant Force",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Mending Shot",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Metal Auger",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Modified Munitions",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Muzzle Flash",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Nano-Applicator",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Napalm Grenades",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Narrow Barrel",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Nightwatch Napalm",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "North Wind",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Parallax Scope",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Piercing Caliber",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Piercing Navigator",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Point Blank",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Point Strike",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Polar Magazine",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Primary Acuity",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Ammo Stock",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Bane of Corpus",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Bane of Grineer",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Bane of Infested",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Bane of Orokin",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Chamber",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Charged Shell",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Chilling Grasp",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Cleanse Corpus",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Cleanse Grineer",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Cleanse Infested",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Cleanse Orokin",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Cryo Rounds",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Dual Rounds",
+    "maxRank": 10,
+    "category": "Archwing"
+  },
+  {
+    "name": "Primed Fast Hands",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Fever Strike",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Firestorm",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Point Blank",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Rifle Ammo Mutation",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Shotgun Ammo Mutation",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Shred",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Sniper Ammo Mutation",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Tactical Pump",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Quick Reload",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Radiated Reload",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Ravage",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Resolute Focus",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Resonance",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Reverse Rotorswell",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Rifle Ammo Mutation",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Rifle Aptitude",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Rifle Elementalist",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Rime Rounds",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Sabot Rounds",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Scan Aquatic Lifeforms",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Scattered Justice",
+    "maxRank": 3,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Scattering Inferno",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Scorch",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Seeker",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Seeking Force",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Seeking Fury",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Semi-Rifle Cannonade",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Semi-Shotgun Cannonade",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Serration",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Sharpshooter",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Shatter Burst",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Shattering Justice",
+    "maxRank": 3,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Shell Compression",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Shell Rush",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Shell Shock",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Shocking Speed",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Shotgun Ammo Mutation",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Shotgun Barrage",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Shotgun Elementalist",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Shotgun Savvy",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Shrapnel Shot",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Shred",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Shredder",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Silent Battery",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Sinister Reach",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Smite Corpus",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Smite Grineer",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Smite Infested",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Smite Orokin",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Smite The Murmur",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Sniper Ammo Mutation",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Spectral Serration",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Speed Trigger",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Split Chamber",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Split Flights",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Spring-Loaded Chamber",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Static Discharge",
+    "maxRank": 5,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Stormbringer",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Sweeping Serration",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Tactical Pump",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Tainted Mag",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Tainted Shell",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Terminal Velocity",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Tether Grenades",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Thermite Rounds",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Thunderbolt",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Toxic Barrage",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Tractor Beam",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Vicious Spread",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Vigilante Armaments",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Vigilante Fervor",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Vigilante Offense",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Vigilante Pursuit",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Vigilante Supplies",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Vigilante Vigor",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Vile Acceleration",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Virulent Scourge",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Vital Sense",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Volatile Quick Return",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Volatile Rebound",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Volatile Variant",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Voltage Sequence",
+    "maxRank": 3,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Voltaic Strike",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Wildfire",
+    "maxRank": 3,
+    "category": "Primary"
+  },
+  {
+    "name": "Accelerated Isotope",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Amalgam Barrel Diffusion",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Anemic Agility",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Augur Pact",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Automatic Trigger",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Barrel Diffusion",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Bore",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Charged Bullets",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Concealed Explosives",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Concussion Rounds",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Convulsion",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Creeping Bullseye",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Critical Precision",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Death Blossom",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Deep Freeze",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Electro Pulse",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Embedded Catalyzer",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Energizing Shot",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Entropy Spike",
+    "maxRank": 3,
+    "category": "Secondary Augment"
+  },
+  {
+    "name": "Expel Corpus",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Expel Grineer",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Expel Infested",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Expel Orokin",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Expel The Murmur",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Explosive Legerdemain",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Flawed Barrel Diffusion",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Flawed Convulsion",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Flawed Gunslinger",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Flawed Heated Charge",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Flawed Hornet Strike",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Flawed Pistol Gambit",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Flawed Quickdraw",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Flawed Ravage",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Flawed Razor Shot",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Flawed Sure Shot",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Flawed Target Cracker",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Flawed Trick Mag",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Frostbite",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Fulmination",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Galvanized Crosshairs",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Galvanized Diffusion",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Galvanized Elementalist",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Galvanized Reflex",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Galvanized Shot",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Gunslinger",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Heated Charge",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Hemorrhage",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "High Noon",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Hollow Point",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Hollowed Bullets",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Homing Fang",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Hornet Strike",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Hydraulic Crosshairs",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Ice Storm",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Jolt",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Kinetic Diversion",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Lethal Momentum",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Lethal Torrent",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Magazine Extension",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Magnetic Might",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Magnetized Cycle",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Magnum Force",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Merciless Gunfight",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "No Return",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Pathogen Rounds",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Perpetual Agony",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Pistol Acuity",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Pistol Ammo Mutation",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Pistol Elementalist",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Pistol Gambit",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Pistol Pestilence",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Pressurized Magazine",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Convulsion",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Expel Corpus",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Expel Grineer",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Expel Infested",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Expel Orokin",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Expel The Murmur",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Fulmination",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Heated Charge",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Magazine Warp",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Pistol Ammo Mutation",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Pistol Gambit",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Quickdraw",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Rubedo-Lined Barrel",
+    "maxRank": 10,
+    "category": "Archwing"
+  },
+  {
+    "name": "Primed Slip Magazine",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Smite Corpus",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Smite Grineer",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Smite Infested",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Smite Murmur",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Smite Orokin",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Stabilizer",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Steady Hands",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Target Cracker",
+    "maxRank": 10,
+    "category": "Secondary"
+  },
+  {
+    "name": "Primed Venomous Clip",
+    "maxRank": 10,
+    "category": "Archwing"
+  },
+  {
+    "name": "Proton Jet",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Proton Snap",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Pummel",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Quickdraw",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Quicklock",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Razor Shot",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Reactive Storm",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Reawaken",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Rubedo-Lined Barrel",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Ruinous Extension",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Rupture",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Sawtooth Clip",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Semi-Pistol Cannonade",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Sequence Burn",
+    "maxRank": 3,
+    "category": "Secondary Augment"
+  },
+  {
+    "name": "Sharpened Bullets",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Slip Magazine",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Stabilizer",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Steady Hands",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Suppress",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Sure Shot",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Synth Charge",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Synth Fiber",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Synth Reflex",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Tainted Clip",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Target Cracker",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Target Fixation",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Targeting Receptor",
+    "maxRank": 3,
+    "category": "Secondary"
+  },
+  {
+    "name": "Targeting Subsystem",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Thermagnetic Shells",
+    "maxRank": 3,
+    "category": "Secondary Augment"
+  },
+  {
+    "name": "Toxic Sequence",
+    "maxRank": 3,
+    "category": "Secondary Augment"
+  },
+  {
+    "name": "Trick Mag",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Venomous Clip",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Vile Discharge",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Vile Precision",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Amalgam Furax Body Count",
+    "maxRank": 5,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Amalgam Organ Shatter",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Amalgam Ripkas True Steel",
+    "maxRank": 5,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Astral Slash",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Auger Strike",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Berserker Fury",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Biting Frost",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Blade of Truth",
+    "maxRank": 3,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Blazing Steel",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Blending Talons",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Blood For Ammo",
+    "maxRank": 1,
+    "category": "Melee"
+  },
+  {
+    "name": "Blood Rush",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Body Count",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Burning Hate",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Bursting Mass",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Calm & Frenzy",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Cataclysmic Gate",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Catapult",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Coil Recharge",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Collision Force",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Combo Fury",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Combo Killer",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Condition Overload",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Conductive Blade",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Conductive Sphere",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Contagion Cloud",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Corrupt Charge",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Counter Pulse",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Covert Lethality",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Crescent Charge",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Crescent Devolution",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Critical Deceleration",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Critical Meltdown",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Dark Propagation",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Dreamer's Wrath",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Drifting Contact",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Empowered Blades",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Enduring Affliction",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Enduring Strike",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Enraged",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Extend",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Finishing Touch",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Berserker Fury",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Fury",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Heavy Trauma",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Jagged Edge",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Maglev",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Melee Prowess",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Molten Impact",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Organ Shatter",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Parry",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Piercing Hit",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Power Throw",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Pressure Point",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Reflex Coil",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Rupture",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Sawtooth Clip",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Shocking Touch",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Sundering Strike",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed True Steel",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Flawed Whirlwind",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Focus Energy",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Focus Radon",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Full Contact",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Fury",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Fused Crucible",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Fused Reservoir",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Gale Kick",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Galvanized Steel",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Glacial Edge",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Gladiator Aegis",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Gladiator Finesse",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Gladiator Might",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Gladiator Resolve",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Gladiator Rush",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Gladiator Vice",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Guardian Derision",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Hata-Satya",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Healing Return",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Heavy Trauma",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Hyperstrike",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Ironclad Charge",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Jagged Edge",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Justice Blades",
+    "maxRank": 3,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Killing Blow",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Lasting Sting",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Life Strike",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Lightning Rod",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Lorun-Tash",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Magnetic Welt",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Maim",
+    "maxRank": 5,
+    "category": "Secondary"
+  },
+  {
+    "name": "Maiming Strike",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Melee Elementalist",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Melee Guidance",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Melee prowess",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Meteor Crash",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Molten Impact",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Necrophagic Vigor",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Opportunity's Reach",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Organ Shatter",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Pain Points",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Pain Threshold",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Parry",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Partitioned Mallet",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Piercing Hit",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Poisonous Sting",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Power Throw",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Precision Strike",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Pressure Point",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Prey of Dynar",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Primed Deadly Efficiency",
+    "maxRank": 10,
+    "category": "Archwing"
+  },
+  {
+    "name": "Primed Fury",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Primed Heavy Trauma",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Primed Pressure Point",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Primed Ravage",
+    "maxRank": 10,
+    "category": "Primary"
+  },
+  {
+    "name": "Primed Reach",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Quickening",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Radiant Finish",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Reach",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Reaping Chakram",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Reflex Coil",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Reflex Denial",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Relentless Combination",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Rending Strike",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Revealing Spores",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Sacrificial Pressure",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Sacrificial Steel",
+    "maxRank": 10,
+    "category": "Melee"
+  },
+  {
+    "name": "Savagery",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Scattering Strike",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Searing Steel",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Seismic Wave",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Shadow Haze",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Sharpened Claws",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Shattering Impact",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Shocking Touch",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Smite Infusion",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Spoiled Strike",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Spring-Loaded Blade",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Stockpiled Blight",
+    "maxRank": 3,
+    "category": "Secondary Augment"
+  },
+  {
+    "name": "Stunning Speed",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Sudden Impact",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Sundering Strike",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Surging Blades",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Swift Mercy",
+    "maxRank": 1,
+    "category": "Melee"
+  },
+  {
+    "name": "Swift Momentum",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Swing Line",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Tempered Blade",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Toxic Blight",
+    "maxRank": 3,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "True Punishment",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "True Steel",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Ulashta-Shol",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Vicious Frost",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Viral Tempest",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Volatile Recompense",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Volcanic Edge",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Weakening Strike",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Weeping Wounds",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Whirlwind",
+    "maxRank": 5,
+    "category": "Melee"
+  },
+  {
+    "name": "Winds of Purity",
+    "maxRank": 3,
+    "category": "Secondary Augment"
+  },
+  {
+    "name": "Worm's Torment",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Wrath of Ukko",
+    "maxRank": 3,
+    "category": "Melee"
+  },
+  {
+    "name": "Wrecking Wall",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Astral Twilight",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Atlantis Vulcan",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Bleeding Willow",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Blind Justice",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Brutal Tide",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Bullet Dance",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Burning Wasp",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Butcher's Revelry",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Carving Mantis",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Clashing Forest",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Cleaving Whirlwind",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Coiling Viper",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Crimson Dervish",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Crossing Snakes",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Crushing Ruin",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Cyclone Kraken",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Decisive Judgement",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Defiled Snapdragon",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Eleventh Storm",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Final Harbinger",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Flailing Branch",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Galeforce Dawn",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Gemini Cross",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Gleaming Talon",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Gnashing Payara",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Grim Fury",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Iron Phoenix",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Malicious Raptor",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Mountain's Edge",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Pointed Wind",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Reaping Spiral",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Rending Crane",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Shattering Storm",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Sinking Talon",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Slicing Feathers",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Spinning Needle",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Stinging Thorn",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Swirling Tiger",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Swooping Falcon",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Tempo Royale",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Tranquil Cleave",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Twirling Spire",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Vengeful Revenant",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Vermillion Storm",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Wise Razor",
+    "maxRank": 3,
+    "category": "Stance"
+  },
+  {
+    "name": "Abating Link",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Acidic Spittle",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Aerial Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Aerial Prospectus",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Animal Instinct",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Anti-Grav Array",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Anti-V",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Assassin Posture",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Astral Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Auto Breach",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Balanced Posture",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Bell Ringer",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Bhisaj-Bal",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Bite",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Bloodthirst",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Botanist",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Brute Conditioning",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Burning Claws",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Byteeryte",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Carnis Carapace",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Carnis Mandible",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Carnis Stinger",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Catalyzer Link",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Charm",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Chilling Claws",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Computer Cop",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Contagious Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Coolant Leak",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Covert Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Cull the Weak",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Da-Ren",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Damzav-Vati",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Dig",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Disabling Conditioning",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Draining Bite",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Dreamer's Bond",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Duplex Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Elusive Posture",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Empazu-Shol",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Enhanced Vitality",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Esti Vel-Ikha",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Evir-Ti",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Failsafe",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Fass Canticle",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Fatal Attraction",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Ferocity",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Fetch",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Firewall",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Flame Gland",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Frenzied Posture",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Frost Jaw",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Ghost",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Guardian",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Hard Reset",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Hastened Deflection",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Hayan-Dabor",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Hit And Run",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Hok-Kaal",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Howl",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Hunt",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Hunter Adrenaline",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Hunter Command",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Hunter Recovery",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Hunter Synergy",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Hunter Track",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Hunter's Bonesaw",
+    "maxRank": 5,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Immunity Resistance",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Immuno Shield",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Infectious Bite",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Instant Secure",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Intruder",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Investigator",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Jahu Canticle",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Jet Stream",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Jugulus Barbs",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Jugulus Carapace",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Jugulus Spines",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Kaal-zidi",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Kavat's Grace",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Keep-Clean",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Khra Canticle",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Lashta-Vak",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Link Fiber",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Link Redirection",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Link Vitality",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Live Wire",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Lohk Canticle",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Looter",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Loyal Companion",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Loyal Retriever",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Magnetic Claws",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Magnetic Strike",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Malicious Code",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Manifold Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Mark of the Beast",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Master Key",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Master Thief",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Master's Edge",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Maul",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Mecha Empowered",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Mecha Overdrive",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Mecha Pulse",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Mecha Recharge",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Medi-Pet Kit",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Medi-Ray",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Mending Splinters",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Merulina Guardian",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Metem-Erun",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Metem-Hakh",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Mischief",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Momentous Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Morphic Transformer",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Mystic Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Negate",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Netra Invocation",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Neutralize",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Omn-Evi",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Out Of Sight",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Pack Leader",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Panzer Devolution",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Paralytic Spores",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Peculiar Audience",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Peculiar Bloom",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Peculiar End",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Peculiar Growth",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Persistent Posture",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Pool of Life",
+    "maxRank": 5,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Pounce",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Power Drain",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Precision Conditioning",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Primed Animal Instinct",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Primed Morphic Transformer",
+    "maxRank": 10,
+    "category": "Archwing"
+  },
+  {
+    "name": "Primed Pack Leader",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Primed Regen",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Prismatic Companion",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Proboscis",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Protect",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Protector Posture",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Quick Correct",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Quick Return",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Radon Claws",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Regen",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Reinforced Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Resourceful Retriever",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Restorative Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Retarget",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Retrieve",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Revenge",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Ris Invocation",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Runtime",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Sanctuary",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Saxum Carapace",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Saxum Spittle",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Saxum Thorax",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Scavenge",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Seismic Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Self Destruct",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Sentient Surge",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Sepsis Claws",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Sey-Taph",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Shelter",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Shepherd",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Shield Charger",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Shock Collar",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Shocking Claws",
+    "maxRank": 10,
+    "category": "Companion"
+  },
+  {
+    "name": "Sil-Tabol",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Sly Devolution",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Soft Safe",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Spare Parts",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Stalk",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Stasis Field",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Strain Consume",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Strain Eruption",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Strain Fever",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Strain Infection",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Striker",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Summoner's Wrath",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Swift Bite",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Swipe",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Synth Deconstruct",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Talsek-An",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Tandem Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Teeming Virulence",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Tek Assault",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Tek Collateral",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Tek Enhance",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Tek Gravity",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Tenacious Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Territorial Aggression",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Threat Blocker",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Thumper",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Trample",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Trojan Tracker",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Turbo Protect",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Ubri-Kaneph",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Undying Will",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Unleashed",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Unseen Dread",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Untraceable",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Vacuum",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Vaporize",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Venari Bodyguard",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Venom Dose",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Venom Teeth",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Vicious Bond",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Vik-Anam",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Vikla-Safor",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Viral Quills",
+    "maxRank": 3,
+    "category": "Companion"
+  },
+  {
+    "name": "Warrior",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Warrior's Rest",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Wild Frenzy",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Worm Away",
+    "maxRank": 1,
+    "category": "Companion"
+  },
+  {
+    "name": "Worthy Comradery",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Yar Dal",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Zazvat-Kar",
+    "maxRank": 5,
+    "category": "Companion"
+  },
+  {
+    "name": "Accelerated Deflection",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Aegis Gale",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Aerial Ace",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Aero Agility",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Aero Periphery",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Aero Vantage",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Afterburner",
+    "maxRank": 3,
+    "category": "Archwing Augment"
+  },
+  {
+    "name": "Amar's Anguish",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Amar's Contempt",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Amar's Hatred",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Ammo Chain",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Arc Coil",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Archgun Ace",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Argon Plating",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Assault Mode",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Astral Autopsy",
+    "maxRank": 1,
+    "category": "Archwing"
+  },
+  {
+    "name": "Auxiliary Power",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Aviator",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Axios Javelineers",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Ballista Measure",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Battering Maneuver",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Bleeding Edge",
+    "maxRank": 10,
+    "category": "Archwing"
+  },
+  {
+    "name": "Boreal's Anguish",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Boreal's Contempt",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Boreal's Hatred",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Bright Purity",
+    "maxRank": 3,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Clip Delegation",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Conductor",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Containment Breach",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Controlled Slide",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Crash Course",
+    "maxRank": 5,
+    "category": "Primary"
+  },
+  {
+    "name": "Critical Mutation",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Diversified Denial",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Dread Ward",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Electrified Barrel",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Electromagnetic Shielding",
+    "maxRank": 5,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Energy Generator",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Enhanced Durability",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Equilibrium Audit",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Evasive Denial",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Eximus Advantage",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Exposing Harpoon",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Focused Prospectus",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Furor",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Hard Engage",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Hyperion Thrusters",
+    "maxRank": 10,
+    "category": "Archwing"
+  },
+  {
+    "name": "Infectious Injection",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Ion Infusion",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Ironclad Flight",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Kinetic Ricochet",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Laser Sight",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Leaded Gas",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Maglev",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Magnetic Strafe",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Marked Target",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Meticulous Aim",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Nebula Bore",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Nira's Anguish",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Nira's Contempt",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Nira's Hatred",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Null Audit",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Photon Repeater",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Piercing Step",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Prosperous Rtriever",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Proton Pulse",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Quasar Drill",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Range Advantage",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Rapid Resilience",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Razor Mortar",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Ready Steel",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Rebound",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Rending Turn",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Repeater Clip",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Repo Audit",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Rift Strike",
+    "maxRank": 5,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Shivering Contagion",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Shock Absorbers",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Shockwave Actuators",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Surging Dash",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Synergized Prospectus",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Target Acquired",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Thermal Transfer",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Whiplash Mine",
+    "maxRank": 3,
+    "category": "Archwing"
+  },
+  {
+    "name": "Zodiac Shred",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Necramech Augur",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Aviator",
+    "maxRank": 3,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Blitz",
+    "maxRank": 3,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Continuity",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Deflection",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Drift",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Efficiency",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Enemy Sense",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Flow",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Friction",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Fury",
+    "maxRank": 3,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Hydraulics",
+    "maxRank": 3,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Intensify",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Pressure Point",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Rage",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Reach",
+    "maxRank": 3,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Rebuke",
+    "maxRank": 3,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Redirection",
+    "maxRank": 10,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Refuel",
+    "maxRank": 3,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Repair",
+    "maxRank": 3,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Seismic Wave",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Slipstream",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Steel Fiber",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Streamline",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Stretch",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Thrusters",
+    "maxRank": 3,
+    "category": "Necramech"
+  },
+  {
+    "name": "Necramech Vitality",
+    "maxRank": 5,
+    "category": "Necramech"
+  },
+  {
+    "name": "Air Time",
+    "maxRank": 3,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Anchored Glide",
+    "maxRank": 5,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Anti-Grav Grenade",
+    "maxRank": 3,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Cold Arrival",
+    "maxRank": 3,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Cruising Speed",
+    "maxRank": 10,
+    "category": "Railjack"
+  },
+  {
+    "name": "Dispatch Overdrive",
+    "maxRank": 5,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Drive-Duster",
+    "maxRank": 1,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Extreme Velocity",
+    "maxRank": 5,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Ice Spring",
+    "maxRank": 10,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Inertia Dampeners",
+    "maxRank": 3,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Juice",
+    "maxRank": 10,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Kinetic Friction",
+    "maxRank": 3,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Lightning Dash",
+    "maxRank": 10,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Mad Stack",
+    "maxRank": 5,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Mag Locks",
+    "maxRank": 5,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Nitro Boost",
+    "maxRank": 5,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Patagium",
+    "maxRank": 5,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Perfect Balance",
+    "maxRank": 10,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Phoenix Blaze",
+    "maxRank": 10,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Pop Top",
+    "maxRank": 5,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Poppin' Vert",
+    "maxRank": 3,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Primo Flair",
+    "maxRank": 5,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Quick Escape",
+    "maxRank": 3,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Rail Guards",
+    "maxRank": 5,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Slay Board",
+    "maxRank": 3,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Sonic Boost",
+    "maxRank": 3,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Sonic Fracture",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Thrash Landing",
+    "maxRank": 3,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Toxic Flight",
+    "maxRank": 10,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Trail Blazer",
+    "maxRank": 3,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Vapor Trail",
+    "maxRank": 10,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Venerdo Hoverdrive",
+    "maxRank": 5,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Waveband Disruptor",
+    "maxRank": 5,
+    "category": "K-Drive"
+  },
+  {
+    "name": "Artillery Cheap Shot",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Atomic Fallout",
+    "maxRank": 3,
+    "category": "Railjack"
+  },
+  {
+    "name": "Auto Omni",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Battle Forge",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Battle Stations",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Beguiling Lantern",
+    "maxRank": 5,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Breach Quanta",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Combat Reload",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Conic Nozzle",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Cordon",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Countermeasures",
+    "maxRank": 3,
+    "category": "Railjack"
+  },
+  {
+    "name": "Crimson Fugue",
+    "maxRank": 10,
+    "category": "Railjack"
+  },
+  {
+    "name": "Defensive Fire",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Energy Amplifier",
+    "maxRank": 5,
+    "category": "Archwing"
+  },
+  {
+    "name": "Fire Suppression",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Fired Up",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Flow Burn",
+    "maxRank": 10,
+    "category": "Railjack"
+  },
+  {
+    "name": "Flux Overdrive",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Form Up",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Fortifying Fire",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Forward Artillery",
+    "maxRank": 10,
+    "category": "Railjack"
+  },
+  {
+    "name": "Granum's Nemesis",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Guided Ordnance",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Holster Amp",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Indomitable Matrix",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Intruder Stasis",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Ion Burn",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Ironclad Matrix",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Lingering Torment",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Metamorphic Magazine",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Munitions Vortex",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Onslaught Matrix",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Ordnance Cheap Shot",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Ordnance Velocity",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Orgone Tuning Matrix",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Overloader",
+    "maxRank": 3,
+    "category": "Railjack"
+  },
+  {
+    "name": "Particle Ram",
+    "maxRank": 10,
+    "category": "Railjack"
+  },
+  {
+    "name": "Photon Overcharge",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Predator",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Protective Shots",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Raider Matrix",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Repair Kit",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Revo Reducer",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Ripload",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Scan Matter",
+    "maxRank": 3,
+    "category": "Railjack"
+  },
+  {
+    "name": "Scourging Warheads",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Section Density",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Security Override",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Seeker Volley",
+    "maxRank": 10,
+    "category": "Railjack"
+  },
+  {
+    "name": "Sentient Barrage",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Sentient Scalpel",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Shimmering Blight",
+    "maxRank": 3,
+    "category": "Railjack"
+  },
+  {
+    "name": "Squad Renew",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Swift Deth",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "System Reroute",
+    "maxRank": 10,
+    "category": "Archwing"
+  },
+  {
+    "name": "Temporal Artillery",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Temporal Erosion",
+    "maxRank": 3,
+    "category": "Warframe Augment"
+  },
+  {
+    "name": "Tether",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Transfusion",
+    "maxRank": 3,
+    "category": "Railjack"
+  },
+  {
+    "name": "Turret Velocity",
+    "maxRank": 10,
+    "category": "Railjack"
+  },
+  {
+    "name": "Valence Formation",
+    "maxRank": 3,
+    "category": "Railjack"
+  },
+  {
+    "name": "Void Cloak",
+    "maxRank": 5,
+    "category": "Railjack"
+  },
+  {
+    "name": "Void Hole",
+    "maxRank": 10,
+    "category": "Railjack"
+  },
+  {
+    "name": "Vome Invocation",
+    "maxRank": 3,
+    "category": "Railjack"
+  },
+  {
+    "name": "Vulcan Blitz",
+    "maxRank": 5,
+    "category": "Melee Augment"
+  },
+  {
+    "name": "Warhead",
+    "maxRank": 10,
+    "category": "Railjack"
+  },
+  {
+    "name": "Xata Invocation",
+    "maxRank": 3,
+    "category": "Railjack"
+  },
+  {
+    "name": "Adept Surge",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Adrenaline Boost",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Afterburn",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Agile Aim",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Air Recon",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Air Thrusters",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Ambush Optics",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Anti-Flak Plating",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Anticipation",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Antimatter Mine",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Apex Predator",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Argent Scourge",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Armored Acrobatics",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Armored Evade",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Armored Recovery",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Biting Piranha",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Blind Shot",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Bounty Hunter",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Brain Storm",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Broad Eye",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Calculated Spring",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Calculated Victory",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Celestial Nightfall",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Comet Rounds",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Counterweight",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Crash Shot",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Crashing Havoc",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Crashing Timber",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Cunning Aspect",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Deceptive Bond",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Defiled Reckoning",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Deft Tempo",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Directed Convergence",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Discharge Strike",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Dividing Blades",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Double Tap",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Double-Barrel Drift",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Draining Gloom",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Eagle Eye",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Eject Magazine",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Emergent Aftermath",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Explosive Demise",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Fateful Truth",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Feathered Arrows",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Final Act",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Final Tap",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Flak Shot",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Focused Acceleration",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Follow Through",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Full Capacity",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Gorgon Frenzy",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Grinloked",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Gun Glide",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Hastened Steps",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Hawk Eye",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Heartseeker",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Heavy Warhead",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Heightened Reflexes",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Hydraulic Barrel",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Hydraulic Chamber",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Hydraulic Gauge",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Hysterical Fixation",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Ice Wave Impedance",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Impaler Munitions",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Impenetrable Offense",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Iron Shrapnel",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Kill Switch",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Kinetic Collision",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Lashing Coil",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Last Herald",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Lie In Wait",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Loaded Capacity",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Lock and Load",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Loose Chamber",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Loose Magazine",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Lucky Shot",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Mafic Rain",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Martial Fury",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Maximum Capacity",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Measured Burst",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Mesa's Waltz",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Meteor Munitions",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Momentary Pause",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Mortal Conduct",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Night Stalker",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "No Current Leap",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Noble Cadence",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Overcharge Detectors",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Overcharged",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Overview",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Piercing Fury",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Plan B",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Power of Three",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Precision Munition",
+    "maxRank": 1,
+    "category": "Conclave"
+  },
+  {
+    "name": "Prism Guard",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Prize Kill",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Purging Slash",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Purifying Flames",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Push & Pull",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Quaking Hand",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Quick Charge",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Razor Munitions",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Recharge Barrier",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Recover",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Recuperate",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Reflex Draw",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Relentless Assault",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Rending Wind",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Rime Vault",
+    "maxRank": 1,
+    "category": "Conclave"
+  },
+  {
+    "name": "Ripper Rounds",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Rising Skill",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Rising Steel",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Rumbled",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Sapping Reach",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Scarlet Hurricane",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Searing Leap",
+    "maxRank": 1,
+    "category": "Conclave"
+  },
+  {
+    "name": "Secondary Wind",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Serrated Edges",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Serrated Rounds",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Shadow Harvest",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Sharpened Blade",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Shield Overload",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Shrapnel Rounds",
+    "maxRank": 1,
+    "category": "Conclave"
+  },
+  {
+    "name": "Shred Shot",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Signal Flare",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Singularity",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Skull Shots",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Snap Shot",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Soaring Strike",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Soft Hands",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Spring-Loaded Broadhead",
+    "maxRank": 5,
+    "category": "Primary Augment"
+  },
+  {
+    "name": "Spry Sights",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Stand Ground",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Star Divide",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Static Alacrity",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Strafing Slide",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Sudden Justice",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Surplus Diverters",
+    "maxRank": 5,
+    "category": "Conclave"
+  },
+  {
+    "name": "Sword Alone",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Tactical Reload",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Tactical Retreat",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Tainted Hydra",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Tear Gas",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Tempered Bound",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Thundermiter",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Triple Tap",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Twitch",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Vanquished Prey",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Venomous Rise",
+    "maxRank": 1,
+    "category": "Conclave"
+  },
+  {
+    "name": "Vexing Retaliation",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  },
+  {
+    "name": "Vicious Approach",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Vital Systems Bypass",
+    "maxRank": 3,
+    "category": "Conclave"
+  },
+  {
+    "name": "Voltaic Lance",
+    "maxRank": 1,
+    "category": "Conclave"
+  },
+  {
+    "name": "Ward Recovery",
+    "maxRank": 3,
+    "category": "Conclave Augment"
+  }
+]
